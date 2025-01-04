@@ -162,15 +162,19 @@ Feel free to copy and paste these revised codes into your markdown file. Let me 
 
 
 ### how to push to repository through MAC terminal (CLI)
+
+##### before you push, make sure no secrets (e.g., PATs) are in the codes
+
 1. change directory to working folder in MAC terminal (使用 cd 命名)
 
 2. Initializing a Git repository (https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)
 $ git init -b main
 
 #使用PaperMod可能需要
-git submodule update --init --recursive 
+$ git submodule update --init --recursive 
 ~~ needed when you reclone your repo (submodules may not get cloned automatically)
 
+#add all files and commit
 $ git add .
 $ git commit -m "First commit"
 
@@ -188,17 +192,20 @@ $ git remote -v
 如果出现Remote origin already exists的报错信息，可以通过两种方法解决：rename 或者 remove 
 (详见：https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#removing-a-remote-repository)
 
-git remote rm origin
+$ git remote rm origin
 ~~remove已有的remote repo
 ~~重新增加remote repo
-
 
 5. Pushing commits to a remote repository
 $ git push origin main
 此时，会提示输入密码。
 如果需要输入github的密码pat
 
-6. deploy via Netlify
+6. deploy via Github pages
+[link to workflow](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+follow the steps specified here
+
+7. deploy via Netlify
 #创建public
 $ hugo 或者  $ hugo -D
 
