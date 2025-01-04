@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Psycholinguistics Experiments on Felix Jun Zhang</title>
-    <link>http://localhost:1313/tool/experiments/</link>
+    <link>http://example.org/tool/experiments/</link>
     <description>Recent content in Psycholinguistics Experiments on Felix Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://example.org/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Eyetracking with OpenSesame</title>
-      <link>http://localhost:1313/tool/experiments/eyetrackingwithopensesame/</link>
+      <link>http://example.org/tool/experiments/eyetrackingwithopensesame/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/experiments/eyetrackingwithopensesame/</guid>
+      <guid>http://example.org/tool/experiments/eyetrackingwithopensesame/</guid>
       <description>&lt;p&gt;Learning about eyetracking technique is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers in social contexts.&lt;/p&gt;
 &lt;p&gt;My first experiments (hopefully) are about perspective-taking and interpreting scalars in social contexts, a project emerging from my discussion with Prof. Gerry Altmann.&lt;/p&gt;
 &lt;p&gt;In this post, I share my experience in learning about this technique in two areas: classical studies, experimental design, and data analysis.&lt;/p&gt;
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>Pre-registration</title>
-      <link>http://localhost:1313/tool/experiments/pre_registration/</link>
+      <link>http://example.org/tool/experiments/pre_registration/</link>
       <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/experiments/pre_registration/</guid>
+      <guid>http://example.org/tool/experiments/pre_registration/</guid>
       <description>&lt;h3 id=&#34;preregistration&#34;&gt;Preregistration&lt;/h3&gt;
 &lt;p&gt;Preregistration is the practice of documenting your research plan at the beginning of your study and storing that plan in a read-only public repository  such as &lt;a href=&#34;https://osf.io/registries?view_only=&#34;&gt;OSF Registries&lt;/a&gt; and &lt;a href=&#34;https://aspredicted.org/&#34;&gt;As Predicted.org&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;benefits-of-preregistration&#34;&gt;Benefits of preregistration&lt;/h4&gt;
@@ -38,9 +38,9 @@
     </item>
     <item>
       <title>Opensesame</title>
-      <link>http://localhost:1313/tool/experiments/opensesame/</link>
+      <link>http://example.org/tool/experiments/opensesame/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/experiments/opensesame/</guid>
+      <guid>http://example.org/tool/experiments/opensesame/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt; is a program to create experiments for psychology, neuroscience, and experimental economics.&lt;/p&gt;
 &lt;p&gt;It does not require coding skills to create psycholinguistics experiments and is particularly friendly to beginners with a comprehensive graphical, point-and-click interface.&lt;/p&gt;
 &lt;p&gt;You can find tutorials and example experiments on the website that are highly useful in learning to build your own experiments.&lt;/p&gt;
@@ -48,9 +48,9 @@
     </item>
     <item>
       <title>Self paced reading</title>
-      <link>http://localhost:1313/tool/experiments/spr/</link>
+      <link>http://example.org/tool/experiments/spr/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/experiments/spr/</guid>
+      <guid>http://example.org/tool/experiments/spr/</guid>
       <description>&lt;p&gt;Self-paced reading is relatively crude-grained in the behavioural data, it, nevertheless, is one of the most accessible tools for beginners in doing experimental language research.&lt;/p&gt;
 &lt;p&gt;The following are some helpful links.&lt;/p&gt;
 &lt;ol&gt;
@@ -65,9 +65,9 @@ Week 4 self paced reading&lt;/p&gt;
     </item>
     <item>
       <title>Mousetracking</title>
-      <link>http://localhost:1313/tool/experiments/mousetracking/</link>
+      <link>http://example.org/tool/experiments/mousetracking/</link>
       <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/experiments/mousetracking/</guid>
+      <guid>http://example.org/tool/experiments/mousetracking/</guid>
       <description>&lt;p&gt;Learning about mousetracking technique is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers. Tomlinson et al. (2013) is a key reference.&lt;/p&gt;
 &lt;p&gt;In my work, I used Opensesame (Mathôt et al., 2012) together with the mousetrap plugin (Kieslich &amp;amp; Henninger, 2017).&lt;/p&gt;
 &lt;p&gt;Here are some useful resources.&lt;/p&gt;
@@ -79,9 +79,9 @@ Paper &lt;a href=&#34;https://link.springer.com/article/10.3758/s13428-019-01228
     </item>
     <item>
       <title>Eyetracking</title>
-      <link>http://localhost:1313/tool/experiments/eyetracking/</link>
+      <link>http://example.org/tool/experiments/eyetracking/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/experiments/eyetracking/</guid>
+      <guid>http://example.org/tool/experiments/eyetracking/</guid>
       <description>&lt;h4 id=&#34;online-webcam-based-eye-tracking&#34;&gt;Online webcam-based eye-tracking&lt;/h4&gt;
 &lt;p&gt;Here are some of the resources that I use in learning to design online eye tracking experiments.&lt;/p&gt;
 &lt;ol&gt;

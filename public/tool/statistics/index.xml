@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Statistics on Felix Jun Zhang</title>
-    <link>http://localhost:1313/tool/statistics/</link>
+    <link>http://example.org/tool/statistics/</link>
     <description>Recent content in Statistics on Felix Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tool/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://example.org/tool/statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>model fitting</title>
-      <link>http://localhost:1313/tool/statistics/modelfitting/</link>
+      <link>http://example.org/tool/statistics/modelfitting/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/statistics/modelfitting/</guid>
+      <guid>http://example.org/tool/statistics/modelfitting/</guid>
       <description>&lt;h2 id=&#34;fitting-lmms&#34;&gt;fitting lMMs&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;factor treatment coding&lt;/li&gt;
@@ -30,9 +30,9 @@ methods to assess normality&lt;/p&gt;</description>
     </item>
     <item>
       <title>Power analysis</title>
-      <link>http://localhost:1313/tool/statistics/poweranalysis/</link>
+      <link>http://example.org/tool/statistics/poweranalysis/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/statistics/poweranalysis/</guid>
+      <guid>http://example.org/tool/statistics/poweranalysis/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#1-notes-to-green-et-al-2016&#34;&gt;1. notes to Green et al. (2016)&lt;/a&gt;
 &lt;ul&gt;
@@ -59,9 +59,9 @@ methods to assess normality&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data types, distribution, modeling choices</title>
-      <link>http://localhost:1313/tool/statistics/datatypedistributionmodeling/</link>
+      <link>http://example.org/tool/statistics/datatypedistributionmodeling/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/statistics/datatypedistributionmodeling/</guid>
+      <guid>http://example.org/tool/statistics/datatypedistributionmodeling/</guid>
       <description>&lt;h2 id=&#34;data-types-distribution-modeling-choices&#34;&gt;Data types, distribution, modeling choices&lt;/h2&gt;
 &lt;p&gt;Linear Mixed Effects Models (LMMs) and Generalized Linear Mixed Effects Models (GLMMs)&lt;/p&gt;
 &lt;p&gt;The choice between LMMs and GLMMs depends on the nature of your response variable and the specific goals of your analysis.&lt;/p&gt;
@@ -134,9 +134,9 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
     </item>
     <item>
       <title>Understand mixed effects modeling</title>
-      <link>http://localhost:1313/tool/statistics/parametersinmodeling/</link>
+      <link>http://example.org/tool/statistics/parametersinmodeling/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/statistics/parametersinmodeling/</guid>
+      <guid>http://example.org/tool/statistics/parametersinmodeling/</guid>
       <description>&lt;h1 id=&#34;part-i-general-overview&#34;&gt;PART I General Overview&lt;/h1&gt;
 &lt;p&gt;The results of mixed-effects modeling, such as those obtained from linear mixed-effects models (LMMs) or generalized linear mixed models (GLMMs), typically include several key parameters and statistics. Here’s a detailed explanation of each component commonly found in the output:&lt;/p&gt;
 &lt;ol&gt;
@@ -151,9 +151,9 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
     </item>
     <item>
       <title>Bayesian modeling</title>
-      <link>http://localhost:1313/tool/statistics/bayesian/</link>
+      <link>http://example.org/tool/statistics/bayesian/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/statistics/bayesian/</guid>
+      <guid>http://example.org/tool/statistics/bayesian/</guid>
       <description>&lt;h3 id=&#34;steps-to-fit-bayesian-models-in-r&#34;&gt;Steps to Fit Bayesian Models in R&lt;/h3&gt;
 &lt;h4 id=&#34;1-specify-the-research-question&#34;&gt;1. Specify the Research Question&lt;/h4&gt;
 &lt;ul&gt;

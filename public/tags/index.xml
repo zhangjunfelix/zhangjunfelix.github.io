@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Felix Jun Zhang</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>http://example.org/tags/</link>
     <description>Recent content in Tags on Felix Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Jun 2023 22:38:49 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inferencing</title>
-      <link>http://localhost:1313/tags/inferencing/</link>
+      <link>http://example.org/tags/inferencing/</link>
       <pubDate>Wed, 21 Jun 2023 22:38:49 +0800</pubDate>
-      <guid>http://localhost:1313/tags/inferencing/</guid>
+      <guid>http://example.org/tags/inferencing/</guid>
       <description></description>
     </item>
     <item>
       <title>Linguistic Communication</title>
-      <link>http://localhost:1313/tags/linguistic-communication/</link>
+      <link>http://example.org/tags/linguistic-communication/</link>
       <pubDate>Wed, 21 Jun 2023 22:38:49 +0800</pubDate>
-      <guid>http://localhost:1313/tags/linguistic-communication/</guid>
+      <guid>http://example.org/tags/linguistic-communication/</guid>
       <description></description>
     </item>
     <item>
       <title>Pragmatics</title>
-      <link>http://localhost:1313/tags/pragmatics/</link>
+      <link>http://example.org/tags/pragmatics/</link>
       <pubDate>Wed, 21 Jun 2023 22:38:49 +0800</pubDate>
-      <guid>http://localhost:1313/tags/pragmatics/</guid>
+      <guid>http://example.org/tags/pragmatics/</guid>
       <description></description>
     </item>
     <item>
       <title>Language Acquisition</title>
-      <link>http://localhost:1313/tags/language-acquisition/</link>
+      <link>http://example.org/tags/language-acquisition/</link>
       <pubDate>Tue, 20 Jun 2023 22:39:05 +0800</pubDate>
-      <guid>http://localhost:1313/tags/language-acquisition/</guid>
+      <guid>http://example.org/tags/language-acquisition/</guid>
       <description></description>
     </item>
     <item>
       <title>Language Learning</title>
-      <link>http://localhost:1313/tags/language-learning/</link>
+      <link>http://example.org/tags/language-learning/</link>
       <pubDate>Tue, 20 Jun 2023 22:39:05 +0800</pubDate>
-      <guid>http://localhost:1313/tags/language-learning/</guid>
+      <guid>http://example.org/tags/language-learning/</guid>
       <description></description>
     </item>
   </channel>
