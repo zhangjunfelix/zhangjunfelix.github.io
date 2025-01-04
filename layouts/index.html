@@ -1,0 +1,82 @@
+{{ define "main" }}
+<main>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Jun Zhang's Portfolio</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 0;
+                    color: #333;
+                    background-color: #f4f4f9;
+                }
+                main {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background: #fff;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    border-radius: 8px;
+                }
+                main h1 {
+                    text-align: center;
+                    font-size: 2em;
+                    margin-bottom: 15px;
+                }
+                main p {
+                    margin: 15px 0;
+                }
+                a {
+                    color: #0066cc;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                figure {
+                    margin: 20px 0;
+                    text-align: center;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 5px;
+                }
+                figcaption {
+                    font-size: 0.9em;
+                    color: #555;
+                }
+             
+            </style>
+        </head>
+        <body>
+            <main>
+                <h3>Welcome to Jun Zhang's Website</h3>
+                <p>
+                    Hi! My name is 张 (zhāng) 军 (jūn) in Mandarin Chinese, and I also go by Felix. 
+                    I am a faculty member at the 
+                    <a href="http://sfs.ahu.edu.cn" target="_blank">School of Foreign Studies</a> at <a href="http://www.ahu.edu.cn" target="_blank">Anhui University</a>.
+                </p>
+                <p>
+                    I am a psycho.................................linguist. 😝 Broadly, I am interested in 
+                    how language is used and learned.
+                </p>
+                <figure>
+                    <img src="images/conriver.jpg" alt="Connecticut River">
+                    <figcaption>Connecticut River viewed from Sugarloaf, MA, USA</figcaption>
+                </figure>
+                <p>
+                    Feel free to reach out at 
+                    <a href="mailto:zhangjun-felix@hotmail.com">zhangjun-felix@hotmail.com</a>.
+                </p>
+            </main>
+        
+        </body>
+        </html>     
+
+</main>
+{{ end }}

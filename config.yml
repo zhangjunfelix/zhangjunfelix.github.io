@@ -1,0 +1,86 @@
+baseURL: 'http://example.org/'
+languageCode: 'en-us'
+title: 'Felix Jun Zhang'
+Theme: PaperMod
+
+
+menu:
+   main: 
+      - identifier: about
+        name: About
+        url: /about/
+        weight: 10
+      - identifier: projects
+        name: Projects
+        url: /projects/
+        weight: 20
+      - identifier: teaching
+        name: Teaching
+        url: /teaching/
+        weight: 30
+      - identifier: publications
+        name: Publications
+        url: /publications/
+        weight: 40
+      - identifier: toolbox
+        name: Toolbox
+        url: /tool/
+        weight: 50
+        children:
+        - identifier: computer
+          parent: toolbox
+          name: Computer
+          url: /tool/computer/
+          weight: 51
+          home: false
+        - identifier: experiments
+          parent: toolbox
+          name: Experiments
+          url: /tool/experiments/
+          weight: 52
+          home: false
+        - identifier: statistics          
+          parent: toolbox
+          name: Statistics
+          url: /tool/statistics/
+          weight: 53
+          home: false   
+
+
+enableEmoji: true
+
+pluralizeListTitles: false
+
+params:
+  mainSection: []
+
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/"
+    - name: facebook
+      url: "https://facebook.com/"
+    - name: instagram
+      url: "http://instagram.com/"
+
+
+  ShowReadingTime: false
+
+  ShowBreadCrumbs: false
+
+  ShowWordCount: false
+
+  UseHugoToc: false
+  ShowToc: false
+  TocOpen: false
+
+
+  ShowShareButtons: false
+
+
+  cover:
+     linkFullImages: true
+     
+  ShowCodeCopyButtons: true
+  
+  showSectionPagesOnHome: true 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Teaching on Felix Jun Zhang</title>
+    <link>http://localhost:1313/teaching/</link>
+    <description>Recent content in Teaching on Felix Jun Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Jul 2023 15:50:45 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Second Language Acquisition</title>
+      <link>http://localhost:1313/teaching/l2a/</link>
+      <pubDate>Sun, 09 Jul 2023 15:50:45 +0800</pubDate>
+      <guid>http://localhost:1313/teaching/l2a/</guid>
+      <description>&lt;p&gt;COURSE SYLLABUS &lt;a href=&#34;Syllabus.pdf&#34;&gt;Download syllabus&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;course-description&#34;&gt;&lt;em&gt;COURSE DESCRIPTION&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;This course is a general introduction to scientific research into how people learn a second language. Although the course is designed to be accessible to students from a wide variety of backgrounds, some knowledge of the linguistic structure of English will be assumed.&lt;/p&gt;
+&lt;p&gt;Second language acquisition, or SLA, is a theoretical and experimental field of study which, like first language acquisition studies, looks at the phenomenon of language development &amp;ndash; in this case the acquisition of a second language.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

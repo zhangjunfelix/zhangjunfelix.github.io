@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Psycholinguistics Experiments on Felix Jun Zhang</title>
+    <link>http://localhost:1313/tool/experiments/</link>
+    <description>Recent content in Psycholinguistics Experiments on Felix Jun Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eyetracking with OpenSesame</title>
+      <link>http://localhost:1313/tool/experiments/eyetrackingwithopensesame/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/eyetrackingwithopensesame/</guid>
+      <description>&lt;p&gt;Learning about eyetracking technique is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers in social contexts.&lt;/p&gt;
+&lt;p&gt;My first experiments (hopefully) are about perspective-taking and interpreting scalars in social contexts, a project emerging from my discussion with Prof. Gerry Altmann.&lt;/p&gt;
+&lt;p&gt;In this post, I share my experience in learning about this technique in two areas: classical studies, experimental design, and data analysis.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Part I Review&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Part II Classical Studies&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pre-registration</title>
+      <link>http://localhost:1313/tool/experiments/pre_registration/</link>
+      <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/pre_registration/</guid>
+      <description>&lt;h3 id=&#34;preregistration&#34;&gt;Preregistration&lt;/h3&gt;
+&lt;p&gt;Preregistration is the practice of documenting your research plan at the beginning of your study and storing that plan in a read-only public repository  such as &lt;a href=&#34;https://osf.io/registries?view_only=&#34;&gt;OSF Registries&lt;/a&gt; and &lt;a href=&#34;https://aspredicted.org/&#34;&gt;As Predicted.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;benefits-of-preregistration&#34;&gt;Benefits of preregistration&lt;/h4&gt;
+&lt;p&gt;(a) ensuring that research teams share a clear understanding of their research goals and processes&lt;br&gt;
+(b) separating the confirmatory aspects of the research from the exploratory aspects&lt;br&gt;
+(c) allowing for input from colleagues online prior to conducting the study, and &lt;br&gt;
+(d) allowing journal editors to accept researchers’ papers conditionally, regardless of the outcomes themselves.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Opensesame</title>
+      <link>http://localhost:1313/tool/experiments/opensesame/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/opensesame/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt; is a program to create experiments for psychology, neuroscience, and experimental economics.&lt;/p&gt;
+&lt;p&gt;It does not require coding skills to create psycholinguistics experiments and is particularly friendly to beginners with a comprehensive graphical, point-and-click interface.&lt;/p&gt;
+&lt;p&gt;You can find tutorials and example experiments on the website that are highly useful in learning to build your own experiments.&lt;/p&gt;
+&lt;p&gt;Opensesame experiments can be implemented both offline and online. It has an extension called OSWEB that allows the experiments to be excuted in a browser.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Self paced reading</title>
+      <link>http://localhost:1313/tool/experiments/spr/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/spr/</guid>
+      <description>&lt;p&gt;Self-paced reading is relatively crude-grained in the behavioural data, it, nevertheless, is one of the most accessible tools for beginners in doing experimental language research.&lt;/p&gt;
+&lt;p&gt;The following are some helpful links.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://kennysmithed.github.io/oels2022/&#34;&gt;Online Experiments for Language Scientists&lt;/a&gt;&lt;br&gt;
+Week 4 self paced reading&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The first tool that I used to build my SRP study was &lt;a href=&#34;https://web.archive.org/web/20191220181934/http://tedlab.mit.edu/~dr/Linger/&#34; title=&#34;Linger site&#34;&gt;Linger&lt;/a&gt;.&lt;br&gt;
+&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt; is certainly a good choice.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mousetracking</title>
+      <link>http://localhost:1313/tool/experiments/mousetracking/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/mousetracking/</guid>
+      <description>&lt;p&gt;Learning about mousetracking technique is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers. Tomlinson et al. (2013) is a key reference.&lt;/p&gt;
+&lt;p&gt;In my work, I used Opensesame (Mathôt et al., 2012) together with the mousetrap plugin (Kieslich &amp;amp; Henninger, 2017).&lt;/p&gt;
+&lt;p&gt;Here are some useful resources.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Design factors in mouse-tracking: What makes a difference?&lt;br&gt;
+Paper &lt;a href=&#34;https://link.springer.com/article/10.3758/s13428-019-01228-y#citeas&#34;&gt;Link to fulltext&lt;/a&gt; &lt;br&gt;
+&amp;#x1f50c; Supplementary resoures &lt;a href=&#34;https://osf.io/xdp7a/&#34;&gt;Link to site&lt;/a&gt; (make best use of the codes and example experiment!!!)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eyetracking</title>
+      <link>http://localhost:1313/tool/experiments/eyetracking/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/eyetracking/</guid>
+      <description>&lt;h4 id=&#34;online-webcam-based-eye-tracking&#34;&gt;Online webcam-based eye-tracking&lt;/h4&gt;
+&lt;p&gt;Here are some of the resources that I use in learning to design online eye tracking experiments.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Webgazer&lt;br&gt;
+WebGazer: &lt;a href=&#34;https://webgazer.cs.brown.edu&#34;&gt;https://webgazer.cs.brown.edu&lt;/a&gt;&lt;br&gt;
+Webgazer on github: &lt;a href=&#34;https://github.com/brownhci/WebGazer&#34;&gt;https://github.com/brownhci/WebGazer&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;tutorial by BROWNHCI&lt;br&gt;
+&lt;a href=&#34;https://github.com/brownhci/WebGazer/wiki/Tutorial&#34;&gt;https://github.com/brownhci/WebGazer/wiki/Tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;webgazer tutorial on jsPsych&lt;br&gt;
+Tutorial by Xiaozhi Zhao &lt;a href=&#34;https://github.com/xiaozhi2/webgazertutorial&#34;&gt;https://github.com/xiaozhi2/webgazertutorial&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Webgazer on Opensesame&lt;br&gt;
+&lt;a href=&#34;https://osdoc.cogsci.nl/3.3/manual/eyetracking/webgazer/&#34;&gt;https://osdoc.cogsci.nl/3.3/manual/eyetracking/webgazer/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;jsPsychTutorial&lt;br&gt;
+jsPsych tutorial on jsPsych &lt;a href=&#34;https://www.jspsych.org/7.0/tutorials/hello-world/&#34;&gt;https://www.jspsych.org/7.0/tutorials/hello-world/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Online book by Winson Yang &lt;a href=&#34;https://winsonfzyang.github.io/jsPsychTutorial/&#34;&gt;https://winsonfzyang.github.io/jsPsychTutorial/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Youtube tutorial  &lt;a href=&#34;https://www.youtube.com/playlist?list=PLtdKTIOUlb42qG962wz30fzlUMibJCGQW&#34;&gt;https://www.youtube.com/playlist?list=PLtdKTIOUlb42qG962wz30fzlUMibJCGQW&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;PyGaze (eye tracking) on OpenSesame
+&lt;a href=&#34;https://osdoc.cogsci.nl/3.3/manual/eyetracking/pygaze/&#34;&gt;https://osdoc.cogsci.nl/3.3/manual/eyetracking/pygaze/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PyGaze documentation: &lt;a href=&#34;http://www.pygaze.org/docs/&#34;&gt;http://www.pygaze.org/docs/&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;eyetracking data analyses in R
+eyetrackingR package: &lt;a href=&#34;http://www.eyetracking-r.com/&#34;&gt;http://www.eyetracking-r.com/&lt;/a&gt;
+tutorial by Marissa Barlaz: &lt;a href=&#34;https://marissabarlaz.github.io/portfolio/eyetracking/&#34;&gt;https://marissabarlaz.github.io/portfolio/eyetracking/&lt;/a&gt;
+youtube tutorial: &lt;a href=&#34;https://www.youtube.com/watch?v=CkoJvnWEOxw&#34;&gt;https://www.youtube.com/watch?v=CkoJvnWEOxw&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;lab-based-eyetracking&#34;&gt;lab-based eyetracking&lt;/h4&gt;</description>
+    </item>
+  </channel>
+</rss>

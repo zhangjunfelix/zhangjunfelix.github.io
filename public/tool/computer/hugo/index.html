@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Create static websites with Hugo | Felix Jun Zhang</title>
+<meta name="keywords" content="">
+<meta name="description" content="Here are some of the codes/tips that I used in creating my website.
+
+Commonly used commands
+~~ command to change directories
+cd
+
+~~建立新文件夹；yml也可能是toml
+hugo new site anatole-felix -f yml
+cd anatole-felix
+~~clone anatole到themes  
+git clone https://github.com/lxndrblz/anatole.git themes/anatole &ndash;depth=1
+~~在VSC中打开文件夹
+code .
+~~ 打开local server:   
+hugo server
+(后面加上 - D 可打开状态为”draft“的页面)
+
+commands to modify config.toml 
+2.1 增加favicon
+第一步，在favicon.io这个网站生成并下载你想要的favicon
+第二步，解压缩后将所有文件拷贝到static的根目录下
+第三步，在themes/anatole/layouts/partials中找到head.html，在该文件中加入
+
+~~并将xxx改为favicon.ico 
+~~可参考https://ibrights.github.io/post/blog20210527/
+2.2 创建新blog或者post  
+hugo new a.md
+#a.md为新的post的名称">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tool/computer/hugo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tool/computer/hugo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Felix Jun Zhang (Alt + H)">Felix Jun Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/teaching/" title="Teaching">
+                    <span>Teaching</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tool/" title="Toolbox">
+                    <span>Toolbox</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Create static websites with Hugo
+    </h1>
+    <div class="post-meta"><span title='2023-08-12 15:02:40 +0800 +0800'>August 12, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><strong>Here are some of the codes/tips that I used in creating my website.</strong></p>
+<ol>
+<li>Commonly used commands<br>
+~~ command to change directories<br>
+<em>cd</em></li>
+</ol>
+<p>~~建立新文件夹；yml也可能是toml<br>
+<em>hugo new site anatole-felix -f yml</em><br>
+<em>cd anatole-felix</em></p>
+<p>~~clone anatole到themes  <br>
+<em>git clone <a href="https://github.com/lxndrblz/anatole.git">https://github.com/lxndrblz/anatole.git</a> themes/anatole &ndash;depth=1</em></p>
+<p>~~在VSC中打开文件夹<br>
+<em>code .</em></p>
+<p>~~ 打开local server:   <br>
+<em>hugo server</em><br>
+(后面加上 - D 可打开状态为”draft“的页面)</p>
+<ol start="2">
+<li>commands to modify config.toml <br>
+2.1 增加favicon<br>
+第一步，在favicon.io这个网站生成并下载你想要的favicon<br>
+第二步，解压缩后将所有文件拷贝到static的根目录下<br>
+第三步，在themes/anatole/layouts/partials中找到head.html，在该文件中加入<!-- raw HTML omitted --></li>
+</ol>
+<p>~~并将xxx改为favicon.ico <br>
+~~可参考https://ibrights.github.io/post/blog20210527/</p>
+<p>2.2 创建新blog或者post  <br>
+<em>hugo new a.md</em><br>
+#a.md为新的post的名称</p>
+<p>~~或在某个具体的directory中创建 <br>
+<em>hugo new dir1/a.md</em><br>
+#dir1为所选文件夹，同一个文件夹中的post会显示为list；a.md为post的名称</p>
+<p>2.3 修改post的front matter,可在archetype中统一修改<br>
+~~进入archetypes中的default.md文件，直接进行增减或修改</p>
+<p>2.4 亦可以修改某个具体文件夹中所有post的frontmatter <br>
+#1.在archetypes文件夹中创建dir1.md（dir1为目标文件夹）<br>
+#2.在该dir1.md的文件中直接进行增减或修改</p>
+<ol start="3">
+<li>
+<p>shortcodes
+格式：例如 
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/sbHG1lwK7O4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+     <br>
+(”sbHG1lwK7O4“为youtube视频地址中v=后的部分)</p>
+</li>
+<li>
+<p>使用tags和categories<br>
+例如，在post的markdown文件的frontmatter中使用：<br>
+tags: [&ldquo;project&rdquo;, &ldquo;work&rdquo;, &ldquo;experient&rdquo;]
+categories: [&ldquo;research&rdquo;]</p>
+</li>
+</ol>
+<p>#增加新的taxonomies
+#在config.toml中，增加以下code: <br>
+<em>[taxonomies]</em><br>
+<em>tag = &ldquo;tags&rdquo;</em><br>
+<em>category = &ldquo;categories&rdquo;</em><br>
+<em>mood = &ldquo;moods&rdquo;</em></p>
+<p>#调整list template (如果不想更改采用的theme的设置，可以不进行这一步)
+#创建_index.md文件可以创建一个list，位于同一文件夹内的post将在同一个list中呈现，该文件中的参数决定了list template的呈现方式
+#如果修改list template的参数，进入所使用的theme中layout文件夹，找到list.html</p>
+<p>#如果要自己设计list template的参数，则进入与content文件夹同级的layout文件夹，创建_default文件夹。
+##在创建list.html文件，这样网站中所有的list template都会使用这个文件中的格式参数</p>
+<p>##使用{{.Content}}，只会列出content文件夹中第一层的markdown文件中的文字内容。不会出现不同markdown文件的名称等。
+##使用  <!-- raw HTML omitted --><!-- raw HTML omitted -->{{.Title}}<!-- raw HTML omitted --><!-- raw HTML omitted -->，可以以超链接的方式列出content文件夹中所有的markdown文件和子文件夹。</p>
+<p>##之前的.URL已失效，应使用.Permalink</p>
+<p>##调整single template
+#类似于list template
+#在layouts文件夹的_default子文件夹中创建single.html文件。</p>
+<p>##homepage页面参数的设置
+#在layouts的root directory中创建index.html
+#只针对Home page</p>
+<p>##section template
+##首先需要确定调整的是Content文件夹中具体哪一个文件夹中的post，如dir1
+##然后在layouts文件夹中创建一个同样文件名的文件夹，如dir1</p>
+<p>##base templates
+#与list template和page template的区别：这两个都只分别适用于各自，而baseof.html适应于所有类型的template
+#base template属于higher level template
+#在layouts中创建一个新的文件夹，命名为_default;
+#在该文件夹中创建一个baseof.html文件</p>
+<p>#以下是视频中的例子</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>{{end}}</p>
+<!-- raw HTML omitted -->
+<p>##variables in hugo</p>
+<p>~~ embed a PDF file in a page on your Hugo website.
+方法一：https://github.com/anvithks/hugo-embed-pdf-shortcode
+方法二：https://discourse.gohugo.io/t/how-to-produce-a-link-to-pdf-file-under-post-folder/29226</p>
+<p>##ZJ的总结
+使用方法一，在markdown文件中使用以下shortcode: {{ &lt; embed-pdf url=&quot;./2009.pdf&quot; hidePaginator=&ldquo;true&rdquo; &gt; }}
+##其中，pdf文件具体放置的位置：使用该markdown文件的名字命名一个同样的文件夹
+##（例如markdown文件为pub.md，则创建一个pub文件夹），然后将该pub.md页面中所有需要链接的文件都放在pub文件夹中。</p>
+<p>##同样的操作也适用于方法二（重点是确定文件的正确地址，可以试着点击链接，然后在修改）</p>
+<p>###可能用到的index.html中的code
+{{ define &ldquo;main&rdquo; }}
+{{ .Title }}</p>
+<p>{{ with .Params.subtitle }} {{ . }} {{ end }}
+{{ .Content }}
+{{ range first 10 .Site.RegularPages }} {{ .Render &ldquo;summary&rdquo; }} {{ end }}
+{{ end }}</p>
+<h3 id="how-to-push-to-repository-through-mac-terminal">how to push to repository through MAC terminal<a hidden class="anchor" aria-hidden="true" href="#how-to-push-to-repository-through-mac-terminal">#</a></h3>
+<ol>
+<li>
+<p>change directory to working folder in MAC terminal (使用 cd 命名)</p>
+</li>
+<li>
+<p>Initializing a Git repository (<a href="https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github">https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github</a>)
+$ git init -b main</p>
+</li>
+</ol>
+<p>#使用PaperMod可能需要
+git submodule update &ndash;init &ndash;recursive
+~~ needed when you reclone your repo (submodules may not get cloned automatically)</p>
+<p>$ git add .
+$ git commit -m &ldquo;First commit&rdquo;</p>
+<ol start="3">
+<li>Adding a remote repository （https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#adding-a-remote-repository）
+e.g.:
+$ git remote add origin <a href="https://github.com/zhangjunfelix/demopush.git">https://github.com/zhangjunfelix/demopush.git</a>
+~~ Set a new remote</li>
+</ol>
+<p>$ git remote -v
+~~ Verify new remote</p>
+<blockquote>
+<p>origin  <a href="https://github.com/zhangjunfelix/demopush.git">https://github.com/zhangjunfelix/demopush.git</a> (fetch)
+origin  <a href="https://github.com/zhangjunfelix/demopush.git">https://github.com/zhangjunfelix/demopush.git</a> (push)</p>
+</blockquote>
+<ol start="4">
+<li>(通常第一次init，应该不会出现这个问题)
+如果出现Remote origin already exists的报错信息，可以通过两种方法解决：rename 或者 remove
+(详见：https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#removing-a-remote-repository)</li>
+</ol>
+<p>git remote rm origin
+~~remove已有的remote repo
+~~重新增加remote repo</p>
+<ol start="5">
+<li>
+<p>Pushing commits to a remote repository
+$ git push origin main
+此时，会提示输入密码。
+如果需要输入github的密码，请参考：https://docs.github.com/en/get-started/getting-started-with-git/why-is-git-always-asking-for-my-password</p>
+</li>
+<li>
+<p>deploy via Netlify
+#创建public
+$ hugo 或者  $ hugo -D</p>
+</li>
+</ol>
+<p>#创建.gitmodules文件
+$ touch .gitmodules
+#在该文件中输入以下内容：
+[submodule &ldquo;themes/PaperMod&rdquo;]
+path = themes/PaperMod
+url = &ldquo;<a href="https://github.com/adityatelange/hugo-PaperMod.git%22">https://github.com/adityatelange/hugo-PaperMod.git&quot;</a></p>
+<p>#add, commit, push到github</p>
+<p>#deployment
+build command: hugo
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-netlify/">https://gohugo.io/hosting-and-deployment/hosting-on-netlify/</a></p>
+<p>#config.yml
+params:
+homeInfoParams:
+Title: &ldquo;Felix, a linguist&rdquo;
+Content: Welcome to Felix&rsquo;s website!  Here you&rsquo;ll get to know my work as a linguist.
+This is Zhang Jun (张 zhāng  军 jūn in simplified Chinese)(張 jēung 軍 gwān in traditional Chinese).
+Here you&rsquo;ll get to know me as a linguist. Anyone who wants to get in touch, please email me <a href="mailto:zhangjun-felix@hotmail.com">zhangjun-felix@hotmail.com</a></p>
+<p>socialIcons:
+- name: github
+url: &ldquo;<a href="https://github.com/%22">https://github.com/&quot;</a>
+- name: facebook
+url: &ldquo;<a href="https://facebook.com/%22">https://facebook.com/&quot;</a>
+- name: instagram
+url: &ldquo;<a href="http://instagram.com/%22">http://instagram.com/&quot;</a></p>
+<p>cover:
+linkFullImages: false</p>
+<p>##_index.md文件
+~~frontmatter
+title: &quot;&rdquo;
+date: 2023-07-06T22:37:08+08:00
+draft: true</p>
+<p>cover:
+image: images/me.png
+caption: Me in the eyes of my dearest daughter Elsie</p>
+<p>socialshare: true</p>
+<h3 id="welcome-to-felixs-website">Welcome to Felix&rsquo;s website! <a hidden class="anchor" aria-hidden="true" href="#welcome-to-felixs-website">#</a></h3>
+<p><br>
+This is Zhang Jun (simplified Chinese: 张 zhāng  军 jūn)(traditional Chinese: 張[jēung]軍[gwān]). <br>
+<br>
+Here you&rsquo;ll get to know me as a linguist.
+<br>
+<br>
+Anyone who wants to get in touch, please email me: <a href="mailto:zhangjun-felix@hotmail.com">zhangjun-felix@hotmail.com</a></p>
+<h4 id="deploying-a-blog-powered-by-hugo-to-github-pages-w-custom-domain-via-github-actions">Deploying a Blog Powered by Hugo to Github Pages w/ Custom Domain via Github Actions<a hidden class="anchor" aria-hidden="true" href="#deploying-a-blog-powered-by-hugo-to-github-pages-w-custom-domain-via-github-actions">#</a></h4>
+<p><a href="https://theplaybook.dev/docs/deploy-hugo-to-github-pages/">https://theplaybook.dev/docs/deploy-hugo-to-github-pages/</a></p>
+<p>###deploy with NETLIFY过程中，如果遇到以下error
+Module PaperMod is not compatible with this Hugo version; run hugo mod graph for more information.</p>
+<p>add the following code to your config file
+ignoreErrors: [&ldquo;error-remote-getjson&rdquo;]  #yml
+or
+ignoreErrors = [&ldquo;error-remote-getjson&rdquo;]  #toml</p>
+<p>source: <a href="https://github.com/adityatelange/hugo-PaperMod/discussions/615">https://github.com/adityatelange/hugo-PaperMod/discussions/615</a></p>
+<p>###在markdown文件中加图片</p>
+<p>例如：EAP.md文件中，插入EAP.jpg，可使用
+<img loading="lazy" src="/images/EAP.jpg" title="EAP"></p>
+<p>###这里images前的&rdquo;/&ldquo;非常重要</p>
+<p>Finally, here are some helpful tutorials.<br>
+1). <a href="https://www.youtube.com/watch?v=hjD9jTi_DQ4&amp;t=438s" title="Getting Started With Hugo">Getting Started With Hugo | FREE COURSE</a><br>
+2). <a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3">Hugo tutorials by Giraffe Academy</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Felix Jun Zhang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

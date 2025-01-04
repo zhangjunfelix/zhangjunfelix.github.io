@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Understand mixed effects modeling | Felix Jun Zhang</title>
+<meta name="keywords" content="">
+<meta name="description" content="PART I General Overview
+The results of mixed-effects modeling, such as those obtained from linear mixed-effects models (LMMs) or generalized linear mixed models (GLMMs), typically include several key parameters and statistics. Here’s a detailed explanation of each component commonly found in the output:
+
+Fixed Effects
+
+
+
+Fixed effects estimate the impact of predictors (independent variables) on the outcome variable, assuming a constant effect across all levels of random effects.
+
+
+Coefficient (Estimate): Represents the change in the outcome variable for a one-unit change in the predictor variable, holding other variables constant. In linear models, this is the (fixed effect) slope; in logistic models, it represents the change in the log odds.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tool/statistics/parametersinmodeling/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tool/statistics/parametersinmodeling/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Felix Jun Zhang (Alt + H)">Felix Jun Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/teaching/" title="Teaching">
+                    <span>Teaching</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tool/" title="Toolbox">
+                    <span>Toolbox</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Understand mixed effects modeling
+    </h1>
+    <div class="post-meta"><span title='2023-08-09 00:00:00 +0000 UTC'>August 9, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="part-i-general-overview">PART I General Overview<a hidden class="anchor" aria-hidden="true" href="#part-i-general-overview">#</a></h1>
+<p>The results of mixed-effects modeling, such as those obtained from linear mixed-effects models (LMMs) or generalized linear mixed models (GLMMs), typically include several key parameters and statistics. Here’s a detailed explanation of each component commonly found in the output:</p>
+<ol>
+<li>Fixed Effects</li>
+</ol>
+<ul>
+<li>
+<p><strong>Fixed effects</strong> estimate the impact of predictors (independent variables) on the outcome variable, <strong>assuming a constant effect</strong> across all levels of random effects.</p>
+</li>
+<li>
+<p><strong>Coefficient (Estimate)</strong>: Represents the change in the outcome variable for a <em><strong>one-unit change</strong></em> in the predictor variable, holding other variables constant. In linear models, this is the <em><strong>(fixed effect) slope</strong></em>; in logistic models, it represents the change in the <em><strong>log odds</strong></em>.</p>
+</li>
+<li>
+<p><strong>Standard Error</strong>: Measures the <em><strong>standard deviation of the coefficient estimate</strong></em>. *<strong>A smaller standard error indicates more precise estimates</strong>.</p>
+</li>
+<li>
+<p><strong>Z-Value or t-Value</strong>: The test statistic for the coefficient, <em><strong>calculated as the coefficient divided by its standard error</strong></em>. <em><strong>In linear models, this is often a t-value; in generalized models, it might be a z-value</strong></em>.</p>
+</li>
+<li>
+<p><strong>P-Value</strong>: <em><strong>Tests the null hypothesis that the coefficient is equal to zero (no effect)</strong></em>. A small p-value (typically &lt; 0.05) suggests that the predictor is significantly associated with the outcome variable.</p>
+</li>
+<li>
+<p><strong>Confidence Interval</strong>: Provides a range within which the true value of the coefficient is likely to fall, typically with 95% confidence.</p>
+</li>
+</ul>
+<ol start="2">
+<li>Random Effects</li>
+</ol>
+<p>Random effects account for <em><strong>variability at different levels of clustering or grouping factors</strong></em>, such as subjects or sites/items.</p>
+<p><strong>Variance Components</strong>: Estimates of the <em><strong>variance of random effects for each grouping factor</strong></em> (e.g., subject variance, site/item variance). Indicates <em><strong>how much variability in the outcome is due to differences between groups/sites/items</strong></em>.</p>
+<p><strong>Standard Deviation</strong>: The <em><strong>square root of the variance components</strong></em>, providing <em><strong>a measure of the spread of random effects</strong></em>.</p>
+<p><strong>Correlation</strong>: If the model includes random slopes and intercepts, the correlation between them might be reported, <em><strong>showing the relationship between the random effects for different predictors</strong></em>.</p>
+<ol start="3">
+<li>Model Fit Statistics</li>
+</ol>
+<p>Model fit statistics assess <em><strong>how well the model explains the data.</strong></em></p>
+<p><strong>Log-Likelihood</strong>: Measures how well the model fits the data. <em><strong>Higher values (closer to zero) indicate a better fit</strong></em>.</p>
+<p><strong>Akaike Information Criterion (AIC)</strong>: A measure of model fit that penalizes for the number of parameters. <em><strong>Lower AIC values indicate a better balance between model fit and complexity</strong></em>.</p>
+<p><strong>Bayesian Information Criterion (BIC)</strong>: Similar to AIC, but with a stronger penalty for the number of parameters. Lower BIC values indicate a better model.</p>
+<hr>
+<hr>
+<h1 id="part-ii-different-mixed-effects-models">PART II Different mixed-effects models<a hidden class="anchor" aria-hidden="true" href="#part-ii-different-mixed-effects-models">#</a></h1>
+<h2 id="lmms">LMMs<a hidden class="anchor" aria-hidden="true" href="#lmms">#</a></h2>
+<ol>
+<li>Fixed Effects Coefficients:</li>
+</ol>
+<p>These coefficients represent the estimated effects of the fixed factors (independent variables) on the dependent variable.</p>
+<p><strong>Estimate (β or Coefficients)</strong>: The estimated change in the dependent variable for a one-unit change in the predictor (e.g., continuous variable), holding other predictors constant. For categorical variables, the estimate compares the effect of one category against <em><strong>a reference category</strong></em>.</p>
+<p><strong>Standard Error (SE)</strong>: Measures the <em><strong>variability of the coefficient estimate</strong></em>. <em><strong>Smaller SE indicates more precise estimates</strong></em>.</p>
+<p><strong>t-value</strong>: The <em><strong>ratio of the estimate to its standard error</strong></em> (=β/SE). It <em><strong>shows how many standard errors the estimate is away from zero</strong></em>.</p>
+<p><strong>p-value</strong>: The <em><strong>probability that the observed t-value could occur by random chance if the null hypothesis (that the coefficient is zero) is true</strong></em>. Smaller p-values (typically &lt; 0.05) suggest the effect is statistically significant.</p>
+<ol start="2">
+<li>Random Effects:</li>
+</ol>
+<p>Random effects account for the <em><strong>variability in the data that is not captured by the fixed effects</strong></em>. These often relate to <em><strong>grouping factors</strong></em>, such as subjects or clusters or items.</p>
+<p><strong>Random Intercept (Intercepts for Grouping Factor)</strong>: Represents <em><strong>the variability in the dependent variable across different levels of the grouping factor</strong></em> (e.g., subjects, sites), after accounting for the fixed effects. It indicates <em><strong>how much each group deviates from the overall intercept</strong></em>.</p>
+<p><strong>Random Slopes (Slopes for Grouping Factor)</strong>: If random slopes are included, these represent the <em><strong>variability in the relationship between a predictor and the dependent variable across different groups</strong></em> (ZJ: how much variability between predictor and dependent variable is accounted for by the grouping factor, namely, different levels in the grouping factor reacted not uniformly to the predictor).</p>
+<p><strong>Variance (σ²) and Standard Deviation</strong>: The variance or standard deviation of the random effects. These values show how much the intercepts or slopes vary across groups.</p>
+<p><strong>Correlation of Random Effects</strong>: If the model includes random slopes, this shows the correlation between the random intercepts and random slopes, indicating whether groups with higher intercepts tend to have steeper or shallower slopes.</p>
+<ol start="3">
+<li>Residual Variance (σ²):</li>
+</ol>
+<p>The variance of the residuals (errors) from the model, which is <em><strong>the variability in the dependent variable not explained by either the fixed or random effects</strong></em>. This <em><strong>gives an idea of how well the model fits the data</strong></em>.</p>
+<ol start="4">
+<li>Model Fit Statistics:</li>
+</ol>
+<p>These statistics help assess the overall fit and complexity of the model.</p>
+<p><strong>Log-Likelihood</strong>: The log of the likelihood function, which indicates how likely it is that the observed data could occur under the specified model. <em><strong>Higher values suggest a better fit</strong></em>.</p>
+<p><strong>AIC (Akaike Information Criterion)</strong>: A measure of the relative quality of the model. It balances model fit and complexity, with <em><strong>lower values indicating a better model</strong></em>.</p>
+<p><strong>BIC (Bayesian Information Criterion)</strong>: Similar to AIC, but with a stronger penalty for models with more parameters. <em><strong>Lower values suggest a better model</strong></em>, especially when comparing models with different numbers of parameters.
+Conditional R²: The proportion of variance explained by both fixed and random effects.</p>
+<p><strong>Marginal R²</strong>: The proportion of variance explained by only the fixed effects.</p>
+<ol start="5">
+<li>Convergence Warnings:</li>
+</ol>
+<p>Occasionally, you may see warnings about convergence issues, indicating that the model may not have found the best estimates for the parameters. This can happen if the model is too complex or the data do not support the model structure.</p>
+<h3 id="example-output-simplified">Example Output (Simplified)<a hidden class="anchor" aria-hidden="true" href="#example-output-simplified">#</a></h3>
+<p>Suppose we fit an LMM to predict student test scores based on study hours and class size, with random intercepts for different schools:</p>
+<hr>
+<h4 id="fixed-effects">Fixed Effects:<a hidden class="anchor" aria-hidden="true" href="#fixed-effects">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Estimate</th>
+          <th>Std. Error</th>
+          <th>t value</th>
+          <th>p-value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(Intercept)</td>
+          <td>50.2</td>
+          <td>1.1</td>
+          <td>45.64</td>
+          <td>&lt;0.001</td>
+      </tr>
+      <tr>
+          <td>StudyHours</td>
+          <td>2.4</td>
+          <td>0.3</td>
+          <td>8.00</td>
+          <td>&lt;0.001</td>
+      </tr>
+      <tr>
+          <td>ClassSize</td>
+          <td>-0.5</td>
+          <td>0.2</td>
+          <td>-2.50</td>
+          <td>0.015</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="random-effects">Random Effects:<a hidden class="anchor" aria-hidden="true" href="#random-effects">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Group (School)</th>
+          <th>Variance</th>
+          <th>Std.Dev</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Intercept</td>
+          <td>6.4</td>
+          <td>2.5</td>
+      </tr>
+  </tbody>
+</table>
+<p>| Residual       | 10.1      | 3.2     |</p>
+<h4 id="model-fit">Model Fit:<a hidden class="anchor" aria-hidden="true" href="#model-fit">#</a></h4>
+<ul>
+<li><strong>AIC:</strong> 1234.5</li>
+<li><strong>BIC:</strong> 1240.1</li>
+<li><strong>Log-Likelihood:</strong> -614.25</li>
+</ul>
+<hr>
+<h2 id="results-of-the-example-linear-mixed-effects-model">Results of the Example Linear Mixed-Effects Model<a hidden class="anchor" aria-hidden="true" href="#results-of-the-example-linear-mixed-effects-model">#</a></h2>
+<h3 id="1-fixed-effects">1. <strong>Fixed Effects</strong><a hidden class="anchor" aria-hidden="true" href="#1-fixed-effects">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Estimate</th>
+          <th>Std. Error</th>
+          <th>t value</th>
+          <th>p-value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(Intercept)</td>
+          <td>50.2</td>
+          <td>1.1</td>
+          <td>45.64</td>
+          <td>&lt;0.001</td>
+      </tr>
+      <tr>
+          <td>StudyHours</td>
+          <td>2.4</td>
+          <td>0.3</td>
+          <td>8.00</td>
+          <td>&lt;0.001</td>
+      </tr>
+      <tr>
+          <td>ClassSize</td>
+          <td>-0.5</td>
+          <td>0.2</td>
+          <td>-2.50</td>
+          <td>0.015</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="interpretation"><strong>Interpretation:</strong><a hidden class="anchor" aria-hidden="true" href="#interpretation">#</a></h4>
+<ul>
+<li>
+<p><strong>(Intercept):</strong></p>
+<ul>
+<li><strong>Estimate:</strong> The intercept is 50.2, representing the <em><strong>predicted average test score when all predictors (StudyHours and ClassSize) are at their reference values (StudyHours = 0 and ClassSize = 0)</strong></em>.</li>
+<li><strong>Std. Error (1.1):</strong> The standard error of the intercept, indicating the precision of this estimate. A smaller standard error means the estimate is more reliable.</li>
+<li><strong>t-value (45.64) &amp; p-value (&lt;0.001):</strong> The high t-value and very small p-value show that the intercept is statistically significant, indicating the intercept is significantly different from zero.</li>
+</ul>
+</li>
+<li>
+<p><strong>StudyHours:</strong></p>
+<ul>
+<li><strong>Estimate (2.4):</strong> Each additional hour of study is predicted to increase the test score by 2.4 points, holding other factors constant.</li>
+<li><strong>Std. Error (0.3):</strong> The standard error of the StudyHours coefficient, reflecting the precision of this estimate.</li>
+<li><strong>t-value (8.00) &amp; p-value (&lt;0.001):</strong> The large t-value and small p-value indicate that the effect of StudyHours on test scores is statistically significant.</li>
+</ul>
+</li>
+<li>
+<p><strong>ClassSize:</strong></p>
+<ul>
+<li><strong>Estimate (-0.5):</strong> Each additional student in the class is associated with a decrease in test score by 0.5 points, holding other factors constant.</li>
+<li><strong>Std. Error (0.2):</strong> The standard error of the ClassSize coefficient.</li>
+<li><strong>t-value (-2.50) &amp; p-value (0.015):</strong> The t-value indicates that the effect of ClassSize is statistically significant at the 0.05 level, suggesting larger class sizes are associated with lower test scores.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-random-effects">2. <strong>Random Effects</strong><a hidden class="anchor" aria-hidden="true" href="#2-random-effects">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Group (School)</th>
+          <th>Variance</th>
+          <th>Std.Dev</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Intercept</td>
+          <td>6.4</td>
+          <td>2.5</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="interpretation-1"><strong>Interpretation:</strong><a hidden class="anchor" aria-hidden="true" href="#interpretation-1">#</a></h4>
+<ul>
+<li><strong>Random Intercept for Schools:</strong>
+<ul>
+<li><strong>Variance (6.4):</strong> The variance in intercepts across schools, indicating variability in average test scores between schools.</li>
+<li><strong>Standard Deviation (2.5):</strong> The standard deviation of the random intercepts, showing that school intercepts vary by approximately ±2.5 points around the overall intercept.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-residual-variance">3. <strong>Residual Variance</strong><a hidden class="anchor" aria-hidden="true" href="#3-residual-variance">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Residual</th>
+          <th>Variance</th>
+          <th>Std.Dev</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td></td>
+          <td>10.1</td>
+          <td>3.2</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="interpretation-2"><strong>Interpretation:</strong><a hidden class="anchor" aria-hidden="true" href="#interpretation-2">#</a></h4>
+<ul>
+<li><strong>Residual Variance (10.1):</strong> The variance of the residuals, representing variability in test scores not explained by the model. Indicates considerable unexplained variability.</li>
+<li><strong>Standard Deviation (3.2):</strong> The standard deviation of the residuals, showing that test scores typically deviate by about ±3.2 points from the predicted values.</li>
+</ul>
+<h3 id="4-model-fit">4. <strong>Model Fit</strong><a hidden class="anchor" aria-hidden="true" href="#4-model-fit">#</a></h3>
+<ul>
+<li><strong>AIC (1234.5):</strong> The Akaike Information Criterion, with lower values suggesting a better model fit relative to others, balancing model fit and complexity.</li>
+<li><strong>BIC (1240.1):</strong> The Bayesian Information Criterion, similar to AIC but with a stricter penalty for model complexity. Lower values indicate a better model.</li>
+<li><strong>Log-Likelihood (-614.25):</strong> The log of the likelihood function. Higher values suggest the model fits the data well.</li>
+</ul>
+<h3 id="summary-of-results"><strong>Summary of Results:</strong><a hidden class="anchor" aria-hidden="true" href="#summary-of-results">#</a></h3>
+<ul>
+<li><strong>Fixed Effects:</strong> Test scores increase by 2.4 points for each additional hour of study and decrease by 0.5 points for each additional student in the class. Both effects are statistically significant.</li>
+<li><strong>Random Effects:</strong> There is significant variability in test scores between schools, independent of study hours and class size.</li>
+<li><strong>Residual Variance:</strong> There is considerable unexplained variability in test scores after accounting for the fixed and random effects.</li>
+<li><strong>Model Fit:</strong> The model provides a reasonable fit to the data, though some variability in test scores remains unexplained.</li>
+</ul>
+<hr>
+<h2 id="glmms">GLMMs<a hidden class="anchor" aria-hidden="true" href="#glmms">#</a></h2>
+<h3 id="example-scenario">Example Scenario<a hidden class="anchor" aria-hidden="true" href="#example-scenario">#</a></h3>
+<p>Suppose we are studying the effect of different teaching methods (predictor/independent variable) on students&rsquo; pass/fail outcomes (dependent variable) (binary outcome: Pass/Fail) in various schools. We fit a GLMM with the following components:</p>
+<p>Fixed Effects: Teaching Method (e.g., Method A vs. Method B)</p>
+<p>Random Effects: Random intercepts for Schools</p>
+<p>The R codes would be as follows:</p>
+<pre><code># Assuming `data` is your data frame with columns `PassFail`, `TeachingMethod`, and `School`
+
+model &lt;- glmer(PassFail ~ TeachingMethod + (1 | School), 
+            data = data, 
+            family = binomial)
+</code></pre>
+<h2 id="explanation-of-the-r-code">Explanation of the R Code<a hidden class="anchor" aria-hidden="true" href="#explanation-of-the-r-code">#</a></h2>
+<ul>
+<li>
+<p><strong><code>PassFail ~ TeachingMethod + (1 | School)</code></strong>: This specifies the model formula used in the GLMM:</p>
+<ul>
+<li><strong><code>PassFail</code></strong>: The dependent variable (binary outcome).</li>
+<li><strong><code>TeachingMethod</code></strong>: A fixed effect, indicating that the model includes TeachingMethod as a predictor.</li>
+<li><strong><code>(1 | School)</code></strong>: Specifies random intercepts for each School, accounting for variability in the baseline log-odds of passing across different schools.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>data = data</code></strong>: Specifies the dataset to be used for fitting the model. Replace <code>data</code> with the actual name of your data frame.</p>
+</li>
+<li>
+<p><strong><code>family = binomial</code></strong>: Indicates that the model is intended for binary outcomes, using the binomial distribution. This is appropriate for outcomes like Pass/Fail, where the response variable is categorical with two possible outcomes.</p>
+</li>
+</ul>
+<h3 id="results-of-the-generalized-linear-mixed-model-glmm">Results of the Generalized Linear Mixed Model (GLMM)<a hidden class="anchor" aria-hidden="true" href="#results-of-the-generalized-linear-mixed-model-glmm">#</a></h3>
+<h3 id="1-fixed-effects-1">1. Fixed Effects<a hidden class="anchor" aria-hidden="true" href="#1-fixed-effects-1">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Estimate</th>
+          <th>Std. Error</th>
+          <th>z value</th>
+          <th>p-value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(Intercept)</td>
+          <td>-0.50</td>
+          <td>0.20</td>
+          <td>-2.50</td>
+          <td>0.012</td>
+      </tr>
+      <tr>
+          <td>Teaching Method B</td>
+          <td>0.75</td>
+          <td>0.25</td>
+          <td>3.00</td>
+          <td>0.003</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="interpretation-3">Interpretation:<a hidden class="anchor" aria-hidden="true" href="#interpretation-3">#</a></h3>
+<ul>
+<li><strong>(Intercept):</strong></li>
+</ul>
+<p>&ndash; <strong>Estimate (-0.50):</strong> This is the <em><strong>log-odds of passing (vs. failing) when the Teaching Method is the baseline category (e.g., Method A)</strong></em>.<br>
+A negative estimate indicates that the baseline log-odds of passing is less than 1.</p>
+<p>&ndash; <strong>Std. Error (0.20):</strong> The standard error measures the precision of the intercept estimate. Smaller values indicate more precise estimates.</p>
+<p>&ndash; <strong>z value (-2.50):</strong> This value is the estimate divided by the standard error. It indicates how many standard deviations the estimate is away from zero. A large absolute z value suggests the estimate is significant.</p>
+<p>&ndash; <strong>p-value (0.012):</strong> The probability of observing a z value as extreme as, or more extreme than, the observed value under the null hypothesis. A p-value less than 0.05 indicates statistical significance.</p>
+<ul>
+<li><strong>Teaching Method B:</strong></li>
+</ul>
+<p>&ndash; <strong>Estimate (0.75):</strong> This coefficient represents the change in log-odds of passing when switching from Method A (the baseline) to Method B. A positive estimate indicates that Method B increases the odds of passing.</p>
+<p>&ndash; <strong>Std. Error (0.25):</strong> Measures the precision of the estimate for Teaching Method B.</p>
+<p>&ndash; <strong>z value (3.00):</strong> Indicates that the estimate is 3 standard deviations away from zero, suggesting a significant effect.</p>
+<p>&ndash; <strong>p-value (0.003):</strong> Indicates that the effect of Teaching Method B is statistically significant, with a p-value less than 0.05.</p>
+<h3 id="2-random-effects-1"><strong>2. Random Effects</strong><a hidden class="anchor" aria-hidden="true" href="#2-random-effects-1">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Group (School)</th>
+          <th>Variance</th>
+          <th>Std.Dev</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Intercept</td>
+          <td>0.80</td>
+          <td>0.89</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="interpretation-4"><strong>Interpretation:</strong><a hidden class="anchor" aria-hidden="true" href="#interpretation-4">#</a></h4>
+<ul>
+<li><strong>Group (School):</strong></li>
+</ul>
+<p>&ndash; <strong>Variance (0.80):</strong> Represents the variability in the intercepts across schools. This indicates that there is some variation in the log-odds of passing across different schools that is not explained by the fixed effects.</p>
+<p>&ndash; <strong>Std.Dev (0.89):</strong> The standard deviation of the random intercepts. It shows the typical amount of variability in the intercepts across schools.</p>
+<h3 id="3-model-fit"><strong>3. Model Fit</strong><a hidden class="anchor" aria-hidden="true" href="#3-model-fit">#</a></h3>
+<ul>
+<li><strong>AIC (220.5):</strong> The Akaike Information Criterion, which helps compare models. Lower AIC values suggest a better fit while penalizing for complexity.</li>
+<li><strong>BIC (225.3):</strong> The Bayesian Information Criterion, similar to AIC but with a stricter penalty for complexity. Lower BIC values indicate a better model fit.</li>
+<li><strong>Log-Likelihood (-105.25):</strong> The log of the likelihood function evaluated at the model parameters. A higher (less negative) log-likelihood indicates a better fit of the model to the data.</li>
+</ul>
+<h3 id="summary"><strong>Summary</strong><a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h3>
+<ul>
+<li><strong>Fixed Effects:</strong> Teaching Method B significantly increases the odds of passing compared to Method A. The baseline log-odds of passing (when using Method A) is significantly less than 1.</li>
+<li><strong>Random Effects:</strong> There is variability in the intercepts across schools, indicating that different schools have different baseline odds of passing.</li>
+<li><strong>Model Fit:</strong> The AIC, BIC, and log-likelihood values provide measures of how well the model fits the data, with lower values indicating a better fit.</li>
+</ul>
+<hr>
+<h2 id="ordinal-logistic-mixed-effect-models">Ordinal logistic mixed effect models<a hidden class="anchor" aria-hidden="true" href="#ordinal-logistic-mixed-effect-models">#</a></h2>
+<h3 id="example-study-student-satisfaction-survey">Example Study: Student Satisfaction Survey<a hidden class="anchor" aria-hidden="true" href="#example-study-student-satisfaction-survey">#</a></h3>
+<p>We examined how study hours and class size affect student satisfaction, measured on an <em><strong>ordinal scale</strong></em> with four levels: &ldquo;Very Dissatisfied,&rdquo; &ldquo;Dissatisfied,&rdquo; &ldquo;Neutral,&rdquo; and &ldquo;Satisfied.&rdquo; The model also accounted for variability between departments using random effects.</p>
+<h3 id="modeling-process">Modeling Process<a hidden class="anchor" aria-hidden="true" href="#modeling-process">#</a></h3>
+<ol>
+<li>
+<p><strong>Data Preparation</strong></p>
+<ul>
+<li><strong>Outcome Variable:</strong> Satisfaction Level (ordinal with 4 levels).</li>
+<li><strong>Fixed Effects Predictors:</strong> Study Hours (continuous), Class Size (continuous).</li>
+<li><strong>Random Effects:</strong> Department (to account for variability between departments).</li>
+</ul>
+<p><strong>Sample Data Frame:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>StudentID</th>
+          <th>Department</th>
+          <th>StudyHours</th>
+          <th>ClassSize</th>
+          <th>SatisfactionLevel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>A</td>
+          <td>5</td>
+          <td>30</td>
+          <td>Satisfied</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>B</td>
+          <td>3</td>
+          <td>25</td>
+          <td>Neutral</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>A</td>
+          <td>2</td>
+          <td>40</td>
+          <td>Dissatisfied</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>C</td>
+          <td>4</td>
+          <td>35</td>
+          <td>Satisfied</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>B</td>
+          <td>1</td>
+          <td>20</td>
+          <td>Very Dissatisfied</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><strong>Fitting the Ordinal Logistic Mixed-Effects Model</strong></p>
+</li>
+</ol>
+<p>The model specification is:</p>
+<p><code>SatisfactionLevel ~ StudyHours + ClassSize + (1 | Department)</code></p>
+<ul>
+<li><strong>Fixed Effects:</strong> StudyHours and ClassSize influence satisfaction levels.</li>
+<li><strong>Random Effects:</strong> Department intercept varies, allowing different baseline satisfaction levels across departments.</li>
+</ul>
+<h3 id="3-interpreting-the-model-output">3. Interpreting the Model Output<a hidden class="anchor" aria-hidden="true" href="#3-interpreting-the-model-output">#</a></h3>
+<p><strong>Fixed Effects:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Estimate</th>
+          <th>Std. Error</th>
+          <th>z value</th>
+          <th>p-value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(Intercept)</td>
+          <td>1.2</td>
+          <td>0.5</td>
+          <td>2.40</td>
+          <td>0.016</td>
+      </tr>
+      <tr>
+          <td>StudyHours</td>
+          <td>0.3</td>
+          <td>0.1</td>
+          <td>3.00</td>
+          <td>0.003</td>
+      </tr>
+      <tr>
+          <td>ClassSize</td>
+          <td>-0.2</td>
+          <td>0.1</td>
+          <td>-2.00</td>
+          <td>0.045</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Random Effects:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Group (Department)</th>
+          <th>Variance</th>
+          <th>Std.Dev</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Intercept</td>
+          <td>0.8</td>
+          <td>0.9</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Model Fit:</strong></p>
+<ul>
+<li><strong>AIC:</strong> 120.5</li>
+<li><strong>BIC:</strong> 128.7</li>
+<li><strong>Log-Likelihood:</strong> -55.2</li>
+</ul>
+<h2 id="detailed-explanation-of-parameters">Detailed Explanation of Parameters<a hidden class="anchor" aria-hidden="true" href="#detailed-explanation-of-parameters">#</a></h2>
+<h3 id="1-fixed-effects-2">1. Fixed Effects:<a hidden class="anchor" aria-hidden="true" href="#1-fixed-effects-2">#</a></h3>
+<ul>
+<li>
+<p><strong>(Intercept):</strong></p>
+<ul>
+<li><strong>Estimate (1.2):</strong> Represents the threshold for the baseline category (e.g., &ldquo;Very Dissatisfied&rdquo; vs. higher satisfaction levels). This is the baseline level when all predictors are zero.</li>
+<li><strong>Std. Error (0.5):</strong> Standard error of the intercept, indicating the precision of this estimate.</li>
+<li><strong>z-value (2.40) &amp; p-value (0.016):</strong> Indicates that the intercept is significantly different from zero, showing a significant baseline satisfaction level.</li>
+</ul>
+</li>
+<li>
+<p><strong>StudyHours:</strong></p>
+<ul>
+<li><strong>Estimate (0.3):</strong> Each additional hour of study increases the likelihood of being in a higher satisfaction category. Positive values suggest more study hours improve satisfaction.</li>
+<li><strong>Std. Error (0.1):</strong> Standard error of the StudyHours estimate.</li>
+<li><strong>z-value (3.00) &amp; p-value (0.003):</strong> Shows that the effect of StudyHours on satisfaction is statistically significant. Increased study hours lead to higher satisfaction.</li>
+</ul>
+</li>
+<li>
+<p><strong>ClassSize:</strong></p>
+<ul>
+<li><strong>Estimate (-0.2):</strong> Each additional student in the class decreases the likelihood of being in a higher satisfaction category. Larger class sizes are associated with lower satisfaction.</li>
+<li><strong>Std. Error (0.1):</strong> Standard error of the ClassSize estimate.</li>
+<li><strong>z-value (-2.00) &amp; p-value (0.045):</strong> Indicates that the effect of ClassSize on satisfaction is statistically significant. Larger classes tend to decrease satisfaction levels.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-random-effects-2">2. Random Effects:<a hidden class="anchor" aria-hidden="true" href="#2-random-effects-2">#</a></h3>
+<ul>
+<li><strong>Group (Department):</strong>
+<ul>
+<li><strong>Variance (0.8):</strong> Variance in baseline satisfaction levels across different departments, indicating variability due to department-specific factors.</li>
+<li><strong>Std.Dev (0.9):</strong> Standard deviation of the random intercepts for departments, showing variability in satisfaction levels between departments.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-model-fit-1">3. Model Fit:<a hidden class="anchor" aria-hidden="true" href="#3-model-fit-1">#</a></h3>
+<ul>
+<li><strong>AIC (120.5) &amp; BIC (128.7):</strong> Measures of model fit, with lower values indicating better fit. These values suggest a reasonable balance between model fit and complexity.</li>
+<li><strong>Log-Likelihood (-55.2):</strong> Indicates how well the model fits the data. Higher values suggest a better fit.</li>
+</ul>
+<h2 id="summary-1">Summary<a hidden class="anchor" aria-hidden="true" href="#summary-1">#</a></h2>
+<p>The ordinal logistic mixed-effects model shows that:</p>
+<ul>
+<li><strong>Study Hours:</strong> Increased study hours are associated with higher satisfaction levels, with a significant positive effect.</li>
+<li><strong>Class Size:</strong> Larger class sizes are associated with lower satisfaction levels, with a significant negative effect.</li>
+<li><strong>Department Variability:</strong> Significant variability in baseline satisfaction levels exists across departments, highlighting the impact of department-specific factors.</li>
+</ul>
+<p>The model effectively captures the effects of study hours and class size on student satisfaction while accounting for differences between departments.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Felix Jun Zhang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
