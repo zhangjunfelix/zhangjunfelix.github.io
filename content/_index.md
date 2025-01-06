@@ -7,6 +7,9 @@ socialshare: true
 
 ---
 
+![](/images/personal@WestMOCA.jpg "")
+
+
 
 ### Welcome to Jun Zhang's website!  ### 
 \
