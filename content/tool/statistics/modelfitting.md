@@ -5,61 +5,73 @@ draft: false
 
 ---
 
-## fitting lMMs
+## Fitting Linear Mixed-Effects Models (LMMs)
 
-1. factor treatment coding
+### 1. Factor Treatment Coding
 
-In this example experiment, there are three independent variables. A (face) and B (number) are within-subjects variables, each having two levels. C (QUD) is a between-subject variable and has four levels.
+In this example experiment:
 
-Response variable is rating on a 7-point scale. 
+- **Independent Variables**:
+  1. **A (Face)**: Within-subjects variable with 2 levels.
+  2. **B (Number)**: Within-subjects variable with 2 levels.
+  3. **C (QUD)**: Between-subjects variable with 4 levels.
 
-I use the ratings as numerical values. 
+- **Response Variable**:  
+  Rating on a 7-point scale, used as **numerical values**.
 
-* fitting LMM or ordinal logistic mixed-effects model/cumulative link mixed model?
+---
 
-factors to consider
--- nature of ratings as numerical data: continuous (equal distance between adjacent points on the scale) vs. ordinal (ratings are ordered but intervals between adjecent points are not assumed to be equal)
--- normality: normally distributed
-  methods to assess normality
+### Should You Fit an LMM or an Ordinal Logistic Mixed-Effects Model (Cumulative Link Mixed Model)?
 
-(1) Visual Inspection
+#### Key Considerations:
+1. **Nature of Ratings as Numerical Data**:
+   - **Continuous**: Assumes equal distances between adjacent points on the scale.
+   - **Ordinal**: Assumes ratings are ordered but intervals between points are not equal.
 
--- handling of missing datapoints
-Remove Missing Data if missingness is minimal and unlikely to introduce bias.   
-Impute Missing Data when you want to retain more data and believe the data is MAR.    
-Use Models That Handle Missing Data if appropriate for your analysis and missing data structure.     
-Analyze the Impact of Missing Data to ensure your conclusions remain robust.     
+2. **Normality**:
+   - Check whether ratings are normally distributed.
 
-in this study, Missingness is unrelated to any observed or unobserved data (MACR)
+#### Methods to Assess Normality:
+- **Visual Inspection**: Examine plots (e.g., histograms, Q-Q plots) for deviations from normality.
 
-Remove Missing Data (Listwise Deletion)
+---
 
-When to Use: When the proportion of missing data is small (e.g., less than 5%) and you believe the data is MCAR.
+### Handling Missing Data
 
-In R, you can use na.omit() to remove rows with NA values (if missing datapoints are left blank).
+#### General Approaches:
+1. **Remove Missing Data**:
+   - Appropriate when missingness is minimal and unlikely to introduce bias.
+   - Use this method for MCAR (Missing Completely at Random) data when the proportion of missing data is small (e.g., <5%).
 
-```
-library(tidyr)
-clean_data <- na.omit(your_data)
-```
+2. **Impute Missing Data**:
+   - Consider this if data is MAR (Missing at Random) and retaining more data is important.
 
-or, Drop rows where `your_column` contains "na"
-```
-     library(dplyr)
-     clean_data <- your_data %>% 
-     filter(your_column != "na")
+3. **Use Models That Handle Missing Data**:
+   - Suitable if the analysis framework supports it.
 
-```
+4. **Analyze the Impact of Missing Data**:
+   - Evaluate how missing data might influence results to ensure robust conclusions.
 
+#### Missing Data in This Study:
+- Missingness is **MCAR (Missing Completely at Random)**.
 
--- bar plotting
-(1) plot Histograms by Condition
+**Approach**: Remove Missing Data (Listwise Deletion).
 
+---
 
+#### R Code to Remove Missing Data:
 
-(2) plot Density Plots by Condition
+1. **Remove Rows with NA Values**:
+   ```r
+   library(tidyr)
+   clean_data <- na.omit(your_data)
 
-(3) 
+2. **Drop Rows Where your_column Contains "na"**:
+   ```r
+   library(dplyr)
+   clean_data <- your_data %>% 
+   filter(your_column != "na")
+
 
 
 

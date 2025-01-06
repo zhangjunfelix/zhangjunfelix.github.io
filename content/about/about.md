@@ -21,7 +21,7 @@ cover:
 **WORK EXPERIENCE**
 
 * Associate Professor, Anhui University | School of Foreign Studies
-* Visiting Scholar, University of Connecticut | Department of Psychological Sciences -Advised by [Prof. Gerry Altmann](https://psychology.uconn.edu/person/gerry-altmann/)
+* Visiting Scholar, University of Connecticut | Department of Psychological Sciences -Advised by [Prof. Gerry Altmann](https://psychology.uconn.edu/person/gerry-altmann/) at his [Psycholinguistics Lab](https://altmann.lab.uconn.edu)
 * Fulbright FLTA, Ramapo College of New Jersey | School of Humanities and Global Studies
 * Lecturer, Hong Kong Baptist University | Language Center
 * Research Assistant, Hong Kong Baptist University | Language Center & Department of English Language and Literature
@@ -36,7 +36,7 @@ cover:
 **COMPUTER SKILLS**
 
 * R
-* Sratch
-* Python
+* Scratch
 * Hugo
-* Jekyll/Ruby
+* Python
+
