@@ -36,7 +36,9 @@ cover:
 **COMPUTER SKILLS**
 
 * R
-* Scratch
-* Hugo
 * Python
+* Latex
+* Hugo
+* Scratch
+
 

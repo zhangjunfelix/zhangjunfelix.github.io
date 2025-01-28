@@ -6,28 +6,8 @@
     <description>Recent content in Psycholinguistics Experiments on Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Eyetracking with OpenSesame</title>
-      <link>http://localhost:1313/tool/experiments/eyetrackingwithopensesame/</link>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tool/experiments/eyetrackingwithopensesame/</guid>
-      <description>&lt;h3 id=&#34;learning-about-eye-tracking-technique&#34;&gt;Learning About Eye-Tracking Technique&lt;/h3&gt;
-&lt;p&gt;Learning about the &lt;strong&gt;eye-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers in social contexts.&lt;/p&gt;
-&lt;p&gt;My first experiments (hopefully) are about &lt;strong&gt;perspective-taking&lt;/strong&gt; and &lt;strong&gt;interpreting scalars in social contexts&lt;/strong&gt;, a project emerging from my discussions with Prof. Gerry Altmann.&lt;/p&gt;
-&lt;p&gt;In this post, I share my experience in learning about this technique in three areas:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Classical studies&lt;/li&gt;
-&lt;li&gt;Experimental design&lt;/li&gt;
-&lt;li&gt;Data analysis&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;part-i-review&#34;&gt;Part I: Review&lt;/h4&gt;
-&lt;h4 id=&#34;part-ii-classical-studies&#34;&gt;Part II: Classical Studies&lt;/h4&gt;
-&lt;h4 id=&#34;part-iii-experimental-design&#34;&gt;Part III: Experimental Design&lt;/h4&gt;
-&lt;p&gt;There are several ways to build an eye-tracking experiment.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Pre-registration</title>
       <link>http://localhost:1313/tool/experiments/pre_registration/</link>
@@ -149,46 +129,21 @@
       <link>http://localhost:1313/tool/experiments/eyetracking/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tool/experiments/eyetracking/</guid>
-      <description>&lt;h3 id=&#34;online-webcam-based-eye-tracking&#34;&gt;Online Webcam-Based Eye-Tracking&lt;/h3&gt;
-&lt;p&gt;Here are some of the resources I use to learn about designing online eye-tracking experiments:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;WebGazer&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;h3 id=&#34;learning-about-eye-tracking-technique-creation-design-data-analysis&#34;&gt;Learning About Eye-Tracking Technique: creation, design, data analysis&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;Learning about the &lt;strong&gt;eye-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers in social contexts.&lt;/p&gt;
+&lt;p&gt;My first experiments (hopefully) are about &lt;strong&gt;perspective-taking&lt;/strong&gt; and &lt;strong&gt;interpreting scalars in social contexts&lt;/strong&gt;, a project emerging from my discussions with Prof. Gerry Altmann.&lt;/p&gt;
+&lt;p&gt;In this post, I share my experience in learning about this technique in five areas:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://webgazer.cs.brown.edu&#34;&gt;WebGazer Official Site&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/brownhci/WebGazer&#34;&gt;WebGazer on GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Tutorial by BROWNHCI: &lt;a href=&#34;https://github.com/brownhci/WebGazer/wiki/Tutorial&#34;&gt;WebGazer Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reviews&lt;/li&gt;
+&lt;li&gt;Classical studies&lt;/li&gt;
+&lt;li&gt;tools to create VWP experiments&lt;/li&gt;
+&lt;li&gt;Experimental design&lt;/li&gt;
+&lt;li&gt;Data analysis&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;WebGazer Tutorial on jsPsych&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Tutorial by Xiaozhi Zhao: &lt;a href=&#34;https://github.com/xiaozhi2/webgazertutorial&#34;&gt;GitHub Repository&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;WebGazer on OpenSesame&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/3.3/manual/eyetracking/webgazer/&#34;&gt;WebGazer in OpenSesame Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;jsPsych Tutorial&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jspsych.org/7.0/tutorials/hello-world/&#34;&gt;jsPsych Official Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Online Book by Winson Yang: &lt;a href=&#34;https://winsonfzyang.github.io/jsPsychTutorial/&#34;&gt;jsPsychTutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLtdKTIOUlb42qG962wz30fzlUMibJCGQW&#34;&gt;YouTube Tutorial Playlist&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;PyGaze (Eye Tracking) on OpenSesame&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/3.3/manual/eyetracking/pygaze/&#34;&gt;PyGaze in OpenSesame Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.pygaze.org/docs/&#34;&gt;PyGaze Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Eyetracking Data Analyses in R&lt;/strong&gt;&lt;/p&gt;</description>
+&lt;hr&gt;
+&lt;h4 id=&#34;part-i-reviews&#34;&gt;Part I: Reviews&lt;/h4&gt;
+&lt;p&gt;video tutorials:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
