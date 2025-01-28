@@ -1,5 +1,5 @@
 ---
-title: "Opensesame"
+title: "OpenSesame"
 date: 2023-08-15
 draft: false
 
