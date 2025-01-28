@@ -14,7 +14,6 @@ Below are some helpful resources for learning and implementing SPR experiments:
 1. **[Online Experiments for Language Scientists](https://kennysmithed.github.io/oels2022/)**  
    - Week 4: Self-Paced Reading  
 
-2. *(Additional resources can be added here)*  
 
 ---
 
