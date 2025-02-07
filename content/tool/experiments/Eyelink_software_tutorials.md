@@ -6,6 +6,7 @@ draft: false
 ---
 
 ## Introduction to Experiment Builder: A Step-by-Step Guide
+[video link](https://www.youtube.com/watch?v=qCMgHiGbWN4&list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv)
 
 ### Overview
 This tutorial provides a fundamental understanding of the Experiment Builder software. You'll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.
@@ -182,7 +183,7 @@ Trigger nodes control when the experiment advances:
 ### Tutorial 3: Overview of the Posner Task
 
 
-## Overview of the Experiment Design  
+#### Overview of the Experiment Design  
 
 In this video, we will discuss the design of the experiment covered in this tutorial series. We will highlight various components of the project that handle different aspects of the experiment as we go along. However, this video primarily provides an overview of the methodological design.  
 
@@ -206,7 +207,7 @@ While specific experimental paradigms may differ, the techniques demonstrated in
 
 The **Posner Task** presented in this tutorial consists of a series of trials, each composed of several key events:  
 
-##### 1. Fixation & Cue Presentation  
+#### 1. Fixation & Cue Presentation  
 - The trial begins with a **fixation cross** and **two placeholder boxes** on the left and right.  
 - A **cue** appears centrally near the fixation cross, which can be:  
   - **Valid**: The cue correctly predicts the target location.  
@@ -214,27 +215,27 @@ The **Posner Task** presented in this tutorial consists of a series of trials, e
   - **Neutral**: The cue does not provide location information.  
 - The cue remains on the screen for **500 milliseconds** before disappearing.  
 
-##### 2. Target Onset & Response Collection  
+#### 2. Target Onset & Response Collection  
 - After a **randomly chosen interval**, a target appears in one of the two placeholder boxes.  
 - The participant must press one of two keys to indicate whether the target is on the left or right:  
   - `Z` key → **Left target**  
   - `/` key → **Right target**  
 
-##### 3. Predictions & Attention Effects  
+#### 3. Predictions & Attention Effects  
 - Participants are expected to respond **faster** to targets preceded by a **valid cue**, as attention is directed toward the target location.  
 - This attentional shift may also result in **faster eye movements** toward the target position.  
 
 ---
 
-## Implementing the Posner Task in Experiment Builder  
+#### Implementing the Posner Task in Experiment Builder  
 
 The experiment is implemented as an **EyeLink experiment** within **Experiment Builder**. The procedure follows these steps:  
 
-##### 1. Camera Setup & Calibration  
+#### 1. Camera Setup & Calibration  
 - At the start, **camera setup and calibration instructions** are presented.  
 - The **camera setup action** puts the **Host PC** and **Display PC** into a special camera mode for **eye tracker calibration**.  
 
-##### 2. Trial Blocks & Instructions  
+#### 2. Trial Blocks & Instructions  
 The experiment consists of **three blocks of trials**:  
 
 - **Practice Block**: 2 trials  
@@ -245,7 +246,7 @@ The experiment consists of **three blocks of trials**:
 
 The **practice block always appears first**, but the order of experimental blocks is **randomized**. Within each block, the **trial order is also randomized**.  
 
-##### 3. Trial Execution  
+#### 3. Trial Execution  
 Each trial follows this sequence:  
 
 1. **Fixation cross** and **placeholder boxes** appear (*1000 milliseconds*).  
@@ -256,7 +257,7 @@ Each trial follows this sequence:
 6. If **no response** is made within *5 seconds*, the trial times out, and a message prompts the participant to respond faster.  
 7. Feedback remains on-screen for **2 seconds**, followed by a **blank screen**.  
 
-### 4. Experiment Completion & Data Transfer  
+#### 4. Experiment Completion & Data Transfer  
 - After all **22 trials**, the experiment **ends automatically**.  
 - The **EDF data file** is transferred from the **Host PC** to the **Display PC**.  
 
@@ -482,4 +483,344 @@ In this tutorial, we covered **essential hardware settings** in Experiment Build
 
 By properly setting up hardware configurations, you ensure **smooth experiment execution** and **accurate data collection**. 🚀  
 
+------------------------------------------------------
+
+
+### Tutorial 05 - Nodes, Connections & Messages
+
+#### Introduction
+
+In this tutorial, we will discuss how actions and triggers connect in **Experiment Builder** to ensure experimental events occur in the correct sequence. We will also explore how **messages** can be used to mark the occurrence of these events in the **EyeLink data file**. 
+
+We will use a **Posner task example** to illustrate these concepts.
+
 ---
+
+#### Display Screen Actions
+
+#### *Editing a Display Screen Action*
+
+1. The first display screen action, renamed **"display camera setup instructions"**, presents simple **camera setup and calibration instructions** to the **Display PC monitor**.
+2. To **view and edit** the contents of a display screen action:
+   - **Double-click** the action node.
+   - The **Screen Builder** will open.
+   - Here, you can **add images, videos, text, shapes, and interest areas** to create the display content.
+3. In this example, a **multi-line text resource** is used to present the instructions.
+
+---
+
+#### Keyboard and Timer Trigger Nodes
+
+#### *Why Use Triggers?*
+
+Display screen actions must be **followed by at least one trigger** before connecting to other actions. Otherwise, the display will **immediately be replaced** by the next display screen action.
+
+##### Example: Using a Keyboard and Timer Trigger
+
+- The **"display camera setup instructions"** action connects to the subsequent **camera setup action** using:
+  - A **keyboard trigger**.
+  - A **timer trigger**.
+- This means that the experiment will proceed **only when**:
+  - The participant **presses a key** (activating the keyboard trigger), OR
+  - The **specified time** elapses (activating the timer trigger).
+- Both triggers connect to the same **camera setup action**, and **whichever fires first** will continue the experiment.
+
+---
+
+#### Messages in Action and Trigger Nodes
+
+#### *Why Use Messages?*
+
+Each **action or trigger node** in Experiment Builder has a **message property**. This property:
+- **Sends a message** to the **Host PC**.
+- **Inserts** the message into the **EyeLink data file** (`.edf`).
+- **Timestamp marks** the exact time when an event occurs.
+
+#### How Messages Work
+
+- **Display screen actions** send messages **time-locked to the start of the screen retrace**.
+- The **timestamp is accurate within a millisecond** of the retrace event.
+- Filling out the **message property** ensures a record of the timing of **experimental events** in the `.edf` file.
+
+---
+
+#### Using Messages for Interest Periods in Data Analysis
+
+#### What is an Interest Period?
+
+An **Interest Period** allows researchers to **analyze only specific parts** of an experimental trial.
+
+For example, in the **Posner task**, we may want to analyze only:
+- **The period from target onset to response**.
+- Excluding **fixation cue, SOA, and feedback** phases.
+
+#### How to Set an Interest Period
+
+- Messages associated with actions and triggers **help define the Interest Period** in **Data Viewer**.
+- When analyzing data, messages in the **EyeLink data file** (`.edf`) can be used to **mark event occurrences**.
+- You can find more details in the **Data Viewer video tutorial series**.
+
+---
+
+#### Labels vs. Messages
+
+- **Label Property**: 
+  - Changes how the **node appears in Experiment Builder**.
+  - Does **not** affect the `.edf` file.
+- **Message Property**:
+  - Specifies **what is written** in the `.edf` file.
+  - Ensures experimental events are **timestamped correctly**.
+
+#### Best Practice
+
+- **Give each node meaningful labels**.
+- Copy and paste the **label text into the message property**.
+- This makes it **easy to associate messages in the `.edf` file`** with Experiment Builder nodes.
+
+---
+
+#### Conclusion
+
+In this tutorial, we covered:
+1. **How actions and triggers connect** to control experimental flow.
+2. **Using keyboard and timer triggers** to advance experiments.
+3. **How messages mark event occurrences** in the EyeLink data file.
+4. **Setting Interest Periods** for precise data analysis.
+5. **The difference between labels and messages** in Experiment Builder.
+
+By following these steps, you can **ensure accurate event timing** and **improve data analysis** in your eye-tracking experiments.
+
+------------------------------------------------------
+
+
+
+### Tutorial 06 - Hierarchical Organization and Data Source Introduction
+
+#### Introduction
+In this tutorial, we'll explore how to use hierarchical organization to avoid redundant structures in your Experiment Builder projects. We'll also introduce how to use data sources to manage trial information efficiently.
+
+#### Hierarchical Organization with Sequences
+
+#### *Avoiding Redundancy*
+In Experiment Builder, you don't need to create separate nodes for each trial. Instead, you can use hierarchical organization through sequences to streamline your project.
+
+#### *Using Sequences*
+Sequences are special action nodes that allow you to implement looping designs. You can double-click a sequence to go inside and add nodes to define events within that sequence. These events will repeat based on the sequence's iteration count.
+
+#### *Nested Sequences*
+Sequences can be nested, allowing for loops within loops. This is useful for designs with multiple blocks of trials. For example, you can have a BLOCK sequence that repeats three times, each containing a TRIAL sequence that repeats for each trial within the block.
+
+#### Implementing BLOCK and TRIAL Sequences
+
+#### *BLOCK Sequence*
+At the top level of your project, create a BLOCK sequence to handle the repetition of trial blocks. Double-click the BLOCK sequence to go inside and add nodes for each block.
+
+#### *TRIAL Sequence*
+Inside the BLOCK sequence, add a TRIAL sequence to handle individual trials. Set the iteration count of the BLOCK sequence to the number of blocks you want to run.
+
+#### *Conditional Triggers*
+Use conditional triggers to control the flow of your experiment. For example, you can check if the current block is the first one and direct the experiment to task instructions or a break screen accordingly.
+
+#### Different Number of Trials Per Block
+
+#### *Split By Property*
+To run a different number of trials for each block, use the Split By property of the TRIAL sequence. For example, set it to `[2,10,10]` to have two trials in the first block and ten trials in each of the next two blocks.
+
+#### Introduction to Data Sources
+
+#### *What is a Data Source?*
+A data source is a spreadsheet that contains information used on each iteration of a sequence. Typically, you'll have a data source for your trial sequence, containing details for each trial.
+
+#### *Accessing Data Sources*
+To access a sequence's data source, click on its data source property. You can also use the dropdown at the top of the interface to select a data source.
+
+### Populating Data Sources
+
+#### *Adding Rows and Columns*
+You can add rows and columns directly in the data source editor. Alternatively, import data from a delimited text file created in spreadsheet software like Excel.
+
+#### *Data Source Structure*
+Each row in the data source represents a trial, and columns represent variables that change from trial to trial. For example:
+- **identifier**: A unique value for each trial.
+- **cueType**: Specifies the type of cue (valid, invalid, neutral).
+- **cueImage**: The image file for the cue.
+- **targetImage**: The image file for the target.
+- **targetSide**: Describes the side of the target.
+- **targetLocation**: The coordinates for presenting the target image.
+- **nontargetLocation**: Coordinates for the opposite rectangle.
+- **practiceStatus**: Distinguishes practice from experimental trials.
+- **correctResponse**: The correct key press for each trial.
+- **block**: Indicates the block number for randomization.
+- **counterbalance**: Used to counterbalance the design.
+
+#### Using Data Sources in Your Experiment
+
+#### *Referencing Data*
+While a data source specifies trial information, this data isn't automatically used. You need to reference these values in node and resource properties. For more details on how to use data sources and randomization options, see later tutorials in this series.
+
+#### Conclusion
+By using hierarchical organization and data sources, you can efficiently manage complex experimental designs in Experiment Builder. This approach reduces redundancy and makes your project more manageable.
+
+
+------------------------------------------------------
+
+
+
+### Tutorial 07 - Data Source Randomization Options
+
+#### Introduction
+In this tutorial, we'll explore the data source randomization options available in Experiment Builder. These options allow you to control the order of experimental trials, randomize trial and block orders, and manage counterbalancing.
+
+#### Overview of Randomization Settings
+
+#### *Accessing Randomization Settings*
+The randomization settings button in a project's data source allows you to apply various randomization schemes to the ordering of experimental trials. These settings include options for:
+- Blocking trials
+- Randomizing trial and block orders
+- Forcing trial ordering to limit the number of consecutive trials with a particular feature
+- Creating alternative versions of the project for counterbalancing
+
+#### Example: Posner Task Experimental Design
+
+#### *Experimental Design*
+The Posner task example is set up as follows:
+- Two practice trials always come first.
+- Two experimental blocks of 10 trials each follow.
+- The order of the experimental blocks is randomized.
+- The order of trials within each block is randomized.
+- Two alternative lists (counterbalances) are used, and each participant receives trials from only one counterbalance.
+
+#### Data Source Columns
+
+#### *Practice Status Column*
+- The first two trials of each list have a value of "practice."
+- The remaining 20 trials have a value of "experimental."
+
+#### *Block Column*
+- Practice trials have a block value of 1.
+- The first block of 10 experimental trials has a block value of 2.
+- The second block of 10 experimental trials has a block value of 3.
+
+#### *Counterbalance Column*
+- The first 22 rows (counterbalance 1) have a value of 1.
+- The last 22 rows (counterbalance 2) have a value of 2.
+
+#### Implementing Randomization
+
+#### *Blocking Levels*
+1. **Practice Status (Blocking Level 1)**:
+   - Set as blocking level 1.
+   - Randomized box unchecked to ensure practice trials come first.
+   - Practice trials (value "practice") will precede experimental trials (value "experimental").
+
+2. **Block (Blocking Level 2)**:
+   - Set as blocking level 2.
+   - Randomized box checked to randomize the order of experimental blocks.
+   - Trials within each block remain grouped together, but the order of blocks is randomized.
+
+#### *Trial Randomization*
+- **Enable Trial Randomization**:
+  - Checked to randomize the order of trials within each block.
+  - Constraint: The `cueImage` column is set as the run length control column with a maximum run length of 2.
+  - Ensures no more than two consecutive trials with the same cue image.
+
+#### Counterbalancing
+
+#### *Splitting Column*
+- **Counterbalance Column**:
+  - Chosen as the splitting column.
+  - Prompts you to select a counterbalance value (1 or 2) at runtime.
+  - Only rows with the selected counterbalance value are used in the experiment.
+
+#### Practical Steps
+
+1. **Open Randomization Settings**:
+   - Click the randomization settings button in the trial data source.
+
+2. **Set Blocking Levels**:
+   - Set `practiceStatus` as blocking level 1 (randomized unchecked).
+   - Set `block` as blocking level 2 (randomized checked).
+
+3. **Enable Trial Randomization**:
+   - Check the "Enable Trial Randomization" option.
+   - Set `cueImage` as the run length control column with a maximum run length of 2.
+
+4. **Set Splitting Column**:
+   - Select the `counterbalance` column as the splitting column.
+
+####  Conclusion
+By using the randomization settings in Experiment Builder, you can efficiently manage the order of trials and blocks, ensuring that your experimental design is both randomized and counterbalanced. This approach helps maintain the integrity of your experimental results and ensures that each participant receives a balanced set of trials.
+
+-----------------------------------------------------------------
+
+
+
+### Tutorial 08 - Trial Preparation
+
+#### Introduction
+In this tutorial, we'll discuss trial preparation considerations in Experiment Builder. Proper trial preparation ensures smooth execution of experimental events and accurate data collection.
+
+#### Trial Preparation Workflow
+
+#### *Basic Trial Events*
+Basic trial events, such as the presentation of images to participants, are typically placed inside a sequence labeled **RECORDING**. This setup allows for trial preparation before recording eye movement data and executing critical trial events.
+
+#### PREPARE_SEQUENCE Action Node
+
+#### *Loading Stimuli*
+On each iteration of the trial sequence, we typically perform the following steps:
+1. **Load Stimuli**:
+   - Use the **PREPARE_SEQUENCE** action to load experimental stimuli (e.g., images, videos, audio files) into the Display PC's memory buffers.
+   - This ensures that the stimuli are pre-buffered and ready for presentation.
+
+#### *Transferring Display Screen to Host PC*
+2. **Transfer Display Screen**:
+   - Set the **Draw to EyeLink Host** property of the **PREPARE_SEQUENCE** action to **Image**.
+   - Select one **DISPLAY_SCREEN** action in the recording sequence and check its **Use for Host Display** property.
+   - Ensure that all other **DISPLAY_SCREEN** actions have their **Use for Host Display** property unchecked.
+   - This allows the experimenter to monitor the participant's gaze in relation to experimental stimuli during trials.
+
+#### Drift Check/Correct using the DRIFT_CORRECT Action Node
+
+#### *Drift Correction*
+3. **Drift Correction**:
+   - The **DRIFT_CORRECT** action presents a fixation target on the Display PC monitor.
+   - The position of the target is determined by the **X Location** and **Y Location** properties of the **DRIFT_CORRECT** action.
+   - During the experimental session, the experimenter can compare the gaze cursor position to the target position on the Host PC.
+   - When the participant's gaze is steady on the fixation target, either the experimenter or the participant can press the space bar to start the trial.
+   - Note: The **DRIFT_CORRECT** action is optional but recommended for ensuring accurate calibration and gaze position at the start of each trial.
+
+#### Recording Data using the RECORDING Sequence
+
+#### *Recording Sequence Setup*
+4. **Recording Sequence**:
+   - The **RECORDING** sequence should have an iteration count of 1.
+   - This sequence is not used for looping but for controlling eye tracker recording.
+   - The **RECORD** property of the **RECORDING** sequence is checked to start and stop eye data recording.
+   - When the experiment exits the **RECORDING** sequence, it logs the values of data source columns and variable nodes, making them accessible in Data Viewer.
+
+#### Real-Time Processing and Host PC Communication
+
+#### *Real-Time Processing*
+5. **Real-Time Processing**:
+   - Check the **Is Realtime** property of the **RECORDING** sequence to elevate the priority of Experiment Builder and ensure optimal timing of experimental events.
+
+#### *Sending Messages to Host PC*
+6. **Sending Messages**:
+   - Use the **EyeLink Record Status Message** property of the **RECORDING** sequence to send messages to the experimenter.
+   - This message can provide feedback, such as the current trial number and total number of trials.
+   - Edit the message using string concatenation and references to the iteration and iteration count properties of the trial sequence.
+
+#### Best Practices and Checklist
+
+#### *Experiment Builder Checklist*
+- Refer to the **Experiment Builder Project Checklist** in the user manual (accessed via Help -> Contents) for best practices in trial preparation and other programming tips.
+- This checklist helps avoid common pitfalls in data collection and analysis.
+
+#### Conclusion
+Proper trial preparation in Experiment Builder ensures that stimuli are pre-loaded, the experimenter can monitor gaze positions, and data is accurately recorded. By following the steps outlined in this tutorial, you can set up efficient and reliable trial preparation for your experiments.
+
+Stay tuned for more tutorials in this series to learn advanced techniques for using Experiment Builder.
+
+
+
