@@ -823,4 +823,153 @@ Proper trial preparation in Experiment Builder ensures that stimuli are pre-load
 Stay tuned for more tutorials in this series to learn advanced techniques for using Experiment Builder.
 
 
+-----------------------------------------------------------------
+
+
+### Tutorial 09 - Trial Events
+
+#### Introduction
+In this tutorial, we'll discuss the basic structure of critical trial events in an experiment. We'll explore how the recording sequence and data source work together to control the flow of events during each trial.
+
+#### Recording Sequence Structure
+
+#### *Basic Structure*
+The nodes in the recording sequence form a skeleton structure or template for the sequence of events that occur on each trial. The data source provides the information that determines the differences across trials.
+
+#### Update Attribute Action Node
+
+#### *Reset Variables*
+The first node in the recording sequence is an **Update Attribute** action called **reset variables**. This action:
+- Sets the value of a variable used for the SOA (Stimulus Onset Asynchrony) duration by randomly selecting from a range of possible numbers.
+- Resets the values of three variable nodes that store behavioral data collected during the trial.
+
+#### Display Screen and Timer Trigger Nodes
+
+#### *Display Fixation Cross*
+- The **display fixation cross** action presents the fixation cross and two placeholder boxes on the screen.
+- The **timer fixation cross** trigger fires after 1000 milliseconds (1 second), controlling the duration of the fixation cross presentation.
+
+#### *Display Cue*
+- The **display cue** action presents the cue stimulus on the screen.
+- The **timer cue** trigger fires after 500 milliseconds, controlling the duration of the cue presentation.
+
+#### *Display Fixation SOA*
+- The **display fixation SOA** action presents an exact copy of the fixation cross action, effectively removing the cue from the screen.
+- The duration of this screen is determined by the value of a variable node called **SOA duration**, which is set randomly at the beginning of the trial.
+
+#### Display Target
+
+#### *Display Target*
+- The **display target** action presents the target stimulus to the participant.
+- The **timer target** trigger fires after 5000 milliseconds (5 seconds), controlling the duration of the target presentation.
+
+#### Keyboard or Timer Trigger Nodes
+
+#### *Keyboard Response Trigger*
+- The **keyboard response trigger** is set to accept input from specific keys (e.g., slash and z keys).
+- If a key is pressed, the **check accuracy** trigger checks the response against the correct response column in the trial data source.
+
+#### Conditional Triggers
+
+#### *Check Accuracy*
+- The **check accuracy** trigger determines whether the participant's response was correct.
+- Two subsequent **Update Attribute** actions set the values of variable nodes that store the trial's behavioral data.
+
+#### Display Screen and Timer Trigger Nodes for Feedback
+
+#### *Present Feedback*
+- Feedback is presented to the participant for 2 seconds, handled by different **display screen** actions based on the response (correct, incorrect, or go faster).
+- The **timer feedback** trigger fires after 2 seconds, and the **display blank** action clears the screen.
+
+#### Add to Results File Node
+
+#### *Log Behavioral Data*
+- The **add to results file** action logs the values of data source columns and variable nodes for the trial to a tab-delimited text file called **results file**.
+- These values are also logged to the EyeLink data file when the recording sequence ends.
+
+#### Adding Message Property for Nodes and Triggers
+
+#### *Event Markers*
+- It is important to fill out the **message property** of all actions and triggers in the recording sequence.
+- When a node is executed, an event marker (text of the message property) is sent to the EyeLink data file, marking the exact time of the experimental event.
+- These messages can be used to set Interest Periods in Data Viewer for focused data analysis.
+
+#### Conclusion
+By understanding the basic structure of trial events and how the recording sequence works, you can effectively control the flow of events during each trial. Properly setting up nodes and triggers ensures accurate data collection and analysis. For more detailed information on specific actions and triggers, refer to the videos on behavioral data logging and Interest Periods in Data Viewer.
+
+-------------------------------------------------------
+
+
+### Tutorial 10 - Screen Building and Referencing
+
+#### Introduction
+In this tutorial, we'll learn how to add content to a display screen action using the screen builder and how to reference information in the data source to change experimental characteristics across trials. We'll focus on nodes in the project's recording sequence.
+
+#### Adding Content to Display Screen Actions
+
+#### *Screen Builder Overview*
+The screen builder allows you to see and edit the content that will be presented to the participant by a display screen action. It includes buttons to add different types of screen resources, such as:
+- Images
+- Videos
+- Text
+- Basic shapes
+- Interest areas (for analysis and triggers)
+
+Interest areas are not visible to participants but are useful for specifying regions of interest and can be used as triggering regions for mouse and gaze-based triggers.
+
+#### Adding Image Resources
+
+#### *Adding an Image Resource*
+1. **Access the Library Manager**:
+   - Click the button that looks like books on a shelf or click "Edit Library Manager".
+   - Add image files to your project's library under the "Image" tab.
+   - The library manager provides a preview of image files and shows properties of the selected file.
+
+2. **Insert an Image Resource**:
+   - Go back to the screen builder for your display screen action.
+   - Use the "Insert Image Resource" button to add an image from your library.
+   - The properties of the image resource become visible in the properties panel on the left.
+
+3. **Source Filename Property**:
+   - The "Source Filename" property specifies the image file to be displayed.
+   - If you want the same image on each trial, set the property to a specific image file (e.g., `cross.png`).
+
+#### Adding Shape Resources
+
+#### *Adding a Shape Resource*
+1. **Select the Shape Button**:
+   - Choose the appropriate shape button (e.g., rectangle).
+   - Click and drag to draw the shape on the screen.
+   - Set properties such as color and fill (e.g., white color with no fill).
+
+#### Referencing Data Source Columns
+
+#### *Changing Image on Each Trial*
+1. **Display Cue Action**:
+   - The display cue action is similar to the display fixation cross action but includes an additional image resource for the cue.
+   - To change the cue image on each trial, reference the `cueImage` column from the trial data source.
+
+2. **Making a Reference**:
+   - Click on the "Source Filename" property in the properties panel.
+   - Click the button with three dots to open the attribute editor.
+   - Navigate to the data source component of the trial sequence.
+   - Double-click the `cueImage` column to create a reference.
+   - The reference will be shown at the top of the attribute editor.
+
+3. **Display Target Action**:
+   - Similarly, reference the `targetImage` column for the target image resource.
+   - Reference the `targetLocation` column for the target image's location property.
+
+#### Example: Display Fixation Cross Action
+- The display fixation cross action uses an image resource to present a cross on a gray background.
+- The image file (`cross.png`) is added from the library.
+- The properties of the image resource can be edited in the screen builder.
+
+#### Example: Display Cue Action
+- The display cue action includes an additional image resource for the cue.
+- The `cueImage` column in the data source is referenced to change the cue image on each trial.
+- The `targetLocation` column is referenced to change the target image's position on each trial.
+
+#### Conclusion
+By using the screen builder and referencing data source columns, you can dynamically change experimental characteristics across trials. This approach allows for flexible and efficient experiment design. For more detailed information on specific actions and triggers, refer to the videos on behavioral data logging and Interest Periods in Data Viewer.
 
