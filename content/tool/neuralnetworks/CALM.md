@@ -5,8 +5,6 @@ draft: false
 
 ---
 
-
-
 # Course Schedule
 
 ## Week 1
@@ -116,8 +114,5 @@ Having understood Transformers, we now focus on fine-tuning and chatbot developm
   - [How does Llama 2 work?](https://www.ibm.com/think/topics/llama-2#:~:text=Llama%202%20is%20a%20family%20of%20transformer%2Dbased%20autoregressive%20causal,the%20next%20word(s).0)  
 
 - **Slides:** *Key Concepts* [📄 View](Key_concepts.pdf)  
-  *Note: These slides are from 2024—updated versions will be available soon.*
 
 ---
-
-This refined version enhances clarity and organization while adhering to Hugo Markdown syntax, ensuring consistency in formatting across headings, lists, links, and spacing. Let me know if you'd like further adjustments! 🚀
