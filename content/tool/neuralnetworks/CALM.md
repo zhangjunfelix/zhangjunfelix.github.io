@@ -5,8 +5,9 @@ draft: false
 
 ---
 
-# Course Schedule
-This course is offered by Professor Gerry Altmann at UConn, my advisor when I worked as a visiting faculty there. This is the course that officially introduced me into LLMs and neural networks.
+# Course Schedule    
+This course is offered by Professor Gerry Altmann at UConn, my advisor when I worked as a visiting faculty there.    
+This is the course that officially introduced me into LLMs and neural networks.    
 The following are the materials from his course. It has been such a wonderful experience.
 
 
