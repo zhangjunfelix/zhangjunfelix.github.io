@@ -1,6 +1,6 @@
 ---
 title: "Notes to Computational Approach to Language and Mind (CALM)"
-date: 2025-02-04T15:38:14+08:00
+date: 2025-02-05T15:38:14+08:00
 draft: false
 
 ---
