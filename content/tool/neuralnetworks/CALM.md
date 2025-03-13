@@ -1,11 +1,14 @@
 ---
 title: "Notes to Computational Approach to Language and Mind (CALM)"
-date: 2025-02-05T15:38:14+08:00
+date: 2025-03-05T15:38:14+08:00
 draft: false
 
 ---
 
 # Course Schedule
+This course is offered by Professor Gerry Altmann at UConn, my advisor when I worked as a visiting faculty there. This is the course that officially introduced me into LLMs and neural networks.
+The following are the materials from his course. It has been such a wonderful experience.
+
 
 ## Week 1
 
