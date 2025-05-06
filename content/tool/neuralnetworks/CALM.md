@@ -110,6 +110,27 @@ We will focus on *Attention*, *Transformers*, and *BERT*.
 
 Having understood Transformers, we now focus on fine-tuning and chatbot development.  
 
+
+Lecture notes (March 24, 2025)
+what is a parameter in LLMs?
+
+How does Mamba work?
+
+homework: your leap of faith 
+If i choose 5 on a 7-point scale, what do i need to have to go from 5 to 7?
+a few sentences to explain: 
+
+
+
+Lecture notes (March 31, 2025)
+neural networks on Vision
+
+
+
+
+
+
+
 ### Additional Resources:
 - 📖 **Articles:**
   - [How Large Language Models Work: From Zero to ChatGPT](https://medium.com/data-science-at-microsoft/how-large-language-models-work-91c362f5b78f) [📄 View](How_LLMs_Work_From_Zero_to_ChatGPT.pdf)  
