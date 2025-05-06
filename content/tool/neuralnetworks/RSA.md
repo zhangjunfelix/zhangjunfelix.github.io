@@ -17,14 +17,17 @@ This list is curated for students and researchers in **psycholinguistics** and *
 - Goodman, N. D., & Frank, M. C. (2016). [Pragmatic language interpretation as probabilistic inference](https://www.sciencedirect.com/science/article/pii/S136466131630122X). *Trends in Cognitive Sciences*, 20(11), 818 - 829.
 - Franke, M., & Jäger, G. (2016). [Probabilistic pragmatics, or why Bayes’ rule is probably important for pragmatics]((https://www.degruyter.com/document/doi/10.1515/zfs-2016-0002/html?lang=en&srsltid=AfmBOorsU5Gn-tQd3xJ7ka_Cl8OKh5eujrjBwscNJHTEkX9JFG2WF9rR)). *Zeitschrift für Sprachwissenschaft*, 35(1), 3 - 44.
 
+---
 #### game-theoretic approaches to pragmatics ##
 Benz A, Stevens J. 2018. Game-theoretic approaches to pragmatics. Annu. Rev. Linguist. 4:173–91
+---
 
 #### Rational Speech Act (RSA) Framework Basics and Theory
 - Frank, M. C., & Goodman, N. D. (2012). [Predicting pragmatic reasoning in language games](https://doi.org/10.1126/science.1218633). *Science*, 336(6084), 998.
 
 - Degen, J. (2023). [The Rational Speech Act framework. Annual Review of Linguistics](https://www.annualreviews.org/content/journals/10.1146/annurev-linguistics-031220-010811), 9, 273–295. https://doi.org/10.1146/annurev-linguistics-011122-041145
-- 
+
+---
 
 ### Applications of RSA in Different Linguistic Phenomena
 #### Scalar Implicature
