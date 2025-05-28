@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Psycholinguistics Experiments on Jun Zhang</title>
-    <link>https://zhangjunfelix.github.io/tool/experiments/</link>
+    <link>http://localhost:1313/tool/experiments/</link>
     <description>Recent content in Psycholinguistics Experiments on Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://zhangjunfelix.github.io/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Designing Experimental Surveys in Qualtrics</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</link>
+      <link>http://localhost:1313/tool/experiments/qualtrics/</link>
       <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</guid>
+      <guid>http://localhost:1313/tool/experiments/qualtrics/</guid>
       <description>&lt;h2 id=&#34;-overview&#34;&gt;🧠 Overview&lt;/h2&gt;
 &lt;p&gt;This tutorial provides a comprehensive guide to building an experimental survey in &lt;strong&gt;Qualtrics&lt;/strong&gt;, specifically designed for testing how &lt;strong&gt;speaker identity&lt;/strong&gt; influences listeners’ judgments of &lt;strong&gt;informativeness&lt;/strong&gt; in varied &lt;strong&gt;face contexts&lt;/strong&gt;. It integrates methodological strategies, Qualtrics configurations, and deployment on &lt;strong&gt;Amazon Mechanical Turk (MTurk)&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -35,9 +35,9 @@
     </item>
     <item>
       <title>Eyelink software tutorial</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</link>
+      <link>http://localhost:1313/tool/experiments/eyelink_software_tutorials/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</guid>
+      <guid>http://localhost:1313/tool/experiments/eyelink_software_tutorials/</guid>
       <description>&lt;h2 id=&#34;introduction-to-experiment-builder-a-step-by-step-guide&#34;&gt;Introduction to Experiment Builder: A Step-by-Step Guide&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qCMgHiGbWN4&amp;amp;list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
@@ -47,9 +47,9 @@
     </item>
     <item>
       <title>Pre-registration</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/pre_registration/</link>
+      <link>http://localhost:1313/tool/experiments/pre_registration/</link>
       <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/pre_registration/</guid>
+      <guid>http://localhost:1313/tool/experiments/pre_registration/</guid>
       <description>&lt;h1 id=&#34;preregistration&#34;&gt;Preregistration&lt;/h1&gt;
 &lt;p&gt;Preregistration is the practice of documenting your research plan at the beginning of your study and storing that plan in a read-only public repository, such as &lt;a href=&#34;https://osf.io/registries?view_only=&#34;&gt;OSF Registries&lt;/a&gt; or &lt;a href=&#34;https://aspredicted.org/&#34;&gt;As Predicted.org&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -110,9 +110,9 @@
     </item>
     <item>
       <title>OpenSesame</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/opensesame/</link>
+      <link>http://localhost:1313/tool/experiments/opensesame/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/opensesame/</guid>
+      <guid>http://localhost:1313/tool/experiments/opensesame/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt; is a program to create experiments for psychology, neuroscience, and experimental economics.&lt;/p&gt;
 &lt;p&gt;It does not require coding skills to create psycholinguistics experiments and is particularly friendly to beginners with a comprehensive graphical, point-and-click interface.&lt;/p&gt;
 &lt;p&gt;You can find tutorials and example experiments on the website that are highly useful in learning to build your own experiments.&lt;/p&gt;
@@ -120,9 +120,9 @@
     </item>
     <item>
       <title>Self paced reading</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/spr/</link>
+      <link>http://localhost:1313/tool/experiments/spr/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/spr/</guid>
+      <guid>http://localhost:1313/tool/experiments/spr/</guid>
       <description>&lt;h3 id=&#34;self-paced-reading&#34;&gt;Self-Paced Reading&lt;/h3&gt;
 &lt;p&gt;Self-paced reading (SPR) is relatively crude-grained in the behavioral data it provides. Nevertheless, it remains one of the most accessible tools for beginners conducting experimental language research.&lt;/p&gt;
 &lt;p&gt;Below are some helpful resources for learning and implementing SPR experiments:&lt;/p&gt;
@@ -140,9 +140,9 @@
     </item>
     <item>
       <title>Mousetracking</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/mousetracking/</link>
+      <link>http://localhost:1313/tool/experiments/mousetracking/</link>
       <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/mousetracking/</guid>
+      <guid>http://localhost:1313/tool/experiments/mousetracking/</guid>
       <description>&lt;h3 id=&#34;mouse-tracking-technique-in-cognitive-research&#34;&gt;Mouse-Tracking Technique in Cognitive Research&lt;/h3&gt;
 &lt;p&gt;Learning about the &lt;strong&gt;mouse-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers. &lt;em&gt;Tomlinson et al. (2013)&lt;/em&gt; is a key reference.&lt;/p&gt;
 &lt;p&gt;In my work, I used &lt;strong&gt;OpenSesame&lt;/strong&gt; (Mathôt et al., 2012) together with the &lt;strong&gt;mousetrap plugin&lt;/strong&gt; (Kieslich &amp;amp; Henninger, 2017).&lt;/p&gt;
@@ -160,9 +160,9 @@
     </item>
     <item>
       <title>Eyetracking</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/eyetracking/</link>
+      <link>http://localhost:1313/tool/experiments/eyetracking/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/eyetracking/</guid>
+      <guid>http://localhost:1313/tool/experiments/eyetracking/</guid>
       <description>&lt;h3 id=&#34;learning-about-eye-tracking-technique-creation-design-data-analysis&#34;&gt;Learning About Eye-Tracking Technique: creation, design, data analysis&lt;/h3&gt;
 &lt;hr&gt;
 &lt;p&gt;Learning about the &lt;strong&gt;eye-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers in social contexts.&lt;/p&gt;

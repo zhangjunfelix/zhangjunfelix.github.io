@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Computer on Jun Zhang</title>
-    <link>https://zhangjunfelix.github.io/tool/computer/</link>
+    <link>http://localhost:1313/tool/computer/</link>
     <description>Recent content in Computer on Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Aug 2023 15:02:40 +0800</lastBuildDate>
-    <atom:link href="https://zhangjunfelix.github.io/tool/computer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tool/computer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Create static websites</title>
-      <link>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</link>
+      <link>http://localhost:1313/tool/computer/websitebuilding/</link>
       <pubDate>Sat, 12 Aug 2023 15:02:40 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</guid>
+      <guid>http://localhost:1313/tool/computer/websitebuilding/</guid>
       <description>&lt;p&gt;Sure, I&amp;rsquo;ll revise the codes for clarity and aesthetics. Here&amp;rsquo;s the improved version:&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;hugo&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/h3&gt;
