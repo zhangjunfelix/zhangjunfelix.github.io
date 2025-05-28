@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Designing Experimental Surveys in Qualtrics | Jun Zhang</title>
 <meta name="keywords" content="qualtrics, survey-design, mturk, experimental-pragmatics, tutorial">
 <meta name="description" content="🧠 Overview
@@ -27,16 +27,16 @@ Determine a fully within-subjects design, block-based, with randomized speaker o
 2. 📦 Creating and Organizing Blocks
 Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/tool/experiments/qualtrics/">
+<link rel="canonical" href="https://zhangjunfelix.github.io/tool/experiments/qualtrics/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://zhangjunfelix.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zhangjunfelix.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zhangjunfelix.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://zhangjunfelix.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://zhangjunfelix.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tool/experiments/qualtrics/">
+<link rel="alternate" hreflang="en" href="https://zhangjunfelix.github.io/tool/experiments/qualtrics/">
 <noscript>
     <style>
         #theme-toggle,
@@ -73,7 +73,100 @@ Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://zhangjunfelix.github.io/tool/experiments/qualtrics/">
+  <meta property="og:site_name" content="Jun Zhang">
+  <meta property="og:title" content="Designing Experimental Surveys in Qualtrics">
+  <meta property="og:description" content="🧠 Overview This tutorial provides a comprehensive guide to building an experimental survey in Qualtrics, specifically designed for testing how speaker identity influences listeners’ judgments of informativeness in varied face contexts. It integrates methodological strategies, Qualtrics configurations, and deployment on Amazon Mechanical Turk (MTurk).
+1. 🎯 Project Setup and Survey Architecture Before building your survey:
+Clearly define your independent variables: Speaker Identity (e.g., Emily vs. Meilin) Sentence Type (UI-some, True-some, True-all, False-all) Face Context (Neutral vs. Face-threatening) Decide how many trials per condition (e.g., 1–2 in pilot). Determine a fully within-subjects design, block-based, with randomized speaker order. 2. 📦 Creating and Organizing Blocks Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tool">
+    <meta property="article:published_time" content="2025-05-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-24T00:00:00+00:00">
+    <meta property="article:tag" content="Qualtrics">
+    <meta property="article:tag" content="Survey-Design">
+    <meta property="article:tag" content="Mturk">
+    <meta property="article:tag" content="Experimental-Pragmatics">
+    <meta property="article:tag" content="Tutorial">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Designing Experimental Surveys in Qualtrics">
+<meta name="twitter:description" content="🧠 Overview
+This tutorial provides a comprehensive guide to building an experimental survey in Qualtrics, specifically designed for testing how speaker identity influences listeners’ judgments of informativeness in varied face contexts. It integrates methodological strategies, Qualtrics configurations, and deployment on Amazon Mechanical Turk (MTurk).
+
+1. 🎯 Project Setup and Survey Architecture
+Before building your survey:
+
+Clearly define your independent variables:
+
+Speaker Identity (e.g., Emily vs. Meilin)
+Sentence Type (UI-some, True-some, True-all, False-all)
+Face Context (Neutral vs. Face-threatening)
+
+
+Decide how many trials per condition (e.g., 1–2 in pilot).
+Determine a fully within-subjects design, block-based, with randomized speaker order.
+
+
+2. 📦 Creating and Organizing Blocks
+Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Toolbox",
+      "item": "https://zhangjunfelix.github.io/tool/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Psycholinguistics Experiments",
+      "item": "https://zhangjunfelix.github.io/tool/experiments/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Designing Experimental Surveys in Qualtrics",
+      "item": "https://zhangjunfelix.github.io/tool/experiments/qualtrics/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Designing Experimental Surveys in Qualtrics",
+  "name": "Designing Experimental Surveys in Qualtrics",
+  "description": "🧠 Overview This tutorial provides a comprehensive guide to building an experimental survey in Qualtrics, specifically designed for testing how speaker identity influences listeners’ judgments of informativeness in varied face contexts. It integrates methodological strategies, Qualtrics configurations, and deployment on Amazon Mechanical Turk (MTurk).\n1. 🎯 Project Setup and Survey Architecture Before building your survey:\nClearly define your independent variables: Speaker Identity (e.g., Emily vs. Meilin) Sentence Type (UI-some, True-some, True-all, False-all) Face Context (Neutral vs. Face-threatening) Decide how many trials per condition (e.g., 1–2 in pilot). Determine a fully within-subjects design, block-based, with randomized speaker order. 2. 📦 Creating and Organizing Blocks Each speaker (Emily, Meilin) should have the following 4 sub-blocks:\n",
+  "keywords": [
+    "qualtrics", "survey-design", "mturk", "experimental-pragmatics", "tutorial"
+  ],
+  "articleBody": "🧠 Overview This tutorial provides a comprehensive guide to building an experimental survey in Qualtrics, specifically designed for testing how speaker identity influences listeners’ judgments of informativeness in varied face contexts. It integrates methodological strategies, Qualtrics configurations, and deployment on Amazon Mechanical Turk (MTurk).\n1. 🎯 Project Setup and Survey Architecture Before building your survey:\nClearly define your independent variables: Speaker Identity (e.g., Emily vs. Meilin) Sentence Type (UI-some, True-some, True-all, False-all) Face Context (Neutral vs. Face-threatening) Decide how many trials per condition (e.g., 1–2 in pilot). Determine a fully within-subjects design, block-based, with randomized speaker order. 2. 📦 Creating and Organizing Blocks Each speaker (Emily, Meilin) should have the following 4 sub-blocks:\nIntroBlock (bio and image) CheckBlock (3 comprehension questions) ScenarioIntroBlock (brief task instructions) ScenariosBlock (16 scenario trials) Create these in the Survey Builder using the “Add Block” button. Use descriptive names (e.g., EmilyScenarios).\n3. 🔗 Grouping Questions Within a Trial Each scenario trial includes:\nA Text/Graphic question with the scenario. A Felicity Rating (1–5 Likert scale). An Attribution Question (MC, shown conditionally). 📌 To group these:\nPlace them consecutively in the block. ✅ Do not insert Page Breaks between them. Use Display Logic to show the attribution question only when relevant (e.g., ConditionType = UI-some). 4. 🔁 Randomizing Scenarios Using Loop \u0026 Merge Click on your Scenarios block → choose Loop \u0026 Merge. Define two columns: ScenarioText ConditionType Enter one row per trial. Enable “Randomize Loop Order” at the top. 📌 In the scenario display question, use:\n${lm://Field/ScenarioText} Use Display Logic for the Attribution question based on ${lm://Field/ConditionType}.\n5. 🔀 Randomizing Speaker Blocks with Groups in Survey Flow Go to Survey Flow. Add a Randomizer (set to randomly present 1 of 2 elements). Under each path, click “Add a Group” and insert: 4 blocks for Emily (or Meilin): Intro → Check → ScenarioIntro → Scenarios Set Embedded Data: BlockOrder = EmilyFirst or MeilinFirst Ensure groups are in the intended fixed order. Click Apply. 6. 🖼️ Adding Speaker Identity Images Use a Text/Graphic question with inline CSS:\n\u003cdiv style=\"margin-left: 280px;\"\u003e \u003cimg src=\"IMAGE_URL\" style=\"width: 100px; height: 100px; filter: grayscale(100%) opacity(70%);\" /\u003e \u003c/div\u003e You can upload your image in the Qualtrics editor and reference the URL.\n7. ⏸️ Mid-Survey Breaks To reduce fatigue:\nAfter every 8 trials, insert a Text/Graphic question that reads: You're halfway through this section. Feel free to take a short break. Click “Next” when you're ready to continue. To insert it in the middle of randomized items:\nUse Advanced Question Randomization and split items into 2 randomization groups, placing the break in between. 8. 🛡️ Preventing Duplicate Participation Recommended: Use Survey Options → Prevent Multiple Submissions (cookie-based). Ask for MTurk Worker ID early in the survey. Optionally, screen for repeat IDs manually in your exported data. 9. 🔗 Deploying via MTurk In MTurk, use the Survey Link template. Paste your Qualtrics anonymous link. Include a completion code page in Qualtrics using a final Text/Graphic block: Thank you for participating! Your completion code is: ABC123XYZ Instruct participants to copy this into MTurk to verify. MTurk Settings:\nTitle: “Short Language and Communication Study” Reward: ~$1.50 for 10–15 mins Requirements: Location = US, HIT approval \u003e 95% 10. 🧩 Tracking Embedded Data Use Embedded Data in Survey Flow:\nSet BlockOrder in each speaker group inside the Randomizer. Track participant condition and block order for analysis. Exported data will include these fields automatically.\n11. 📊 Exporting and Cleaning Data After data collection:\nExport responses to CSV or SPSS. Filter out: Incomplete or fast responses Duplicates by Worker ID Failed comprehension checks Use the BlockOrder, ConditionType, and response fields for initial analysis and plotting.\n✅ Final Thoughts This walkthrough integrates technical setup with practical experimental design for a nuanced pragmatic judgment study. For a real-world example, see our pilot: “The Cost of Saying Too Little—or Too Much: How Speaker Identity Shapes Judgments of Informativeness.”\n",
+  "wordCount" : "642",
+  "inLanguage": "en",
+  "datePublished": "2025-05-24T00:00:00Z",
+  "dateModified": "2025-05-24T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zhangjunfelix.github.io/tool/experiments/qualtrics/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jun Zhang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zhangjunfelix.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -103,7 +196,7 @@ Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Jun Zhang (Alt + H)">Jun Zhang</a>
+            <a href="https://zhangjunfelix.github.io/" accesskey="h" title="Jun Zhang (Alt + H)">Jun Zhang</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -129,27 +222,27 @@ Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/about/" title="About">
+                <a href="https://zhangjunfelix.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
+                <a href="https://zhangjunfelix.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/teaching/" title="Teaching">
+                <a href="https://zhangjunfelix.github.io/teaching/" title="Teaching">
                     <span>Teaching</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/publications/" title="Publications">
+                <a href="https://zhangjunfelix.github.io/publications/" title="Publications">
                     <span>Publications</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tool/" title="Toolbox">
+                <a href="https://zhangjunfelix.github.io/tool/" title="Toolbox">
                     <span>Toolbox</span>
                 </a>
             </li>
@@ -342,18 +435,18 @@ Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/qualtrics/">Qualtrics</a></li>
-      <li><a href="http://localhost:1313/tags/survey-design/">Survey-Design</a></li>
-      <li><a href="http://localhost:1313/tags/mturk/">Mturk</a></li>
-      <li><a href="http://localhost:1313/tags/experimental-pragmatics/">Experimental-Pragmatics</a></li>
-      <li><a href="http://localhost:1313/tags/tutorial/">Tutorial</a></li>
+      <li><a href="https://zhangjunfelix.github.io/tags/qualtrics/">Qualtrics</a></li>
+      <li><a href="https://zhangjunfelix.github.io/tags/survey-design/">Survey-Design</a></li>
+      <li><a href="https://zhangjunfelix.github.io/tags/mturk/">Mturk</a></li>
+      <li><a href="https://zhangjunfelix.github.io/tags/experimental-pragmatics/">Experimental-Pragmatics</a></li>
+      <li><a href="https://zhangjunfelix.github.io/tags/tutorial/">Tutorial</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Zhang</a></span> · 
+        <span>&copy; 2025 <a href="https://zhangjunfelix.github.io/">Jun Zhang</a></span> · 
 
     <span>
         Powered by
