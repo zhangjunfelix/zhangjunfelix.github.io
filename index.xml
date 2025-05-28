@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Welcome on Jun Zhang</title>
+    <link>https://zhangjunfelix.github.io/</link>
+    <description>Recent content in Welcome on Jun Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zhangjunfelix.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing Experimental Surveys in Qualtrics</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</guid>
+      <description>&lt;h2 id=&#34;-overview&#34;&gt;🧠 Overview&lt;/h2&gt;
+&lt;p&gt;This tutorial provides a comprehensive guide to building an experimental survey in &lt;strong&gt;Qualtrics&lt;/strong&gt;, specifically designed for testing how &lt;strong&gt;speaker identity&lt;/strong&gt; influences listeners’ judgments of &lt;strong&gt;informativeness&lt;/strong&gt; in varied &lt;strong&gt;face contexts&lt;/strong&gt;. It integrates methodological strategies, Qualtrics configurations, and deployment on &lt;strong&gt;Amazon Mechanical Turk (MTurk)&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1--project-setup-and-survey-architecture&#34;&gt;1. 🎯 Project Setup and Survey Architecture&lt;/h2&gt;
+&lt;p&gt;Before building your survey:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clearly define your independent variables:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Speaker Identity&lt;/strong&gt; (e.g., Emily vs. Meilin)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sentence Type&lt;/strong&gt; (UI-some, True-some, True-all, False-all)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Face Context&lt;/strong&gt; (Neutral vs. Face-threatening)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Decide how many trials per condition (e.g., 1–2 in pilot).&lt;/li&gt;
+&lt;li&gt;Determine a fully &lt;strong&gt;within-subjects design&lt;/strong&gt;, block-based, with randomized speaker order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2--creating-and-organizing-blocks&#34;&gt;2. 📦 Creating and Organizing Blocks&lt;/h2&gt;
+&lt;p&gt;Each speaker (Emily, Meilin) should have the following 4 sub-blocks:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rational Speech Act-learning notes</title>
+      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsanotes/</link>
+      <pubDate>Tue, 06 May 2025 11:41:54 -0400</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsanotes/</guid>
+      <description>&lt;p&gt;&amp;ldquo;&amp;hellip; one of my avowed aims is to see talking as a special case or variety of purposive, indeed rational, behavior&amp;rdquo; (Grice, 1975: 47)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;i-background-of-rsa&#34;&gt;I. Background of RSA&lt;/h3&gt;
+&lt;p&gt;The Rational Speech Act (RSA) framework was developed within the broader enterprise of &lt;strong&gt;Probabilistic Pragmatics&lt;/strong&gt;, a rapidly growing approach in the study of meaning.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Probabilistic pragmatics&lt;/strong&gt; integrates insights from formal and experimental semantics and pragmatics, psycholinguistics, and computational cognitive science. It offers a unified framework for modeling how speakers produce and listeners interpret language in context.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rational Speech Act-learning resources</title>
+      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsaresources/</link>
+      <pubDate>Wed, 12 Mar 2025 15:38:14 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsaresources/</guid>
+      <description>&lt;h3 id=&#34;learning-resources-the-rational-speech-act-rsa-framework&#34;&gt;Learning Resources: The Rational Speech Act (RSA) Framework&lt;/h3&gt;
+&lt;p&gt;Welcome! This page introduces key resources to help you get started with the Rational Speech Act (RSA) framework — a powerful model of pragmatic reasoning in language. The RSA framework integrates probabilistic inference, semantic interpretation, and recursive social reasoning.&lt;/p&gt;
+&lt;p&gt;This list is curated for students and researchers in &lt;strong&gt;psycholinguistics&lt;/strong&gt; and &lt;strong&gt;experimental pragmatics&lt;/strong&gt;, based on the overview presented in &lt;a href=&#34;(https://www.annualreviews.org/content/journals/10.1146/annurev-linguistics-031220-010811)&#34;&gt;&lt;em&gt;The Rational Speech Act Framework&lt;/em&gt; (2023)&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Notes to Computational Approach to Language and Mind (CALM)</title>
+      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/calm/</link>
+      <pubDate>Wed, 05 Mar 2025 15:38:14 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/calm/</guid>
+      <description>&lt;h1 id=&#34;course-schedule&#34;&gt;Course Schedule&lt;/h1&gt;
+&lt;p&gt;This course is offered by Professor Gerry Altmann at UConn, my advisor when I worked as a visiting faculty there. &lt;br&gt;
+This is the course that officially introduced me into LLMs and neural networks. &lt;br&gt;
+The following are the materials from his course. It has been such a wonderful experience.&lt;/p&gt;
+&lt;h2 id=&#34;week-1&#34;&gt;Week 1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Jargon checklist&lt;/strong&gt; &lt;a href=&#34;Jargon_checklist.pdf&#34;&gt;📄 View&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reading:&lt;/strong&gt; &lt;em&gt;AI-pocalypse&lt;/em&gt; &lt;a href=&#34;AI-pocalypse.pdf&#34;&gt;📄 View&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;week-2-lsa-to-srns&#34;&gt;Week 2: LSA to SRNs&lt;/h2&gt;
+&lt;p&gt;In this seminar, we shall explore one perspective on &amp;ldquo;meaning&amp;rdquo; through &lt;em&gt;Latent Semantic Analysis (LSA)&lt;/em&gt;. Key concepts include:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eyelink software tutorial</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</guid>
+      <description>&lt;h2 id=&#34;introduction-to-experiment-builder-a-step-by-step-guide&#34;&gt;Introduction to Experiment Builder: A Step-by-Step Guide&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qCMgHiGbWN4&amp;amp;list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
+&lt;p&gt;This tutorial provides a fundamental understanding of the Experiment Builder software. You&amp;rsquo;ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.&lt;/p&gt;
+&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;&lt;strong&gt;Introduction to Experiment Builder&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>model fitting</title>
+      <link>https://zhangjunfelix.github.io/tool/statistics/modelfitting/</link>
+      <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/statistics/modelfitting/</guid>
+      <description>&lt;h2 id=&#34;fitting-linear-mixed-effects-models-lmms&#34;&gt;Fitting Linear Mixed-Effects Models (LMMs)&lt;/h2&gt;
+&lt;h3 id=&#34;1-factor-treatment-coding&#34;&gt;1. Factor Treatment Coding&lt;/h3&gt;
+&lt;p&gt;In this example experiment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Independent Variables&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;A (Face)&lt;/strong&gt;: Within-subjects variable with 2 levels.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B (Number)&lt;/strong&gt;: Within-subjects variable with 2 levels.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;C (QUD)&lt;/strong&gt;: Between-subjects variable with 4 levels.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Response Variable&lt;/strong&gt;:&lt;br&gt;
+Rating on a 7-point scale, used as &lt;strong&gt;numerical values&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;should-you-fit-an-lmm-or-an-ordinal-logistic-mixed-effects-model-cumulative-link-mixed-model&#34;&gt;Should You Fit an LMM or an Ordinal Logistic Mixed-Effects Model (Cumulative Link Mixed Model)?&lt;/h3&gt;
+&lt;h4 id=&#34;key-considerations&#34;&gt;Key Considerations:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Nature of Ratings as Numerical Data&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Power analysis</title>
+      <link>https://zhangjunfelix.github.io/tool/statistics/poweranalysis/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/statistics/poweranalysis/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1-notes-to-green-et-al-2016&#34;&gt;1. notes to Green et al. (2016)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#example-dataset&#34;&gt;Example dataset&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#step-1-fitting-a-model&#34;&gt;step 1: fitting a model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#step-2-a-simple-power-analysis&#34;&gt;step 2: a simple power analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#step-3-running-the-power-analysis&#34;&gt;step 3: running the power analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#increasing-the-sample-size&#34;&gt;Increasing the sample size&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#power-analysis-at-a-range-of-sample-sizes&#34;&gt;Power analysis at a range of sample sizes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#varying-the-number-and-size-of-groups&#34;&gt;Varying the number and size of groups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#increasing-the-size-within-groups&#34;&gt;Increasing the size within groups&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-power-analysis-from-scratch&#34;&gt;2 Power analysis from scratch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3-power-analysis-with-simr-for-lmms&#34;&gt;3. Power analysis with &lt;code&gt;simr&lt;/code&gt; for LMMs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#4-power-analysis-with-simr-for-multilevel-data&#34;&gt;4. Power analysis with &lt;code&gt;simr&lt;/code&gt; for multilevel data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#5-power-analysis-with-actual-datasets-from-my-own-study&#34;&gt;5. Power analysis with actual datasets from my own study&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-notes-to-green-et-al-2016&#34;&gt;1. notes to Green et al. (2016)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12504&#34;&gt;https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12504&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pre-registration</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/pre_registration/</link>
+      <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/pre_registration/</guid>
+      <description>&lt;h1 id=&#34;preregistration&#34;&gt;Preregistration&lt;/h1&gt;
+&lt;p&gt;Preregistration is the practice of documenting your research plan at the beginning of your study and storing that plan in a read-only public repository, such as &lt;a href=&#34;https://osf.io/registries?view_only=&#34;&gt;OSF Registries&lt;/a&gt; or &lt;a href=&#34;https://aspredicted.org/&#34;&gt;As Predicted.org&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;benefits-of-preregistration&#34;&gt;Benefits of Preregistration&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Clarity&lt;/strong&gt;: Ensures that research teams share a clear understanding of their research goals and processes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transparency&lt;/strong&gt;: Separates the confirmatory aspects of the research from the exploratory aspects.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collaboration&lt;/strong&gt;: Allows for input from colleagues online prior to conducting the study.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pre-acceptance&lt;/strong&gt;: Enables journal editors to accept researchers’ papers conditionally, regardless of the outcomes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;h3 id=&#34;general-resources&#34;&gt;General Resources&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.osf.io/article/145-preregistration&#34;&gt;Preregistration on OSF Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.osf.io/article/158-create-a-preregistration&#34;&gt;Create a Preregistration on OSF Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cos.io/initiatives/prereg&#34;&gt;Preregistration on the Center for Open Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;resources-by-universities-and-psycholinguists&#34;&gt;Resources by universities and psycholinguists&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.surrey.ac.uk/library/open-research/preregistration-and-registered-reports&#34;&gt;Open Research by University of Surrey&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Contains comprehensive information on preregistration, examples, and templates.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://people.ku.edu/~sjpa/Classes/CBS6442/ResearchPractices/pre-registration.html&#34;&gt;Pre-registration by Stephen Politzer-Ahles&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Part of his course &lt;a href=&#34;https://people.ku.edu/~sjpa/Classes/CBS6442/&#34;&gt;Research Methods&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://osf.io/pm8bh/&#34;&gt;WWU Open Science Talk and Preregistration Workshop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://brendanhcullen.github.io/psy611/labs/lab-7.html&#34;&gt;Lab 7 Preregistration&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;From the course &lt;a href=&#34;https://brendanhcullen.github.io/psy611/&#34;&gt;Psy 611: Data Analysis I&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;video-tutorials&#34;&gt;Video Tutorials&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=8QK2-udwoK8&#34;&gt;The What, Why, and How of Preregistration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=7ic_BgpmakI&#34;&gt;How to Preregister a Study on As Predicted&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=EnKkGO3OM9c&#34;&gt;Preregistration on the OSF by Center for Open Science&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=nfFdQwJevhY&#34;&gt;Pre-Registering Your Research with Open Science Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/NRhCLIxt-lQ&#34;&gt;Preregistration Standards for Psychology&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;examples-of-preregistration-in-linguistics&#34;&gt;Examples of Preregistration in Linguistics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://osf.io/d5e6u&#34;&gt;Negated Adjectives and Politeness&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://osf.io/ytpr5&#34;&gt;Knowledgeability, Contextual Numerals, and Scalar Implicature&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;selected-references-on-preregistration&#34;&gt;Selected References on Preregistration&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Wagenmakers, E. J., Wetzels, R., Borsboom, D., van der Maas, H. L., &amp;amp; Kievit, R. A. (2012).  &lt;em&gt;An agenda for purely confirmatory research.&lt;/em&gt; Perspectives on Psychological Science, 7(6), 632-638. &lt;a href=&#34;https://journals.sagepub.com/doi/abs/10.1177/1745691612463078&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenSesame</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/opensesame/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/opensesame/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt; is a program to create experiments for psychology, neuroscience, and experimental economics.&lt;/p&gt;
+&lt;p&gt;It does not require coding skills to create psycholinguistics experiments and is particularly friendly to beginners with a comprehensive graphical, point-and-click interface.&lt;/p&gt;
+&lt;p&gt;You can find tutorials and example experiments on the website that are highly useful in learning to build your own experiments.&lt;/p&gt;
+&lt;p&gt;Opensesame experiments can be implemented both offline and online. It has an extension called OSWEB that allows the experiments to be excuted in a browser.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Self paced reading</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/spr/</link>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/spr/</guid>
+      <description>&lt;h3 id=&#34;self-paced-reading&#34;&gt;Self-Paced Reading&lt;/h3&gt;
+&lt;p&gt;Self-paced reading (SPR) is relatively crude-grained in the behavioral data it provides. Nevertheless, it remains one of the most accessible tools for beginners conducting experimental language research.&lt;/p&gt;
+&lt;p&gt;Below are some helpful resources for learning and implementing SPR experiments:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://kennysmithed.github.io/oels2022/&#34;&gt;Online Experiments for Language Scientists&lt;/a&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Week 4: Self-Paced Reading&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;tools-for-building-spr-studies&#34;&gt;Tools for Building SPR Studies&lt;/h3&gt;
+&lt;p&gt;The first tool I used to build my SPR study was &lt;strong&gt;&lt;a href=&#34;https://web.archive.org/web/20191220181934/http://tedlab.mit.edu/~dr/Linger/&#34; title=&#34;Linger site&#34;&gt;Linger&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt;&lt;/strong&gt; is another excellent option for creating SPR experiments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Create static websites</title>
+      <link>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</link>
+      <pubDate>Sat, 12 Aug 2023 15:02:40 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</guid>
+      <description>&lt;p&gt;Sure, I&amp;rsquo;ll revise the codes for clarity and aesthetics. Here&amp;rsquo;s the improved version:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;hugo&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Here are some of the codes/tips that I used in creating my website:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Commonly used commands&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change directories:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Create a new site (yml or toml):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site anatole-felix -f yml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd anatole-felix
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Clone Anatole theme:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/lxndrblz/anatole.git themes/anatole --depth&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Open folder in VS Code:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;code .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Start local server:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;(Add &lt;code&gt;-D&lt;/code&gt; to include draft pages)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Commands to modify &lt;code&gt;config.toml&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+2.1 &lt;strong&gt;Add favicon&lt;/strong&gt;&lt;br&gt;
+- Step 1: Generate and download favicon from favicon.io&lt;br&gt;
+- Step 2: Extract and copy all files to the &lt;code&gt;static&lt;/code&gt; root directory&lt;br&gt;
+- Step 3: Add the following line to &lt;code&gt;themes/anatole/layouts/partials/head.html&lt;/code&gt;:&lt;br&gt;
+&lt;code&gt;html &amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; href=&amp;quot;favicon.ico&amp;quot; /&amp;gt; &lt;/code&gt;
+(Replace &lt;code&gt;favicon.ico&lt;/code&gt; with the appropriate file name if different)&lt;br&gt;
+Refer to this guide for more details.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mousetracking</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/mousetracking/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/mousetracking/</guid>
+      <description>&lt;h3 id=&#34;mouse-tracking-technique-in-cognitive-research&#34;&gt;Mouse-Tracking Technique in Cognitive Research&lt;/h3&gt;
+&lt;p&gt;Learning about the &lt;strong&gt;mouse-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers. &lt;em&gt;Tomlinson et al. (2013)&lt;/em&gt; is a key reference.&lt;/p&gt;
+&lt;p&gt;In my work, I used &lt;strong&gt;OpenSesame&lt;/strong&gt; (Mathôt et al., 2012) together with the &lt;strong&gt;mousetrap plugin&lt;/strong&gt; (Kieslich &amp;amp; Henninger, 2017).&lt;/p&gt;
+&lt;h4 id=&#34;useful-resources&#34;&gt;Useful Resources&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Design factors in mouse-tracking: What makes a difference?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://link.springer.com/article/10.3758/s13428-019-01228-y#citeas&#34;&gt;Paper (Full Text)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;#x1f50c; &lt;a href=&#34;https://osf.io/xdp7a/&#34;&gt;Supplementary Resources&lt;/a&gt; (includes codes and example experiments!)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Mouse-tracking: A practical guide to implementation and analysis&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Data types, distribution, modeling choices</title>
+      <link>https://zhangjunfelix.github.io/tool/statistics/datatypedistributionmodeling/</link>
+      <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/statistics/datatypedistributionmodeling/</guid>
+      <description>&lt;h2 id=&#34;data-types-distribution-modeling-choices&#34;&gt;Data types, distribution, modeling choices&lt;/h2&gt;
+&lt;p&gt;Linear Mixed Effects Models (LMMs) and Generalized Linear Mixed Effects Models (GLMMs)&lt;/p&gt;
+&lt;p&gt;The choice between LMMs and GLMMs depends on the nature of your response variable and the specific goals of your analysis.&lt;/p&gt;
+&lt;p&gt;A summary of data types, their distribution, link functions, and modeling choices&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;data type&lt;/th&gt;
+          &lt;th&gt;normality&lt;/th&gt;
+          &lt;th&gt;distribution&lt;/th&gt;
+          &lt;th&gt;model type&lt;/th&gt;
+          &lt;th&gt;link function&lt;/th&gt;
+          &lt;th&gt;example data&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;continuous&lt;/td&gt;
+          &lt;td&gt;normal&lt;/td&gt;
+          &lt;td&gt;normal&lt;/td&gt;
+          &lt;td&gt;LMMs&lt;/td&gt;
+          &lt;td&gt;identity (normally not specify in LMMs)&lt;/td&gt;
+          &lt;td&gt;reaction times&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;binary&lt;/td&gt;
+          &lt;td&gt;non-normal&lt;/td&gt;
+          &lt;td&gt;binomial&lt;/td&gt;
+          &lt;td&gt;GLMMs&lt;/td&gt;
+          &lt;td&gt;logit&lt;/td&gt;
+          &lt;td&gt;binary outcome: pass/fail&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;count&lt;/td&gt;
+          &lt;td&gt;non-normal&lt;/td&gt;
+          &lt;td&gt;poisson&lt;/td&gt;
+          &lt;td&gt;GLMMs&lt;/td&gt;
+          &lt;td&gt;log&lt;/td&gt;
+          &lt;td&gt;number of events&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;proportional&lt;/td&gt;
+          &lt;td&gt;non-normal&lt;/td&gt;
+          &lt;td&gt;binomial&lt;/td&gt;
+          &lt;td&gt;GLMMs&lt;/td&gt;
+          &lt;td&gt;logit&lt;/td&gt;
+          &lt;td&gt;proportion of seeds that germinate under different treatment conditions&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;categorical&lt;/td&gt;
+          &lt;td&gt;non-normal&lt;/td&gt;
+          &lt;td&gt;multinomial&lt;/td&gt;
+          &lt;td&gt;GLMMs&lt;/td&gt;
+          &lt;td&gt;logit&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ordinal&lt;/td&gt;
+          &lt;td&gt;non-normal&lt;/td&gt;
+          &lt;td&gt;cumulative&lt;/td&gt;
+          &lt;td&gt;ordinal logistic mixed-effects model/  cumulative link mixed model&lt;/td&gt;
+          &lt;td&gt;cumulative logic&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;--when-to-use&#34;&gt;- WHEN TO USE&lt;/h3&gt;
+&lt;p&gt;Use LMMs when your response variable is &lt;strong&gt;continuous&lt;/strong&gt; and is assumed to follow a &lt;strong&gt;normal distribution&lt;/strong&gt;. &lt;br&gt;
+Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong&gt; and does &lt;strong&gt;not follow a normal distribution&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understand mixed effects modeling</title>
+      <link>https://zhangjunfelix.github.io/tool/statistics/parametersinmodeling/</link>
+      <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/statistics/parametersinmodeling/</guid>
+      <description>&lt;h1 id=&#34;part-i-general-overview&#34;&gt;PART I General Overview&lt;/h1&gt;
+&lt;p&gt;The results of mixed-effects modeling, such as those obtained from linear mixed-effects models (LMMs) or generalized linear mixed models (GLMMs), typically include several key parameters and statistics. Here’s a detailed explanation of each component commonly found in the output:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Fixed Effects&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fixed effects&lt;/strong&gt; estimate the impact of predictors (independent variables) on the outcome variable, &lt;strong&gt;assuming a constant effect&lt;/strong&gt; across all levels of random effects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Coefficient (Estimate)&lt;/strong&gt;: Represents the change in the outcome variable for a &lt;em&gt;&lt;strong&gt;one-unit change&lt;/strong&gt;&lt;/em&gt; in the predictor variable, holding other variables constant. In linear models, this is the &lt;em&gt;&lt;strong&gt;(fixed effect) slope&lt;/strong&gt;&lt;/em&gt;; in logistic models, it represents the change in the &lt;em&gt;&lt;strong&gt;log odds&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introducing Second Language Acquisition</title>
+      <link>https://zhangjunfelix.github.io/teaching/l2a/</link>
+      <pubDate>Sun, 09 Jul 2023 15:50:45 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/teaching/l2a/</guid>
+      <description>&lt;p&gt;COURSE SYLLABUS &lt;a href=&#34;Syllabus.pdf&#34;&gt;Download syllabus&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;course-description&#34;&gt;&lt;em&gt;COURSE DESCRIPTION&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;This course is a general introduction to scientific research into how people learn a second language. Although the course is designed to be accessible to students from a wide variety of backgrounds, some knowledge of the linguistic structure of English will be assumed.&lt;/p&gt;
+&lt;p&gt;Second language acquisition, or SLA, is a theoretical and experimental field of study which, like first language acquisition studies, looks at the phenomenon of language development &amp;ndash; in this case the acquisition of a second language.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bayesian modeling</title>
+      <link>https://zhangjunfelix.github.io/tool/statistics/bayesian/</link>
+      <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/statistics/bayesian/</guid>
+      <description>&lt;h3 id=&#34;steps-to-fit-bayesian-models-in-r&#34;&gt;Steps to Fit Bayesian Models in R&lt;/h3&gt;
+&lt;h4 id=&#34;1-specify-the-research-question&#34;&gt;1. Specify the Research Question&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Define the hypotheses you want to test and determine the variables involved.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;2-prepare-the-data&#34;&gt;2. Prepare the Data&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Clean and preprocess your data, ensuring all variables are correctly formatted.&lt;/li&gt;
+&lt;li&gt;For categorical variables, ensure they are factors with the correct reference levels.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-specify-the-model&#34;&gt;3. Specify the Model&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Define your model formula, including fixed effects, interactions, and random effects.&lt;/li&gt;
+&lt;li&gt;Choose the appropriate family for your response variable (e.g., &lt;code&gt;cumulative&lt;/code&gt; for ordinal data).&lt;/li&gt;
+&lt;li&gt;Set priors based on your knowledge or use default weakly informative priors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;4-fit-the-model&#34;&gt;4. Fit the Model&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the &lt;code&gt;brm()&lt;/code&gt; function to fit the model, specifying the formula, data, priors, and MCMC parameters (e.g., number of iterations, chains, cores).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;example&#34;&gt;Example:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;brm&lt;/span&gt;(formula &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; strategy &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; face &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; number &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; QUD &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; face &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; subject),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; exp2youxie, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             family &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cumulative&lt;/span&gt;(link &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;logit&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             prior &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;set_prior&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;normal(0, 1)&amp;#34;&lt;/span&gt;, class &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             iter &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4000&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             warmup &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             chains &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;             cores &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Advanced Academic English Writing</title>
+      <link>https://zhangjunfelix.github.io/teaching/eap/wae194/</link>
+      <pubDate>Fri, 07 Jul 2023 11:36:14 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/teaching/eap/wae194/</guid>
+      <description>&lt;h4 id=&#34;course-description&#34;&gt;COURSE DESCRIPTION&lt;/h4&gt;
+&lt;p&gt;The purpose of WAE194 is to provide students with writing experiences designed to improve their academic essay writing skills through the process of prewriting, drafting, and revising. It also strives to build confidence, fluency and grammatical correctness in students’ writing generally, and it serves as preparation for WRT100.  To accomplish these goals, students work on expanding their English competence on the sentence and paragraph levels. Specifically, they work on strategies that promote independence and self-evaluation of their own and others’ writing and produce at least two revised essays.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intermediate Academic English Writing</title>
+      <link>https://zhangjunfelix.github.io/teaching/eap/wae192/</link>
+      <pubDate>Fri, 07 Jul 2023 11:36:14 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/teaching/eap/wae192/</guid>
+      <description>&lt;h4 id=&#34;course-description&#34;&gt;COURSE DESCRIPTION&lt;/h4&gt;
+&lt;p&gt;The purpose of WAE 192 is to provide students with writing experiences designed to help them express ideas effectively in sentences, paragraphs, and essays.  Students will develop writing skills with the use of the dictionary, practicing structures of written English, and learning to edit in preparation for advanced editing in WAE 194.  To accomplish these goals, students work on expanding their English competence on the sentence level, expanding their vocabulary through reading and the use of the dictionary, developing strategies that promote independence in writing, and editing personal and peer writing. Grammar proficiency tests are administered throughout the semester. These tests emphasize the use of particular grammatical points in the context of a creative effort on the part of the student.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Publications and others</title>
+      <link>https://zhangjunfelix.github.io/publications/pub/</link>
+      <pubDate>Thu, 22 Jun 2023 13:57:00 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/publications/pub/</guid>
+      <description>&lt;h3 id=&#34;journal-articles&#34;&gt;Journal Articles&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;In progress&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Conventionalization of politeness, alternatives, and pragmatic inferencing&lt;/li&gt;
+&lt;li&gt;Timecourse of politeness and perspective-taking: an eye-tracking study   &lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;2023&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Zhang, Jun&lt;/strong&gt;, &amp;amp; Wu, Yan.&lt;/em&gt; (2023). “Yixie” is likely not created equal for everyone: Distinct reasoning procedures in interpreting the same scalar quantifier. &lt;em&gt;Lingua&lt;/em&gt;, 288, 103523. &lt;a href=&#34;https://www.sciencedirect.com/science/article/abs/pii/S0024384123000475&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;2022&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Zhang, Jun&lt;/strong&gt;, &amp;amp; Wu, Yan.&lt;/em&gt; (2022). Epistemic reasoning in pragmatic inferencing by non-native speakers: The case of scalar implicatures. &lt;em&gt;Second Language Research&lt;/em&gt;, 02676583211069735. &lt;a href=&#34;https://journals.sagepub.com/doi/abs/10.1177/02676583211069735&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;2020&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1. Pragmatic inferencing</title>
+      <link>https://zhangjunfelix.github.io/projects/praginfer/</link>
+      <pubDate>Wed, 21 Jun 2023 22:38:49 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/projects/praginfer/</guid>
+      <description>&lt;p&gt;Given my view of languages as an critical part of human cognition, I would like to know more about the nature of this cognitive capability that seems to be only possessed by humans.&lt;/p&gt;
+&lt;p&gt;As a continuation of my research on language acquisition, I started to realize that, fascinating as linguistic competence may be, ignoring linguistic performance is not reasonable.&lt;/p&gt;
+&lt;p&gt;After working on topics of non-native language processing, especially disambiguation, I ventered into pragmatic inferencing (mostly due to failure to produce any publication &amp;#x1f615; &amp;#x1f62d; &amp;#x1f61e; &amp;#x1f631; ).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2. language acquisition</title>
+      <link>https://zhangjunfelix.github.io/projects/nonnative/</link>
+      <pubDate>Tue, 20 Jun 2023 22:39:05 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/projects/nonnative/</guid>
+      <description>&lt;p&gt;As a learner of English as a foreign language since age 13, I naturally wonder how my English always come short of native-like competence. Such curiosity drives me, as a linguist, further to investigate issues in non-native language acquisition and conduct research on these issues.&lt;/p&gt;
+&lt;p&gt;Here is a link to my master&amp;rsquo;s thesis.
+《中国大学生英语写作中语篇衔接手段的使用研究》&lt;a href=&#34;https://kns.cnki.net/kcms2/article/abstract?v=RyaFSLOYMk5LKnlQeuON3lZLmXNW61jdu88ypOVVXS5JWDqWjKOG3Zdxv_oqBVvEWqeK78rehNkcB7D-qYHstcgvtuOh57iEXcSD6xqlxhFCYF3IgJRnnrkM-kbSwnc4&amp;amp;uniplatform=NZKPT&amp;amp;flag=copy&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;While I was studying for my Ph.D., I expanded my interest into the area of first language acquisition as I was working on how syntactic knowledge was acquired.
+Here is a link to my Ph.D. disseration. &lt;a href=&#34;https://scholars.hkbu.edu.hk/en/studentTheses/scope-interaction-between-universal-quantifiers-and-sentential-ne&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About me</title>
+      <link>https://zhangjunfelix.github.io/about/about/</link>
+      <pubDate>Tue, 20 Jun 2023 22:30:07 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/about/about/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;EDUCATION&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ph.D. in Linguistics&lt;/strong&gt; (2009-2013) | Hong Kong Baptist University &amp;ndash; advised by &lt;a href=&#34;https://ias.szu.edu.cn/en/info/1048/1616.htm&#34;&gt;Dr. Huang Yue Yuan&lt;/a&gt; and &lt;a href=&#34;https://scholar.google.com/citations?user=I31eYH4AAAAJ&amp;amp;hl=zh-CN&#34;&gt;Dr. Yang Suying&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Exchange Ph.D. student&lt;/strong&gt; (2011.10-2012.01) | University of Vienna - advised by &lt;a href=&#34;https://anglistik.univie.ac.at/staff/staff/detail-seite/user/daltonc8/inum/1063/backpid/30750/&#34;&gt;Prof. Christiane Dalton-Puffer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;M.A. in Linguistics&lt;/strong&gt; (2003-2006) | Anhui University - advised by &lt;a href=&#34;https://sfs.ahu.edu.cn/2019/1115/c16872a213618/page.htm&#34;&gt;Prof. Zhu Xiaomei&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B.A. in English Language and Literature&lt;/strong&gt; (1999-2003) | Anhui University - advised by &lt;a href=&#34;http://www.ahu.edu.cn/2013/1125/c15129a31900/page.htm&#34;&gt;Prof. Tian Debei&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;WORK EXPERIENCE&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Associate Professor, Anhui University | School of Foreign Studies&lt;/li&gt;
+&lt;li&gt;Visiting Scholar, University of Connecticut | Department of Psychological Sciences -Advised by &lt;a href=&#34;https://psychology.uconn.edu/person/gerry-altmann/&#34;&gt;Prof. Gerry Altmann&lt;/a&gt; at his &lt;a href=&#34;https://altmann.lab.uconn.edu&#34;&gt;Psycholinguistics Lab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fulbright FLTA, Ramapo College of New Jersey | School of Humanities and Global Studies&lt;/li&gt;
+&lt;li&gt;Lecturer, Hong Kong Baptist University | Language Center&lt;/li&gt;
+&lt;li&gt;Research Assistant, Hong Kong Baptist University | Language Center &amp;amp; Department of English Language and Literature&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;RESEARCH INTERESTS&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eyetracking</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/eyetracking/</link>
+      <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/eyetracking/</guid>
+      <description>&lt;h3 id=&#34;learning-about-eye-tracking-technique-creation-design-data-analysis&#34;&gt;Learning About Eye-Tracking Technique: creation, design, data analysis&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;Learning about the &lt;strong&gt;eye-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers in social contexts.&lt;/p&gt;
+&lt;p&gt;My first experiments (hopefully) are about &lt;strong&gt;perspective-taking&lt;/strong&gt; and &lt;strong&gt;interpreting scalars in social contexts&lt;/strong&gt;, a project emerging from my discussions with Prof. Gerry Altmann.&lt;/p&gt;
+&lt;p&gt;In this post, I share my experience in learning about this technique in five areas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reviews&lt;/li&gt;
+&lt;li&gt;Classical studies&lt;/li&gt;
+&lt;li&gt;tools to create VWP experiments&lt;/li&gt;
+&lt;li&gt;Experimental design&lt;/li&gt;
+&lt;li&gt;Data analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;part-i-reviews&#34;&gt;Part I: Reviews&lt;/h4&gt;
+&lt;p&gt;video tutorials:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zhangjunfelix.github.io/projects/praglife/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zhangjunfelix.github.io/projects/praglife/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
