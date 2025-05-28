@@ -375,6 +375,7 @@ Here is an example stimuli:
 5. The PPT-generated images are ABOUT 1280** * 720 in size. (The actual width and height of PowerPoint-generated images are 1280 * 718; or you can set them as 1284 * 720) (The resolution of the screen of the display computer is 1920 * 1080; it is close to 16:9) The images will be centered both horizontally and vertically. 
 6. why not 1920 * 1080 but 1280 * 720? This gives a nice large visible area, while leaving small margins on all sides. Exporting a 1920×1080 image would stretch everything, misaligning your interest area calculations unless you rescale manually.
 7. Measurements of the three pictures in each image are as follows:
+   
    Top-center picture: width 6 cm; height 6 cm; X (from top) 13.5 cm; Y (from top) 0.5 cm
    (X = 13.5 (i.e., distance from the top-left corner to the left side of the slide): full size of a slide is 33 cm; thus, half a slide is 16.5cm; size of the picture is 6 cm; thus, half a picture is 3 cm; thus the X of the top-center corner of the picture is 16.5-3 = 13.5)
    (Y = 0.5 (i.e., distance from the top-left corner to the top side of the slide))

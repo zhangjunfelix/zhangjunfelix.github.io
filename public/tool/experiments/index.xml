@@ -6,8 +6,45 @@
     <description>Recent content in Psycholinguistics Experiments on Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing Experimental Surveys in Qualtrics</title>
+      <link>http://localhost:1313/tool/experiments/qualtrics/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/qualtrics/</guid>
+      <description>&lt;h2 id=&#34;-overview&#34;&gt;🧠 Overview&lt;/h2&gt;
+&lt;p&gt;This tutorial provides a comprehensive guide to building an experimental survey in &lt;strong&gt;Qualtrics&lt;/strong&gt;, specifically designed for testing how &lt;strong&gt;speaker identity&lt;/strong&gt; influences listeners’ judgments of &lt;strong&gt;informativeness&lt;/strong&gt; in varied &lt;strong&gt;face contexts&lt;/strong&gt;. It integrates methodological strategies, Qualtrics configurations, and deployment on &lt;strong&gt;Amazon Mechanical Turk (MTurk)&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1--project-setup-and-survey-architecture&#34;&gt;1. 🎯 Project Setup and Survey Architecture&lt;/h2&gt;
+&lt;p&gt;Before building your survey:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clearly define your independent variables:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Speaker Identity&lt;/strong&gt; (e.g., Emily vs. Meilin)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sentence Type&lt;/strong&gt; (UI-some, True-some, True-all, False-all)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Face Context&lt;/strong&gt; (Neutral vs. Face-threatening)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Decide how many trials per condition (e.g., 1–2 in pilot).&lt;/li&gt;
+&lt;li&gt;Determine a fully &lt;strong&gt;within-subjects design&lt;/strong&gt;, block-based, with randomized speaker order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2--creating-and-organizing-blocks&#34;&gt;2. 📦 Creating and Organizing Blocks&lt;/h2&gt;
+&lt;p&gt;Each speaker (Emily, Meilin) should have the following 4 sub-blocks:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eyelink software tutorial</title>
+      <link>http://localhost:1313/tool/experiments/eyelink_software_tutorials/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/eyelink_software_tutorials/</guid>
+      <description>&lt;h2 id=&#34;introduction-to-experiment-builder-a-step-by-step-guide&#34;&gt;Introduction to Experiment Builder: A Step-by-Step Guide&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qCMgHiGbWN4&amp;amp;list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
+&lt;p&gt;This tutorial provides a fundamental understanding of the Experiment Builder software. You&amp;rsquo;ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.&lt;/p&gt;
+&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;&lt;strong&gt;Introduction to Experiment Builder&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Pre-registration</title>
       <link>http://localhost:1313/tool/experiments/pre_registration/</link>
@@ -72,7 +109,7 @@
 &lt;p&gt;Wagenmakers, E. J., Wetzels, R., Borsboom, D., van der Maas, H. L., &amp;amp; Kievit, R. A. (2012).  &lt;em&gt;An agenda for purely confirmatory research.&lt;/em&gt; Perspectives on Psychological Science, 7(6), 632-638. &lt;a href=&#34;https://journals.sagepub.com/doi/abs/10.1177/1745691612463078&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Opensesame</title>
+      <title>OpenSesame</title>
       <link>http://localhost:1313/tool/experiments/opensesame/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tool/experiments/opensesame/</guid>
@@ -90,19 +127,16 @@
 &lt;p&gt;Self-paced reading (SPR) is relatively crude-grained in the behavioral data it provides. Nevertheless, it remains one of the most accessible tools for beginners conducting experimental language research.&lt;/p&gt;
 &lt;p&gt;Below are some helpful resources for learning and implementing SPR experiments:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://kennysmithed.github.io/oels2022/&#34;&gt;Online Experiments for Language Scientists&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://kennysmithed.github.io/oels2022/&#34;&gt;Online Experiments for Language Scientists&lt;/a&gt;&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Week 4: Self-Paced Reading&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;(Additional resources can be added here)&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;tools-for-building-spr-studies&#34;&gt;Tools for Building SPR Studies&lt;/h3&gt;
-&lt;p&gt;The first tool I used to build my SPR study was &lt;strong&gt;&lt;a href=&#34;https://web.archive.org/web/20191220181934/http://tedlab.mit.edu/~dr/Linger/&#34; title=&#34;Linger site&#34;&gt;Linger&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</description>
+&lt;p&gt;The first tool I used to build my SPR study was &lt;strong&gt;&lt;a href=&#34;https://web.archive.org/web/20191220181934/http://tedlab.mit.edu/~dr/Linger/&#34; title=&#34;Linger site&#34;&gt;Linger&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt;&lt;/strong&gt; is another excellent option for creating SPR experiments.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mousetracking</title>

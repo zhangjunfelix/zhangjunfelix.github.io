@@ -4,6 +4,12 @@ title: 'Jun Zhang'
 Theme: PaperMod
 
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+
 menu:
    main: 
       - identifier: about
@@ -60,6 +66,11 @@ pluralizeListTitles: false
 params:
   mainSection: []
 
+  math: true
+
+  assets: 
+    customCSS: ["css/custom.css"]
+
 
   socialIcons:
     - name: github
@@ -70,16 +81,15 @@ params:
       url: "http://instagram.com/"
 
 
-  ShowReadingTime: false
+  ShowReadingTime: true
 
   ShowBreadCrumbs: false
 
   ShowWordCount: false
 
-  UseHugoToc: false
-  ShowToc: false
-  TocOpen: false
-
+  UseHugoToc: True
+  ShowToc: true
+  TocOpen: true
 
   ShowShareButtons: false
 
@@ -90,3 +100,4 @@ params:
   ShowCodeCopyButtons: true
   
   showSectionPagesOnHome: true 
+

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Designing Experimental Surveys in Qualtrics | Jun Zhang</title>
+<meta name="keywords" content="qualtrics, survey-design, mturk, experimental-pragmatics, tutorial">
+<meta name="description" content="🧠 Overview
+This tutorial provides a comprehensive guide to building an experimental survey in Qualtrics, specifically designed for testing how speaker identity influences listeners’ judgments of informativeness in varied face contexts. It integrates methodological strategies, Qualtrics configurations, and deployment on Amazon Mechanical Turk (MTurk).
+
+1. 🎯 Project Setup and Survey Architecture
+Before building your survey:
+
+Clearly define your independent variables:
+
+Speaker Identity (e.g., Emily vs. Meilin)
+Sentence Type (UI-some, True-some, True-all, False-all)
+Face Context (Neutral vs. Face-threatening)
+
+
+Decide how many trials per condition (e.g., 1–2 in pilot).
+Determine a fully within-subjects design, block-based, with randomized speaker order.
+
+
+2. 📦 Creating and Organizing Blocks
+Each speaker (Emily, Meilin) should have the following 4 sub-blocks:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tool/experiments/qualtrics/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tool/experiments/qualtrics/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });">
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Zhang (Alt + H)">Jun Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/teaching/" title="Teaching">
+                    <span>Teaching</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tool/" title="Toolbox">
+                    <span>Toolbox</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Designing Experimental Surveys in Qualtrics
+    </h1>
+    <div class="post-meta"><span title='2025-05-24 00:00:00 +0000 UTC'>May 24, 2025</span>&nbsp;·&nbsp;4 min
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#-overview">🧠 Overview</a></li>
+    <li><a href="#1--project-setup-and-survey-architecture">1. 🎯 Project Setup and Survey Architecture</a></li>
+    <li><a href="#2--creating-and-organizing-blocks">2. 📦 Creating and Organizing Blocks</a></li>
+    <li><a href="#3--grouping-questions-within-a-trial">3. 🔗 Grouping Questions Within a Trial</a></li>
+    <li><a href="#4--randomizing-scenarios-using-loop--merge">4. 🔁 Randomizing Scenarios Using Loop &amp; Merge</a></li>
+    <li><a href="#5--randomizing-speaker-blocks-with-groups-in-survey-flow">5. 🔀 Randomizing Speaker Blocks with Groups in Survey Flow</a></li>
+    <li><a href="#6--adding-speaker-identity-images">6. 🖼️ Adding Speaker Identity Images</a></li>
+    <li><a href="#7--mid-survey-breaks">7. ⏸️ Mid-Survey Breaks</a></li>
+    <li><a href="#8--preventing-duplicate-participation">8. 🛡️ Preventing Duplicate Participation</a>
+      <ul>
+        <li><a href="#recommended">Recommended:</a></li>
+      </ul>
+    </li>
+    <li><a href="#9--deploying-via-mturk">9. 🔗 Deploying via MTurk</a></li>
+    <li><a href="#10--tracking-embedded-data">10. 🧩 Tracking Embedded Data</a></li>
+    <li><a href="#11--exporting-and-cleaning-data">11. 📊 Exporting and Cleaning Data</a></li>
+    <li><a href="#-final-thoughts">✅ Final Thoughts</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="-overview">🧠 Overview<a hidden class="anchor" aria-hidden="true" href="#-overview">#</a></h2>
+<p>This tutorial provides a comprehensive guide to building an experimental survey in <strong>Qualtrics</strong>, specifically designed for testing how <strong>speaker identity</strong> influences listeners’ judgments of <strong>informativeness</strong> in varied <strong>face contexts</strong>. It integrates methodological strategies, Qualtrics configurations, and deployment on <strong>Amazon Mechanical Turk (MTurk)</strong>.</p>
+<hr>
+<h2 id="1--project-setup-and-survey-architecture">1. 🎯 Project Setup and Survey Architecture<a hidden class="anchor" aria-hidden="true" href="#1--project-setup-and-survey-architecture">#</a></h2>
+<p>Before building your survey:</p>
+<ul>
+<li>Clearly define your independent variables:
+<ul>
+<li><strong>Speaker Identity</strong> (e.g., Emily vs. Meilin)</li>
+<li><strong>Sentence Type</strong> (UI-some, True-some, True-all, False-all)</li>
+<li><strong>Face Context</strong> (Neutral vs. Face-threatening)</li>
+</ul>
+</li>
+<li>Decide how many trials per condition (e.g., 1–2 in pilot).</li>
+<li>Determine a fully <strong>within-subjects design</strong>, block-based, with randomized speaker order.</li>
+</ul>
+<hr>
+<h2 id="2--creating-and-organizing-blocks">2. 📦 Creating and Organizing Blocks<a hidden class="anchor" aria-hidden="true" href="#2--creating-and-organizing-blocks">#</a></h2>
+<p>Each speaker (Emily, Meilin) should have the following 4 sub-blocks:</p>
+<ul>
+<li><code>IntroBlock</code> (bio and image)</li>
+<li><code>CheckBlock</code> (3 comprehension questions)</li>
+<li><code>ScenarioIntroBlock</code> (brief task instructions)</li>
+<li><code>ScenariosBlock</code> (16 scenario trials)</li>
+</ul>
+<p>Create these in the <strong>Survey Builder</strong> using the &ldquo;Add Block&rdquo; button. Use descriptive names (e.g., <code>EmilyScenarios</code>).</p>
+<hr>
+<h2 id="3--grouping-questions-within-a-trial">3. 🔗 Grouping Questions Within a Trial<a hidden class="anchor" aria-hidden="true" href="#3--grouping-questions-within-a-trial">#</a></h2>
+<p>Each scenario trial includes:</p>
+<ol>
+<li>A <strong>Text/Graphic</strong> question with the scenario.</li>
+<li>A <strong>Felicity Rating</strong> (1–5 Likert scale).</li>
+<li>An <strong>Attribution Question</strong> (MC, shown conditionally).</li>
+</ol>
+<p>📌 To group these:</p>
+<ul>
+<li>Place them consecutively in the block.</li>
+<li>✅ <strong>Do not insert Page Breaks</strong> between them.</li>
+<li>Use <strong>Display Logic</strong> to show the attribution question only when relevant (e.g., <code>ConditionType = UI-some</code>).</li>
+</ul>
+<hr>
+<h2 id="4--randomizing-scenarios-using-loop--merge">4. 🔁 Randomizing Scenarios Using Loop &amp; Merge<a hidden class="anchor" aria-hidden="true" href="#4--randomizing-scenarios-using-loop--merge">#</a></h2>
+<ol>
+<li>Click on your Scenarios block → choose <strong>Loop &amp; Merge</strong>.</li>
+<li>Define two columns:
+<ul>
+<li><code>ScenarioText</code></li>
+<li><code>ConditionType</code></li>
+</ul>
+</li>
+<li>Enter one row per trial.</li>
+<li>Enable <strong>&ldquo;Randomize Loop Order&rdquo;</strong> at the top.</li>
+</ol>
+<p>📌 In the scenario display question, use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>${lm://Field/ScenarioText}
+</span></span></code></pre></div><p>Use Display Logic for the Attribution question based on <code>${lm://Field/ConditionType}</code>.</p>
+<hr>
+<h2 id="5--randomizing-speaker-blocks-with-groups-in-survey-flow">5. 🔀 Randomizing Speaker Blocks with Groups in Survey Flow<a hidden class="anchor" aria-hidden="true" href="#5--randomizing-speaker-blocks-with-groups-in-survey-flow">#</a></h2>
+<ol>
+<li>Go to <strong>Survey Flow</strong>.</li>
+<li>Add a <strong>Randomizer</strong> (set to randomly present 1 of 2 elements).</li>
+<li>Under each path, click <strong>“Add a Group”</strong> and insert:
+<ul>
+<li>4 blocks for Emily (or Meilin): Intro → Check → ScenarioIntro → Scenarios</li>
+<li>Set Embedded Data: <code>BlockOrder = EmilyFirst</code> or <code>MeilinFirst</code></li>
+</ul>
+</li>
+<li>Ensure groups are in the intended fixed order.</li>
+<li>Click <strong>Apply</strong>.</li>
+</ol>
+<hr>
+<h2 id="6--adding-speaker-identity-images">6. 🖼️ Adding Speaker Identity Images<a hidden class="anchor" aria-hidden="true" href="#6--adding-speaker-identity-images">#</a></h2>
+<p>Use a <strong>Text/Graphic question</strong> with inline CSS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin-left: 280px;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;IMAGE_URL&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 100px; height: 100px; filter: grayscale(100%) opacity(70%);&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>You can upload your image in the Qualtrics editor and reference the URL.</p>
+<hr>
+<h2 id="7--mid-survey-breaks">7. ⏸️ Mid-Survey Breaks<a hidden class="anchor" aria-hidden="true" href="#7--mid-survey-breaks">#</a></h2>
+<p>To reduce fatigue:</p>
+<ul>
+<li>After every 8 trials, insert a <strong>Text/Graphic</strong> question that reads:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>You&#39;re halfway through this section. Feel free to take a short break. Click “Next” when you&#39;re ready to continue.
+</span></span></code></pre></div><p>To insert it in the middle of randomized items:</p>
+<ul>
+<li>Use <strong>Advanced Question Randomization</strong> and split items into 2 randomization groups, placing the break in between.</li>
+</ul>
+<hr>
+<h2 id="8--preventing-duplicate-participation">8. 🛡️ Preventing Duplicate Participation<a hidden class="anchor" aria-hidden="true" href="#8--preventing-duplicate-participation">#</a></h2>
+<h3 id="recommended">Recommended:<a hidden class="anchor" aria-hidden="true" href="#recommended">#</a></h3>
+<ul>
+<li>Use <strong>Survey Options → Prevent Multiple Submissions</strong> (cookie-based).</li>
+<li>Ask for <strong>MTurk Worker ID</strong> early in the survey.</li>
+<li>Optionally, screen for repeat IDs manually in your exported data.</li>
+</ul>
+<hr>
+<h2 id="9--deploying-via-mturk">9. 🔗 Deploying via MTurk<a hidden class="anchor" aria-hidden="true" href="#9--deploying-via-mturk">#</a></h2>
+<ol>
+<li>In MTurk, use the <strong>Survey Link template</strong>.</li>
+<li>Paste your <strong>Qualtrics anonymous link</strong>.</li>
+<li>Include a <strong>completion code page</strong> in Qualtrics using a final Text/Graphic block:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Thank you for participating! Your completion code is: ABC123XYZ
+</span></span></code></pre></div><ol start="4">
+<li>Instruct participants to copy this into MTurk to verify.</li>
+</ol>
+<p>MTurk Settings:</p>
+<ul>
+<li>Title: “Short Language and Communication Study”</li>
+<li>Reward: ~$1.50 for 10–15 mins</li>
+<li>Requirements: Location = US, HIT approval &gt; 95%</li>
+</ul>
+<hr>
+<h2 id="10--tracking-embedded-data">10. 🧩 Tracking Embedded Data<a hidden class="anchor" aria-hidden="true" href="#10--tracking-embedded-data">#</a></h2>
+<p>Use <strong>Embedded Data</strong> in Survey Flow:</p>
+<ul>
+<li>Set <code>BlockOrder</code> in each speaker group inside the Randomizer.</li>
+<li>Track participant condition and block order for analysis.</li>
+</ul>
+<p>Exported data will include these fields automatically.</p>
+<hr>
+<h2 id="11--exporting-and-cleaning-data">11. 📊 Exporting and Cleaning Data<a hidden class="anchor" aria-hidden="true" href="#11--exporting-and-cleaning-data">#</a></h2>
+<p>After data collection:</p>
+<ul>
+<li>Export responses to CSV or SPSS.</li>
+<li>Filter out:
+<ul>
+<li>Incomplete or fast responses</li>
+<li>Duplicates by Worker ID</li>
+<li>Failed comprehension checks</li>
+</ul>
+</li>
+</ul>
+<p>Use the <code>BlockOrder</code>, <code>ConditionType</code>, and response fields for initial analysis and plotting.</p>
+<hr>
+<h2 id="-final-thoughts">✅ Final Thoughts<a hidden class="anchor" aria-hidden="true" href="#-final-thoughts">#</a></h2>
+<p>This walkthrough integrates technical setup with practical experimental design for a nuanced pragmatic judgment study. For a real-world example, see our pilot: <em>&ldquo;The Cost of Saying Too Little—or Too Much: How Speaker Identity Shapes Judgments of Informativeness.&rdquo;</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/qualtrics/">Qualtrics</a></li>
+      <li><a href="http://localhost:1313/tags/survey-design/">Survey-Design</a></li>
+      <li><a href="http://localhost:1313/tags/mturk/">Mturk</a></li>
+      <li><a href="http://localhost:1313/tags/experimental-pragmatics/">Experimental-Pragmatics</a></li>
+      <li><a href="http://localhost:1313/tags/tutorial/">Tutorial</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Zhang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -78,6 +78,18 @@ Nature of Ratings as Numerical Data:">
 
     </style>
 </noscript>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });">
+</script>
+
 </head>
 
 <body class="" id="top">
@@ -156,10 +168,30 @@ Nature of Ratings as Numerical Data:">
     <h1 class="post-title entry-hint-parent">
       model fitting
     </h1>
-    <div class="post-meta"><span title='2024-08-16 00:00:00 +0000 UTC'>August 16, 2024</span>
+    <div class="post-meta"><span title='2024-08-16 00:00:00 +0000 UTC'>August 16, 2024</span>&nbsp;·&nbsp;2 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#fitting-linear-mixed-effects-models-lmms">Fitting Linear Mixed-Effects Models (LMMs)</a>
+      <ul>
+        <li><a href="#1-factor-treatment-coding">1. Factor Treatment Coding</a></li>
+        <li><a href="#should-you-fit-an-lmm-or-an-ordinal-logistic-mixed-effects-model-cumulative-link-mixed-model">Should You Fit an LMM or an Ordinal Logistic Mixed-Effects Model (Cumulative Link Mixed Model)?</a></li>
+        <li><a href="#handling-missing-data">Handling Missing Data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h2 id="fitting-linear-mixed-effects-models-lmms">Fitting Linear Mixed-Effects Models (LMMs)<a hidden class="anchor" aria-hidden="true" href="#fitting-linear-mixed-effects-models-lmms">#</a></h2>
 <h3 id="1-factor-treatment-coding">1. Factor Treatment Coding<a hidden class="anchor" aria-hidden="true" href="#1-factor-treatment-coding">#</a></h3>
 <p>In this example experiment:</p>

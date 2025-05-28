@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mturk on Jun Zhang</title>
+    <link>http://localhost:1313/tags/mturk/</link>
+    <description>Recent content in Mturk on Jun Zhang</description>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mturk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing Experimental Surveys in Qualtrics</title>
+      <link>http://localhost:1313/tool/experiments/qualtrics/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tool/experiments/qualtrics/</guid>
+      <description>&lt;h2 id=&#34;-overview&#34;&gt;🧠 Overview&lt;/h2&gt;
+&lt;p&gt;This tutorial provides a comprehensive guide to building an experimental survey in &lt;strong&gt;Qualtrics&lt;/strong&gt;, specifically designed for testing how &lt;strong&gt;speaker identity&lt;/strong&gt; influences listeners’ judgments of &lt;strong&gt;informativeness&lt;/strong&gt; in varied &lt;strong&gt;face contexts&lt;/strong&gt;. It integrates methodological strategies, Qualtrics configurations, and deployment on &lt;strong&gt;Amazon Mechanical Turk (MTurk)&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1--project-setup-and-survey-architecture&#34;&gt;1. 🎯 Project Setup and Survey Architecture&lt;/h2&gt;
+&lt;p&gt;Before building your survey:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clearly define your independent variables:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Speaker Identity&lt;/strong&gt; (e.g., Emily vs. Meilin)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sentence Type&lt;/strong&gt; (UI-some, True-some, True-all, False-all)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Face Context&lt;/strong&gt; (Neutral vs. Face-threatening)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Decide how many trials per condition (e.g., 1–2 in pilot).&lt;/li&gt;
+&lt;li&gt;Determine a fully &lt;strong&gt;within-subjects design&lt;/strong&gt;, block-based, with randomized speaker order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2--creating-and-organizing-blocks&#34;&gt;2. 📦 Creating and Organizing Blocks&lt;/h2&gt;
+&lt;p&gt;Each speaker (Emily, Meilin) should have the following 4 sub-blocks:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

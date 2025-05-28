@@ -57,6 +57,18 @@
 
     </style>
 </noscript>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });">
+</script>
+
 </head>
 
 <body class="list" id="top">
@@ -140,6 +152,36 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Designing Experimental Surveys in Qualtrics
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🧠 Overview This tutorial provides a comprehensive guide to building an experimental survey in Qualtrics, specifically designed for testing how speaker identity influences listeners’ judgments of informativeness in varied face contexts. It integrates methodological strategies, Qualtrics configurations, and deployment on Amazon Mechanical Turk (MTurk).
+1. 🎯 Project Setup and Survey Architecture Before building your survey:
+Clearly define your independent variables: Speaker Identity (e.g., Emily vs. Meilin) Sentence Type (UI-some, True-some, True-all, False-all) Face Context (Neutral vs. Face-threatening) Decide how many trials per condition (e.g., 1–2 in pilot). Determine a fully within-subjects design, block-based, with randomized speaker order. 2. 📦 Creating and Organizing Blocks Each speaker (Emily, Meilin) should have the following 4 sub-blocks:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-24 00:00:00 +0000 UTC'>May 24, 2025</span>&nbsp;·&nbsp;4 min</footer>
+  <a class="entry-link" aria-label="post link to Designing Experimental Surveys in Qualtrics" href="http://localhost:1313/tool/experiments/qualtrics/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Eyelink software tutorial
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introduction to Experiment Builder: A Step-by-Step Guide video link
+Overview This tutorial provides a fundamental understanding of the Experiment Builder software. You’ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.
+Introduction to Experiment Builder Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-01-28 00:00:00 +0000 UTC'>January 28, 2025</span>&nbsp;·&nbsp;30 min</footer>
+  <a class="entry-link" aria-label="post link to Eyelink software tutorial" href="http://localhost:1313/tool/experiments/eyelink_software_tutorials/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Pre-registration
     </h2>
   </header>
@@ -148,13 +190,13 @@
 Benefits of Preregistration Clarity: Ensures that research teams share a clear understanding of their research goals and processes. Transparency: Separates the confirmatory aspects of the research from the exploratory aspects. Collaboration: Allows for input from colleagues online prior to conducting the study. Pre-acceptance: Enables journal editors to accept researchers’ papers conditionally, regardless of the outcomes. Resources General Resources Preregistration on OSF Support Create a Preregistration on OSF Support Preregistration on the Center for Open Science Resources by universities and psycholinguists Open Research by University of Surrey Contains comprehensive information on preregistration, examples, and templates. Pre-registration by Stephen Politzer-Ahles Part of his course Research Methods. WWU Open Science Talk and Preregistration Workshop Lab 7 Preregistration From the course Psy 611: Data Analysis I. Video Tutorials The What, Why, and How of Preregistration How to Preregister a Study on As Predicted Preregistration on the OSF by Center for Open Science Pre-Registering Your Research with Open Science Framework Preregistration Standards for Psychology Examples of Preregistration in Linguistics Negated Adjectives and Politeness Knowledgeability, Contextual Numerals, and Scalar Implicature Selected References on Preregistration Wagenmakers, E. J., Wetzels, R., Borsboom, D., van der Maas, H. L., &amp; Kievit, R. A. (2012). An agenda for purely confirmatory research. Perspectives on Psychological Science, 7(6), 632-638. Link
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2024-02-03 00:00:00 +0000 UTC'>February 3, 2024</span></footer>
+  <footer class="entry-footer"><span title='2024-02-03 00:00:00 +0000 UTC'>February 3, 2024</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Pre-registration" href="http://localhost:1313/tool/experiments/pre_registration/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Opensesame
+    <h2 class="entry-hint-parent">OpenSesame
     </h2>
   </header>
   <div class="entry-content">
@@ -164,8 +206,8 @@ You can find tutorials and example experiments on the website that are highly us
 Opensesame experiments can be implemented both offline and online. It has an extension called OSWEB that allows the experiments to be excuted in a browser.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-08-15 00:00:00 +0000 UTC'>August 15, 2023</span></footer>
-  <a class="entry-link" aria-label="post link to Opensesame" href="http://localhost:1313/tool/experiments/opensesame/"></a>
+  <footer class="entry-footer"><span title='2023-08-15 00:00:00 +0000 UTC'>August 15, 2023</span>&nbsp;·&nbsp;1 min</footer>
+  <a class="entry-link" aria-label="post link to OpenSesame" href="http://localhost:1313/tool/experiments/opensesame/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -176,12 +218,11 @@ Opensesame experiments can be implemented both offline and online. It has an ext
   <div class="entry-content">
     <p>Self-Paced Reading Self-paced reading (SPR) is relatively crude-grained in the behavioral data it provides. Nevertheless, it remains one of the most accessible tools for beginners conducting experimental language research.
 Below are some helpful resources for learning and implementing SPR experiments:
-Online Experiments for Language Scientists
-Week 4: Self-Paced Reading (Additional resources can be added here)
-Tools for Building SPR Studies The first tool I used to build my SPR study was Linger.
+Online Experiments for Language Scientists Week 4: Self-Paced Reading Tools for Building SPR Studies The first tool I used to build my SPR study was Linger.
+OpenSesame is another excellent option for creating SPR experiments.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-08-15 00:00:00 +0000 UTC'>August 15, 2023</span></footer>
+  <footer class="entry-footer"><span title='2023-08-15 00:00:00 +0000 UTC'>August 15, 2023</span>&nbsp;·&nbsp;1 min</footer>
   <a class="entry-link" aria-label="post link to Self paced reading" href="http://localhost:1313/tool/experiments/spr/"></a>
 </article>
 
@@ -197,7 +238,7 @@ Useful Resources Design factors in mouse-tracking: What makes a difference?
 Paper (Full Text) 🔌 Supplementary Resources (includes codes and example experiments!) Mouse-tracking: A practical guide to implementation and analysis
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-08-11 00:00:00 +0000 UTC'>August 11, 2023</span></footer>
+  <footer class="entry-footer"><span title='2023-08-11 00:00:00 +0000 UTC'>August 11, 2023</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Mousetracking" href="http://localhost:1313/tool/experiments/mousetracking/"></a>
 </article>
 
@@ -213,7 +254,7 @@ In this post, I share my experience in learning about this technique in five are
 Reviews Classical studies tools to create VWP experiments Experimental design Data analysis Part I: Reviews video tutorials:
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-06-17 00:00:00 +0000 UTC'>June 17, 2023</span></footer>
+  <footer class="entry-footer"><span title='2023-06-17 00:00:00 +0000 UTC'>June 17, 2023</span>&nbsp;·&nbsp;18 min</footer>
   <a class="entry-link" aria-label="post link to Eyetracking" href="http://localhost:1313/tool/experiments/eyetracking/"></a>
 </article>
     </main>

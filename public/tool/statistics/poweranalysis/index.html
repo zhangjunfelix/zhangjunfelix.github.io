@@ -78,6 +78,18 @@ https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12504">
 
     </style>
 </noscript>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });">
+</script>
+
 </head>
 
 <body class="" id="top">
@@ -156,10 +168,32 @@ https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12504">
     <h1 class="post-title entry-hint-parent">
       Power analysis
     </h1>
-    <div class="post-meta"><span title='2024-08-10 00:00:00 +0000 UTC'>August 10, 2024</span>
+    <div class="post-meta"><span title='2024-08-10 00:00:00 +0000 UTC'>August 10, 2024</span>&nbsp;·&nbsp;18 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-notes-to-green-et-al-2016">1. notes to Green et al. (2016)</a>
+      <ul>
+        <li><a href="#example-dataset">Example dataset</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-power-analysis-from-scratch">2 Power analysis from scratch</a></li>
+    <li><a href="#3-power-analysis-with-simr-for-lmms">3. Power analysis with <code>simr</code> for LMMs</a></li>
+    <li><a href="#4-power-analysis-with-simr-for-multilevel-data">4. Power analysis with <code>simr</code> for multilevel data</a></li>
+    <li><a href="#5-power-analysis-with-actual-datasets-from-my-own-study">5. Power analysis with actual datasets from my own study</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><ul>
 <li><a href="#1-notes-to-green-et-al-2016">1. notes to Green et al. (2016)</a>
 <ul>
