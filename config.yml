@@ -72,6 +72,8 @@ params:
     customCSS: ["css/custom.css"]
 
 
+    
+
   socialIcons:
     - name: github
       url: "https://github.com/"
@@ -79,7 +81,6 @@ params:
       url: "https://facebook.com/"
     - name: instagram
       url: "http://instagram.com/"
-
 
   ShowReadingTime: true
 
@@ -100,4 +101,3 @@ params:
   ShowCodeCopyButtons: true
   
   showSectionPagesOnHome: true 
-

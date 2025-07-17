@@ -46,6 +46,7 @@ This list is curated for students and researchers in **psycholinguistics** and *
 #### Reference
 - Degen, J., Hawkins, R. X. D., Graf, C., Kreiss, E., & Goodman, N. D. (2020). [When redundancy is useful: a Bayesian approach to ‘overinformative’ referring expressions](https://psycnet.apa.org/buy/2020-22960-001). *Psychological Review*, 127(4), 591 - 621.
 - Frank, M. C., & Goodman, N. D. (2012). [Predicting pragmatic reasoning in language games](https://doi.org/10.1126/science.1218633). *Science*, 336(6084), 998.
+- Franke M, Degen J. 2016. Reasoning in reference games: individual- versus population-level probabilistic modeling. PLOS ONE 11(5):e0154854
 - Hawkins RD, Gweon H, Goodman ND. 2021. [The division of labor in communication: speakers help listeners account for asymmetries in visual perspective](https://onlinelibrary.wiley.com/doi/10.1111/cogs.12926). Cogn. Sci. 45(3):e12926
 - Hawkins, R. D., Franke, M., Frank, M. C., Goldberg, A. E., Smith, K., et al. (2022). [From partners to populations: a hierarchical Bayesian account of coordination and convention](https://arxiv.org/abs/2104.05857). *Psychological Review*.
 - Heller, D., Parisien, C., & Stevenson, S. (2016). [Perspective - taking behavior as the probabilistic weighing of multiple domains](https://www.sciencedirect.com/science/article/pii/S0010027715301244). *Cognition*, 149, 104 - 120.
@@ -54,11 +55,13 @@ This list is curated for students and researchers in **psycholinguistics** and *
 ---
 
 #### Vagueness
+- Franke M. 2014. Typical use of quantifiers: a probabilistic speaker model. Proc. Annu. Meet. Cogn. Sci. Soc. 36:487–92.
+- Schöller, A., & Franke, M. (2015). [Semantic values as latent parameters: surprising few & many](https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/25.143). In *Proceedings of the 25th Conference on Semantics and Linguistic Theory (SALT 25)* (pp. 143 - 162). Washington, DC: Linguistic Society of America.
+- van Tiel B, Franke M, Sauerland U. 2021. Probabilistic pragmatics explains gradience and focality in natural language quantification. PNAS 118(9):e2005453118
 - Herbstritt, M., & Franke, M. (2019). [Complex probability expressions & higher - order uncertainty: compositional semantics, probabilistic pragmatics & experimental data](https://doi.org/10.1016/j.cognition.2018.11.013). *Cognition*, 186, 50 - 71.
 - Lassiter, D., & Goodman, N. D. (2013). [Context, scale structure, and statistics in the interpretation of positive - form adjectives](https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/2658). In *Proceedings of the 23rd Conference on Semantics and Linguistic Theory (SALT 23)* (pp. 587 - 610). Washington, DC: Linguistic Society of America.
 - Lassiter, D., & Goodman, N. D. (2017). [Adjectival vagueness in a Bayesian model of interpretation](https://link.springer.com/article/10.1007/s11229-015-0786-1). *Synthese*, 194(10), 3801 - 3836.
 - Qing, C., & Franke, M. (2014). [Gradable adjectives, vagueness, and optimal language use: a speaker - oriented model](https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/24.23). In *Proceedings of the 24th Conference on Semantics and Linguistic Theory (SALT 24)* (pp. 23 - 41). Washington, DC: Linguistic Society of America.
-- Schöller, A., & Franke, M. (2015). [Semantic values as latent parameters: surprising few & many](https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/25.143). In *Proceedings of the 25th Conference on Semantics and Linguistic Theory (SALT 25)* (pp. 143 - 162). Washington, DC: Linguistic Society of America.
 - Tessler, M. H., & Goodman, N. D. (2019). [The language of generalization](https://pubmed.ncbi.nlm.nih.gov/30762385/). *Psychological Review*, 126(3), 395 - 436.
 ---
 
@@ -97,8 +100,25 @@ This list is curated for students and researchers in **psycholinguistics** and *
 - Scontras, G., & Pearl, L. S. (2021). [When pragmatics matters more for truth - value judgments: an investigation of quantifier scope ambiguity](https://doi.org/10.5334/gjgl.841). *Glossa*, 6(1), 110.
 - Song, Y., Jimenez, A. H., & Scontras, G. (2021). [Cross - linguistic scope ambiguity: an investigation of English, Spanish, and Mandarin]( https://doi.org/10.3765/plsa.v6i1.4992). *Proceedings of the Linguistic Society of America*, 6(1), 572 - 586.
 
+---
+
+#### Linking hypotheses from model quantities to empirical measures
+- Jasbi M, Waldon B, Degen J. 2019. Linking hypothesis and number of response options modulate inferred scalar implicature rate. Front. Psychol. https://doi.org/10.3389/fpsyg.2019.00189
+- Waldon B, Degen J. 2020. Modeling behavior in truth value judgment task experiments. Proc. Soc. Comput. Linguist. 3:10–19
+- Potts C, Lassiter D, Levy R, Frank MC. 2016. Embedded implicatures as pragmatic inferences under compositional lexical uncertainty. J. Semant. 33(4):755–802
+- Chemla E, Singh R. 2014. Remarks on the experimental turn in the study of scalar implicature, part I. Lang. Linguist. Compass 8(9):373–86
+- Scontras G, Tessler MH, Franke M. 2017. Probabilistic language understanding: an introduction to the Rational Speech Act framework. Online course. https://www.problang.org
+- 
+
+
+
+
+
+---
+
+
 ### Extensions and Refinements of the RSA Model
-#### Question - Under - Discussion Effects
+#### Question-under-Discussion Effects
 - Cummins, C., & Rohde, H. (2015). [Evoking context with contrastive stress: effects on pragmatic enrichment](https://doi.org/10.3389/fpsyg.2015.01779). *Frontiers in Psychology*.
 - Degen, J., & Goodman, N. D. (2014). [Lost your marbles? The puzzle of dependent measures in experimental pragmatics](https://cocolab.stanford.edu/papers/DegenGoodman2014-Cogsci.pdf). In *Proceedings of the Annual Meeting of the Cognitive Science Society* (pp. 397 - 402). Austin, TX: Cognitive Science Society.
 - Ronai, E., & Xiang, M. (2021). [Pragmatic inferences are QUD - sensitive: an experimental study](https://doi:10.1017/S0022226720000389). *Journal of Linguistics*, 57(4), 841 - 870.
@@ -129,6 +149,8 @@ This list is curated for students and researchers in **psycholinguistics** and *
 **joint inference and scalar implicature**
 - Degen J, Tessler MH, Goodman ND. 2015. [Wonky worlds: Listeners revise world knowledge when utterances are odd](https://cocolab.stanford.edu/papers/DegenEtAl2015-Cogsci.pdf). In Proceedings of the 37th Annual Meeting of the Cognitive Science Society, ed. DC Noelle, R Dale, AS Warlaumont, J Yoshimi, T Matlock, et al., pp. 548–53. Austin, TX: Cogn. Sci. Soc.
 
+**atypicality inferences**
+- Kravtchenko E, Demberg V. 2022. Modeling atypicality inferences in pragmatic reasoning. Proc. Annu. Meet. Cogn. Sci. Soc. 44:1918–24
 
 #### A special case of joint inference: Lexical Uncertainty
 

@@ -266,6 +266,15 @@ NOTE:
 | Proportional  | Computes unnormalized values. Useful for comparing relative likelihoods before normalization. |
 | Normalized    | Computes final, interpretable probabilities that sum to 1. Required for reporting and decision-making. |
 
+>> "$\propto$" vs. "="
+>> - "$\propto$" is used in the unnormalized equation.
+>> - "$\propto$" This form"" gives unnormalized scores — only the relative values matter. You must normalize later by dividing by the total. 
+>> - "=" means the result is a proper probability distribution.
+>> - "=" is used in the normalized equation.
+
+
+
+
 
 #### 4.2.2 Explanation of Each Component
 
@@ -662,15 +671,7 @@ It is the final — and often implicit — step in probabilistic interpretation.
 
 
 
-#### 4.2.5  Summary table
-
-| Symbol                             | Description                                                              |
-|------------------------------------|--------------------------------------------------------------------------|
-| $ P_{L_0}(m \mid u) $             | Posterior belief about meaning $ m $ after hearing utterance $ u $   |
-| $ \llbracket u \rrbracket $       | Literal denotation: set of meanings where $ u $ is true                |
-| $ \delta_{m \in \llbracket u \rrbracket} $ | Truth filter: 1 if $ m $ is compatible with $ u $, else 0             |
-| $ P(m) $                          | Prior probability of each meaning $ m $                                |
-
+#### 4.2.5  Summary
 
 The Literal Listener **does not** reason about why the speaker chose one utterance over another. It simply filters meanings based on:
 
@@ -696,7 +697,8 @@ This balances the **Gricean Quantity Maxim** (be informative) and the **Manner M
 
 $$
 P_{S_1}(u \mid m) \propto \exp \left( \alpha \cdot U(u, m) \right)
-$$  where $ U(u, m) = \log P_{L_0}(m \mid u) - \text{cost}(u) $
+$$  
+where $ U(u, m) = \log P_{L_0}(m \mid u) - \text{cost}(u) $
 
 This means:
 > "The probability that the **Pragmatic Speaker** $ S_1 $ will produce utterance $ u $ given that they want to communicate meaning $ m $, is proportional to the exponential of $ \alpha $ times the utility of utterance $ u $ for meaning $ m $."
@@ -707,12 +709,8 @@ Meaning of its components
 - $ P_{S_1}(u \mid m) $: Probability the speaker chooses utterance $ u $ to communicate meaning $ m $.
 - $ \alpha $: Rationality parameter controlling how strongly the speaker optimizes utility.
 - $ U(u, m) $: Utility of utterance $ u $ for communicating meaning $ m $.
-- **$ \propto $** is read as **“proportional to”**. It is used in equations to express that one quantity **scales with another**, but the exact value is not yet determined — because we still need to compute a normalization step.
-
-
+- **$ \propto $** is read as **“proportional to”**. It is used in equations to express that one quantity **scales with another**, but the exact value is not yet determined — **because we still need to compute a normalization step**.
 - This computes **unnormalized scores** for each utterance $u$.
-- $\alpha$ controls how strongly the speaker prefers higher-utility utterances.
-- $U(u, m)$ is the **utility** of utterance $u$ for conveying meaning $m$.
 
 
 #### 2. Full Normalized Equation (Softmax Function)
@@ -730,7 +728,7 @@ $$
 
 The utility function balances **informativeness** and **cost**:
 
-An utterance's utility $ U (u, m) $ is defined as a trade-off between the utterance's **informativeness** as characterized by $ P_{L_0}(m \mid u) $ --how likely it si that a lieral listener will corectly infer $ m $ from $ u $'s literal semantics alone-- and its cost, as defined in the utility function:
+An utterance's utility $ U (u, m) $ is defined as a trade-off between the utterance's **informativeness** as characterized by $ P_{L_0}(m \mid u) $ --how likely it is that a literal listener will corectly infer $ m $ from $ u $'s literal semantics alone-- and its cost, as defined in the utility function:
 
 $$
 U(u, m) = \log P_{L_0}(m \mid u) - \text{cost}(u)
@@ -792,7 +790,7 @@ To compute pragmatic speaker probabilities, we must set a value for $ \alpha $ a
 
 #### 4.3.5 Worked Example: Cookie Scenario
 
-Suppose the speaker wants to communicate that **Alex ate all the cookies**.
+Suppose the speaker wants to communicate that "**Alex ate all the cookies**", i.e., $m_4$.
 
 #### Step 1: Compute Literal Listener Beliefs
 
@@ -800,17 +798,71 @@ $$
 P_{L_0}(m_4 \mid u_{\text{all}}) = 1.0, \quad P_{L_0}(m_4 \mid u_{\text{some}}) = 0.25
 $$
 
+>  e.g.: Computing $P_{L_0}(m_4 \mid u_{\text{some}}) = 0.25$
+>
+> **Define the Possible Meanings $M$**: $ m_0 $ = 0 cookies; $ m_1 $ = 1 cookies; $ m_2 $ = 2 cookies; $ m_3 $ = 3 cookies; $ m_4 $ = 4 cookies;  
+> **uniform priors**: $ P(m_i) = 0.2 \quad \text{for all } i \in \{0, 1, 2, 3, 4\} $
+>
+>#### Step 2: Determine Literal Semantics (Define $\llbracket u \rrbracket$)
+>
+> Utterance:  
+> $ u = $ "Alex ate some of the cookies."
+> 
+> Literal semantics:
+>
+> $$
+> \llbracket u \rrbracket = \{ m_1, m_2, m_3, m_4 \}
+> $$
+>
+> #### Step 3: Calculation Using the **Simplified (Proportional) Equation**
+>
+> $$
+> P_{L_0}(m \mid u) \propto \delta_{m \in \llbracket u \rrbracket} \cdot P(m)
+> $$
+>
+> #### Compute Unnormalized Values:
+>
+> <div align="center">
+> $$
+> \delta_{m \in \llbracket u \rrbracket} = 
+> \begin{cases}
+> 0 & \text{if } m = m_0, \\
+> 1 & \text{if } m \in \{ m_1, m_2, m_3, m_4 \}.
+> \end{cases}
+> $$
+> </div>
+>
+> - $P_{L_0}(m_i \mid u) = \delta_{m_i \in \llbracket u \rrbracket} \cdot P(m_i) = 1 \cdot 0.2 = 0.2$  for $i \in \{1, 2, 3, 4\}$
+>
+> - $P_{L_0}(m_4 \mid u_{some}) = \delta_{m_4 \in \llbracket u_{some} \rrbracket} \cdot P(m_4) = 1 \cdot 0.2 = 0.2$   
+> - At this stage, these values are **unnormalized scores**.
+>
+> #### Compute the Denominator When You Normalize
+> 
+> - The sum of unnormalized scores **is the denominator** (all meanings $m_i$ that make $u_{some}$ true):
+>
+> $$
+> \text{Denominator} = 0.2 + 0.2 + 0.2 + 0.2 = 0.8
+> $$
+>
+> #### **Final Step: Normalize to Get Probabilities**
+>
+> $$
+> P_{L_0}(m_4 \mid u) = \frac{\text{Unnormalized Score}}{\text{Denominator}} = \frac{0.2}{0.8} = 0.25
+> $$
+
+
 #### Step 2: Compute Utilities
 
 Assume $\text{cost}(u) = 0$ for simplicity.
 
-- $U(u_{\text{all}}, m_4) = \log(1.0) = 0$
-- $U(u_{\text{some}}, m_4) = \log(0.25) \approx -1.386$
+- $U(u_{\text{all}}, m_4) = \log P_{L_0}(m_4 \mid u_{all}) - \text{cost}(u_{all}) = \log(1.0) - 0 = 0 - 0 = 0$
+- $U(u_{\text{some}}, m_4) = \log P_{L_0}(m_4 \mid u_{some}) - \text{cost}(u_{some}) = \log(0.25) - 0 \approx -1.386 -0 \approx -1.386 $
 
 #### Step 3: Compute Unnormalized Scores (Assume $\alpha = 1$)
 
-- $P_{S_1}(u_{\text{all}} \mid m_4) \propto \exp(1 \cdot 0) = 1$
-- $P_{S_1}(u_{\text{some}} \mid m_4) \propto \exp(1 \cdot -1.386) \approx 0.25$
+- $P_{S_1}(u_{all} \mid m_4) \propto \exp \left( \alpha \cdot U(u_{all}, m_4) \right) \propto \exp(1 \cdot 0) \propto \exp(0) = 1$
+- $P_{S_1}(u_{some} \mid m_4) \propto \exp \left( \alpha \cdot U(u_{some}, m_4) \right) \propto \exp(1 \cdot -1.386) \propto \exp(-1.386) \approx 0.25$
 
 
 #### Step 4: Normalize
@@ -824,24 +876,9 @@ $$
 
 #### Final Interpretation
 
-| Utterance       | Final Probability $P_{S_1}(u \mid m_4)$ |
-|-----------------|-----------------------------------------|
-| "All"           | 0.8                                     |
-| "Some"          | 0.2                                     |
-
 - The speaker is **four times more likely** to say "all" than "some" when Alex ate all the cookies.
 
-#### 4.3.6 Visualizing Speaker Behavior (Figure 2)
-
-<p align="center">
-  <img src="/images/figure2Degen2023.png" alt="Figure 2: Pragmatic Speaker Production Probabilities" width="300px">
-</p>
-
-- **Y-Axis**: Probability of each utterance.
-- **X-Axis**: Rationality parameter $\alpha$.
-- As $\alpha$ increases, the speaker increasingly prefers more informative utterances.
-
-#### 4.3.7 A Complete Example: Cookies Scenario**
+#### 4.3.6 A Complete Example: Cookies Scenario
 
 **Possible Meanings (M):**
 - $ m_1 $: Alex ate **all** the cookies.  
@@ -891,7 +928,7 @@ $$
 > **Interpretation**:  
 > - The speaker is **four times more likely** to say “all” than “some” when Alex ate all cookies.
 
-#### 4.3.8 How to understand Figure 2?
+#### 4.3.7 How to understand Figure 2?
 
 #### **Figure 2: RSA Speaker Production Probabilities**
 
@@ -1089,8 +1126,8 @@ $$
 
 #### Literal Listener’s Interpretations:
 
-**For $u_{\text{all}}$**
-- $P_{L_0}(m_4 \mid u_{\text{all}}) = \delta_{m_4 \in \llbracket u_{\text{all}} \rrbracket} \cdot P(m_4) = 1 \cdot 0.2 = 0.2 $ (This is Unnormalized probability)
+**For $u_{\text{all}}$**:  
+  $P_{L_0}(m_4 \mid u_{\text{all}}) = \delta_{m_4 \in \llbracket u_{\text{all}} \rrbracket} \cdot P(m_4) = 1 \cdot 0.2 = 0.2 $ (This is Unnormalized probability)
 
 Normalization Step
 
@@ -1104,45 +1141,55 @@ $$
 P_{L_0}(m_4 \mid u_{\text{all}}) = \frac{0.2}{0.2} = 1.0
 $$
 
->> Step-by-Step Expansion
-
-- Recall that $\llbracket u_{\text{all}} \rrbracket = \{ m_4 \}$, because the utterance "all" is only literally true if Alex ate all the cookies.
-
-- So the indicator function $\delta_{m' \in \llbracket u_{\text{all}} \rrbracket}$ evaluates as:
-
-| $m'$   | $\delta_{m' \in \llbracket u_{\text{all}} \rrbracket}$ | $P(m')$ | Contribution |
-|---------|------------------------------------------------------|---------|--------------|
-| $m_0$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
-| $m_1$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
-| $m_2$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
-| $m_3$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
-| $m_4$   | 1 (kept)                                              | 0.2     | $1 \cdot 0.2 = 0.2$ |
-
-- Summing all contributions:
-
-$$
-\text{Total} = 0 + 0 + 0 + 0 + 0.2 = 0.2
-$$
-
+> Step-by-Step Expansion
+>
+> - Recall that $\llbracket u_{\text{all}} \rrbracket = \{ m_4 \}$, because the utterance "all" is only literally true if Alex ate all the cookies.
+>
+> - So the indicator function $\delta_{m' \in \llbracket u_{\text{all}} \rrbracket}$ evaluates as:
+>
+>| $m'$   | $\delta_{m' \in \llbracket u_{\text{all}} \rrbracket}$ | $P(m')$ | Contribution |
+>|---------|------------------------------------------------------|---------|--------------|
+>| $m_0$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
+>| $m_1$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
+>| $m_2$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
+>| $m_3$   | 0 (ruled out)                                        | 0.2     | $0 \cdot 0.2 = 0$ |
+>| $m_4$   | 1 (kept)                                              | 0.2     | $1 \cdot 0.2 = 0.2$ |
+>
+> - Summing all contributions:
+>
+>$$
+>\text{Total} = 0 + 0 + 0 + 0 + 0.2 = 0.2
+>$$
+>
 
 **For $u_{\text{some}}$**
-- $P_{L_0}(m_4 \mid u_{\text{some}}) = 0.25$
+- $P_{L_0}(m_4 \mid u_{some}) = \delta_{m_4 \in \llbracket u_{some} \rrbracket} \cdot P(m_4) = 1 \cdot 0.2 = 0.2 $ (This is Unnormalized probability)
 
---- 
+Normalization Step
+
+$$
+\sum_{m'} \delta_{m' \in \llbracket u_{\text{all}} \rrbracket} \cdot P(m') = P(m_1)+P(m_2)+P(m_3) +P(m_4) = 0.2 + 0.2 + 0.2 + 0.2 = 0.8
+$$
+
+Final probability:
+
+$$
+P_{L_0}(m_4 \mid u_{\text{some}}) = \frac{0.2}{0.8} = 0.25
+$$
 
 
 #### Utility Calculation:
 
-Using $U(u, m) = \log P_{L_0}(m \mid u)$ and assuming no cost:
+Using $U(u, m) = \log P_{L_0}(m \mid u) - cost(u)$ and assuming no cost:
 
-- $U(u_{\text{all}}, m_4) = \log(1) = 0$  
-- $U(u_{\text{some}}, m_4) = \log(0.25) \approx -1.386$
+- $U(u_{all}, m_4) = \log P_{L_0}(m_4 \mid u_{all}) - cost(u_{all})= \log(1) - 0 = 0$  
+- $U(u_{some}, m_4) = \log P_{L_0}(m_4 \mid u_{some}) - cost(u_{some})= \log(0.25) - 0 \approx -1.386 - 0 \approx -1.386$
 
-#### Compute $P_{S_1}(u \mid m_4)$:
+#### Compute Pragmatic Speaker $P_{S_1}(u \mid m_4)$:
 
 - Unnormalized:
-  - $P_{S_1}(u_{\text{all}} \mid m_4) \propto \exp(0) = 1$
-  - $P_{S_1}(u_{\text{some}} \mid m_4) \propto \exp(-1.386) \approx 0.25$
+  - $P_{S_1}(u_{all} \mid m_4) \propto \exp \left( \alpha \cdot U(u_{all}, m_4) \right) \propto \exp \left( 1 \cdot 0 \right) \propto \exp(0) = 1$
+  - $P_{S_1}(u_{\text{some}} \mid m_4) \propto \exp \left( \alpha \cdot U(u_{some}, m_4) \right) \propto \exp \left( 1 \cdot -1.386 \right) \propto \exp(-1.386) \approx 0.25$
 
 - Normalize:
   - Total = $1 + 0.25 = 1.25$
@@ -1163,21 +1210,21 @@ Compute unnormalized scores for all meanings:
 | Meaning  | $P_{S_1}(u_{\text{some}} \mid m)$ | $P(m)$ | Product |
 |-----------|-------------------------------|--------|---------|
 | $m_0$     | 0 (ruled out by literal meaning) | 0.2    | 0.0     |
-| $m_1$     | Assume 0.4                       | 0.2    | 0.08    |
+| $m_1$     | Assume 0.3                       | 0.2    | 0.06    |
 | $m_2$     | Assume 0.3                       | 0.2    | 0.06    |
-| $m_3$     | Assume 0.2                       | 0.2    | 0.04    |
+| $m_3$     | Assume 0.3                       | 0.2    | 0.06    |
 | $m_4$     | 0.2 (computed above)              | 0.2    | 0.04    |
 
-Total sum = $0.08 + 0.06 + 0.04 + 0.04 = 0.22$
+Total sum = $0.06 + 0.06 + 0.06 + 0.04 = 0.22$
 
 #### Final Posterior Probabilities:
 
 | Meaning  | Final $P_{L_1}(m \mid u_{\text{some}})$ |
 |-----------|---------------------------------------|
 | $m_0$     | 0.0 (ruled out)                       |
-| $m_1$     | $\frac{0.08}{0.22} \approx 0.364$     |
+| $m_1$     | $\frac{0.06}{0.22} \approx 0.273$     |
 | $m_2$     | $\frac{0.06}{0.22} \approx 0.273$     |
-| $m_3$     | $\frac{0.04}{0.22} \approx 0.182$     |
+| $m_3$     | $\frac{0.06}{0.22} \approx 0.273$     |
 | $m_4$     | $\frac{0.04}{0.22} \approx 0.182$     |
 
 
@@ -1370,7 +1417,7 @@ $$
 ### VI. Reference Games
 This section presents how RSA explains language production and comprehension in Reference Games based on Franke & Jäger (2016). 
 
-### 5.1 What Are Reference Games?
+### 6.1 What Are Reference Games?
 
 **Reference Games** are simplified experimental tasks designed to study how speakers choose expressions to refer to objects and how listeners interpret those expressions.
 
@@ -1420,7 +1467,7 @@ Task:
 - Reference games form the foundation for formal models of language use like the **RSA model**.
 
 
-### 5.2 Reference Games — Formal Modeling
+### 6.2 Reference Games — Formal Modeling
 
 In this section, we explore how the RSA model accounts for reasoning in reference games, following the mathematical formalizations used in **Franke & Jäger (2016)**.
 
@@ -1501,7 +1548,7 @@ P_{\text{comp}}(r \mid p) = \frac{P(r) \cdot P_{\text{prod}}(p \mid r)}{\sum_{r'
 $$
 
 
-#### 5.3 Further break-downs of the mathematical notations in Franke & Jager (2016) and Degen (2023)
+#### 6.3 Further break-downs of the mathematical notations in Franke & Jager (2016) and Degen (2023)
 
 #### Literal Listener: Notation Comparison
 
@@ -1522,7 +1569,7 @@ $$
 - Franke & Jäger’s approach is useful for **simple reference tasks** with uniform assumptions.
 
 
-### 5.4 Literal Listener
+### 6.4 Literal Listener
 *(Based on Franke & Jäger, 2016)*
 
 #### Step 1: Understand the Task Setup
@@ -1621,7 +1668,7 @@ $$
 > - $P_{\text{literal}}(r_3 \mid \text{"square"}) = \frac{1}{1} = 1.0$
 
 
-### 5.5 Pragmatic Speaker
+### 6.5 Pragmatic Speaker
 
 $$
 P_{prod}(p \mid r; \lambda, f) = 
@@ -1795,7 +1842,7 @@ $ Total = \exp\left( \lambda \cdot EU_{speaker}(r_1, green'; f) \right) + \exp\l
 
 ---
 
-### 5.6 Pragmatic Listener
+### 6.6 Pragmatic Listener
 
 In the RSA model, the **pragmatic listener** ($L_1$) updates beliefs about the speaker’s intended referent based on the utterance they receive. This is done using **Bayes' Rule** and the listener’s model of the speaker.
 
@@ -1952,6 +1999,481 @@ $$
 > - $P_{prod}(\text{"blue"} \mid r_3) = \frac{2.718}{6.367} \approx 0.4269$
 
 
+---
+
+### VII. Indirect Speech Acts in RSA
+
+*Based on Franke & Jäger (2016), Section 6*
+
+### 7.1 What Are Indirect Speech Acts?
+
+An **indirect speech act** occurs when a speaker utters something whose **literal meaning** differs from their **intended communicative goal**. For example:
+
+> **"Can you pass the salt?"**
+>
+> * **Literal interpretation**: A question about your ability.
+> * **Pragmatic interpretation**: A polite request to pass the salt.
+
+These types of speech acts are pervasive in everyday communication and raise a key challenge for formal models of meaning. How can a listener derive an intended meaning that diverges from the literal form?
+
+The **Rational Speech Act (RSA)** model provides a solution by modeling speakers and listeners as rational agents engaging in recursive social reasoning — not just about *what was said*, but *why it was said* in a given context.
+
+---
+Certainly! Below is the revised section **“6.1 The Problem”** formatted in **Hugo markdown syntax** with clear bullet points, examples, and beginner-friendly explanation. This version is tailored for your RSA learning notes website.
+
+---
+
+### 7.2 The Problem: Why Indirect Speech Acts Seem Irrational—But Aren’t
+
+Indirect speech acts pose a foundational puzzle for rational models of communication. At first glance, they appear to violate classic Gricean principles:
+
+* **Quantity**: Be as informative as necessary.
+* **Manner**: Avoid obscurity and ambiguity.
+* **Relation**: Be relevant.
+* **Quality**: Say what you believe to be true.
+
+Yet in daily life, people routinely use—and understand—**indirect speech** effectively. So why do speakers often choose **less direct expressions**, especially when their intent is clear?
+
+####  What's the Puzzle?
+
+According to Gricean maxims, indirect utterances seem:
+
+* **Less informative** than needed (Quantity),
+* **More ambiguous** than necessary (Manner),
+* Sometimes even **irrelevant** on the surface (Relation).
+
+This suggests that indirect speech is **irrational**—and yet, it's ubiquitous and interpretable. To resolve this contradiction, Franke and Jäger (2016) draw from the broader field of **rationalist pragmatics**, especially ideas from **Brown & Levinson (1987)** and **Steven Pinker (2008)**.
+
+Their key insight:
+
+> **Indirect speech is rational when we consider social context, strategic goals, and reputational concerns.**
+
+
+- #### Three Social-Pragmatic Motivations (after Pinker, 2008)
+
+#### 1. Plausible Deniability
+
+> *Example*:  
+> The veiled bribe is another recognizable plot device, as when the kidnapper in Fargo shows a police officer his drivers’s license in a wallet with a fifty-dollar bill protruding from it and suggests, ‘So maybe the best thing would be to take care of that here in Brainerd.’ (Pinker 2008: 374)
+>
+> <p align="center">
+  <img src="/images/Brainerd.jpg" alt="Fargo" width="600px">
+</p>
+
+* The **literal meaning** is vague.
+* The **implied meaning** (a bribe) is understood—but **not explicit**.
+* If challenged, the speaker can deny the implicature.
+
+👉 **Why?** Indirectness helps the speaker avoid social or legal consequences if the implicature is rejected or punished.
+
+#### 2. Establishing Shared Knowledge Without Common Knowledge
+
+> *Example*:
+> “Would you like to come up for coffee?” (instead of “Do you want to have sex?”)
+
+* The utterance signals intent.
+* Both speaker and hearer **recognize the implicature**.
+* But they avoid making it **common knowledge**—publicly acknowledged by both parties.
+
+**Why?** Maintaining deniability or politeness can protect both parties from embarrassment or rejection.
+
+#### 3. Preserving Social Relationships and Roles
+
+> *Example*:
+> A customer tells the maître d’, “Is there any way to get a table sooner?” instead of “Here’s \$50 to seat me now.”
+
+* The **direct request** would frame the situation as a **market transaction**.
+* The **indirect request** preserves the social role of a courteous guest.
+
+👉 **Why?** Indirect speech **protects the relational frame** and avoids signaling an inappropriate relationship type (e.g., transactional vs. respectful).
+
+---
+
+
+
+> - **shared knowledge vs. common knowledge**
+> ####  Key Distinction
+>
+>Understanding **indirect speech acts** often requires distinguishing between two types of mutual understanding:
+>
+> #### Shared Knowledge
+> - Both speaker and listener know a fact.
+> - However, **there is no public acknowledgment** that both know it.
+> - This creates a zone of **plausible deniability**.
+>
+> #### Common Knowledge
+> - Not only do both know it, but **they know that the other knows it**—and this fact is **mutually acknowledged**.
+> - Once a fact becomes common knowledge, it’s **out in the open** and cannot be easily denied.
+>
+> #### Example 1: Romantic Context
+>
+> **Indirect speech**: “Would you like to come up for coffee?”  
+> **Direct speech**: “Do you want to have sex?”
+>
+> - Both interlocutors may **know** the intent behind "coffee" (shared knowledge).
+> - But they **avoid stating it directly**, which would make it common knowledge.
+> - This preserves **social harmony** and allows either party to save face.
+>
+>#### Example 2: Workplace Context
+>
+> **Indirect**: “It’s a little warm in here, isn’t it?”  
+> **Direct**: “Please turn on the air conditioning.”
+>
+> - The **boss’s intent** is understood (shared knowledge),
+> - But it’s **not framed as a direct order**, keeping it from becoming common knowledge.
+> - This helps **preserve hierarchical boundaries** without confrontation.
+>
+> Indirect speech often works by **deliberately avoiding the shift from shared to common knowledge**.
+> 
+> ---
+>
+> - **Avoiding the Mixing of Relationship Types**
+>
+> One reason for using **indirect speech acts** is to **preserve the boundaries** between **different social relationship types**, such as professional vs. romantic, or hierarchical vs. egalitarian.
+>
+> When people communicate across **multiple social dimensions**, they must **signal which frame of relationship** they are currently invoking. Direct speech might **trigger an unwanted interpretation** associated with another relationship type.
+>
+> #### Example: Professor and Student
+>
+> **Indirect**: “Would you be interested in attending the conference with me?”  
+> **Direct**: “Would you like to go on a date with me?”
+>
+> - The **indirect question** may preserve the **professional relationship**, while opening space for a social connection.
+> - A **direct question** risks re-framing the interaction as **romantic**, which may be inappropriate or problematic.
+>
+> #### Example: Manager and Subordinate
+>
+> **Indirect**: “If you have time later, maybe you could take a look at this?”  
+> **Direct**: “I’m assigning this task to you.”
+>
+> - A **manager might avoid sounding too authoritarian**, maintaining a more **collegial tone**.
+> - Mixing directive and collaborative frames could create discomfort.
+> - **Indirectness helps the speaker frame the interaction** in a way that suits the current social dynamic.
+>
+---
+
+### 7.3 The Deeper Problem
+
+The real puzzle isn’t “why do indirect speech acts work?” but rather:
+
+> **When and why is it rational to use them?**
+
+What seems irrational in terms of raw information transfer becomes rational when:
+
+* Social dynamics,
+* Strategic ambiguity,
+* and Relationship management
+
+are taken into account.
+
+Franke and Jäger argue that **game-theoretic models**, especially from the **RSA/IBR family**, can model these choices:
+
+* Agents (speakers and listeners) have **utilities** that include **social and reputational costs**.
+* Speakers reason about **how listeners will interpret them**.
+* Listeners reason about **why a speaker chose a particular form** over another.
+
+
+---
+
+
+### 7.4 Why Do Indirect Speech Acts Work? (RSA Explanation)
+
+Indirect speech acts—where speakers imply meaning rather than state it directly—can seem puzzling. RSA offers a clear game-theoretic approach to explaining why these acts work rationally, despite their apparent indirectness.
+
+#### Step-by-Step Explanation (Stalnaker's Example)
+
+The authors illustrate their RSA approach using a real-world scenario involving an indirect speech act by the US Treasury Secretary:
+
+>> _In May, 2003, the US Treasury Secretary, John Snow, in response to a question, made some remarks that caused the dollar to drop precipitously in value. The Wall Street Journal sharply criticized him for ‘playing with fire,’ and characterized his remarks as ‘dumping on his own currency,’ ‘bashing the dollar,’ and ‘talking the dollar down.’ What he in fact said was this: ‘**When the dollar is at a lower level it helps exports, and I think exports are getting stronger as a result**.’ This was an uncontroversial factual claim that everyone, whatever his or her views about what US government currency policy is or should be, would agree with. Why did it have such an impact? (Stalnaker 2005: 82)_
+
+**Utterance $s$ (indirect)**:
+
+> “When the dollar is at a lower level it helps exports, and I think exports are getting stronger as a result.”
+
+**Implied meaning (direct)**:
+
+> “The US Treasury will take measures to lower the dollar’s exchange rate.”
+
+**A rationalist account based on decision and game theory**
+
+***Step 1: Define Speaker’s Possible Intentions ("Types")***
+
+We consider two possible "types" of speaker (S):
+
+* **Type $t_1$**: The speaker **plans to reduce** the dollar’s value.
+* **Type $t_2$**: The speaker has **no plan to reduce** the dollar’s value.
+
+prior assumptions about the relative likelihood of $t_1$ and $t_2$: 
+* prior probability distribution of $t_1$: $P(t_1)$ 
+* prior probability distribution of $t_1$: $P(t_2)$
+
+The listener $L$ initially has uncertainty regarding these two possibilities:
+
+$$
+P(t_1) + P(t_2) = 1,\quad 0 < P(t_1) < 1
+$$
+
+**Step 2: Determine Likelihood of Utterance Given Speaker’s Intentions**
+
+How likely is it that $S$ would utter $s$ in $t_1$, and in $t_2$?
+
+Next, consider the likelihood that each speaker type would produce the indirect utterance $s$:
+
+* $P(s|t_1)$: Probability the speaker would say $s$ if planning to lower the dollar ($t_1$).
+* $P(s|t_2)$: Probability the speaker would say $s$ if not planning any action ($t_2$).
+
+Because the statement made is generally an economic truism, it's plausible for both types to utter it. 
+* for $t_1$ it would be a useful argument to justify his intentions; thus, the statement is significantly more meaningful for a speaker who plans to act (type $t_1$)
+* for $t_2$, t2 utters this sentence, just to say something meaningless during a public hearing. As there myriads of meaningless statements to choose from, this likelihood is small.
+
+Thus: 
+$$
+P(s|t_1) > P(s|t_2)
+$$
+
+Intuitively:
+* A speaker planning to act ($t_1$) would choose such a statement intentionally (making their intent clear indirectly).
+* A speaker not planning to act ($t_2$) would rarely choose this specific statement, given many equally trivial statements available.
+
+**Step 3: Listener Updates Beliefs (Bayesian Reasoning)**
+
+the listener $L$ will use Bayes’ rule to compute the posterior probability distribution over S’s types $t$, given the signal observed $s$
+
+$$
+P(t_1|s) = \frac{P(s|t_1)P(t_1)}{\sum_{(t')}P(s|t')P(t')}
+$$
+
+also:
+
+$$
+P(t_1|s) = \frac{P(s|t_1)P(t_1)}{P(s|t_1)P(t_1) + P(s|t_2)P(t_2)}
+$$
+
+Since $P(s|t_1) > P(s|t_2)$, we have:
+
+$$
+P(t_1|s) > P(t_1)
+$$
+
+This means hearing the utterance **increases the listener’s belief** that the speaker plans to lower the dollar.
+
+#### Key Insight
+
+* The indirect utterance (economic truism) **raises the listener's belief** in the speaker's intention without explicitly confirming it.
+* If the utterance were completely direct (e.g., “The US Treasury will lower the dollar”), it would remove all uncertainty—potentially creating commitment or unwanted accountability for the speaker.
+
+Thus, indirectness **maintains plausible deniability** while effectively communicating intent.
+
+
+
+
+
+
+>> **Why does $ P(s \mid t_1) > P(s \mid t_2) $ imply $ P(t_1 \mid s) > P(t_1) $?**  
+>> $$P(s \mid t_1) > P(s \mid t_2)$$
+>> $$ \frac{P(s \mid t_1)}{P(s \mid t_2)} > 1 $$
+>> $$ \frac{P(s \mid t_1)P(t_1)}{P(s \mid t_2)(P(t_2))} > \frac{P(t_1)}{P(t_2)}$$
+>> $$ \frac{ \frac{P(s \mid t_1)P(t_1)}{P(s)}}{\frac{P(s \mid t_2)(P(t_2))}{P(s)}} > \frac{P(t_1)}{P(t_2)}$$
+>> as Bayesian Theorem stipulates: $\frac{P(s \mid t)P(t)}{P(s)} = P(t \mid s)$
+>> $$ \frac{P(t_1 \mid s)}{P(t_2 \mid s)} > \frac{P(t_1)}{P(t_2)} $$
+>> as in this setting: $P(t_1) + P(t_2) = 1$ and $P(t_1 \mid s) + P(t_2 \mid s) = 1$
+>> $$\frac{P(t_1 \mid s)}{1 - P(t_1 \mid s)} > \frac{P(t_1)}{1 - P(t_1)}$$
+>> $$P(t_1 \mid s) - P(t_1)P(t_1 \mid s) > P(t_1) - P(t_1)P(t_1 \ mid s)$$
+>> $$P(t_1 \mid s) > P(t_1)$$
+
+
+
+
+
+
+
+
+
+---
+### 7.5 Why RSA Models Capture This Rationality:
+
+RSA rationalizes indirect speech acts as:
+
+* **Strategic choices** made by speakers to influence listener beliefs without explicit commitment.
+* **Optimally balancing** social cost (being explicit can be risky) and communicative effectiveness (the listener still infers intent clearly).
+
+---
+
+#### RSA Summary (Stalnaker's Example):
+
+| Component    | Explanation (in RSA terms)                                                     |                                                    |
+| ------------ | ------------------------------------------------------------------------------ | -------------------------------------------------- |
+| $t_1, t_2$   | Possible speaker intentions          |                     |
+| $P(t)$   | Listener’s prior beliefs      |                       |
+| $P(s\|t)$  | Likelihood speaker utters sentence given intention |
+| $P(t\|s) $  | Listener’s updated belief after hearing utterance  | 
+| Indirectness | Rational strategy for influencing listener beliefs without full accountability |                                                    |
+
+---
+
+#### Intuition Check:
+
+> **Indirectness is rational** because it strategically **affects listener beliefs** without explicitly committing the speaker. It shifts probabilities, making some interpretations highly likely—but not guaranteed—thus preserving crucial **social and strategic flexibility**.
+
+
+
+---
+
+> **Step 3: Bayesian Reasoning and Listener Belief Updating**
+>
+> When a listener hears an utterance — especially an *indirect* one — they **update their beliefs** about what the speaker intends.  
+> RSA models this belief updating using **Bayes’ rule**, a core principle in probabilistic reasoning.
+>
+> #### Example (Franke & Jäger, 2016)
+> 
+> > **Utterance (indirect)**:  
+> > “When the dollar is at a lower level, it helps exports, and I think exports are getting stronger as a result.”
+> >
+> > **Possible speaker intentions**:  
+> > • *t₁*: The speaker intends to lower the dollar.  
+> > • *t₂*: The speaker does **not** intend any action.
+>
+> #### Bayes' Rule (Formal)
+> $$
+> P(t_1 \mid s) = \frac{P(s \mid t_1) \cdot P(t_1)}{P(s)}
+> $$
+>
+> • $P(t_1 \mid s)$: Updated belief about speaker's intention *t₁* after hearing utterance *s*.  
+> • $P(s \mid t_1)$: Likelihood of producing utterance *s* given intention *t₁*.  
+> • $P(t_1)$: Prior belief about intention *t₁*.  
+> • $P(s)$: Total probability of *s*, marginalizing over all possible intentions.
+>
+> #### Sample Calculation:
+> 
+> - Prior: $P(t_1) = 0.5$, $P(t_2) = 0.5$  
+> - Likelihood: $P(s \mid t_1) = 0.8$, $P(s \mid t_2) = 0.2$  
+> - Marginal:  
+> $$
+> P(s) = (0.8 \cdot 0.5) + (0.2 \cdot 0.5) = 0.5
+> $$
+> - Posterior:  
+> $$
+> P(t_1 \mid s) = \frac{0.8 \cdot 0.5}{0.5} = 0.8
+> $$
+>
+> The listener now assigns **80% probability** to the speaker intending to lower the dollar — a strong update from the original 50%.
+>
+> #### Why It Matters
+> RSA shows that **even vague or indirect utterances** can shift beliefs dramatically through rational inference.  
+> This explains why **indirect speech acts are effective**, despite their surface ambiguity.
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
+
+### 7.4 RSA Perspective on Indirectness
+
+In the RSA framework, interpretation goes beyond truth conditions. Speakers are modeled as optimizing communicative goals, and listeners reason backward from utterances to infer those goals.
+
+Franke & Jäger (2016) formalize this with the notion of **goal-based RSA**:
+
+* Each utterance \$u\$ can serve multiple **communicative goals** \$g\$.
+* Listeners compute the most likely **goal** the speaker intended, given the utterance.
+
+
+#### Communicative Goals as Targets of Inference
+
+Let:
+
+* \$U\$ = utterance space
+* \$G\$ = space of possible communicative goals
+* Example goals:
+
+  * \$g\_1\$: Request (e.g., "please pass the salt")
+  * \$g\_2\$: Information inquiry (e.g., "are you able to pass the salt?")
+
+
+#### RSA Inference for Indirect Speech
+
+#### Step 1: Pragmatic Speaker
+
+The **speaker** chooses an utterance \$u\$ to realize goal \$g\$ by maximizing its **utility**:
+
+$$
+P_{S_1}(u \mid g) \propto \exp\left( \lambda \cdot U(u, g) \right)
+$$
+
+* \$U(u, g)\$ is the utility of using utterance \$u\$ to achieve goal \$g\$
+* \$\lambda\$ is the **rationality parameter**, controlling how deterministic the speaker is
+
+#### Step 2: Pragmatic Listener
+
+The **listener** infers the likely goal \$g\$ that motivated \$u\$:
+
+$$
+P_{L_1}(g \mid u) \propto P_{S_1}(u \mid g) \cdot P(g)
+$$
+
+* \$P(g)\$: prior probability of goal \$g\$ (based on context/world knowledge)
+* \$P\_{S\_1}(u \mid g)\$: speaker’s production probability
+
+This equation is a direct application of **Bayes’ Rule**.
+
+
+#### Illustration: “Can you pass the salt?”
+
+#### Scenario
+
+* Speaker utters: *"Can you pass the salt?"*
+* Literal content = question about ability (\$g\_2\$)
+* Context: speaker and listener are seated at dinner
+
+#### Listener’s reasoning:
+
+1. **Literal listener** interprets \$u\$ as ability question.
+2. **Pragmatic listener** reasons:
+
+   > “If the speaker truly wanted information, would they have said this?
+   > Or is it more likely they’re politely requesting action?”
+
+Given the **contextual prior** \$P(g\_1) > P(g\_2)\$, and assuming \$P\_{S\_1}(u \mid g\_1)\$ is high, the listener concludes the intended goal is \$g\_1\$ (request).
+
+
+#### Why This Works
+
+RSA formalizes a long-standing idea in pragmatics:
+
+* Utterances are **goal-directed**
+* Indirectness arises from **optimization under social and contextual constraints**
+
+Rather than assuming fixed speech act types, RSA derives them as the outcome of:
+
+* **Rational choice by the speaker**, balancing informativeness, politeness, and cost
+* **Rational inference by the listener**, integrating form, context, and expectations
+
+#### Summary Table
+
+| Component               | Explanation                                                     |
+| ----------------------- | --------------------------------------------------------------- |
+| \$g\$                   | Communicative goal (e.g., request, information-seeking)         |
+| \$u\$                   | Observed utterance (e.g., “Can you pass the salt?”)             |
+| \$P(g)\$                | Prior plausibility of goal \$g\$                                |
+| \$P\_{S\_1}(u \mid g)\$ | Probability speaker would say \$u\$ to achieve \$g\$            |
+| \$P\_{L\_1}(g \mid u)\$ | Listener’s inferred probability that \$g\$ is the intended goal |
+
+#### Takeaways
+
+* RSA treats speech acts as probabilistic goal inferences.
+* Indirect speech acts are explained as **intentional ambiguity** for reasons like politeness or plausible deniability.
+* By using recursive reasoning about goals, RSA naturally derives indirect meaning as an emergent property of rational communication.
+
+---
 
 
 
@@ -2279,10 +2801,87 @@ Softmax in RSA makes the model mathematically **standard, general, and interpret
 </html>
 
 
+---
+### Extra 4 Bayesian Theorem
+
+**Theorem: A Beginner’s Guide**
+
+Bayes’ Theorem is a fundamental concept in probability theory and statistical reasoning. It describes how to **update our beliefs** in light of new evidence. This principle is central to many fields, including linguistics, cognitive science, machine learning, and especially **pragmatic inference** in models like the Rational Speech Act (RSA) framework.
+
+
+**What is Bayes’ Theorem?**
+
+At its core, Bayes’ Theorem answers the question:
+
+> **"Given some new evidence, how should I update my belief about a hypothesis?"**
+
+**The Formula**
+
+$$
+P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}
+$$
+
+**What the symbols mean:**
+- **$P(H \mid E)$**: Posterior  
+  The probability of hypothesis $H$ given the new evidence $E$. *(What we want to know.)*
+  
+- **$P(E \mid H)$**: Likelihood  
+  The probability of seeing the evidence $E$ if the hypothesis $H$ were true.
+  
+- **$P(H)$**: Prior  
+  The initial belief about hypothesis $H$, before seeing the new evidence.
+  
+- **$P(E)$**: Marginal likelihood or Evidence  
+  The total probability of the evidence under all possible hypotheses.
+
+
+**Simple Example**
+
+Suppose:
+- A rare disease affects **1%** of a population.
+- A medical test detects the disease with **99% accuracy** (true positive rate).
+- The false positive rate is also **1%**.
+
+If a person tests positive, what is the probability they actually have the disease?
+
+***Step 1: Define Events***
+- $D$: Person has the disease
+- $T$: Person tests positive
+
+***Step 2: Plug in the numbers***
+- $P(D) = 0.01$
+- $P(\neg D) = 0.99$
+- $P(T \mid D) = 0.99$
+- $P(T \mid \neg D) = 0.01$
+
+$$
+P(T) = P(T \mid D) \cdot P(D) + P(T \mid \neg D) \cdot P(\neg D)
+= 0.99 \cdot 0.01 + 0.01 \cdot 0.99 = 0.0198
+$$
+
+$$
+P(D \mid T) = \frac{0.99 \cdot 0.01}{0.0198} \approx 0.50
+$$
+
+**Conclusion**:
+Even after testing positive, the probability of actually having the disease is **only 50%**!  
+This counterintuitive result shows the importance of prior probability in updating beliefs.
+
+
+**Visual Breakdown**
+
+```mermaid
+flowchart TD
+    A[Start: Prior P(H)] --> B[New Evidence P(E | H)]
+    B --> C[Compute Joint: P(E | H) * P(H)]
+    C --> D[Compute P(E)]
+    D --> E[Posterior: P(H | E)]
+
+```
 
 
 ---
----
+
 ### Sources 
 Degen (2023), [*The Rational Speech Act Framework*](https://www.annualreviews.org/content/journals/10.1146/annurev-linguistics-031220-010811)
 

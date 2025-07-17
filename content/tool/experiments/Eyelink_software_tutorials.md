@@ -12,13 +12,11 @@ draft: false
 This tutorial provides a fundamental understanding of the Experiment Builder software. You'll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.
 
 
-### **Introduction to Experiment Builder**
+### Introduction to Experiment Builder
 
 Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.
 
----
-
-## **What is Experiment Builder?**
+#### **What is Experiment Builder?**
 
 Experiment Builder is a powerful tool for creating experimental designs with the following features:
 
@@ -30,11 +28,11 @@ Experiment Builder is a powerful tool for creating experimental designs with the
 
 ---
 
-### ** Tutorial 1: Experiment Lifecycle in Experiment Builder**
+### Tutorial 1: Experiment Lifecycle in Experiment Builder**
 
 The typical process for designing an experiment in Experiment Builder includes the following steps:
 
-#### **1. Creating and Saving a Project**
+#### 1. Creating and Saving a Project
 
 1. Open the Experiment Builder application and use the **graphical user interface** to design the experiment by building a flowchart.
 2. Save your project by specifying:
@@ -47,18 +45,15 @@ The typical process for designing an experiment in Experiment Builder includes t
 
 > **Note:** Always manage files within Experiment Builder. Avoid manually editing or deleting files in the project folder.
 
----
 
-### **2. Packaging a Project**
+#### 2. Packaging a Project
 
 If you need to share or move a project (e.g., send to a colleague), use the **File → Package** command. This will:
 
 - Create a single `.ebz` file.
 - Use **File → Unpack** to expand it back into a full project folder.
 
----
-
-#### **3. Test Running the Experiment**
+#### 3. Test Running the Experiment
 
 1. Perform a **test run** to ensure everything works as intended:
    - Go to **Experiment → Test Run** or click the **play button** in the toolbar.
@@ -68,9 +63,7 @@ If you need to share or move a project (e.g., send to a colleague), use the **Fi
 
 > **Important:** Test runs should not be used for actual participant data collection. Only the latest test run's data file is saved, and previous test data is overwritten.
 
----
-
-#### **4. Deploying the Experiment**
+#### 4. Deploying the Experiment
 
 Once the experiment is finalized:
 
@@ -81,16 +74,13 @@ Once the experiment is finalized:
    - Each run will prompt you to enter an **EDF file name** (EyeLink Data File).  
    - At the end of the run, the EDF file will be saved in the deployed folder's `results` subfolder.
 
----
-
-#### **5. HASP License Key**
+#### 5. HASP License Key
 
 - A license key is required to build and edit experiments.  
 - However, you **do not need a license key** to run deployed experiments for data collection.
 
----
 
-#### **6. Data Analysis Preparation**
+#### 6. Data Analysis Preparation
 
 When preparing for data analysis, ensure that you:
 
@@ -101,9 +91,8 @@ When preparing for data analysis, ensure that you:
 
 > **Tip:** Without the full folder, you may lose access to experimental stimuli and interest area data during analysis.
 
----
 
-#### **Summary**
+#### Summary
 
 Experiment Builder simplifies experimental design and eye-tracking data collection with its graphical interface and precise timing controls. By following this guide, you’ll be able to:
 
@@ -115,7 +104,7 @@ Experiment Builder simplifies experimental design and eye-tracking data collecti
 For more details, refer to the official documentation or continue to the next tutorial in this series.
 
 
--------------------------------------------
+---
 
 ### Tutorial 2: Graphical User Interface Overview
 
@@ -201,7 +190,6 @@ This implementation of the Posner Task showcases how to:
 
 While specific experimental paradigms may differ, the techniques demonstrated in this example can be applied to other paradigms. The tutorial aims to introduce fundamental building blocks, techniques, and best practices for implementing any experimental task.  
 
----
 
 #### Posner Task Structure  
 
@@ -224,8 +212,6 @@ The **Posner Task** presented in this tutorial consists of a series of trials, e
 #### 3. Predictions & Attention Effects  
 - Participants are expected to respond **faster** to targets preceded by a **valid cue**, as attention is directed toward the target location.  
 - This attentional shift may also result in **faster eye movements** toward the target position.  
-
----
 
 #### Implementing the Posner Task in Experiment Builder  
 
@@ -261,8 +247,6 @@ Each trial follows this sequence:
 - After all **22 trials**, the experiment **ends automatically**.  
 - The **EDF data file** is transferred from the **Host PC** to the **Display PC**.  
 
----
-
 #### Test Run of the Posner Task  
 
 To test the experiment **without** an **EyeLink Host PC** or **eye tracker**, we can enable **Dummy Mode** in Experiment Builder.  
@@ -273,20 +257,20 @@ To test the experiment **without** an **EyeLink Host PC** or **eye tracker**, we
 3. This prevents the experiment from attempting to connect to a **Host PC**.  
 
 ##### Running the Experiment  
-1. Go to **Experiment → Test Run**.  
-2. When prompted for an **EDF file name**, use the default:  
+  1. Go to **Experiment → Test Run**.  
+  2. When prompted for an **EDF file name**, use the default:  
 
    ```plaintext
    test.edf
    ```
 
-3. Since Dummy Mode is enabled, a notification will confirm this.
+  3. Since Dummy Mode is enabled, a notification will confirm this.
 
-4. The program will ask which counterbalanced version of the experiment to use.
+  4. The program will ask which counterbalanced version of the experiment to use.
 
       This project includes two versions of the experiment.
       Select a version to proceed.
-5. The experiment begins as usual.
+  5. The experiment begins as usual.
 
 ##### Key Points During Test Run
 Instructions and block transitions function as they would in a real experiment.
@@ -352,7 +336,7 @@ The first step is to specify the type of **EyeLink** eye tracker being used. Thi
 - Configuring these properties allows Experiment Builder to send the correct **commands** to the **Host PC** for proper hardware setup.  
 - If you **do not** want Experiment Builder to send configuration commands, you can set these properties to `"current"` (explained later).  
 
-### **Selecting Your Eye Tracker Model**  
+#### **Selecting Your Eye Tracker Model**  
 
 From the **Tracker Version** dropdown menu, choose the **EyeLink model** you are using:  
 
@@ -382,7 +366,7 @@ If using **EyeLink 1000** or **1000 Plus**, specify additional properties:
 
 For **EyeLink 1000 Plus**, you can use **binocular tracking in head-free mode**, unlike the standard EyeLink 1000.  
 
-### **Configuring EyeLink Portable Duo**  
+#### **Configuring EyeLink Portable Duo**  
 
 For **EyeLink Portable Duo**, select one of the following:  
 
@@ -396,7 +380,6 @@ If you prefer to configure the **eye tracker settings manually on the Host PC**,
 - This prevents Experiment Builder from **overriding** existing Host PC settings.  
 - The Host PC will use whatever **configuration** has already been selected in its interface.  
 
----
 
 #### **Setting Display Screen Resolution and Refresh Rate**  
 
@@ -418,7 +401,6 @@ When running an **Experiment Builder** project, the software **temporarily chang
 
 For this tutorial’s experiment, **60 Hz and native resolution** are used, as **no gaze-contingent features** require ultra-fast updates.  
 
----
 
 #### **Maintaining a Consistent Background Color**  
 
@@ -443,8 +425,6 @@ For this tutorial, a **gray background** is used **throughout the experiment** t
 - If you set the background color **in preferences before adding nodes**, all newly created nodes will automatically **match the chosen color**.  
 - This saves time and ensures **consistency** across the experiment.  
 
----
-
 #### **Configuring Audio and Other External Devices**  
 
 If your experiment includes **audio playback** or uses **additional hardware devices**, configure them in the **Devices tab**.  
@@ -457,7 +437,6 @@ If your experiment includes **audio playback** or uses **additional hardware dev
 - If using response boxes, button presses, or other external input devices, set their properties correctly.  
 - Experiment Builder will automatically detect and allow configuration for **compatible devices**.  
 
----
 
 #### **Saving Default Hardware Settings**  
 
@@ -469,9 +448,8 @@ To **save your project settings as defaults**, follow these steps:
 
 This ensures that **future projects** automatically apply the same hardware settings, reducing setup time.  
 
----
 
-## **Summary**  
+#### **Summary**  
 
 In this tutorial, we covered **essential hardware settings** in Experiment Builder, including:  
 
@@ -494,7 +472,6 @@ In this tutorial, we will discuss how actions and triggers connect in **Experime
 
 We will use a **Posner task example** to illustrate these concepts.
 
----
 
 #### Display Screen Actions
 
@@ -507,7 +484,6 @@ We will use a **Posner task example** to illustrate these concepts.
    - Here, you can **add images, videos, text, shapes, and interest areas** to create the display content.
 3. In this example, a **multi-line text resource** is used to present the instructions.
 
----
 
 #### Keyboard and Timer Trigger Nodes
 
@@ -525,7 +501,6 @@ Display screen actions must be **followed by at least one trigger** before conne
   - The **specified time** elapses (activating the timer trigger).
 - Both triggers connect to the same **camera setup action**, and **whichever fires first** will continue the experiment.
 
----
 
 #### Messages in Action and Trigger Nodes
 
@@ -542,7 +517,6 @@ Each **action or trigger node** in Experiment Builder has a **message property**
 - The **timestamp is accurate within a millisecond** of the retrace event.
 - Filling out the **message property** ensures a record of the timing of **experimental events** in the `.edf` file.
 
----
 
 #### Using Messages for Interest Periods in Data Analysis
 
@@ -560,7 +534,6 @@ For example, in the **Posner task**, we may want to analyze only:
 - When analyzing data, messages in the **EyeLink data file** (`.edf`) can be used to **mark event occurrences**.
 - You can find more details in the **Data Viewer video tutorial series**.
 
----
 
 #### Labels vs. Messages
 
@@ -577,7 +550,6 @@ For example, in the **Posner task**, we may want to analyze only:
 - Copy and paste the **label text into the message property**.
 - This makes it **easy to associate messages in the `.edf` file`** with Experiment Builder nodes.
 
----
 
 #### Conclusion
 
@@ -634,7 +606,7 @@ A data source is a spreadsheet that contains information used on each iteration 
 #### *Accessing Data Sources*
 To access a sequence's data source, click on its data source property. You can also use the dropdown at the top of the interface to select a data source.
 
-### Populating Data Sources
+#### Populating Data Sources
 
 #### *Adding Rows and Columns*
 You can add rows and columns directly in the data source editor. Alternatively, import data from a delimited text file created in spreadsheet software like Excel.

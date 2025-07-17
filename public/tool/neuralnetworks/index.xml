@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Neural Networks &amp; LLMs on Jun Zhang</title>
-    <link>https://zhangjunfelix.github.io/tool/neuralnetworks/</link>
+    <link>http://localhost:1313/tool/neuralnetworks/</link>
     <description>Recent content in Neural Networks &amp; LLMs on Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 May 2025 11:41:54 -0400</lastBuildDate>
-    <atom:link href="https://zhangjunfelix.github.io/tool/neuralnetworks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tool/neuralnetworks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rational Speech Act-learning notes</title>
-      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsanotes/</link>
+      <link>http://localhost:1313/tool/neuralnetworks/rsa/rsanotes/</link>
       <pubDate>Tue, 06 May 2025 11:41:54 -0400</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsanotes/</guid>
+      <guid>http://localhost:1313/tool/neuralnetworks/rsa/rsanotes/</guid>
       <description>&lt;p&gt;&amp;ldquo;&amp;hellip; one of my avowed aims is to see talking as a special case or variety of purposive, indeed rational, behavior&amp;rdquo; (Grice, 1975: 47)&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;i-background-of-rsa&#34;&gt;I. Background of RSA&lt;/h3&gt;
@@ -21,18 +21,18 @@
     </item>
     <item>
       <title>Rational Speech Act-learning resources</title>
-      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsaresources/</link>
+      <link>http://localhost:1313/tool/neuralnetworks/rsa/rsaresources/</link>
       <pubDate>Wed, 12 Mar 2025 15:38:14 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsaresources/</guid>
+      <guid>http://localhost:1313/tool/neuralnetworks/rsa/rsaresources/</guid>
       <description>&lt;h3 id=&#34;learning-resources-the-rational-speech-act-rsa-framework&#34;&gt;Learning Resources: The Rational Speech Act (RSA) Framework&lt;/h3&gt;
 &lt;p&gt;Welcome! This page introduces key resources to help you get started with the Rational Speech Act (RSA) framework — a powerful model of pragmatic reasoning in language. The RSA framework integrates probabilistic inference, semantic interpretation, and recursive social reasoning.&lt;/p&gt;
 &lt;p&gt;This list is curated for students and researchers in &lt;strong&gt;psycholinguistics&lt;/strong&gt; and &lt;strong&gt;experimental pragmatics&lt;/strong&gt;, based on the overview presented in &lt;a href=&#34;(https://www.annualreviews.org/content/journals/10.1146/annurev-linguistics-031220-010811)&#34;&gt;&lt;em&gt;The Rational Speech Act Framework&lt;/em&gt; (2023)&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Notes to Computational Approach to Language and Mind (CALM)</title>
-      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/calm/</link>
+      <link>http://localhost:1313/tool/neuralnetworks/calm/</link>
       <pubDate>Wed, 05 Mar 2025 15:38:14 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/calm/</guid>
+      <guid>http://localhost:1313/tool/neuralnetworks/calm/</guid>
       <description>&lt;h1 id=&#34;course-schedule&#34;&gt;Course Schedule&lt;/h1&gt;
 &lt;p&gt;This course is offered by Professor Gerry Altmann at UConn, my advisor when I worked as a visiting faculty there. &lt;br&gt;
 This is the course that officially introduced me into LLMs and neural networks. &lt;br&gt;

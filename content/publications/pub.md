@@ -50,4 +50,5 @@ draft: false
 * *Second Language Research*
 * *Journal of Pragmatics*
 * *Lingua* 
+* *Applied Psycholinguistics*
 

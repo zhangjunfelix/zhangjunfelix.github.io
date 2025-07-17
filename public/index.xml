@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Welcome on Jun Zhang</title>
-    <link>https://zhangjunfelix.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Welcome on Jun Zhang</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://zhangjunfelix.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Designing Experimental Surveys in Qualtrics</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</link>
+      <link>http://localhost:1313/tool/experiments/qualtrics/</link>
       <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</guid>
+      <guid>http://localhost:1313/tool/experiments/qualtrics/</guid>
       <description>&lt;h2 id=&#34;-overview&#34;&gt;🧠 Overview&lt;/h2&gt;
 &lt;p&gt;This tutorial provides a comprehensive guide to building an experimental survey in &lt;strong&gt;Qualtrics&lt;/strong&gt;, specifically designed for testing how &lt;strong&gt;speaker identity&lt;/strong&gt; influences listeners’ judgments of &lt;strong&gt;informativeness&lt;/strong&gt; in varied &lt;strong&gt;face contexts&lt;/strong&gt;. It integrates methodological strategies, Qualtrics configurations, and deployment on &lt;strong&gt;Amazon Mechanical Turk (MTurk)&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -35,9 +35,9 @@
     </item>
     <item>
       <title>Rational Speech Act-learning notes</title>
-      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsanotes/</link>
+      <link>http://localhost:1313/tool/neuralnetworks/rsa/rsanotes/</link>
       <pubDate>Tue, 06 May 2025 11:41:54 -0400</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsanotes/</guid>
+      <guid>http://localhost:1313/tool/neuralnetworks/rsa/rsanotes/</guid>
       <description>&lt;p&gt;&amp;ldquo;&amp;hellip; one of my avowed aims is to see talking as a special case or variety of purposive, indeed rational, behavior&amp;rdquo; (Grice, 1975: 47)&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;i-background-of-rsa&#34;&gt;I. Background of RSA&lt;/h3&gt;
@@ -46,18 +46,18 @@
     </item>
     <item>
       <title>Rational Speech Act-learning resources</title>
-      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsaresources/</link>
+      <link>http://localhost:1313/tool/neuralnetworks/rsa/rsaresources/</link>
       <pubDate>Wed, 12 Mar 2025 15:38:14 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/rsa/rsaresources/</guid>
+      <guid>http://localhost:1313/tool/neuralnetworks/rsa/rsaresources/</guid>
       <description>&lt;h3 id=&#34;learning-resources-the-rational-speech-act-rsa-framework&#34;&gt;Learning Resources: The Rational Speech Act (RSA) Framework&lt;/h3&gt;
 &lt;p&gt;Welcome! This page introduces key resources to help you get started with the Rational Speech Act (RSA) framework — a powerful model of pragmatic reasoning in language. The RSA framework integrates probabilistic inference, semantic interpretation, and recursive social reasoning.&lt;/p&gt;
 &lt;p&gt;This list is curated for students and researchers in &lt;strong&gt;psycholinguistics&lt;/strong&gt; and &lt;strong&gt;experimental pragmatics&lt;/strong&gt;, based on the overview presented in &lt;a href=&#34;(https://www.annualreviews.org/content/journals/10.1146/annurev-linguistics-031220-010811)&#34;&gt;&lt;em&gt;The Rational Speech Act Framework&lt;/em&gt; (2023)&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Notes to Computational Approach to Language and Mind (CALM)</title>
-      <link>https://zhangjunfelix.github.io/tool/neuralnetworks/calm/</link>
+      <link>http://localhost:1313/tool/neuralnetworks/calm/</link>
       <pubDate>Wed, 05 Mar 2025 15:38:14 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/neuralnetworks/calm/</guid>
+      <guid>http://localhost:1313/tool/neuralnetworks/calm/</guid>
       <description>&lt;h1 id=&#34;course-schedule&#34;&gt;Course Schedule&lt;/h1&gt;
 &lt;p&gt;This course is offered by Professor Gerry Altmann at UConn, my advisor when I worked as a visiting faculty there. &lt;br&gt;
 This is the course that officially introduced me into LLMs and neural networks. &lt;br&gt;
@@ -73,21 +73,21 @@ The following are the materials from his course. It has been such a wonderful ex
     </item>
     <item>
       <title>Eyelink software tutorial</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</link>
+      <link>http://localhost:1313/tool/experiments/eyelink_software_tutorials/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</guid>
+      <guid>http://localhost:1313/tool/experiments/eyelink_software_tutorials/</guid>
       <description>&lt;h2 id=&#34;introduction-to-experiment-builder-a-step-by-step-guide&#34;&gt;Introduction to Experiment Builder: A Step-by-Step Guide&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qCMgHiGbWN4&amp;amp;list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
 &lt;p&gt;This tutorial provides a fundamental understanding of the Experiment Builder software. You&amp;rsquo;ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.&lt;/p&gt;
-&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;&lt;strong&gt;Introduction to Experiment Builder&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;Introduction to Experiment Builder&lt;/h3&gt;
 &lt;p&gt;Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>model fitting</title>
-      <link>https://zhangjunfelix.github.io/tool/statistics/modelfitting/</link>
+      <link>http://localhost:1313/tool/statistics/modelfitting/</link>
       <pubDate>Fri, 16 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/statistics/modelfitting/</guid>
+      <guid>http://localhost:1313/tool/statistics/modelfitting/</guid>
       <description>&lt;h2 id=&#34;fitting-linear-mixed-effects-models-lmms&#34;&gt;Fitting Linear Mixed-Effects Models (LMMs)&lt;/h2&gt;
 &lt;h3 id=&#34;1-factor-treatment-coding&#34;&gt;1. Factor Treatment Coding&lt;/h3&gt;
 &lt;p&gt;In this example experiment:&lt;/p&gt;
@@ -114,9 +114,9 @@ Rating on a 7-point scale, used as &lt;strong&gt;numerical values&lt;/strong&gt;
     </item>
     <item>
       <title>Power analysis</title>
-      <link>https://zhangjunfelix.github.io/tool/statistics/poweranalysis/</link>
+      <link>http://localhost:1313/tool/statistics/poweranalysis/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/statistics/poweranalysis/</guid>
+      <guid>http://localhost:1313/tool/statistics/poweranalysis/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#1-notes-to-green-et-al-2016&#34;&gt;1. notes to Green et al. (2016)&lt;/a&gt;
 &lt;ul&gt;
@@ -143,9 +143,9 @@ Rating on a 7-point scale, used as &lt;strong&gt;numerical values&lt;/strong&gt;
     </item>
     <item>
       <title>Pre-registration</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/pre_registration/</link>
+      <link>http://localhost:1313/tool/experiments/pre_registration/</link>
       <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/pre_registration/</guid>
+      <guid>http://localhost:1313/tool/experiments/pre_registration/</guid>
       <description>&lt;h1 id=&#34;preregistration&#34;&gt;Preregistration&lt;/h1&gt;
 &lt;p&gt;Preregistration is the practice of documenting your research plan at the beginning of your study and storing that plan in a read-only public repository, such as &lt;a href=&#34;https://osf.io/registries?view_only=&#34;&gt;OSF Registries&lt;/a&gt; or &lt;a href=&#34;https://aspredicted.org/&#34;&gt;As Predicted.org&lt;/a&gt;.&lt;/p&gt;
 &lt;hr&gt;
@@ -206,9 +206,9 @@ Rating on a 7-point scale, used as &lt;strong&gt;numerical values&lt;/strong&gt;
     </item>
     <item>
       <title>OpenSesame</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/opensesame/</link>
+      <link>http://localhost:1313/tool/experiments/opensesame/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/opensesame/</guid>
+      <guid>http://localhost:1313/tool/experiments/opensesame/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://osdoc.cogsci.nl/4.0/&#34;&gt;OpenSesame&lt;/a&gt; is a program to create experiments for psychology, neuroscience, and experimental economics.&lt;/p&gt;
 &lt;p&gt;It does not require coding skills to create psycholinguistics experiments and is particularly friendly to beginners with a comprehensive graphical, point-and-click interface.&lt;/p&gt;
 &lt;p&gt;You can find tutorials and example experiments on the website that are highly useful in learning to build your own experiments.&lt;/p&gt;
@@ -216,9 +216,9 @@ Rating on a 7-point scale, used as &lt;strong&gt;numerical values&lt;/strong&gt;
     </item>
     <item>
       <title>Self paced reading</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/spr/</link>
+      <link>http://localhost:1313/tool/experiments/spr/</link>
       <pubDate>Tue, 15 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/spr/</guid>
+      <guid>http://localhost:1313/tool/experiments/spr/</guid>
       <description>&lt;h3 id=&#34;self-paced-reading&#34;&gt;Self-Paced Reading&lt;/h3&gt;
 &lt;p&gt;Self-paced reading (SPR) is relatively crude-grained in the behavioral data it provides. Nevertheless, it remains one of the most accessible tools for beginners conducting experimental language research.&lt;/p&gt;
 &lt;p&gt;Below are some helpful resources for learning and implementing SPR experiments:&lt;/p&gt;
@@ -236,9 +236,9 @@ Rating on a 7-point scale, used as &lt;strong&gt;numerical values&lt;/strong&gt;
     </item>
     <item>
       <title>Create static websites</title>
-      <link>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</link>
+      <link>http://localhost:1313/tool/computer/websitebuilding/</link>
       <pubDate>Sat, 12 Aug 2023 15:02:40 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</guid>
+      <guid>http://localhost:1313/tool/computer/websitebuilding/</guid>
       <description>&lt;p&gt;Sure, I&amp;rsquo;ll revise the codes for clarity and aesthetics. Here&amp;rsquo;s the improved version:&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;hugo&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/h3&gt;
@@ -277,9 +277,9 @@ Refer to this guide for more details.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mousetracking</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/mousetracking/</link>
+      <link>http://localhost:1313/tool/experiments/mousetracking/</link>
       <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/mousetracking/</guid>
+      <guid>http://localhost:1313/tool/experiments/mousetracking/</guid>
       <description>&lt;h3 id=&#34;mouse-tracking-technique-in-cognitive-research&#34;&gt;Mouse-Tracking Technique in Cognitive Research&lt;/h3&gt;
 &lt;p&gt;Learning about the &lt;strong&gt;mouse-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers. &lt;em&gt;Tomlinson et al. (2013)&lt;/em&gt; is a key reference.&lt;/p&gt;
 &lt;p&gt;In my work, I used &lt;strong&gt;OpenSesame&lt;/strong&gt; (Mathôt et al., 2012) together with the &lt;strong&gt;mousetrap plugin&lt;/strong&gt; (Kieslich &amp;amp; Henninger, 2017).&lt;/p&gt;
@@ -297,9 +297,9 @@ Refer to this guide for more details.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Data types, distribution, modeling choices</title>
-      <link>https://zhangjunfelix.github.io/tool/statistics/datatypedistributionmodeling/</link>
+      <link>http://localhost:1313/tool/statistics/datatypedistributionmodeling/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/statistics/datatypedistributionmodeling/</guid>
+      <guid>http://localhost:1313/tool/statistics/datatypedistributionmodeling/</guid>
       <description>&lt;h2 id=&#34;data-types-distribution-modeling-choices&#34;&gt;Data types, distribution, modeling choices&lt;/h2&gt;
 &lt;p&gt;Linear Mixed Effects Models (LMMs) and Generalized Linear Mixed Effects Models (GLMMs)&lt;/p&gt;
 &lt;p&gt;The choice between LMMs and GLMMs depends on the nature of your response variable and the specific goals of your analysis.&lt;/p&gt;
@@ -372,9 +372,9 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
     </item>
     <item>
       <title>Understand mixed effects modeling</title>
-      <link>https://zhangjunfelix.github.io/tool/statistics/parametersinmodeling/</link>
+      <link>http://localhost:1313/tool/statistics/parametersinmodeling/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/statistics/parametersinmodeling/</guid>
+      <guid>http://localhost:1313/tool/statistics/parametersinmodeling/</guid>
       <description>&lt;h1 id=&#34;part-i-general-overview&#34;&gt;PART I General Overview&lt;/h1&gt;
 &lt;p&gt;The results of mixed-effects modeling, such as those obtained from linear mixed-effects models (LMMs) or generalized linear mixed models (GLMMs), typically include several key parameters and statistics. Here’s a detailed explanation of each component commonly found in the output:&lt;/p&gt;
 &lt;ol&gt;
@@ -389,9 +389,9 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
     </item>
     <item>
       <title>Introducing Second Language Acquisition</title>
-      <link>https://zhangjunfelix.github.io/teaching/l2a/</link>
+      <link>http://localhost:1313/teaching/l2a/</link>
       <pubDate>Sun, 09 Jul 2023 15:50:45 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/teaching/l2a/</guid>
+      <guid>http://localhost:1313/teaching/l2a/</guid>
       <description>&lt;p&gt;COURSE SYLLABUS &lt;a href=&#34;Syllabus.pdf&#34;&gt;Download syllabus&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;course-description&#34;&gt;&lt;em&gt;COURSE DESCRIPTION&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;This course is a general introduction to scientific research into how people learn a second language. Although the course is designed to be accessible to students from a wide variety of backgrounds, some knowledge of the linguistic structure of English will be assumed.&lt;/p&gt;
@@ -399,9 +399,9 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
     </item>
     <item>
       <title>Bayesian modeling</title>
-      <link>https://zhangjunfelix.github.io/tool/statistics/bayesian/</link>
+      <link>http://localhost:1313/tool/statistics/bayesian/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/statistics/bayesian/</guid>
+      <guid>http://localhost:1313/tool/statistics/bayesian/</guid>
       <description>&lt;h3 id=&#34;steps-to-fit-bayesian-models-in-r&#34;&gt;Steps to Fit Bayesian Models in R&lt;/h3&gt;
 &lt;h4 id=&#34;1-specify-the-research-question&#34;&gt;1. Specify the Research Question&lt;/h4&gt;
 &lt;ul&gt;
@@ -435,25 +435,25 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
     </item>
     <item>
       <title>Advanced Academic English Writing</title>
-      <link>https://zhangjunfelix.github.io/teaching/eap/wae194/</link>
+      <link>http://localhost:1313/teaching/eap/wae194/</link>
       <pubDate>Fri, 07 Jul 2023 11:36:14 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/teaching/eap/wae194/</guid>
+      <guid>http://localhost:1313/teaching/eap/wae194/</guid>
       <description>&lt;h4 id=&#34;course-description&#34;&gt;COURSE DESCRIPTION&lt;/h4&gt;
 &lt;p&gt;The purpose of WAE194 is to provide students with writing experiences designed to improve their academic essay writing skills through the process of prewriting, drafting, and revising. It also strives to build confidence, fluency and grammatical correctness in students’ writing generally, and it serves as preparation for WRT100.  To accomplish these goals, students work on expanding their English competence on the sentence and paragraph levels. Specifically, they work on strategies that promote independence and self-evaluation of their own and others’ writing and produce at least two revised essays.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Intermediate Academic English Writing</title>
-      <link>https://zhangjunfelix.github.io/teaching/eap/wae192/</link>
+      <link>http://localhost:1313/teaching/eap/wae192/</link>
       <pubDate>Fri, 07 Jul 2023 11:36:14 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/teaching/eap/wae192/</guid>
+      <guid>http://localhost:1313/teaching/eap/wae192/</guid>
       <description>&lt;h4 id=&#34;course-description&#34;&gt;COURSE DESCRIPTION&lt;/h4&gt;
 &lt;p&gt;The purpose of WAE 192 is to provide students with writing experiences designed to help them express ideas effectively in sentences, paragraphs, and essays.  Students will develop writing skills with the use of the dictionary, practicing structures of written English, and learning to edit in preparation for advanced editing in WAE 194.  To accomplish these goals, students work on expanding their English competence on the sentence level, expanding their vocabulary through reading and the use of the dictionary, developing strategies that promote independence in writing, and editing personal and peer writing. Grammar proficiency tests are administered throughout the semester. These tests emphasize the use of particular grammatical points in the context of a creative effort on the part of the student.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Publications and others</title>
-      <link>https://zhangjunfelix.github.io/publications/pub/</link>
+      <link>http://localhost:1313/publications/pub/</link>
       <pubDate>Thu, 22 Jun 2023 13:57:00 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/publications/pub/</guid>
+      <guid>http://localhost:1313/publications/pub/</guid>
       <description>&lt;h3 id=&#34;journal-articles&#34;&gt;Journal Articles&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -480,18 +480,18 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
     </item>
     <item>
       <title>1. Pragmatic inferencing</title>
-      <link>https://zhangjunfelix.github.io/projects/praginfer/</link>
+      <link>http://localhost:1313/projects/praginfer/</link>
       <pubDate>Wed, 21 Jun 2023 22:38:49 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/projects/praginfer/</guid>
+      <guid>http://localhost:1313/projects/praginfer/</guid>
       <description>&lt;p&gt;Given my view of languages as an critical part of human cognition, I would like to know more about the nature of this cognitive capability that seems to be only possessed by humans.&lt;/p&gt;
 &lt;p&gt;As a continuation of my research on language acquisition, I started to realize that, fascinating as linguistic competence may be, ignoring linguistic performance is not reasonable.&lt;/p&gt;
 &lt;p&gt;After working on topics of non-native language processing, especially disambiguation, I ventered into pragmatic inferencing (mostly due to failure to produce any publication &amp;#x1f615; &amp;#x1f62d; &amp;#x1f61e; &amp;#x1f631; ).&lt;/p&gt;</description>
     </item>
     <item>
       <title>2. language acquisition</title>
-      <link>https://zhangjunfelix.github.io/projects/nonnative/</link>
+      <link>http://localhost:1313/projects/nonnative/</link>
       <pubDate>Tue, 20 Jun 2023 22:39:05 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/projects/nonnative/</guid>
+      <guid>http://localhost:1313/projects/nonnative/</guid>
       <description>&lt;p&gt;As a learner of English as a foreign language since age 13, I naturally wonder how my English always come short of native-like competence. Such curiosity drives me, as a linguist, further to investigate issues in non-native language acquisition and conduct research on these issues.&lt;/p&gt;
 &lt;p&gt;Here is a link to my master&amp;rsquo;s thesis.
 《中国大学生英语写作中语篇衔接手段的使用研究》&lt;a href=&#34;https://kns.cnki.net/kcms2/article/abstract?v=RyaFSLOYMk5LKnlQeuON3lZLmXNW61jdu88ypOVVXS5JWDqWjKOG3Zdxv_oqBVvEWqeK78rehNkcB7D-qYHstcgvtuOh57iEXcSD6xqlxhFCYF3IgJRnnrkM-kbSwnc4&amp;amp;uniplatform=NZKPT&amp;amp;flag=copy&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/p&gt;
@@ -500,9 +500,9 @@ Here is a link to my Ph.D. disseration. &lt;a href=&#34;https://scholars.hkbu.ed
     </item>
     <item>
       <title>About me</title>
-      <link>https://zhangjunfelix.github.io/about/about/</link>
+      <link>http://localhost:1313/about/about/</link>
       <pubDate>Tue, 20 Jun 2023 22:30:07 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/about/about/</guid>
+      <guid>http://localhost:1313/about/about/</guid>
       <description>&lt;p&gt;&lt;strong&gt;EDUCATION&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Ph.D. in Linguistics&lt;/strong&gt; (2009-2013) | Hong Kong Baptist University &amp;ndash; advised by &lt;a href=&#34;https://ias.szu.edu.cn/en/info/1048/1616.htm&#34;&gt;Dr. Huang Yue Yuan&lt;/a&gt; and &lt;a href=&#34;https://scholar.google.com/citations?user=I31eYH4AAAAJ&amp;amp;hl=zh-CN&#34;&gt;Dr. Yang Suying&lt;/a&gt;
@@ -525,9 +525,9 @@ Here is a link to my Ph.D. disseration. &lt;a href=&#34;https://scholars.hkbu.ed
     </item>
     <item>
       <title>Eyetracking</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/eyetracking/</link>
+      <link>http://localhost:1313/tool/experiments/eyetracking/</link>
       <pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/eyetracking/</guid>
+      <guid>http://localhost:1313/tool/experiments/eyetracking/</guid>
       <description>&lt;h3 id=&#34;learning-about-eye-tracking-technique-creation-design-data-analysis&#34;&gt;Learning About Eye-Tracking Technique: creation, design, data analysis&lt;/h3&gt;
 &lt;hr&gt;
 &lt;p&gt;Learning about the &lt;strong&gt;eye-tracking technique&lt;/strong&gt; is motivated by my interest in discovering cognitive processes involved in interpreting scalar quantifiers in social contexts.&lt;/p&gt;
@@ -546,9 +546,9 @@ Here is a link to my Ph.D. disseration. &lt;a href=&#34;https://scholars.hkbu.ed
     </item>
     <item>
       <title></title>
-      <link>https://zhangjunfelix.github.io/projects/praglife/</link>
+      <link>http://localhost:1313/projects/praglife/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/projects/praglife/</guid>
+      <guid>http://localhost:1313/projects/praglife/</guid>
       <description></description>
     </item>
   </channel>
