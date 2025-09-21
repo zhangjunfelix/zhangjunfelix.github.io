@@ -9,7 +9,8 @@ cover:
 
 ---
 
-
+[ORCID](https://orcid.org/0000-0002-8840-0951)     
+[Google Scholar](https://scholar.google.com/citations?user=mP4oQBgAAAAJ&hl=en)
 
 **EDUCATION**
 
@@ -23,6 +24,7 @@ cover:
 * Associate Professor, Anhui University | School of Foreign Studies
 * Visiting Scholar, University of Connecticut | Department of Psychological Sciences -Advised by [Prof. Gerry Altmann](https://psychology.uconn.edu/person/gerry-altmann/) at his [Psycholinguistics Lab](https://altmann.lab.uconn.edu)
 * Fulbright FLTA, Ramapo College of New Jersey | School of Humanities and Global Studies
+* Lecturer, Anhui University | School of Foreign Studies
 * Lecturer, Hong Kong Baptist University | Language Center
 * Research Assistant, Hong Kong Baptist University | Language Center & Department of English Language and Literature
 
@@ -39,6 +41,7 @@ cover:
 * Python
 * Latex
 * Hugo
+* Jekyll
 * Scratch
 
 

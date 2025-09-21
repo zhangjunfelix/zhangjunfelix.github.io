@@ -10,9 +10,11 @@ draft: false
 
 * **In progress**   
   
-   * Conventionalization of politeness, alternatives, and pragmatic inferencing    
-   * Timecourse of politeness and perspective-taking: an eye-tracking study   <br>
+   * Timecourse of politeness and perspective-taking: an eye-tracking study   
+   * Speaker sensitivity in pragmatic inferencing     <br>
    
+* **2025**
+    * *__Zhang, Jun__, & Wu, Yan.* (2025). Conventionalization of politeness and questions under discussion in pragmatic inferencing: Interpreting scalars in interpersonal contexts. *Journal of Pragmatics*, 249, 1-22. [Link to fulltext](https://www.sciencedirect.com/science/article/abs/pii/S037821662500205X)
 
 * **2023**
     * *__Zhang, Jun__, & Wu, Yan.* (2023). “Yixie” is likely not created equal for everyone: Distinct reasoning procedures in interpreting the same scalar quantifier. *Lingua*, 288, 103523. [Link to fulltext](https://www.sciencedirect.com/science/article/abs/pii/S0024384123000475)
@@ -43,6 +45,8 @@ draft: false
 
 * **2004**
     * *Zhang Jun.* 2004. The True Status of "Faithfulness" in Yanfu's Translation Criterion "Faithfulness, Expressiveness, Elegance". *Journal of West Anhui College*. (6): 118-120.(张军. 2004.“信”在严複“译事三难”中的真实地位及其 “非常规”反映的深刻原因.《皖西学院学报》，(6): 118-120.) [Link to fulltext](https://www.cnki.com.cn/Article/CJFDTOTAL-WXXB200406039.htm)
+
+
 
 ### Article Reviewing
 

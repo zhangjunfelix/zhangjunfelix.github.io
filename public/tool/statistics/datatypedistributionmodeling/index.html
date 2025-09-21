@@ -330,8 +330,7 @@ Imagine a study where children&rsquo;s reading abilities (measured on a continuo
 <strong>Counts</strong> (e.g., number of events) using a Poisson distribution.
 <strong>Proportions</strong> using a binomial distribution.
 <strong>Multinomial outcomes</strong> (e.g., categorical data with more than two levels).
-Random Effects: When there is a need to model random effects, such as variability among subjects, items, or clusters, GLMMs allow you to account for this variability. This is essential when the assumption of independence between observations is violated.</p>
-</blockquote>
+Random Effects: When there is a need to model random effects, such as variability among subjects, items, or clusters, GLMMs allow you to account for this variability. This is essential when the assumption of independence between observations is violated.</p></blockquote>
 <p>Complex Experimental Designs: GLMMs are useful in experiments with complex designs that include both fixed effects (e.g., treatment effects that are the main focus of your study) and random effects (e.g., random variability due to subjects, items, etc.).</p>
 <p>Repeated Measures: When you have repeated measures from the same subjects over time or under different conditions, GLMMs can model the correlation between these repeated measures.</p>
 <p>2.1 Binary Outcomes (Logistic Mixed Model)</p>
@@ -341,32 +340,28 @@ Random Effects: When there is a need to model random effects, such as variabilit
 <ul>
 <li><strong>Binomial Distribution</strong><br>
 The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials of a <strong>binary (yes/no) experiment</strong>. Each trial has two possible outcomes: success or failure, with a constant probability of success.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <blockquote>
 <ul>
 <li>Key Characteristics:<br>
 &ndash; Number of Trials (n): The experiment is repeated a fixed number of times.<br>
 &ndash; Probability of Success (p): Each trial has the same probability of success <br>
 &ndash; Number of Successes (k): The distribution describes the probability of obtaining a specific number of successes in 𝑛 trials.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <blockquote>
 <ul>
 <li><strong>logit link function</strong><br>
 &ndash; The logit link function is used in logistic regression, where the response variable is binary (e.g., success/failure, yes/no). <br>
 &ndash; It models the log-odds of the probability of an event occurring as a linear function of the predictor variables.<br>
 &ndash; The coefficients in a logistic regression model using the logit link function represent the change in the log-odds of the outcome for a one-unit change in the predictor variable.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <blockquote>
 <ul>
 <li>Example 1: Medical Study (Predicting Disease Presence)<br>
 &ndash; In a medical study, researchers might be interested in predicting whether a patient has a certain disease (1) or does not have it (0) based on several predictor variables like age, blood pressure, and cholesterol levels.<br>
 &ndash; Response Variable: Disease (binary outcome: 0 = No, 1 = Yes) <br>
 &ndash; Predictor Variables: Age, Blood Pressure, Cholesterol Level</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p><img alt="Example data format for binary data/binomial distribution" loading="lazy" src="/images/Binarydata.png" title="Example data format for binary data/binomial distribution"></p>
 <p>2.2 Count Data (Poisson Mixed Model)</p>
 <p>Consider a study on the number of errors made by workers in a factory over different shifts. The response variable is the <strong>count</strong> of errors, which is <strong>not normally distributed</strong> and likely follows a <strong>Poisson distribution</strong>.</p>
@@ -375,47 +370,40 @@ The binomial distribution is a discrete probability distribution that models the
 <ul>
 <li><strong>Poisson distribution</strong><br>
 It is a discrete probability distribution that models the <strong>number of events</strong> occurring within a fixed interval of time, space, or any other continuous domain. It is used when events occur independently and the average rate (mean number of events) is constant.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <blockquote>
 <ul>
 <li>Example scenarios  <br>
 &ndash; Number of Emails Received: The number of emails you receive per hour can be modeled by a Poisson distribution if emails arrive randomly and independently of each other.<br>
 &ndash; Traffic Accidents: The number of traffic accidents at a particular intersection per month may follow a Poisson distribution if accidents occur randomly.<br>
 &ndash; Phone Calls to a Call Center: The number of calls received by a call center in a given time period (e.g., per hour) can be modeled using a Poisson distribution if the calls are independent and the rate of calls is constant.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <blockquote>
 <ul>
 <li><strong>log Link Function</strong><br>
 &ndash; When modeling <strong>count data</strong> using the <strong>Poisson distribution</strong> in a regression context, the most appropriate link function is the <strong>log link function</strong>.<br>
 &ndash; The log link function relates the expected count (mean 𝜆) to a linear combination of the predictor variables.<br>
 &ndash; The coefficients in a Poisson regression model using the log link function represent the change in the log of the expected count for a one-unit change in the predictor variable.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <blockquote>
 <ul>
 <li><strong>Example data format</strong></li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <blockquote>
-<p>You are studying the number of correct answers students give in a quiz, with quizzes given on multiple occasions. Each student takes the quiz multiple times under different conditions (e.g., time of day, difficulty level).</p>
-</blockquote>
+<p>You are studying the number of correct answers students give in a quiz, with quizzes given on multiple occasions. Each student takes the quiz multiple times under different conditions (e.g., time of day, difficulty level).</p></blockquote>
 <blockquote>
 <ul>
 <li>Count Data (Response Variable): Correct_Answers (number of correct answers).</li>
 <li>Fixed Effects: Time_of_Day (categorical variable: Morning, Afternoon) and Difficulty (categorical variable: Easy, Hard).</li>
 <li>Random Effects: Student_Random, accounting for differences in quiz performance between students.</li>
 <li>Grouping Variable: Student_ID, the identifier for each student.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p><img alt="Example data format for count data/poisson distribution" loading="lazy" src="/images/Count-poissondata.png" title="Example data format for count data/poisson distribution"></p>
 <p>2.3 Proportional Data</p>
 <p>Imagine you&rsquo;re analyzing the <em>proportion of seeds that germinate under different treatment conditions</em>, where each condition has several batches of seeds. The response is the proportion of seeds germinated, which follows a binomial distribution.</p>
 <p>A GLMM with a <strong>binomial distribution</strong> and <strong>logit link function</strong> can be used to model the proportion of germination based on treatment (fixed effect) while accounting for batch-to-batch variability (random effect).</p>
 <blockquote>
-<p>Here’s an example data frame for proportional data where we might use a GLMM to analyze the effect of different conditions on proportions, with random effects for different groups or subjects.</p>
-</blockquote>
+<p>Here’s an example data frame for proportional data where we might use a GLMM to analyze the effect of different conditions on proportions, with random effects for different groups or subjects.</p></blockquote>
 <p><img alt="Example data format for proportional data/binomial distribution" loading="lazy" src="/images/Proportionaldata.png" title="Example data format for proportional data/binomial distribution"></p>
 <p>2.4 Multinomial Outcomes</p>
 <p>Suppose you&rsquo;re interested in modeling the choice of transportation mode (car, bus, bike, walk) among commuters, with <strong>multiple choices</strong> available <strong>(categorical outcome)</strong>. Commuters are nested within cities.</p>
@@ -460,10 +448,7 @@ Predictors: Age, Income, Gender</p>
 <blockquote>
 <p>Model Specification<br>
 Fixed Effects: Age and Income.<br>
-Random Effects: Store_ID (to account for variability between stores).</p>
-</blockquote>
-</blockquote>
-</blockquote>
+Random Effects: Store_ID (to account for variability between stores).</p></blockquote></blockquote></blockquote>
 <pre><code>model &lt;- clmm(Satisfaction ~ Age + Income + (1 | Store_ID), data = your_data)
 </code></pre>
 <h4 id="3-different-types-of-data-distribution">3. different types of data distribution<a hidden class="anchor" aria-hidden="true" href="#3-different-types-of-data-distribution">#</a></h4>
@@ -474,44 +459,36 @@ Description: Symmetrical, bell-shaped distribution where most data points are cl
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Heights of Adults: The heights of adult men in a large population typically follow a normal distribution. Most men have a height close to the average (e.g., 5'9&quot; or 175 cm), with fewer men being significantly shorter or taller.</p>
-</blockquote>
+<p>Heights of Adults: The heights of adult men in a large population typically follow a normal distribution. Most men have a height close to the average (e.g., 5'9&quot; or 175 cm), with fewer men being significantly shorter or taller.</p></blockquote>
 <blockquote>
-<p>Test Scores: In standardized tests, scores are often designed to follow a normal distribution, with most students scoring around the mean and fewer achieving very high or very low scores.</p>
-</blockquote>
+<p>Test Scores: In standardized tests, scores are often designed to follow a normal distribution, with most students scoring around the mean and fewer achieving very high or very low scores.</p></blockquote>
 <p>3.2 Binomial Distribution<br>
 Description: Discrete distribution representing the number of successes in a fixed number of independent trials, with each trial having the same probability of success.</p>
 <ul>
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Flipping a Coin: If you flip a fair coin 10 times, the number of heads you get follows a binomial distribution. Each flip is independent, and the probability of getting heads is 0.5.</p>
-</blockquote>
+<p>Flipping a Coin: If you flip a fair coin 10 times, the number of heads you get follows a binomial distribution. Each flip is independent, and the probability of getting heads is 0.5.</p></blockquote>
 <blockquote>
-<p>Pass/Fail Outcomes: In a classroom, if a teacher randomly selects 5 students and checks if they passed an exam, the number of students who passed (out of 5) follows a binomial distribution.</p>
-</blockquote>
+<p>Pass/Fail Outcomes: In a classroom, if a teacher randomly selects 5 students and checks if they passed an exam, the number of students who passed (out of 5) follows a binomial distribution.</p></blockquote>
 <p>3.3. Poisson Distribution
 Description: Discrete distribution representing the number of events occurring in a fixed interval of time or space, where events occur independently at a constant average rate.</p>
 <ul>
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Calls to a Call Center: The number of phone calls received by a call center in an hour might follow a Poisson distribution. If the average number of calls per hour is 20, the distribution describes how many calls might be received in any given hour.</p>
-</blockquote>
+<p>Calls to a Call Center: The number of phone calls received by a call center in an hour might follow a Poisson distribution. If the average number of calls per hour is 20, the distribution describes how many calls might be received in any given hour.</p></blockquote>
 <blockquote>
-<p>Traffic Accidents: The number of traffic accidents at a particular intersection in a month could follow a Poisson distribution, assuming accidents occur randomly over time.</p>
-</blockquote>
+<p>Traffic Accidents: The number of traffic accidents at a particular intersection in a month could follow a Poisson distribution, assuming accidents occur randomly over time.</p></blockquote>
 <p>3.4. Exponential Distribution
 Description: Continuous distribution describing the time between events in a Poisson process, where events occur continuously and independently at a constant average rate.</p>
 <ul>
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Time Between Bus Arrivals: The time between arrivals of buses at a bus stop might follow an exponential distribution. If buses arrive on average every 10 minutes, the distribution describes the likelihood of waiting times between buses.</p>
-</blockquote>
+<p>Time Between Bus Arrivals: The time between arrivals of buses at a bus stop might follow an exponential distribution. If buses arrive on average every 10 minutes, the distribution describes the likelihood of waiting times between buses.</p></blockquote>
 <blockquote>
-<p>Lifespan of Light Bulbs: The time until a light bulb burns out can be modeled by an exponential distribution, assuming the failure rate is constant over time.</p>
-</blockquote>
+<p>Lifespan of Light Bulbs: The time until a light bulb burns out can be modeled by an exponential distribution, assuming the failure rate is constant over time.</p></blockquote>
 <ol start="5">
 <li>Uniform Distribution
 Description: Continuous or discrete distribution where all outcomes are equally likely within a specified range.</li>
@@ -520,55 +497,45 @@ Description: Continuous or discrete distribution where all outcomes are equally 
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Rolling a Fair Die: Rolling a fair six-sided die follows a discrete uniform distribution, where each face (1 through 6) has an equal probability of occurring (1/6).</p>
-</blockquote>
+<p>Rolling a Fair Die: Rolling a fair six-sided die follows a discrete uniform distribution, where each face (1 through 6) has an equal probability of occurring (1/6).</p></blockquote>
 <blockquote>
-<p>Random Number Generation: If a computer program generates random numbers between 0 and 1, these numbers follow a continuous uniform distribution, where any number in the range [0, 1] is equally likely.</p>
-</blockquote>
+<p>Random Number Generation: If a computer program generates random numbers between 0 and 1, these numbers follow a continuous uniform distribution, where any number in the range [0, 1] is equally likely.</p></blockquote>
 <p>3.6. Bernoulli Distribution
 Description: A special case of the binomial distribution for a single trial, representing a random experiment with exactly two possible outcomes: success (1) or failure (0).</p>
 <ul>
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Coin Flip: The outcome of a single coin flip (heads or tails) follows a Bernoulli distribution, with a probability 𝑝 of success (e.g., heads).</p>
-</blockquote>
+<p>Coin Flip: The outcome of a single coin flip (heads or tails) follows a Bernoulli distribution, with a probability 𝑝 of success (e.g., heads).</p></blockquote>
 <blockquote>
-<p>Defective Product Check: Testing a single product from a manufacturing line to see if it is defective (defective or not defective) follows a Bernoulli distribution.</p>
-</blockquote>
+<p>Defective Product Check: Testing a single product from a manufacturing line to see if it is defective (defective or not defective) follows a Bernoulli distribution.</p></blockquote>
 <p>3.7. Multinomial Distribution
 Description: Generalization of the binomial distribution to more than two outcomes, representing the probabilities of different categories in multiple trials.</p>
 <ul>
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Dice Rolls: Rolling a fair six-sided die 10 times, where the outcome is a category (1 through 6), follows a multinomial distribution. The distribution describes the number of times each face appears in 10 rolls.</p>
-</blockquote>
+<p>Dice Rolls: Rolling a fair six-sided die 10 times, where the outcome is a category (1 through 6), follows a multinomial distribution. The distribution describes the number of times each face appears in 10 rolls.</p></blockquote>
 <blockquote>
-<p>Survey Responses: In a survey where respondents choose among several options (e.g., &ldquo;Agree,&rdquo; &ldquo;Neutral,&rdquo; &ldquo;Disagree&rdquo;), the number of respondents selecting each option in a sample follows a multinomial distribution.</p>
-</blockquote>
+<p>Survey Responses: In a survey where respondents choose among several options (e.g., &ldquo;Agree,&rdquo; &ldquo;Neutral,&rdquo; &ldquo;Disagree&rdquo;), the number of respondents selecting each option in a sample follows a multinomial distribution.</p></blockquote>
 <p>3.8. Negative Binomial Distribution
 Description: Discrete distribution representing the number of failures before a specified number of successes occurs in a sequence of independent and identically distributed Bernoulli trials.</p>
 <ul>
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Customer Complaints: If you&rsquo;re studying the number of dissatisfied customers (failures) you encounter before getting 10 satisfied customers (successes), the number of dissatisfied customers follows a negative binomial distribution.</p>
-</blockquote>
+<p>Customer Complaints: If you&rsquo;re studying the number of dissatisfied customers (failures) you encounter before getting 10 satisfied customers (successes), the number of dissatisfied customers follows a negative binomial distribution.</p></blockquote>
 <blockquote>
-<p>Sales Success: A salesperson might record the number of unsuccessful sales calls before securing a certain number of sales. This scenario can be modeled using a negative binomial distribution.</p>
-</blockquote>
+<p>Sales Success: A salesperson might record the number of unsuccessful sales calls before securing a certain number of sales. This scenario can be modeled using a negative binomial distribution.</p></blockquote>
 <p>3.9. Log-Normal Distribution
 Description: A distribution of a random variable whose logarithm is normally distributed. It is skewed and often used to model positive data.</p>
 <ul>
 <li>Example:</li>
 </ul>
 <blockquote>
-<p>Income Distribution: Individual incomes in an economy often follow a log-normal distribution because income cannot be negative and tends to be right-skewed, with many people earning less and a few earning much more.</p>
-</blockquote>
+<p>Income Distribution: Individual incomes in an economy often follow a log-normal distribution because income cannot be negative and tends to be right-skewed, with many people earning less and a few earning much more.</p></blockquote>
 <blockquote>
-<p>Stock Prices: The price of stocks over time can follow a log-normal distribution, as prices are multiplicative and cannot fall below zero.</p>
-</blockquote>
+<p>Stock Prices: The price of stocks over time can follow a log-normal distribution, as prices are multiplicative and cannot fall below zero.</p></blockquote>
 <table>
   <thead>
       <tr>

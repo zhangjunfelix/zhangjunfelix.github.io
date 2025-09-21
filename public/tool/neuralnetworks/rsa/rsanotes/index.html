@@ -151,7 +151,7 @@ Probabilistic pragmatics integrates insights from formal and experimental semant
     <h1 class="post-title entry-hint-parent">
       Rational Speech Act-learning notes
     </h1>
-    <div class="post-meta"><span title='2025-05-06 11:41:54 -0400 EDT'>May 6, 2025</span>&nbsp;·&nbsp;66 min
+    <div class="post-meta"><span title='2025-05-06 11:41:54 -0400 -0400'>May 6, 2025</span>&nbsp;·&nbsp;66 min
 
 </div>
   </header> <div class="toc">
@@ -299,8 +299,7 @@ A <strong>signaling game</strong> models communication as an interaction between
           <td>Successful communication: the listener correctly infers the speaker’s intended meaning.</td>
       </tr>
   </tbody>
-</table>
-</blockquote>
+</table></blockquote>
 <h4 id="31-semantic-foundation-denotation-functions">3.1 Semantic Foundation (Denotation Functions)<a hidden class="anchor" aria-hidden="true" href="#31-semantic-foundation-denotation-functions">#</a></h4>
 <p>RSA begins with a <strong>literal semantics</strong>, defined by a denotation function (see SECTION 4.1 for more explanations):</p>
 <p>$$
@@ -357,8 +356,7 @@ Meaning space: $ M = \{ m_0, m_1, m_2, m_3, m_4 \} $</p>
 <p>Semantics:  $ u_{\text{all}}  = \{ m_4 \}$</p>
 <p>            $ u_{\text{some}}  = \{ m_1, m_2, m_3, m_4 \} $</p>
 <p>            $ u_{\text{none}}  = \{ m_0 \} $</p>
-<p>Prior beliefs: $P(m_0)$ = $P(m_1)$ = $P(m_2)$ = $P(m_3)$ = $P(m_4)$ = $0.2$</p>
-</blockquote>
+<p>Prior beliefs: $P(m_0)$ = $P(m_1)$ = $P(m_2)$ = $P(m_3)$ = $P(m_4)$ = $0.2$</p></blockquote>
 <h3 id="41-denotation-function">4.1 Denotation Function<a hidden class="anchor" aria-hidden="true" href="#41-denotation-function">#</a></h3>
 <p>The <strong>denotation function</strong> is a foundational concept in formal semantics and the Rational Speech Act (RSA) framework. In the RSA framework, the <strong>denotation function</strong> is written as:</p>
 <p>$$
@@ -366,8 +364,7 @@ Meaning space: $ M = \{ m_0, m_1, m_2, m_3, m_4 \} $</p>
 $$
 This means:</p>
 <blockquote>
-<p>The denotation function <em>maps each utterance $ u $ from the set of possible utterances $ U $ to a set of meanings $ M $ — specifically, the meanings for which the utterance is <strong>literally true</strong></em>.</p>
-</blockquote>
+<p>The denotation function <em>maps each utterance $ u $ from the set of possible utterances $ U $ to a set of meanings $ M $ — specifically, the meanings for which the utterance is <strong>literally true</strong></em>.</p></blockquote>
 <h4 id="411--step-by-step-logic-of-the-indicator">4.1.1  Step-by-Step Logic of the Indicator<a hidden class="anchor" aria-hidden="true" href="#411--step-by-step-logic-of-the-indicator">#</a></h4>
 <p>Step 1: Evaluate Whether $m$ Is Literally Compatible with $u$</p>
 <ul>
@@ -382,8 +379,7 @@ This means:</p>
 <p>An <strong>utterance</strong> $ u $ is something a speaker might say.<br>
 Example:</p>
 <blockquote>
-<p>“Alex ate some of the cookies.”</p>
-</blockquote>
+<p>“Alex ate some of the cookies.”</p></blockquote>
 <p>A <strong>meaning</strong> $ m $ refers to a possible state of the world — what might be true or false.<br>
 For example: (in a context where there were four cookies)</p>
 <ul>
@@ -449,8 +445,7 @@ P_{L_0}(m \mid u) \propto \delta_{m \in \llbracket u \rrbracket} \cdot P(m)
 $$</p>
 <p>This means:</p>
 <blockquote>
-<p>The probability that the <strong>Literal Listener</strong> $L_0$ interprets utterance $u$ as meaning $m$ is proportional to whether the meaning $m$ is compatible with the literal semantics of $u$, multiplied by the prior probability of $ m $.</p>
-</blockquote>
+<p>The probability that the <strong>Literal Listener</strong> $L_0$ interprets utterance $u$ as meaning $m$ is proportional to whether the meaning $m$ is compatible with the literal semantics of $u$, multiplied by the prior probability of $ m $.</p></blockquote>
 <ul>
 <li>This computes <strong>unnormalized scores</strong>.</li>
 </ul>
@@ -472,8 +467,7 @@ $$</p>
 <li>This computes the total <strong>weight</strong> of all <strong>and only</strong> remaining possible meanings that make the utterance true (the meanings that make the utterance false would be <strong>left out</strong>).</li>
 <li>It’s the sum over all possible meanings $ m&rsquo; $ that are <strong>compatible with the utterance</strong>.</li>
 <li>This ensures the final probabilities <strong>sum to 1</strong> — this is the <strong>normalization step</strong>.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="why-are-there-two-versions">Why Are There Two Versions?<a hidden class="anchor" aria-hidden="true" href="#why-are-there-two-versions">#</a></h4>
 <table>
   <thead>
@@ -501,23 +495,19 @@ $$</p>
 <li>&ldquo;$\propto$&rdquo; This form&quot;&quot; gives unnormalized scores — only the relative values matter. You must normalize later by dividing by the total.</li>
 <li>&ldquo;=&rdquo; means the result is a proper probability distribution.</li>
 <li>&ldquo;=&rdquo; is used in the normalized equation.</li>
-</ul>
-</blockquote>
-</blockquote>
+</ul></blockquote></blockquote>
 <h4 id="422-explanation-of-each-component">4.2.2 Explanation of Each Component<a hidden class="anchor" aria-hidden="true" href="#422-explanation-of-each-component">#</a></h4>
 <p>(1) $ P_{L_0}(m \mid u) $<br>
 This is the <strong>posterior belief</strong> of the Literal Listener:</p>
 <blockquote>
-<p>How likely is it that the intended meaning is $ m $, given that the utterance $ u $ was heard?</p>
-</blockquote>
+<p>How likely is it that the intended meaning is $ m $, given that the utterance $ u $ was heard?</p></blockquote>
 <p>This represents the listener’s literal interpretation of the utterance: $ \llbracket u \rrbracket $</p>
 <p>(2) $ \llbracket u \rrbracket $</p>
 <p>The set of meanings where $ u $ is literally true.</p>
 <p>(3) $ \delta_{m \in \llbracket u \rrbracket} $</p>
 <p>This is an <strong>indicator/delta function</strong>. It returns 1 if the meaning $m$ is <strong>compatible</strong> with the literal meaning of the utterance; 0 otherwise</p>
 <blockquote>
-<p>In effect, this acts as a <strong>truth filter</strong> — it rules out meanings that are not literally possible.</p>
-</blockquote>
+<p>In effect, this acts as a <strong>truth filter</strong> — it rules out meanings that are not literally possible.</p></blockquote>
 <p>(4) $ P(m) $</p>
 <p>This is the <strong>prior probability</strong> of each possible meaning, representing the listener’s <strong>expectations</strong> about the world <strong>before</strong> hearing the utterance.</p>
 <h4 id="423-how-the-literal-listener-computes-interpretation">4.2.3 How the Literal Listener Computes Interpretation<a hidden class="anchor" aria-hidden="true" href="#423-how-the-literal-listener-computes-interpretation">#</a></h4>
@@ -561,8 +551,7 @@ $$</p>
 <h4 id="step-2-determine-literal-semantics-define-llbracket-u-rrbracket">Step 2: Determine Literal Semantics (Define $\llbracket u \rrbracket$)<a hidden class="anchor" aria-hidden="true" href="#step-2-determine-literal-semantics-define-llbracket-u-rrbracket">#</a></h4>
 <p>Utterance:</p>
 <blockquote>
-<p>$ u = $ &ldquo;Alex ate some of the cookies.&rdquo;</p>
-</blockquote>
+<p>$ u = $ &ldquo;Alex ate some of the cookies.&rdquo;</p></blockquote>
 <p>Literal semantics:</p>
 <p>$$
 \llbracket u \rrbracket = { m_1, m_2, m_3, m_4 }
@@ -734,8 +723,7 @@ $$</p>
 <h4 id="step-2-determine-literal-semantics-define-llbracket-u-rrbracket-1">Step 2: Determine Literal Semantics (Define $\llbracket u \rrbracket$)<a hidden class="anchor" aria-hidden="true" href="#step-2-determine-literal-semantics-define-llbracket-u-rrbracket-1">#</a></h4>
 <p>Utterance:</p>
 <blockquote>
-<p>$ u = $ &ldquo;Alex ate none of the cookies.&rdquo;</p>
-</blockquote>
+<p>$ u = $ &ldquo;Alex ate none of the cookies.&rdquo;</p></blockquote>
 <p>Literal semantics:</p>
 <p>$$
 \llbracket u \rrbracket = { m_0 }
@@ -844,8 +832,7 @@ $$</p>
 <h4 id="step-2-determine-literal-semantics-define-llbracket-u-rrbracket-2">Step 2: Determine Literal Semantics (Define $\llbracket u \rrbracket$)<a hidden class="anchor" aria-hidden="true" href="#step-2-determine-literal-semantics-define-llbracket-u-rrbracket-2">#</a></h4>
 <p>Utterance:</p>
 <blockquote>
-<p>$ u = $ &ldquo;Alex ate all of the cookies.&rdquo;</p>
-</blockquote>
+<p>$ u = $ &ldquo;Alex ate all of the cookies.&rdquo;</p></blockquote>
 <p>Literal semantics:</p>
 <p>$$
 \llbracket u \rrbracket = { m_4 }
@@ -1106,11 +1093,9 @@ $$<br>
 where $ U(u, m) = \log P_{L_0}(m \mid u) - \text{cost}(u) $</p>
 <p>This means:</p>
 <blockquote>
-<p>&ldquo;The probability that the <strong>Pragmatic Speaker</strong> $ S_1 $ will produce utterance $ u $ given that they want to communicate meaning $ m $, is proportional to the exponential of $ \alpha $ times the utility of utterance $ u $ for meaning $ m $.&rdquo;</p>
-</blockquote>
+<p>&ldquo;The probability that the <strong>Pragmatic Speaker</strong> $ S_1 $ will produce utterance $ u $ given that they want to communicate meaning $ m $, is proportional to the exponential of $ \alpha $ times the utility of utterance $ u $ for meaning $ m $.&rdquo;</p></blockquote>
 <blockquote>
-<p>This formula defines the speaker&rsquo;s production $ u $ as softmax optimizing $ u $&rsquo;s utility for communicating $ m $, $ U (u, m) $.</p>
-</blockquote>
+<p>This formula defines the speaker&rsquo;s production $ u $ as softmax optimizing $ u $&rsquo;s utility for communicating $ m $, $ U (u, m) $.</p></blockquote>
 <p>Meaning of its components</p>
 <ul>
 <li>$ P_{S_1}(u \mid m) $: Probability the speaker chooses utterance $ u $ to communicate meaning $ m $.</li>
@@ -1191,8 +1176,7 @@ $$</p>
 <p><strong>$\propto$</strong> means <strong>“proportional to”</strong>.<br>
 It indicates the values are relative but not yet normalized.</p>
 <blockquote>
-<p>The probability of choosing utterance $ u $ to express meaning $ m $ is <strong>proportional to</strong> the exponentiated utility, but this is <strong>not yet the final probability</strong>.</p>
-</blockquote>
+<p>The probability of choosing utterance $ u $ to express meaning $ m $ is <strong>proportional to</strong> the exponentiated utility, but this is <strong>not yet the final probability</strong>.</p></blockquote>
 <h4 id="why-normalize">Why Normalize?<a hidden class="anchor" aria-hidden="true" href="#why-normalize">#</a></h4>
 <ul>
 <li>Probabilities must sum to <strong>1</strong>.</li>
@@ -1250,8 +1234,7 @@ $$</p>
 <h4 id="final-step-normalize-to-get-probabilities-1"><strong>Final Step: Normalize to Get Probabilities</strong><a hidden class="anchor" aria-hidden="true" href="#final-step-normalize-to-get-probabilities-1">#</a></h4>
 <p>$$
 P_{L_0}(m_4 \mid u) = \frac{\text{Unnormalized Score}}{\text{Denominator}} = \frac{0.2}{0.8} = 0.25
-$$</p>
-</blockquote>
+$$</p></blockquote>
 <h4 id="step-2-compute-utilities">Step 2: Compute Utilities<a hidden class="anchor" aria-hidden="true" href="#step-2-compute-utilities">#</a></h4>
 <p>Assume $\text{cost}(u) = 0$ for simplicity.</p>
 <ul>
@@ -1315,8 +1298,7 @@ $$</p>
 <p><strong>Interpretation</strong>:</p>
 <ul>
 <li>The speaker is <strong>four times more likely</strong> to say “all” than “some” when Alex ate all cookies.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="437-how-to-understand-figure-2">4.3.7 How to understand Figure 2?<a hidden class="anchor" aria-hidden="true" href="#437-how-to-understand-figure-2">#</a></h4>
 <h4 id="figure-2-rsa-speaker-production-probabilities"><strong>Figure 2: RSA Speaker Production Probabilities</strong><a hidden class="anchor" aria-hidden="true" href="#figure-2-rsa-speaker-production-probabilities">#</a></h4>
 <p align="center">
@@ -1522,8 +1504,7 @@ $$</p>
 <li>
 <p>The listener hears $u$ and asks:</p>
 <blockquote>
-<p><em>“How likely would a rational speaker have said this if they intended each possible meaning?”</em></p>
-</blockquote>
+<p><em>“How likely would a rational speaker have said this if they intended each possible meaning?”</em></p></blockquote>
 </li>
 <li>
 <p>The listener also considers how likely each meaning was <strong>before</strong> hearing $u$ (using the prior $P(m)$).</p>
@@ -1646,8 +1627,7 @@ $$</p>
 </ul>
 <p>$$
 \text{Total} = 0 + 0 + 0 + 0 + 0.2 = 0.2
-$$</p>
-</blockquote>
+$$</p></blockquote>
 <p><strong>For $u_{\text{some}}$</strong></p>
 <ul>
 <li>$P_{L_0}(m_4 \mid u_{some}) = \delta_{m_4 \in \llbracket u_{some} \rrbracket} \cdot P(m_4) = 1 \cdot 0.2 = 0.2 $ (This is Unnormalized probability)</li>
@@ -1821,7 +1801,7 @@ $$</p>
 <li>$\llbracket u_{\text{all}} \rrbracket = { m_4 }$</li>
 </ul>
 <p>Assume <strong>$\alpha = 1$</strong> and <strong>$\text{cost}(u) = 0$</strong> for all utterances.</p>
-<h4 id="reasoning-level-1-literal-listener-l_0">REASONING LEVEL #1 <strong>Literal Listener ($L_0$)</strong><a hidden class="anchor" aria-hidden="true" href="#reasoning-level-1-literal-listener-l_0">#</a></h4>
+<h4 id="reasoning-level-1-literal-listener-l_">REASONING LEVEL #1 <strong>Literal Listener ($L_0$)</strong><a hidden class="anchor" aria-hidden="true" href="#reasoning-level-1-literal-listener-l_">#</a></h4>
 <h4 id="step-1-apply-the-full-equation">Step 1: Apply the Full Equation<a hidden class="anchor" aria-hidden="true" href="#step-1-apply-the-full-equation">#</a></h4>
 <p>$$
 P_{L_0}(m \mid u_{\text{some}}) = \frac{\delta_{m \in \llbracket u_{\text{some}} \rrbracket} \cdot P(m)}{\displaystyle \sum_{m&rsquo;} \delta_{m&rsquo; \in \llbracket u_{\text{some}} \rrbracket} \cdot P(m&rsquo;)}
@@ -1866,7 +1846,7 @@ $$</p>
       </tr>
   </tbody>
 </table>
-<h4 id="reasoning-level-2-pragmatic-speaker-s_1">REASONING LEVEL #2 <strong>Pragmatic Speaker ($S_1$)</strong><a hidden class="anchor" aria-hidden="true" href="#reasoning-level-2-pragmatic-speaker-s_1">#</a></h4>
+<h4 id="reasoning-level-2-pragmatic-speaker-s_">REASONING LEVEL #2 <strong>Pragmatic Speaker ($S_1$)</strong><a hidden class="anchor" aria-hidden="true" href="#reasoning-level-2-pragmatic-speaker-s_">#</a></h4>
 <p>The speaker reasons about how the Literal Listener interprets utterances to decide which utterance to produce.</p>
 <h4 id="step-1-compute-utility-for-each-utterance-when-meaning--m_4">Step 1: Compute Utility for Each Utterance When Meaning = $m_4$<a hidden class="anchor" aria-hidden="true" href="#step-1-compute-utility-for-each-utterance-when-meaning--m_4">#</a></h4>
 <p>Using:</p>
@@ -1958,7 +1938,7 @@ $$</p>
       </tr>
   </tbody>
 </table>
-<h4 id="reasoning-level-3-pragmatic-listener-l_1">REASONING LEVEL #3 <strong>Pragmatic Listener ($L_1$)</strong><a hidden class="anchor" aria-hidden="true" href="#reasoning-level-3-pragmatic-listener-l_1">#</a></h4>
+<h4 id="reasoning-level-3-pragmatic-listener-l_">REASONING LEVEL #3 <strong>Pragmatic Listener ($L_1$)</strong><a hidden class="anchor" aria-hidden="true" href="#reasoning-level-3-pragmatic-listener-l_">#</a></h4>
 <p>The listener now reasons about what meaning the speaker most likely intended after hearing the utterance.</p>
 <h4 id="step-1-apply-the-full-equation-1">Step 1: Apply the Full Equation<a hidden class="anchor" aria-hidden="true" href="#step-1-apply-the-full-equation-1">#</a></h4>
 <p>$$
@@ -2272,8 +2252,7 @@ $$</p>
 <li>$P_{\text{literal}}(r_1 \mid \text{&ldquo;green&rdquo;}) = \frac{1}{2} = 0.5$</li>
 <li>$P_{\text{literal}}(r_2 \mid \text{&ldquo;green&rdquo;}) = 0.5$</li>
 <li>$P_{\text{literal}}(r_3 \mid \text{&ldquo;green&rdquo;}) = 0$</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="2-pragmatic-speaker-s_1">2. Pragmatic Speaker ($S_1$)<a hidden class="anchor" aria-hidden="true" href="#2-pragmatic-speaker-s_1">#</a></h4>
 <p>$$
 P_{prod}(p \mid r; \lambda, f) =
@@ -2433,8 +2412,7 @@ $$</p>
 <li>$P_{\text{literal}}(r_1 \mid \text{&ldquo;green&rdquo;}) = \frac{1}{2} = 0.5$</li>
 <li>$P_{\text{literal}}(r_2 \mid \text{&ldquo;green&rdquo;}) = \frac{1}{2} = 0.5$</li>
 <li>$P_{\text{literal}}(r_3 \mid \text{&ldquo;green&rdquo;}) = 0$</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="example-2-listener-hears-square">Example 2: Listener Hears “square”<a hidden class="anchor" aria-hidden="true" href="#example-2-listener-hears-square">#</a></h4>
 <ol>
 <li>
@@ -2481,8 +2459,7 @@ $$</p>
 <li>$P_{\text{literal}}(r_1 \mid \text{&ldquo;square&rdquo;}) = \frac{1}{1} = 1.0$</li>
 <li>$P_{\text{literal}}(r_2 \mid \text{&ldquo;square&rdquo;}) = 0$</li>
 <li>$P_{\text{literal}}(r_3 \mid \text{&ldquo;square&rdquo;}) = 0$</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="example-3-listener-hears-blue">Example 3: Listener Hears “blue”<a hidden class="anchor" aria-hidden="true" href="#example-3-listener-hears-blue">#</a></h4>
 <ol>
 <li>
@@ -2529,8 +2506,7 @@ $$</p>
 <li>$P_{\text{literal}}(r_1 \mid \text{&ldquo;square&rdquo;}) = 0$</li>
 <li>$P_{\text{literal}}(r_2 \mid \text{&ldquo;square&rdquo;}) = 0$</li>
 <li>$P_{\text{literal}}(r_3 \mid \text{&ldquo;square&rdquo;}) = \frac{1}{1} = 1.0$</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h3 id="65-pragmatic-speaker">6.5 Pragmatic Speaker<a hidden class="anchor" aria-hidden="true" href="#65-pragmatic-speaker">#</a></h3>
 <p>$$
 P_{prod}(p \mid r; \lambda, f) =
@@ -2660,8 +2636,7 @@ Speakers can, and sometimes do, use suboptimal or false utterances.</p>
 <li>You&rsquo;re modeling <strong>idealized agents</strong> in formal semantics or decision theory.</li>
 <li>Your research assumes <strong>strict informativeness</strong>.</li>
 <li>You&rsquo;re simulating <strong>maximally rational communication</strong>.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p><strong><em>Speaker production probabilities calculation</em></strong><br>
 <em>Step 1: Assume:</em></p>
 <ul>
@@ -2739,8 +2714,7 @@ $EU_{speaker}(r_1, &ldquo;square&rdquo;; f) = P_{literal}(r_1 \mid &ldquo;square
           <td>Low utility (as in $\log(0.25)$).</td>
       </tr>
   </tbody>
-</table>
-</blockquote>
+</table></blockquote>
 <p><em>Step 5: Normalize to Get Final Probabilities</em></p>
 <p>$ Total = \exp\left( \lambda \cdot EU_{speaker}(r_1, green&rsquo;; f) \right) + \exp\left( \lambda \cdot EU_{speaker}(r_1, square&rsquo;; f) \right) =1.649 + 2.718 = 4.367 $</p>
 <ul>
@@ -2840,8 +2814,7 @@ $$</p>
 <h4 id="intuition">Intuition<a hidden class="anchor" aria-hidden="true" href="#intuition">#</a></h4>
 <blockquote>
 <p>The listener <strong>reasons backward</strong>:<br>
-“If the speaker chose to say $p$, which referent $r$ would make that utterance most likely—assuming they were optimizing utility using $\lambda$ and $f$?”</p>
-</blockquote>
+“If the speaker chose to say $p$, which referent $r$ would make that utterance most likely—assuming they were optimizing utility using $\lambda$ and $f$?”</p></blockquote>
 <p>This is a form of <strong>Bayesian social reasoning</strong>:</p>
 <ul>
 <li>The listener assumes the speaker is rational (to some degree),</li>
@@ -2983,8 +2956,7 @@ $$</p>
 <li>$P_{prod}(\text{&ldquo;square&rdquo;} \mid r_3) = \frac{1}{6.367} \approx 0.1571$</li>
 <li>$P_{prod}(\text{&ldquo;circle&rdquo;} \mid r_3) = \frac{1.64}{6.367} \approx 0.2589$</li>
 <li>$P_{prod}(\text{&ldquo;blue&rdquo;} \mid r_3) = \frac{2.718}{6.367} \approx 0.4269$</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <hr>
 <h3 id="vii-indirect-speech-acts-in-rsa">VII. Indirect Speech Acts in RSA<a hidden class="anchor" aria-hidden="true" href="#vii-indirect-speech-acts-in-rsa">#</a></h3>
 <p><em>Based on Franke &amp; Jäger (2016), Section 6</em></p>
@@ -2995,8 +2967,7 @@ $$</p>
 <ul>
 <li><strong>Literal interpretation</strong>: A question about your ability.</li>
 <li><strong>Pragmatic interpretation</strong>: A polite request to pass the salt.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>These types of speech acts are pervasive in everyday communication and raise a key challenge for formal models of meaning. How can a listener derive an intended meaning that diverges from the literal form?</p>
 <p>The <strong>Rational Speech Act (RSA)</strong> model provides a solution by modeling speakers and listeners as rational agents engaging in recursive social reasoning — not just about <em>what was said</em>, but <em>why it was said</em> in a given context.</p>
 <hr>
@@ -3021,8 +2992,7 @@ $$</p>
 <p>This suggests that indirect speech is <strong>irrational</strong>—and yet, it&rsquo;s ubiquitous and interpretable. To resolve this contradiction, Franke and Jäger (2016) draw from the broader field of <strong>rationalist pragmatics</strong>, especially ideas from <strong>Brown &amp; Levinson (1987)</strong> and <strong>Steven Pinker (2008)</strong>.</p>
 <p>Their key insight:</p>
 <blockquote>
-<p><strong>Indirect speech is rational when we consider social context, strategic goals, and reputational concerns.</strong></p>
-</blockquote>
+<p><strong>Indirect speech is rational when we consider social context, strategic goals, and reputational concerns.</strong></p></blockquote>
 <ul>
 <li>
 <h4 id="three-social-pragmatic-motivations-after-pinker-2008">Three Social-Pragmatic Motivations (after Pinker, 2008)<a hidden class="anchor" aria-hidden="true" href="#three-social-pragmatic-motivations-after-pinker-2008">#</a></h4>
@@ -3032,8 +3002,7 @@ $$</p>
 <blockquote>
 <p><em>Example</em>:<br>
 The veiled bribe is another recognizable plot device, as when the kidnapper in Fargo shows a police officer his drivers’s license in a wallet with a fifty-dollar bill protruding from it and suggests, ‘So maybe the best thing would be to take care of that here in Brainerd.’ (Pinker 2008: 374)</p>
-<p align="center">
-</blockquote>
+<p align="center"></blockquote>
   <img src="/images/Brainerd.jpg" alt="Fargo" width="600px">
 </p>
 <ul>
@@ -3045,8 +3014,7 @@ The veiled bribe is another recognizable plot device, as when the kidnapper in F
 <h4 id="2-establishing-shared-knowledge-without-common-knowledge">2. Establishing Shared Knowledge Without Common Knowledge<a hidden class="anchor" aria-hidden="true" href="#2-establishing-shared-knowledge-without-common-knowledge">#</a></h4>
 <blockquote>
 <p><em>Example</em>:
-“Would you like to come up for coffee?” (instead of “Do you want to have sex?”)</p>
-</blockquote>
+“Would you like to come up for coffee?” (instead of “Do you want to have sex?”)</p></blockquote>
 <ul>
 <li>The utterance signals intent.</li>
 <li>Both speaker and hearer <strong>recognize the implicature</strong>.</li>
@@ -3056,8 +3024,7 @@ The veiled bribe is another recognizable plot device, as when the kidnapper in F
 <h4 id="3-preserving-social-relationships-and-roles">3. Preserving Social Relationships and Roles<a hidden class="anchor" aria-hidden="true" href="#3-preserving-social-relationships-and-roles">#</a></h4>
 <blockquote>
 <p><em>Example</em>:
-A customer tells the maître d’, “Is there any way to get a table sooner?” instead of “Here’s $50 to seat me now.”</p>
-</blockquote>
+A customer tells the maître d’, “Is there any way to get a table sooner?” instead of “Here’s $50 to seat me now.”</p></blockquote>
 <ul>
 <li>The <strong>direct request</strong> would frame the situation as a <strong>market transaction</strong>.</li>
 <li>The <strong>indirect request</strong> preserves the social role of a courteous guest.</li>
@@ -3118,14 +3085,12 @@ A customer tells the maître d’, “Is there any way to get a table sooner?”
 <li>A <strong>manager might avoid sounding too authoritarian</strong>, maintaining a more <strong>collegial tone</strong>.</li>
 <li>Mixing directive and collaborative frames could create discomfort.</li>
 <li><strong>Indirectness helps the speaker frame the interaction</strong> in a way that suits the current social dynamic.</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <hr>
 <h3 id="73-the-deeper-problem">7.3 The Deeper Problem<a hidden class="anchor" aria-hidden="true" href="#73-the-deeper-problem">#</a></h3>
 <p>The real puzzle isn’t “why do indirect speech acts work?” but rather:</p>
 <blockquote>
-<p><strong>When and why is it rational to use them?</strong></p>
-</blockquote>
+<p><strong>When and why is it rational to use them?</strong></p></blockquote>
 <p>What seems irrational in terms of raw information transfer becomes rational when:</p>
 <ul>
 <li>Social dynamics,</li>
@@ -3146,17 +3111,13 @@ A customer tells the maître d’, “Is there any way to get a table sooner?”
 <p>The authors illustrate their RSA approach using a real-world scenario involving an indirect speech act by the US Treasury Secretary:</p>
 <blockquote>
 <blockquote>
-<p><em>In May, 2003, the US Treasury Secretary, John Snow, in response to a question, made some remarks that caused the dollar to drop precipitously in value. The Wall Street Journal sharply criticized him for ‘playing with fire,’ and characterized his remarks as ‘dumping on his own currency,’ ‘bashing the dollar,’ and ‘talking the dollar down.’ What he in fact said was this: ‘<strong>When the dollar is at a lower level it helps exports, and I think exports are getting stronger as a result</strong>.’ This was an uncontroversial factual claim that everyone, whatever his or her views about what US government currency policy is or should be, would agree with. Why did it have such an impact? (Stalnaker 2005: 82)</em></p>
-</blockquote>
-</blockquote>
+<p><em>In May, 2003, the US Treasury Secretary, John Snow, in response to a question, made some remarks that caused the dollar to drop precipitously in value. The Wall Street Journal sharply criticized him for ‘playing with fire,’ and characterized his remarks as ‘dumping on his own currency,’ ‘bashing the dollar,’ and ‘talking the dollar down.’ What he in fact said was this: ‘<strong>When the dollar is at a lower level it helps exports, and I think exports are getting stronger as a result</strong>.’ This was an uncontroversial factual claim that everyone, whatever his or her views about what US government currency policy is or should be, would agree with. Why did it have such an impact? (Stalnaker 2005: 82)</em></p></blockquote></blockquote>
 <p><strong>Utterance $s$ (indirect)</strong>:</p>
 <blockquote>
-<p>“When the dollar is at a lower level it helps exports, and I think exports are getting stronger as a result.”</p>
-</blockquote>
+<p>“When the dollar is at a lower level it helps exports, and I think exports are getting stronger as a result.”</p></blockquote>
 <p><strong>Implied meaning (direct)</strong>:</p>
 <blockquote>
-<p>“The US Treasury will take measures to lower the dollar’s exchange rate.”</p>
-</blockquote>
+<p>“The US Treasury will take measures to lower the dollar’s exchange rate.”</p></blockquote>
 <p><strong>A rationalist account based on decision and game theory</strong></p>
 <p><em><strong>Step 1: Define Speaker’s Possible Intentions (&ldquo;Types&rdquo;)</strong></em></p>
 <p>We consider two possible &ldquo;types&rdquo; of speaker (S):</p>
@@ -3226,9 +3187,7 @@ $$ \frac{P(t_1 \mid s)}{P(t_2 \mid s)} &gt; \frac{P(t_1)}{P(t_2)} $$
 as in this setting: $P(t_1) + P(t_2) = 1$ and $P(t_1 \mid s) + P(t_2 \mid s) = 1$
 $$\frac{P(t_1 \mid s)}{1 - P(t_1 \mid s)} &gt; \frac{P(t_1)}{1 - P(t_1)}$$
 $$P(t_1 \mid s) - P(t_1)P(t_1 \mid s) &gt; P(t_1) - P(t_1)P(t_1 \ mid s)$$
-$$P(t_1 \mid s) &gt; P(t_1)$$</p>
-</blockquote>
-</blockquote>
+$$P(t_1 \mid s) &gt; P(t_1)$$</p></blockquote></blockquote>
 <hr>
 <h3 id="75-why-rsa-models-capture-this-rationality">7.5 Why RSA Models Capture This Rationality:<a hidden class="anchor" aria-hidden="true" href="#75-why-rsa-models-capture-this-rationality">#</a></h3>
 <p>RSA rationalizes indirect speech acts as:</p>
@@ -3277,8 +3236,7 @@ $$P(t_1 \mid s) &gt; P(t_1)$$</p>
 <hr>
 <h4 id="intuition-check">Intuition Check:<a hidden class="anchor" aria-hidden="true" href="#intuition-check">#</a></h4>
 <blockquote>
-<p><strong>Indirectness is rational</strong> because it strategically <strong>affects listener beliefs</strong> without explicitly committing the speaker. It shifts probabilities, making some interpretations highly likely—but not guaranteed—thus preserving crucial <strong>social and strategic flexibility</strong>.</p>
-</blockquote>
+<p><strong>Indirectness is rational</strong> because it strategically <strong>affects listener beliefs</strong> without explicitly committing the speaker. It shifts probabilities, making some interpretations highly likely—but not guaranteed—thus preserving crucial <strong>social and strategic flexibility</strong>.</p></blockquote>
 <hr>
 <blockquote>
 <p><strong>Step 3: Bayesian Reasoning and Listener Belief Updating</strong></p>
@@ -3290,8 +3248,7 @@ RSA models this belief updating using <strong>Bayes’ rule</strong>, a core pri
 “When the dollar is at a lower level, it helps exports, and I think exports are getting stronger as a result.”</p>
 <p><strong>Possible speaker intentions</strong>:<br>
 • <em>t₁</em>: The speaker intends to lower the dollar.<br>
-• <em>t₂</em>: The speaker does <strong>not</strong> intend any action.</p>
-</blockquote>
+• <em>t₂</em>: The speaker does <strong>not</strong> intend any action.</p></blockquote>
 <h4 id="bayes-rule-formal">Bayes&rsquo; Rule (Formal)<a hidden class="anchor" aria-hidden="true" href="#bayes-rule-formal">#</a></h4>
 <p>$$
 P(t_1 \mid s) = \frac{P(s \mid t_1) \cdot P(t_1)}{P(s)}
@@ -3316,8 +3273,7 @@ $$</li>
 <p>The listener now assigns <strong>80% probability</strong> to the speaker intending to lower the dollar — a strong update from the original 50%.</p>
 <h4 id="why-it-matters">Why It Matters<a hidden class="anchor" aria-hidden="true" href="#why-it-matters">#</a></h4>
 <p>RSA shows that <strong>even vague or indirect utterances</strong> can shift beliefs dramatically through rational inference.<br>
-This explains why <strong>indirect speech acts are effective</strong>, despite their surface ambiguity.</p>
-</blockquote>
+This explains why <strong>indirect speech acts are effective</strong>, despite their surface ambiguity.</p></blockquote>
 <hr>
 <h3 id="74-rsa-perspective-on-indirectness">7.4 RSA Perspective on Indirectness<a hidden class="anchor" aria-hidden="true" href="#74-rsa-perspective-on-indirectness">#</a></h3>
 <p>In the RSA framework, interpretation goes beyond truth conditions. Speakers are modeled as optimizing communicative goals, and listeners reason backward from utterances to infer those goals.</p>
@@ -3379,8 +3335,7 @@ $$</p>
 <p><strong>Pragmatic listener</strong> reasons:</p>
 <blockquote>
 <p>“If the speaker truly wanted information, would they have said this?
-Or is it more likely they’re politely requesting action?”</p>
-</blockquote>
+Or is it more likely they’re politely requesting action?”</p></blockquote>
 </li>
 </ol>
 <p>Given the <strong>contextual prior</strong> $P(g_1) &gt; P(g_2)$, and assuming $P_{S_1}(u \mid g_1)$ is high, the listener concludes the intended goal is $g_1$ (request).</p>
@@ -3439,8 +3394,7 @@ Or is it more likely they’re politely requesting action?”</p>
 <p>In the Rational Speech Act (RSA) model, <strong>λ (lambda)</strong> appears in the <strong>Pragmatic Speaker equation</strong>, where it controls how strongly the speaker favors higher-utility utterances.</p>
 <h4 id="core-intuition">Core Intuition:<a hidden class="anchor" aria-hidden="true" href="#core-intuition">#</a></h4>
 <blockquote>
-<p>λ determines how <strong>deterministic or probabilistic</strong> the speaker’s utterance choices are.</p>
-</blockquote>
+<p>λ determines how <strong>deterministic or probabilistic</strong> the speaker’s utterance choices are.</p></blockquote>
 <h4 id="where-does-λ-appear">Where Does λ Appear?<a hidden class="anchor" aria-hidden="true" href="#where-does-λ-appear">#</a></h4>
 <p>In <strong>Franke &amp; Jäger (2016)</strong>, the Pragmatic Speaker is modeled as:</p>
 <p>$$
@@ -3584,8 +3538,7 @@ $$</p>
 </table>
 <h4 id="final-takeaway">Final Takeaway<a hidden class="anchor" aria-hidden="true" href="#final-takeaway">#</a></h4>
 <blockquote>
-<p>λ gives the RSA model <strong>flexibility</strong> to represent real human speakers who are sometimes decisive and sometimes probabilistic in their choices. It controls the <strong>softness of rationality</strong> in utterance production.</p>
-</blockquote>
+<p>λ gives the RSA model <strong>flexibility</strong> to represent real human speakers who are sometimes decisive and sometimes probabilistic in their choices. It controls the <strong>softness of rationality</strong> in utterance production.</p></blockquote>
 <hr>
 <h3 id="extra-2-softmax-function">Extra #2 Softmax Function<a hidden class="anchor" aria-hidden="true" href="#extra-2-softmax-function">#</a></h3>
 <h4 id="why-is-the-softmax-function-used-in-the-pragmatic-speaker-formula">Why Is the Softmax Function Used in the Pragmatic Speaker Formula?<a hidden class="anchor" aria-hidden="true" href="#why-is-the-softmax-function-used-in-the-pragmatic-speaker-formula">#</a></h4>
@@ -3667,8 +3620,7 @@ Softmax:</p>
 <h4 id="intuition-1">Intuition<a hidden class="anchor" aria-hidden="true" href="#intuition-1">#</a></h4>
 <blockquote>
 <p>Softmax lets the speaker be smart—but not rigid.<br>
-Better utterances are more likely, but nothing is guaranteed.</p>
-</blockquote>
+Better utterances are more likely, but nothing is guaranteed.</p></blockquote>
 <h4 id="summary-table-2">Summary Table<a hidden class="anchor" aria-hidden="true" href="#summary-table-2">#</a></h4>
 <table>
   <thead>
@@ -3775,8 +3727,7 @@ Better utterances are more likely, but nothing is guaranteed.</p>
 <p><strong>What is Bayes’ Theorem?</strong></p>
 <p>At its core, Bayes’ Theorem answers the question:</p>
 <blockquote>
-<p><strong>&ldquo;Given some new evidence, how should I update my belief about a hypothesis?&rdquo;</strong></p>
-</blockquote>
+<p><strong>&ldquo;Given some new evidence, how should I update my belief about a hypothesis?&rdquo;</strong></p></blockquote>
 <p><strong>The Formula</strong></p>
 <p>$$
 P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}

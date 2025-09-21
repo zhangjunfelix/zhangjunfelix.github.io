@@ -1,12 +1,12 @@
 ---
-title: "Eyelink software tutorial"
+title: "Eyelink Experimental Builder tutorial"
 date: 2025-01-28
 draft: false
 
 ---
 
 ## Introduction to Experiment Builder: A Step-by-Step Guide
-[video link](https://www.youtube.com/watch?v=qCMgHiGbWN4&list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv)
+[video link](https://www.youtube.com/playlist?list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv)
 
 ### Overview
 This tutorial provides a fundamental understanding of the Experiment Builder software. You'll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.
@@ -945,3 +945,906 @@ Interest areas are not visible to participants but are useful for specifying reg
 #### Conclusion
 By using the screen builder and referencing data source columns, you can dynamically change experimental characteristics across trials. This approach allows for flexible and efficient experiment design. For more detailed information on specific actions and triggers, refer to the videos on behavioral data logging and Interest Periods in Data Viewer.
 
+
+-----
+
+
+
+## Webinar - Implementing the Visual World Paradigm in Experiment Builder
+
+[Link to video](https://www.youtube.com/watch?v=U3gt2v9_ZN4)
+
+[Data, PPT & Video downloads](https://drive.google.com/drive/folders/1PH312mMMkVTEfzxmwZXrIxZjTrTHAY56)
+
+
+Example project: *SimpleVisualWorld.ebz*
+
+
+**Overview**
+
+This tutorial is based on the SR Research webinar *Implementing the Visual World Paradigm in Experiment Builder*.  
+It walks you through building a Visual World experiment using the included **SimpleVisualWorld.ebz** project, covering:
+
+- Automatic drift checks between trials
+- Balancing stimulus positions
+- Marking critical audio times in EDF files
+- Logging behavioral responses
+
+**1. Experiment Structure**
+
+- **Blocks:**
+  - 1 practice block (2 trials)
+  - 4 experimental blocks (4 trials each)
+- **Between-block event:** Break screen
+- **Counterbalancing:** 2 list versions defined in the Data Source
+
+
+**2. Trial Start & Auto Drift Check**
+
+**Fixation Cross**
+- **Invisible Boundary Trigger**:
+  - Region: bounding box over fixation cross
+  - Event: *Gaze In Region For* = 500 ms
+  - Timeout: 10,000 ms
+  - On timeout:
+    - **Update Attribute** (`SET_RECALIBRATE`):
+      ```
+      SHOULD_WE_RECALIBRATE = 1
+      ```
+
+**Recalibration Logic**
+- **Conditional Trigger** (`CHECK_TO_RECALIBRATE`):
+  - If:
+    ```
+    SHOULD_WE_RECALIBRATE == 1
+    ```
+    → Go to `EL_CAMERA_SETUP`
+  - Else → Continue trial
+
+
+
+**3. Stimulus Display & Positioning**
+
+**Goal:** Interest Areas (IAs) code **stimulus type**, not screen position.
+
+- **Image Resources:**
+  - `Target_Image`
+  - `PhonComp_Image`
+  - `SemComp_Image`
+  - `Distractor_Image`
+- **Interest Areas:**
+  - `IA_Target`
+  - `IA_PhonComp`
+  - `IA_SemComp`
+  - `IA_Distractor`
+  - Location: Reference → corresponding image resource
+- **Variable:**
+  - `POSITIONS_LIST` (list of `(x, y)` coordinates)
+    - Index `0` unused
+    - Codes:  
+      `1` = top left  
+      `2` = top right  
+      `3` = bottom left  
+      `4` = bottom right
+- **Data Source:**
+  - Position codes: `Target_Pos`, `PhonComp_Pos`, `SemComp_Pos`, `Distractor_Pos`
+  - File names: `Target_File`, `PhonComp_File`, `SemComp_File`, `Distractor_File`
+- **DISPLAY_IMAGES Action:**
+  - Position = `POSITIONS_LIST` index from Data Source
+  - File = filename from Data Source
+
+
+
+**4. Preview and Audio Playback**
+
+- **TIMER_IMAGE_PREVIEW**:
+  - Duration = 500 ms
+- **PLAY_SOUND** Action:
+  - Sound File = `AudioFile` column from Data Source
+
+
+**5. Critical Audio Event Marking**
+
+- **TIMER_CRIT_WORD** Trigger:
+  - Start Time = `PLAY_SOUND.playStartTime`
+  - Duration = `CritWordTime` column
+  - **Send Message To EDF**:
+    ```
+    CRIT_WORD_ONSET
+    ```
+
+**6. Mouse Response Collection**
+
+**Cursor Setup:**
+- Cursor image resource
+- **Position is Mouse Contingent** = ON
+- **Color Key** = ON
+- **Update Attribute**:
+  - Reset mouse position before showing images
+
+**Click Detection:**
+- **MOUSE_RESPONSE** Trigger:
+  - Region Type = INTEREST AREA
+  - Linked to: IA_Target, IA_PhonComp, IA_SemComp, IA_Distractor
+  - Button = 1 (left click)
+  - **Press Events** = ON
+  - **Position Triggered** = ON
+
+
+
+**7. Logging Behavioral Data**
+
+- **Conditional Trigger** after MOUSE_RESPONSE:
+  - If:
+    ```
+    IA ID == 1
+    ```
+    → **SET_VARS_CORRECT**:
+      ```
+      ACCURACY = 1
+      ```
+  - Else:
+    → **SET_VARS_INCORRECT**:
+      ```
+      ACCURACY = 0
+      ```
+- Both branches also set:
+  - `IMAGE_CLICKED`
+  - `RT`
+- **Send Message to EDF** and write to results file
+
+
+
+**8. Trial End**
+
+- **Feedback Display**: 1 second
+- Next trial or block break
+
+**Summary Table**
+
+| Component              | Purpose                         | EB Objects Used |
+|------------------------|---------------------------------|-----------------|
+| Auto Drift Check       | Maintain calibration            | Invisible Boundary Trigger, Conditional Trigger |
+| Stimulus Positioning   | Type-based IA coding            | Image Resources, Interest Areas, `POSITIONS_LIST` |
+| Audio Event Marking    | Time-lock to critical words     | Timer Trigger, Send Message to EDF |
+| Mouse Response         | Collect participant clicks      | Cursor Resource, Mouse Response Trigger |
+| Data Logging           | Store accuracy, RT, choice      | Conditional Trigger, Update Attribute, EDF Msg |
+
+---
+
+
+##  Step-by-step creation of the Visual World Paradigm in EB
+
+**Series Navigation:**  
+Part 1 – Project Setup and Data Source    
+Part 2 – Stimulus Display and Interest Areas
+
+
+### Part 1 – Project Setup and Data Source 
+
+**Overview**
+
+This post begins the step-by-step build of the *SimpleVisualWorld.ebz* experiment as described in the SR Research webinar *Implementing the Visual World Paradigm in Experiment Builder*.  
+
+
+**1. Create a New Project**
+
+1. Open **Experiment Builder** and select **File → New Project**.
+2. Give the project a descriptive name (e.g., `VisualWorldParadigm`).
+3. Set the save location for your `.ebz` file.
+
+
+
+**2. Define Variables**
+
+From the transcript, the following variables are used later in the build:
+
+1. `SHOULD_WE_RECALIBRATE` – integer, default value `0`.
+2. `POSITIONS_LIST` – list, stores `(x, y)` coordinates for positions 1–4.
+3. `ACCURACY` – integer.
+4. `IMAGE_CLICKED` – string.
+5. `RT` – number.
+
+**Steps:**
+1. Go to the **Variables** tab.
+2. Add each variable with its correct type.
+3. For `POSITIONS_LIST`:
+   - Add position coordinates:
+     ```
+     0 = (0,0)   # unused
+     1 = top left
+     2 = top right
+     3 = bottom left
+     4 = bottom right
+     ```
+
+> **Note on `POSITIONS_LIST`, Image Positions, and Interest Areas in a Visual World Experiment**
+> 
+> **What**  
+> In this experiment, `POSITIONS_LIST` is a variable storing fixed `(x, y)` coordinates for potential stimulus locations on a 1920×1080 display.  
+> Each coordinate was chosen so that it lies in a different quadrant:
+> 
+> ```
+> Index 0: (0, 0)        # unused placeholder
+> Index 1: (480, 270)    # top left
+> Index 2: (1440, 270)   # top right
+> Index 3: (480, 810)    # bottom left
+> Index 4: (1440, 810)   # bottom right
+> ```
+> <img src="/images/positionlistVW4Q.png" alt="4-Quadrant positions for POSITIONS_LIST" width="450">
+> 
+> The screen center is at `(960, 540)`, dividing the display into four quadrants:  
+> - **Top left:** `x < 960` and `y < 540`  
+> - **Top right:** `x > 960` and `y < 540`  
+> - **Bottom left:** `x < 960` and `y > 540`  
+> - **Bottom right:** `x > 960` and `y > 540`
+> 
+> **How**  
+> - The Data Source contains position codes (1–4) for each stimulus type (e.g., `Target_Pos`, `PhonComp_Pos`).  
+> - EB uses the code as an **index** into `POSITIONS_LIST` to find the corresponding coordinates.  
+> - For example, `Target_Pos = 2` → `POSITIONS_LIST[2] = (1440, 270)`  
+>   - `1440` > `960` → right half of screen  
+>   - `270` < `540` → top half of screen  
+>   → Result: **top-right quadrant**.  
+> - The Image Resource’s **Position** property references `POSITIONS_LIST`, with the **Index** tied to the relevant Data Source column.  
+> - Each Interest Area’s **Location** property references its image resource, so when the image is positioned, the IA moves with it automatically.
+> 
+> **Why**  
+> - **Quadrants ≠ Interest Areas**: Quadrants are just possible screen positions. Interest Areas are named for stimulus type (e.g., `IA_Target`, `IA_PhonComp`) and follow the assigned image to any quadrant.  
+> - **Counterbalancing**: The same stimulus type can appear in different quadrants across trials, supporting balanced designs without changing IA definitions.  
+> - **Clean analysis**: In Data Viewer, `IA_Target` always refers to the target stimulus, regardless of which quadrant it was displayed in. This avoids the need to re-code locations in post-processing.
+> 
+> This setup ensures stimulus placement is flexible, Interest Areas always match stimulus identity, and the design supports efficient counterbalancing and straightforward analysis.
+> 
+
+
+**3. Prepare the Data Source**
+
+The Data Source should contain columns matching the variables used to position and display stimuli:
+
+1. **Position columns** (integer values 1–4):
+   - `Target_Pos`
+   - `PhonComp_Pos`
+   - `SemComp_Pos`
+   - `Distractor_Pos`
+2. **File name columns** (string):
+   - `Target_File`
+   - `PhonComp_File`
+   - `SemComp_File`
+   - `Distractor_File`
+3. **Audio file column**:
+   - `AudioFile`
+4. **Critical word timing**:
+   - `CritWordTime` (in milliseconds)
+
+**Steps:**
+1. Open the **Data Source** editor.
+2. Create the columns listed above.
+3. Fill in the rows for each trial according to your design.
+4. Save the Data Source file.
+
+
+**4. Create Project Blocks**
+
+From the transcript:
+
+- **1 practice block** (2 trials)
+- **4 experimental blocks** (4 trials each)
+- Break screen between blocks
+- Two counterbalanced list versions in the Data Source
+
+**Steps:**
+1. In the timeline, create a **Practice Block**:
+   - Number of trials: 2.
+2. Create **Experimental Block 1–4**:
+   - Number of trials: 4 in each block.
+3. Add a **Break Screen** sequence between blocks.
+4. Link blocks to the correct Data Source list version.
+
+---
+
+### Part 2 – Stimulus Display and Interest Areas
+
+**Overview**
+
+This post covers the setup of stimulus display and interest areas for the *SimpleVisualWorld.ebz* experiment, following the SR Research webinar transcript step-by-step.
+
+
+**1. Add Image Resources**
+
+From the transcript, we have four image resources:
+
+1. `Target_Image`
+2. `PhonComp_Image`
+3. `SemComp_Image`
+4. `Distractor_Image`
+
+**Steps:**
+1. In the **Resource Manager**, create a new **Image Resource** for each stimulus type.
+2. Assign placeholder images for now — these will be replaced with file references from the Data Source later.
+
+
+**2. Create Interest Areas (IAs)**
+
+The transcript specifies one IA per stimulus type, not per position.
+
+1. `IA_Target`
+2. `IA_PhonComp`
+3. `IA_SemComp`
+4. `IA_Distractor`
+
+**Steps:**
+1. On the stimulus display canvas, right-click → **Add Interest Area**.
+2. Name it according to stimulus type (e.g., `IA_Target`).
+3. In the **Location** property of the IA, set **Reference** to the matching image resource (e.g., `IA_Target` → `Target_Image`).
+4. Repeat for all four IAs.
+
+
+
+**3. Link Positions from `POSITIONS_LIST`**
+
+The transcript specifies that stimulus positions are controlled by a variable rather than fixed coordinates.
+
+**Steps:**
+1. Select `Target_Image` in the display canvas.
+2. In the **Position** property, set Reference → `POSITIONS_LIST`.
+3. For **Index**, reference the Data Source column `Target_Pos`.
+4. Repeat for:
+   - `PhonComp_Image` → Index from `PhonComp_Pos`
+   - `SemComp_Image` → Index from `SemComp_Pos`
+   - `Distractor_Image` → Index from `Distractor_Pos`
+
+
+**4. Link Image Files from the Data Source**
+
+**Steps:**
+1. Select `Target_Image`.
+2. In the **File** property, set Reference → `Target_File` (Data Source column).
+3. Repeat for:
+   - `PhonComp_Image` → `PhonComp_File`
+   - `SemComp_Image` → `SemComp_File`
+   - `Distractor_Image` → `Distractor_File`
+
+
+**5. Add DISPLAY_IMAGES Action to the Trial Sequence**
+
+**Steps:**
+1. In the trial sequence, insert a **DISPLAY_IMAGES** action.
+2. Ensure it references the four image resources already linked to `POSITIONS_LIST` and Data Source columns.
+3. Place this action in the correct order in the trial timeline, before the audio playback.
+
+---
+
+## A Triangle Layout in a Visual World Experiment
+### Using `POSITIONS_LIST` for a Triangle Layout in a Visual World Experiment
+> 
+> **What**  
+> In this design, we present **three images** arranged in a triangular pattern on a 1920×1080 display. Instead of placing them in rectangular quadrants, we define a `POSITIONS_LIST` with three fixed `(x, y)` coordinates, each representing one vertex of the triangle:
+> 
+> ```
+> Index 0: (0, 0)        # unused placeholder
+> Index 1: (960, 270)    # top center
+> Index 2: (560, 810)    # bottom left
+> Index 3: (1360, 810)   # bottom right
+> ```
+> > <img src="/images/positionlistVW3Q.png" alt="3-Quadrant positions for POSITIONS_LIST" width="450">
+> 
+> These coordinates were chosen so that each point lies inside one of the intended positions of the triangle. You can adjust these values to change spacing or alignment.
+> 
+> **How**  
+> 1. **Define `POSITIONS_LIST`**  
+>    - In Experimental Builder, create a variable named `POSITIONS_LIST` of type **Point List**.  
+>    - Enter the coordinates above, keeping index `0` as an unused placeholder.  
+> 
+> 2. **Add position columns in the Data Source**  
+>    - In your CSV/Excel Data Source, add a **position column** for each image type:  
+>      - `Target_Pos`  
+>      - `Comp_Pos` (competitor)  
+>      - `Distractor_Pos`  
+>    - For each trial, assign a number **1–3** indicating where that image should appear.  
+>    - Example:
+>      | Trial | Target_Pos | Comp_Pos | Distractor_Pos |
+>      |-------|------------|----------|----------------|
+>      | 1     | 1          | 2        | 3              |
+>      | 2     | 2          | 1        | 3              |
+>      | 3     | 3          | 2        | 1              |
+> 
+> 3. **Link images to `POSITIONS_LIST`**  
+>    - On the display, select each image resource (`Target_Image`, `Comp_Image`, `Distractor_Image`).  
+>    - In the **Position** property:  
+>      - Set **Reference** → `POSITIONS_LIST`.  
+>      - Set **Index** → the matching Data Source column (`Target_Pos`, `Comp_Pos`, or `Distractor_Pos`).  
+>    - This tells EB: *For this trial, place the image at `POSITIONS_LIST[ DataSource.PositionColumn ]`*.
+> 
+> 4. **Link Interest Areas to image resources**  
+>    - Create an Interest Area (IA) for each stimulus type (`IA_Target`, `IA_Comp`, `IA_Distractor`).  
+>    - In the IA’s **Location** property, set **Reference** → the associated image resource.  
+>    - This ensures the IA moves automatically to follow its image’s position in each trial.
+> 
+> **Why**  
+> - **Flexible positioning**: You can easily change the coordinates in `POSITIONS_LIST` to adjust the triangle’s shape without editing every display.  
+> - **Counterbalancing**: Stimulus types can swap positions across trials simply by changing the position codes in the Data Source.  
+> - **Clean analysis**: Interest Areas are tied to stimulus identity, not fixed positions. For example, `IA_Target` always means the target stimulus, whether it appears at the top or bottom of the triangle.  
+> - **Reusability**: The same trial display works for all position combinations, avoiding the need to create separate layouts for each configuration.
+> 
+> This method mirrors the standard `POSITIONS_LIST` approach used in quadrant-based designs, but with custom coordinates for a triangle arrangement, ensuring both experimental flexibility and data analysis clarity.
+
+---
+
+
+### Choosing `POSITIONS_LIST` Coordinates for a Triangle Layout on a 1920×1080 Screen
+> 
+> **Understanding the Coordinate System**  
+> Experimental Builder (EB) uses screen coordinates where:
+> - `(0, 0)` = top-left corner of the screen  
+> - `(1920, 1080)` = bottom-right corner (for a 1920×1080 display)  
+> - By default, the **Position** property for an image refers to its **center point**, not its top-left corner.
+> 
+> **Goal Layout**  
+> For a triangle arrangement of three images:
+> - One image at the **top center**
+> - Two images at the **bottom**, left and right
+> 
+> **Step-by-Step Process**  
+> 1. **Find the screen center**  
+>    ```
+>    Center X = 1920 / 2 = 960
+>    Center Y = 1080 / 2 = 540
+>    ```
+> 
+> 2. **Top vertex (Image 1)**  
+>    - Keep it horizontally centered: `x = 960`  
+>    - Move it upward to about 1/4 of the way down the screen: `y = 270`  
+>    - Result: `(960, 270)`  
+> 
+> 3. **Bottom left vertex (Image 2)**  
+>    - Shift left from the center: `x = 960 - 400 = 560`  
+>    - Move it downward to about 3/4 of the way down the screen: `y = 810`  
+>    - Result: `(560, 810)`  
+> 
+> 4. **Bottom right vertex (Image 3)**  
+>    - Shift right from the center: `x = 960 + 400 = 1360`  
+>    - Same vertical position as bottom left: `y = 810`  
+>    - Result: `(1360, 810)`
+> 
+> **Final `POSITIONS_LIST`**
+> ```
+> Index 0: (0, 0)        # unused placeholder
+> Index 1: (960, 270)    # top center
+> Index 2: (560, 810)    # bottom left
+> Index 3: (1360, 810)   # bottom right
+> ```
+> 
+> **Why These Values Work**  
+> - **Symmetry:** Equal horizontal shifts from the center produce a balanced triangle.  
+> - **Spacing:** Vertical offsets (270 for top, 810 for bottom) keep images apart and leave room for Interest Areas.  
+> - **Adjustability:** Changing horizontal or vertical offsets lets you easily resize or reshape the triangle without altering the Data Source or trial displays.
+> 
+> **Tip**: These values assume that your image’s *center point* is positioned at the given coordinates. If you use large images, test the layout to ensure they don’t overlap and adjust offsets accordingly.
+
+---
+
+
+
+## Composite Images and IAS Files for a Triangle Layout in a Visual World Experiment
+
+### Using Composite Images and IAS Files in EyeLink Visual World Experiments"
+
+**🎯 Overview**
+
+In a Visual World eye-tracking experiment, the **Target**, **Competitor**, and **Distractor** are combined into a **single composite image** for each trial.  
+
+This method replaces `POSITIONS_LIST` with **matching Interest Area Set (IAS) files** that define rectangles aligned with the composite layout.  
+
+- Composite images fix the layout of stimuli.  
+- IAS files specify screen-relative coordinates of Interest Areas (IAs).  
+- This guarantees that the gaze data always maps correctly to each object.
+
+
+**🛠 How to Implement**
+
+**1. 🖼 Create Composite Images**
+- Use **PowerPoint** (or similar) to arrange the three images (Target, Competitor, Distractor).  
+- Export each slide as a `.png` (e.g., `1280 × 718`).  
+- In EB, these images will be displayed **centered on a `1920 × 1080` screen**, without stretching.  
+- Create multiple composites to counterbalance object positions across trials.
+
+
+
+**2. 📐 Define Interest Areas (IAS Files)**
+For each composite, create a `.ias` file that specifies the Interest Area rectangles.
+
+Coordinates must be relative to the **full screen (1920 × 1080)**, not the composite image size.
+
+Since a `1280 × 718` image is centered on the `1920 × 1080` screen:
+- Horizontal offset = (1920 − 1280) / 2 = **320**  
+- Vertical offset = (1080 − 718) / 2 = **181**
+
+Add these offsets to the image-relative IA coordinates.
+
+Example conversion:  
+If the Target is at (524, 19) in the image, then its screen coordinates are:
+- X = 524 + 320 = **844**  
+- Y = 19 + 181 = **200**
+
+> Example IAS file:
+
+```
+Label X Y Width Height
+Target 844 200 233 233
+Competitor 475 647 233 233
+Distractor 1212 647 233 233
+```
+
+
+
+- **Label** = stimulus role (Target, Competitor, Distractor)  
+- **X, Y** = top-left corner of IA rectangle (screen pixels)  
+- **Width, Height** = IA size (screen pixels)  
+
+If stimuli swap positions in another composite, you only change coordinates in the IAS file — labels remain consistent.
+
+
+
+**3. 📋 Reference Images and IAS Files in the Data Source**
+In the EB Data Source spreadsheet, include:
+
+| Trial | CompositeImage | IASFile   |
+|-------|----------------|-----------|
+| 1     | comp1.png      | comp1.ias |
+| 2     | comp2.png      | comp2.ias |
+| 3     | comp3.png      | comp3.ias |
+
+- `CompositeImage` → composite stimulus filename  
+- `IASFile` → matching interest area set filename  
+
+
+**4. ⚙ Configure the Display in EB**
+- Insert a single **Image Resource**.  
+  - Set **Filename Reference** to the `CompositeImage` column.  
+- In the Display **Properties**, set **Interest Area Set Name** to reference the `IASFile` column.  
+- Place composites in the `images/` folder and IAS files in the `ias/` folder of the EB project.
+
+
+**5. 📡 During Recording**
+- EB loads the composite image and its IAS file for each trial.  
+- IA definitions are written into the `.edf` along with gaze data.
+
+
+
+**6. 📊 In Data Viewer**
+- The correct interest areas load automatically per trial.  
+- Exports include `IA_LABEL` values (`Target`, `Competitor`, `Distractor`), regardless of screen position.  
+
+
+
+**✅ Advantages**
+- 🔄 Eliminates `POSITIONS_LIST` (layout is fixed in the composite).  
+- 🎯 Precise IA mapping (avoids misalignment).  
+- 💡 Simplified setup (one image, one IAS file per trial).  
+- 🎲 Easy counterbalancing (shuffle composite–IAS pairs in the Data Source).  
+- 📊 Streamlined Data Viewer analysis (labels consistent across trials).  
+
+
+
+**⚠️ Trade-offs**
+- ✏️ Each new layout requires a composite + IAS pair.  
+- 🧩 Less flexible — moving images means re-exporting composites and updating IAS files.  
+- 📂 Requires careful file management to avoid mismatches.  
+
+
+
+**🖼 Example**
+
+<img src="/images/composite_in_full_screen_black_white.png" alt="Composite Image in a full screen" width="450">
+
+*Example: A `1280 × 718` composite centered on a `1920 × 1080` screen, with IAS coordinates offset to align with Target, Competitor, and Distractor. In the actual experiment, the background of both the composite images and the screen are set as black. Only the three interest areas are set as white.*
+
+
+
+**📊 Conversion Table**
+
+Here’s how the three IA coordinates from the composite image (`1280 × 718`) were converted into screen-relative coordinates (`1920 × 1080`):
+
+| Label       | Image X | Image Y | Width | Height | +320 (H offset) | +181 (V offset) | Screen X | Screen Y |
+|-------------|---------|---------|-------|--------|-----------------|-----------------|----------|----------|
+| Target      | 524     | 19      | 233   | 233    | 524 + 320       | 19 + 181        | **844**  | **200**  |
+| Competitor  | 155     | 466     | 233   | 233    | 155 + 320       | 466 + 181       | **475**  | **647**  |
+| Distractor  | 892     | 466     | 233   | 233    | 892 + 320       | 466 + 181       | **1212** | **647**  |
+
+This table ensures clarity:  
+- **Image X/Y** = measured directly on the 1280×718 composite  
+- **Offsets** = applied to center the image on the 1920×1080 screen  
+- **Screen X/Y** = final values to use in IAS files  
+
+
+
+
+
+---
+
+
+### Calculating Interest Area (IA) Coordinates from PowerPoint Measurements
+
+**Prompt**  
+Measurements from PowerPoint’s *Size & Position* panel for a composite image:
+
+**Top-center image**  
+- X position = 13.45 cm (from top-left corner)  
+- Y position = 0.5 cm (from top-left corner)  
+- Width = 6 cm  
+- Height = 6 cm  
+
+**Bottom-left image**  
+- X position = 4 cm (from top-left corner)  
+- Y position = 12 cm (from top-left corner)  
+- Width = 6 cm  
+- Height = 6 cm  
+
+**Bottom-right image**  
+- X position = 23 cm (from top-left corner)  
+- Y position = 12 cm (from top-left corner)  
+- Width = 6 cm  
+- Height = 6 cm  
+
+**Slide size**: 1280×718 px  
+**Screen size**: 1920×1080 px  
+**Export DPI**: 99 pixels/inch  
+
+---
+
+**Step 1 — Conversion Factor**
+
+To convert from cm to pixels:
+$$
+\text{pixels} = \text{cm} \times \frac{99}{2.54} \approx \text{cm} \times 38.976
+$$
+
+At **99 DPI**, every cm ≈ **38.976 px**.
+
+
+**Step 2 — Convert each measurement**
+
+**Top-center**  
+- X = 13.45 × 38.976 ≈ **524 px**  
+- Y = 0.5 × 38.976 ≈ **19 px**  
+- Width = 6 × 38.976 ≈ **234 px**  
+- Height = 6 × 38.976 ≈ **234 px**
+
+**Bottom-left**  
+- X = 4 × 38.976 ≈ **156 px**  
+- Y = 12 × 38.976 ≈ **468 px**  
+- Width = **234 px**  
+- Height = **234 px**
+
+**Bottom-right**  
+- X = 23 × 38.976 ≈ **896 px**  
+- Y = 12 × 38.976 ≈ **468 px**  
+- Width = **234 px**  
+- Height = **234 px**
+
+---
+
+**Step 3 — IAS File (relative to composite image 1280×718 px)**
+
+```text
+# Label        X     Y     Width   Height
+TopCenter     524    19     234     234
+BottomLeft    156   468     234     234
+BottomRight   896   468     234     234
+```
+
+
+
+
+---
+
+
+
+
+
+
+### How EB Stores IAS References in the EDF 
+> 
+> When you set **Interest Area Set Name** in a Display to reference the `IASFile` column in your Data Source:
+> 
+> 1. **During experiment runtime**  
+>    - For each trial, EB reads the filename from the `IASFile` column (e.g., `comp1.ias`)  
+>    - EB loads that `.ias` file and applies it to the stimulus display for that trial.
+> 
+> 2. **While recording**  
+>    - EB writes a special **IA definition message** into the `.edf` file at the exact moment the trial starts.  
+>    - This message contains:
+>      - The IA labels (e.g., `Target`, `Competitor`, `Distractor`)
+>      - The coordinates and sizes of each IA rectangle
+>      - The link between this IA set and the trial ID
+> 
+> 3. **When you open the EDF in Data Viewer**  
+>    - Data Viewer reads the IA definition messages directly from the EDF.  
+>    - It reconstructs the IA sets for each trial exactly as they were during the experiment.  
+>    - Because your IAS files were named by stimulus role (not position), the exported data’s `IA_LABEL` values always match the correct Target/Competitor/Distractor for that trial.
+> 
+> **Why this matters**  
+> - You don’t need to manually load IAS files later — they’re already embedded in the EDF.  
+> - The `IA_LABEL` column in fixation/saccade exports is trustworthy for direct analysis.  
+> - Even if the same physical IA coordinates are reused across different trials, the labels are correct because they’re tied to the trial-specific IAS file that EB applied during recording.
+
+
+---
+
+
+
+### Note on Screen and Interest Area Layout
+> 
+> In this setup:
+> - The **full screen resolution** is **1920×1200** pixels (Some computers are **1920*1080**).
+> - The **composite stimulus image** is **1280×718** pixels and is positioned in the **center** of the screen.
+> - All Interest Area (IA) coordinates are defined **relative to the composite image’s top-left corner**.
+> 
+> **Interest Area coordinates for this example**:
+> ```
+> # Label       X     Y     Width   Height
+> Target       524   19    233     233
+> Competitor   155   466   233     233
+> Distractor   892   466   233     233
+> ```
+> 
+> When the composite image is displayed in Experimental Builder:
+> - EB draws it centered on the screen (1920×1200).
+> - Each IA’s `(X, Y)` coordinate is offset by the composite image’s top-left corner position on the screen.
+> - The **Y coordinate** is inverted when converting from EB’s top-left origin to plotting or analysis environments like Matplotlib.
+> 
+> **Visualization of Layout**:
+> 
+> <img src="/images/triangleIAS.png" alt="Composite image centered on screen with interest areas" width="500">
+> 
+> **Why this matters**:
+> - The IAS file should always use coordinates relative to the composite image size (1280×718), not the full screen size.
+> - As long as the composite image stays centered, the same IAS coordinates will align correctly across trials.
+
+
+---
+
+
+### How Gaze Coordinates Are Determined When Using a Centered Composite Image
+
+**Prompt**  
+Explain how the coordinates of gazes are determined in this case.
+
+
+**1. Eye tracker coordinate system**
+- The EyeLink tracker samples gaze points in **full screen coordinates**.  
+- On this setup, the screen is **1920 × 1080 pixels**.  
+- The origin `(0, 0)` is at the **top-left corner of the screen**.
+
+
+**2. Composite image placement**
+- The composite stimulus image is **1280 × 718 px**.  
+- Experimental Builder (EB) positions it **centered** on the 1920×1080 screen.  
+
+**Screen offsets:**
+- Horizontal offset = (1920 − 1280) ÷ 2 = **320 px** from the left edge.  
+- Vertical offset = (1080 − 718) ÷ 2 = **181 px** from the top edge.
+
+
+**3. Interest Area (IAS) coordinates**
+- The `.ias` file stores IA coordinates **relative to the composite image’s top-left corner**.  
+- Example: `TopCenter` IA = (524, 19) inside the composite image.
+
+**EB applies offsets when displaying:**
+
+IA_screen_X = Image_offset_X + IA_relative_X   
+IA_screen_Y = Image_offset_Y + IA_relative_Y  
+
+
+For `(524, 19)`:
+- Screen X = 320 + 524 = **844**  
+- Screen Y = 181 + 19 = **200**
+
+
+**4. How Data Viewer uses it**
+- EB writes the **final screen-space IA coordinates** into the `.edf` file during recording.  
+- When the EDF is opened in Data Viewer:
+  - The IAs are already in **screen coordinates** matching the gaze samples.
+  - If a gaze sample is at `(850, 210)`, Data Viewer checks if it falls inside `(844, 200, width=704, height=704)` and assigns the correct `IA_LABEL`.
+
+**Key takeaway**  
+Even though IAS files are designed in **composite image space**, EB applies the **centering offset** at runtime and stores the **true screen coordinates** in the EDF.  
+This ensures Data Viewer’s analysis is accurate without any manual coordinate conversion.
+
+---
+
+
+---
+
+### Mapping Interest Areas from a Centered Composite Image
+
+
+**🔠 Screen and Image Setup**
+
+* **Experiment screen resolution:** `1920 × 1080` (fullscreen)
+* **Composite image size:** `1280 × 718` pixels
+* **Composite image position:** **centered** on screen, **not stretched or scaled**
+* **Each face tile size (Interest Area):** `233 × 233` pixels (square)
+
+**📀 Composite Image Position on Screen**
+
+Since the image is centered and smaller than the screen:
+
+```
+Left/right margin  = (1920 − 1280) / 2 = 320 px  
+Top/bottom margin  = (1080 − 718) / 2 = 181 px
+```
+
+Thus, the **top-left corner of the composite image** is positioned at **(320, 181)** on the screen.
+
+
+**🔁 Conversion Rule: Image to Screen Coordinates**
+
+If your interest area (IA) coordinates are defined relative to the image (1280×718), you must convert them to **screen-based coordinates** for use in Experimental Builder (EB).
+
+```text
+X_screen = X_image + 320
+Y_screen = Y_image + 181
+Width and Height remain the same
+```
+
+> ⚠️ EB and Data Viewer interpret IA coordinates relative to the full screen, **not** the image. Always apply this conversion before use.
+
+
+**🧪 Example Conversion**
+
+**Interest Areas in Image Coordinates (1280×718)**
+
+| Label      | X   | Y   | Width | Height |
+| ---------- | --- | --- | ----- | ------ |
+| Target     | 524 | 19  | 233   | 233    |
+| Competitor | 155 | 466 | 233   | 233    |
+| Distractor | 892 | 466 | 233   | 233    |
+
+**Converted to Screen Coordinates (1920×1080)**
+
+| Label      | X    | Y   | Width | Height |
+| ---------- | ---- | --- | ----- | ------ |
+| Target     | 844  | 200 | 233   | 233    |
+| Competitor | 475  | 647 | 233   | 233    |
+| Distractor | 1212 | 647 | 233   | 233    |
+
+
+**📄 Ready-to-Use `.ias` Snippet**
+
+```plaintext
+# Label       X    Y    Width  Height
+Target       844  200  233    233
+Competitor   475  647  233    233
+Distractor  1212  647  233    233
+```
+
+✅ Save this file with `.ias` extension in **plain text**, UTF-8 encoding, and use LF line endings (not Windows CRLF).
+
+
+**✅ Best Practices for Experimental Builder**
+
+1. **Display**: Set the image action to "centered" and **do not scale** or stretch it.
+2. **Interest Areas**: Load the converted `.ias` file as an Interest Area Set.
+3. **Test**: Run a test session and visually confirm alignment of the rectangles with image elements.
+4. **Environment**: Ensure:
+
+   * Screen resolution is exactly 1920×1080
+   * No DPI scaling or OS-level zoom is active
+   * Image is not resized at runtime
+
+
+**🔁 When to Recalculate IA Coordinates**
+
+Recalculate coordinates if:
+
+* You change the **image size**
+* You change the **screen resolution**
+* You **scale or stretch** the image in EB
+* You edit **position or layout** of elements within the composite image
+
+
+This workflow ensures **pixel-perfect alignment** between your visual stimuli and gaze-tracking data, which is critical for meaningful analysis using Data Viewer.
+
+---

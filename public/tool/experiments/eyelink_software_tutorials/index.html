@@ -152,7 +152,7 @@ Welcome to the Experiment Builder introductory tutorial series! This guide will 
     <h1 class="post-title entry-hint-parent">
       Eyelink software tutorial
     </h1>
-    <div class="post-meta"><span title='2025-01-28 00:00:00 +0000 UTC'>January 28, 2025</span>&nbsp;·&nbsp;30 min
+    <div class="post-meta"><span title='2025-01-28 00:00:00 +0000 UTC'>January 28, 2025</span>&nbsp;·&nbsp;37 min
 
 </div>
   </header> <div class="toc">
@@ -177,6 +177,12 @@ Welcome to the Experiment Builder introductory tutorial series! This guide will 
         <li><a href="#tutorial-08---trial-preparation">Tutorial 08 - Trial Preparation</a></li>
         <li><a href="#tutorial-09---trial-events">Tutorial 09 - Trial Events</a></li>
         <li><a href="#tutorial-10---screen-building-and-referencing">Tutorial 10 - Screen Building and Referencing</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-viewer-a-beginners-guide-to-eye-tracking-analysis">Data Viewer: A Beginner&rsquo;s Guide to Eye-Tracking Analysis</a>
+      <ul>
+        <li><a href="#tutorial-01-data-viewer-overview">Tutorial 01: Data Viewer Overview</a></li>
+        <li><a href="#tutorial-02-creating-and-managing-viewing-sessions-in-data-viewer">Tutorial 02: Creating and Managing Viewing Sessions in Data Viewer</a></li>
       </ul>
     </li>
   </ul>
@@ -1153,6 +1159,351 @@ To terminate a test run, press:
 </ul>
 <h4 id="conclusion-6">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-6">#</a></h4>
 <p>By using the screen builder and referencing data source columns, you can dynamically change experimental characteristics across trials. This approach allows for flexible and efficient experiment design. For more detailed information on specific actions and triggers, refer to the videos on behavioral data logging and Interest Periods in Data Viewer.</p>
+<hr>
+<h2 id="data-viewer-a-beginners-guide-to-eye-tracking-analysis">Data Viewer: A Beginner&rsquo;s Guide to Eye-Tracking Analysis<a hidden class="anchor" aria-hidden="true" href="#data-viewer-a-beginners-guide-to-eye-tracking-analysis">#</a></h2>
+<p>Welcome to the first tutorial in our <strong>Data Viewer for Beginners</strong> series. If you&rsquo;re new to eye-tracking analysis or just getting started with <strong>SR Research’s Data Viewer</strong>, this guide is for you.</p>
+<p>In this post, you’ll learn:</p>
+<ul>
+<li>What Data Viewer is</li>
+<li>What kinds of eye-tracking data it can analyze</li>
+<li>How it helps researchers visualize and extract insights</li>
+<li>Why it&rsquo;s one of the most widely used tools for processing EyeLink data</li>
+</ul>
+<p>Let’s take a first look at what makes Data Viewer so powerful and beginner-friendly.</p>
+<h3 id="tutorial-01-data-viewer-overview">Tutorial 01: Data Viewer Overview<a hidden class="anchor" aria-hidden="true" href="#tutorial-01-data-viewer-overview">#</a></h3>
+<h4 id="what-is-data-viewer">What Is Data Viewer?<a hidden class="anchor" aria-hidden="true" href="#what-is-data-viewer">#</a></h4>
+<p><strong>Data Viewer</strong> is a powerful and flexible tool developed by SR Research for analyzing <strong>eye-tracking data</strong>. If you&rsquo;re working with an <strong>EyeLink system</strong>, this is your go-to application for:</p>
+<ul>
+<li>Viewing gaze behavior over time and across conditions</li>
+<li>Creating visualizations like heat maps</li>
+<li>Extracting data for statistical analysis</li>
+</ul>
+<p>This tutorial introduces the major functions and benefits of Data Viewer and prepares you to dive deeper in later modules.</p>
+<h4 id="what-can-you-do-with-data-viewer">What Can You Do with Data Viewer?<a hidden class="anchor" aria-hidden="true" href="#what-can-you-do-with-data-viewer">#</a></h4>
+<h4 id="1-inspect-spatial-and-temporal-data">1. <strong>Inspect Spatial and Temporal Data</strong><a hidden class="anchor" aria-hidden="true" href="#1-inspect-spatial-and-temporal-data">#</a></h4>
+<p>Data Viewer lets you analyze <strong>where</strong> and <strong>when</strong> participants look during a task. You can:</p>
+<ul>
+<li>Compare gaze durations on different parts of an image</li>
+<li>Track regressions while reading text</li>
+<li>Analyze saccade amplitude and latency</li>
+<li>Explore pupillometry over time</li>
+</ul>
+<blockquote>
+<p>📌 Example: See if participants looked longer at <strong>angry faces</strong> than <strong>happy faces</strong>, or how many <strong>regressions</strong> they made during reading.</p>
+</blockquote>
+<h4 id="2-batch-processing-for-all-participants">2. <strong>Batch Processing for All Participants</strong><a hidden class="anchor" aria-hidden="true" href="#2-batch-processing-for-all-participants">#</a></h4>
+<p>Data Viewer supports <strong>batch processing</strong>, meaning you can analyze data from <strong>all participants at once</strong>.</p>
+<p>Just:</p>
+<ul>
+<li><strong>Import all .edf files</strong> into a single session</li>
+<li>Process them collectively</li>
+<li>Export your reports in seconds</li>
+</ul>
+<p>This saves time and ensures consistent output across your dataset.</p>
+<h4 id="3-define-interest-periods-ips">3. <strong>Define Interest Periods (IPs)</strong><a hidden class="anchor" aria-hidden="true" href="#3-define-interest-periods-ips">#</a></h4>
+<p>An <strong>Interest Period (IP)</strong> is a time window during a trial where you want to focus your analysis.</p>
+<p>You can:</p>
+<ul>
+<li>Sync IPs to specific experimental events (e.g., stimulus onset)</li>
+<li>Define IPs to last a fixed duration or until another event</li>
+<li>Apply the same IP definition across all trials and participants</li>
+</ul>
+<blockquote>
+<p>📌 Example: Analyze <strong>only the image-viewing part</strong> of a trial and ignore the following question.</p>
+</blockquote>
+<h4 id="4-define-interest-areas-ias">4. <strong>Define Interest Areas (IAs)</strong><a hidden class="anchor" aria-hidden="true" href="#4-define-interest-areas-ias">#</a></h4>
+<p>An <strong>Interest Area (IA)</strong> defines a region of a visual display where you expect relevant gaze behavior.</p>
+<ul>
+<li>Can be <strong>static</strong> (e.g., text or image studies) or <strong>dynamic</strong> (e.g., video or smooth pursuit)</li>
+<li>Come in various shapes:
+<ul>
+<li>Rectangle</li>
+<li>Ellipse</li>
+<li>Freehand</li>
+</ul>
+</li>
+<li>Dynamic IAs can <strong>change over time</strong> for more complex studies</li>
+</ul>
+<blockquote>
+<p>🎯 Knowing <em>where</em> participants are looking is just as important as knowing <em>when</em>.</p>
+</blockquote>
+<h4 id="visualization-tools-in-data-viewer">Visualization Tools in Data Viewer<a hidden class="anchor" aria-hidden="true" href="#visualization-tools-in-data-viewer">#</a></h4>
+<p>Data Viewer offers a suite of tools to help you visually explore gaze data:</p>
+<h4 id="temporal-graph-view">Temporal Graph View<a hidden class="anchor" aria-hidden="true" href="#temporal-graph-view">#</a></h4>
+<ul>
+<li>Displays <strong>eye data over time</strong> (e.g., fixation durations, pupil size trends).</li>
+</ul>
+<h4 id="spatial-overlay-view">Spatial Overlay View<a hidden class="anchor" aria-hidden="true" href="#spatial-overlay-view">#</a></h4>
+<ul>
+<li>Overlays <strong>scan paths</strong> (saccades + fixations) on your stimuli.</li>
+</ul>
+<h4 id="animation-playback-view">Animation Playback View<a hidden class="anchor" aria-hidden="true" href="#animation-playback-view">#</a></h4>
+<ul>
+<li>Plays back each trial with gaze data overlay</li>
+<li>Includes <strong>bee swarm mode</strong> and <strong>dynamic heat map mode</strong></li>
+</ul>
+<h4 id="heat-maps-and-difference-maps">Heat Maps and Difference Maps<a hidden class="anchor" aria-hidden="true" href="#heat-maps-and-difference-maps">#</a></h4>
+<ul>
+<li>Generate <strong>static or dynamic heat maps</strong></li>
+<li>Create <strong>difference maps</strong> to compare conditions or participant groups</li>
+</ul>
+<h4 id="filters-and-data-export">Filters and Data Export<a hidden class="anchor" aria-hidden="true" href="#filters-and-data-export">#</a></h4>
+<h4 id="filtering-tools">Filtering Tools<a hidden class="anchor" aria-hidden="true" href="#filtering-tools">#</a></h4>
+<ul>
+<li>Apply <strong>temporal</strong> and <strong>spatial</strong> filters</li>
+<li>Replicate standard preprocessing steps used in eye-tracking research</li>
+</ul>
+<h4 id="data-reports">Data Reports<a hidden class="anchor" aria-hidden="true" href="#data-reports">#</a></h4>
+<p>Data Viewer offers <strong>report generation</strong> for different levels of granularity:</p>
+<ul>
+<li><strong>Fixations</strong></li>
+<li><strong>Saccades</strong></li>
+<li><strong>Interest Areas</strong></li>
+<li><strong>Time bins</strong></li>
+<li><strong>Sample-level data</strong></li>
+</ul>
+<p>Each report:</p>
+<ul>
+<li>Includes <strong>dozens of variables</strong></li>
+<li>Can be tailored to your specific research questions</li>
+<li>Is exportable to tools like SPSS, R, or Excel</li>
+</ul>
+<h4 id="compatibility-and-flexibility">Compatibility and Flexibility<a hidden class="anchor" aria-hidden="true" href="#compatibility-and-flexibility">#</a></h4>
+<p>Data Viewer works seamlessly with:</p>
+<ul>
+<li><strong>EyeLink data files</strong> collected via <strong>Experiment Builder</strong></li>
+<li>Data from <strong>other software</strong>, using SR Research’s communication protocol</li>
+</ul>
+<p>This ensures flexibility no matter what platform you used to run your experiment.</p>
+<hr>
+<h4 id="summary-why-use-data-viewer">Summary: Why Use Data Viewer?<a hidden class="anchor" aria-hidden="true" href="#summary-why-use-data-viewer">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Benefit</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>🎞️ Visual Playback</td>
+          <td>Understand gaze behavior in real time</td>
+      </tr>
+      <tr>
+          <td>🔁 Batch Analysis</td>
+          <td>Process data from all participants at once</td>
+      </tr>
+      <tr>
+          <td>🎯 Interest Areas</td>
+          <td>Define &ldquo;where&rdquo; the participant was looking</td>
+      </tr>
+      <tr>
+          <td>⏱️ Interest Periods</td>
+          <td>Define &ldquo;when&rdquo; the data matters most</td>
+      </tr>
+      <tr>
+          <td>🔥 Heat Maps</td>
+          <td>Visualize attention distribution</td>
+      </tr>
+      <tr>
+          <td>📤 Flexible Reports</td>
+          <td>Export customizable data summaries for analysis</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Bottom line</strong>: Data Viewer simplifies and enhances your analysis workflow so you can spend more time interpreting results and less time managing files.</p>
+</blockquote>
+<hr>
+<h4 id="whats-next">What&rsquo;s Next?<a hidden class="anchor" aria-hidden="true" href="#whats-next">#</a></h4>
+<p>In the next tutorial, we’ll walk through the <strong>Data Viewer interface</strong> and guide you through setting up your first session.</p>
+<hr>
+<h3 id="tutorial-02-creating-and-managing-viewing-sessions-in-data-viewer">Tutorial 02: Creating and Managing Viewing Sessions in Data Viewer<a hidden class="anchor" aria-hidden="true" href="#tutorial-02-creating-and-managing-viewing-sessions-in-data-viewer">#</a></h3>
+<p>Welcome to <strong>Tutorial 2</strong> in our beginner’s series on <strong>SR Research’s Data Viewer</strong>.</p>
+<p>In this guide, you’ll learn how to:</p>
+<ul>
+<li>Create a new <strong>Viewing Session</strong></li>
+<li>Import <strong>EDF files</strong> (eye-tracking data)</li>
+<li>Understand the relationship between <strong>EDF files</strong> and <strong>EVS files</strong></li>
+<li>Set up <strong>Interest Periods</strong></li>
+<li>Navigate the <strong>Graphical User Interface (GUI)</strong> of Data Viewer</li>
+</ul>
+<p>Let’s get started with the Data Viewer workflow.</p>
+<h4 id="what-is-a-viewing-session">What Is a Viewing Session?<a hidden class="anchor" aria-hidden="true" href="#what-is-a-viewing-session">#</a></h4>
+<p>A <strong>Viewing Session</strong> is the central project file in Data Viewer. It contains:</p>
+<ul>
+<li>All your imported <strong>EDF files</strong></li>
+<li>Associated settings (e.g. Interest Areas, Interest Periods)</li>
+<li>Your visualization and analysis preferences</li>
+</ul>
+<blockquote>
+<p>📁 The Viewing Session file uses the <code>.evs</code> file extension.</p>
+</blockquote>
+<p>To begin a new project:</p>
+<ul>
+<li>Go to <strong>File → New</strong></li>
+<li>Or simply launch Data Viewer — it creates a new session by default</li>
+</ul>
+<h4 id="importing-edf-files">Importing EDF Files<a hidden class="anchor" aria-hidden="true" href="#importing-edf-files">#</a></h4>
+<p>Once you’ve started a Viewing Session, the next step is to <strong>import the eye-tracking data</strong>.</p>
+<h4 id="step-by-step">Step-by-step:<a hidden class="anchor" aria-hidden="true" href="#step-by-step">#</a></h4>
+<ol>
+<li>Click <strong>File → Import Data → Multiple EyeLink Data Files</strong></li>
+<li>Navigate to your <strong>experiment folder</strong> (containing participant EDF files)</li>
+<li>Data Viewer will <strong>automatically detect all EDF files</strong>, even in subfolders</li>
+<li>Click <strong>Import</strong></li>
+</ol>
+<blockquote>
+<p>✅ If you used <strong>Experiment Builder</strong>, you can point to the <strong>deployed project folder</strong>.</p>
+</blockquote>
+<h4 id="edf-vs-evs-whats-the-difference">EDF vs. EVS: What’s the Difference?<a hidden class="anchor" aria-hidden="true" href="#edf-vs-evs-whats-the-difference">#</a></h4>
+<h4 id="edf-files">EDF Files:<a hidden class="anchor" aria-hidden="true" href="#edf-files">#</a></h4>
+<ul>
+<li>Contain <strong>raw, binary eye-tracking data</strong></li>
+<li><strong>Cannot be edited</strong></li>
+<li>Include fixations, saccades, timestamps, and messages</li>
+<li>Do <strong>not</strong> include images, videos, or interest areas</li>
+</ul>
+<h4 id="evs-files">EVS Files:<a hidden class="anchor" aria-hidden="true" href="#evs-files">#</a></h4>
+<ul>
+<li>Created when you import EDFs into Data Viewer</li>
+<li>Store your <strong>session-specific settings</strong> and <strong>visual references</strong></li>
+<li>Can be saved and reopened later</li>
+</ul>
+<blockquote>
+<p>⚠️ Always move the <strong>entire experiment folder</strong> (not just EDF files) when transferring projects. Missing files will result in <strong>blank screen views</strong> during analysis.</p>
+</blockquote>
+<h4 id="saving-and-moving-viewing-sessions">Saving and Moving Viewing Sessions<a hidden class="anchor" aria-hidden="true" href="#saving-and-moving-viewing-sessions">#</a></h4>
+<p>After importing your data:</p>
+<ul>
+<li>Save your session via <strong>File → Save</strong></li>
+<li>Data Viewer saves:
+<ul>
+<li>An <code>.evs</code> file</li>
+<li>Associated folders and files (e.g. stimuli, visualizations)</li>
+</ul>
+</li>
+</ul>
+<h4 id="need-to-move-the-session-to-another-computer">Need to move the session to another computer?<a hidden class="anchor" aria-hidden="true" href="#need-to-move-the-session-to-another-computer">#</a></h4>
+<p>Use <strong>File → Package</strong> to create a <code>.dvz</code> file:</p>
+<ul>
+<li>Combines everything into one portable file</li>
+<li>On the new machine, double-click the <code>.dvz</code> file or use <strong>File → Unpack</strong> to extract it</li>
+</ul>
+<h4 id="setting-interest-periods">Setting Interest Periods<a hidden class="anchor" aria-hidden="true" href="#setting-interest-periods">#</a></h4>
+<p>Interest Periods allow you to <strong>analyze specific time windows</strong> of each trial.</p>
+<blockquote>
+<p>📌 Example: If a picture is followed by a question, you may want to focus analysis only on the <strong>picture period</strong>.</p>
+</blockquote>
+<h4 id="why-use-them">Why use them?<a hidden class="anchor" aria-hidden="true" href="#why-use-them">#</a></h4>
+<ul>
+<li>Exclude samples <strong>before and after</strong> stimulus presentation</li>
+<li>Focus on precise trial segments for accurate metrics</li>
+</ul>
+<h4 id="how-to-set-interest-periods">How to set Interest Periods:<a hidden class="anchor" aria-hidden="true" href="#how-to-set-interest-periods">#</a></h4>
+<ol>
+<li>Locate the <strong>Interest Period dropdown</strong> (e.g., “Full Trial Period”)</li>
+<li>Click the arrow and select <strong>Edit</strong></li>
+<li>Use the <strong>Interest Period Manager</strong> to define your time windows</li>
+</ol>
+<p>Once defined:</p>
+<ul>
+<li>You’ll see visual stimulus content (if linked properly)</li>
+<li>You can switch views like <strong>Spatial Overlay</strong> or <strong>Trial Animation Playback</strong> to see the participant’s gaze during that interval</li>
+</ul>
+<h4 id="data-viewer-interface-overview">Data Viewer Interface Overview<a hidden class="anchor" aria-hidden="true" href="#data-viewer-interface-overview">#</a></h4>
+<p>Let’s walk through the GUI layout.</p>
+<h4 id="1-inspector-panel-left-side">1. <strong>Inspector Panel (Left Side)</strong><a hidden class="anchor" aria-hidden="true" href="#1-inspector-panel-left-side">#</a></h4>
+<ul>
+<li><strong>Preferences tab</strong>: Adjust session-wide settings and filters</li>
+<li><strong>Data tab</strong>: Navigate between trials</li>
+</ul>
+<h4 id="2-trial-view-window">2. <strong>Trial View Window</strong><a hidden class="anchor" aria-hidden="true" href="#2-trial-view-window">#</a></h4>
+<ul>
+<li>Displays visual data per trial</li>
+<li>Change visibility of elements (e.g. fixations, saccades) with buttons at the top</li>
+<li>Switch between view modes (top-left corner buttons):
+<ul>
+<li><strong>Temporal Graph View</strong></li>
+<li><strong>Spatial Overlay View</strong></li>
+<li><strong>Trial Animation Playback View</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="3-middle-panel-event-list">3. <strong>Middle Panel (Event List)</strong><a hidden class="anchor" aria-hidden="true" href="#3-middle-panel-event-list">#</a></h4>
+<ul>
+<li>Lists detected events (e.g. fixations, saccades) for the selected trial</li>
+</ul>
+<h4 id="4-bottom-panel-event-details">4. <strong>Bottom Panel (Event Details)</strong><a hidden class="anchor" aria-hidden="true" href="#4-bottom-panel-event-details">#</a></h4>
+<ul>
+<li>Shows detailed info for the currently selected event</li>
+</ul>
+<blockquote>
+<p>📸 You can export visualizations as <strong>images or videos</strong> for presentations or publications.</p>
+</blockquote>
+<h4 id="editing-and-exporting-data">Editing and Exporting Data<a hidden class="anchor" aria-hidden="true" href="#editing-and-exporting-data">#</a></h4>
+<h4 id="add-or-edit-interest-areas">Add or Edit Interest Areas<a hidden class="anchor" aria-hidden="true" href="#add-or-edit-interest-areas">#</a></h4>
+<ul>
+<li>Define new Interest Areas (IA) within Data Viewer</li>
+<li>Adjust existing ones to match your research goals</li>
+</ul>
+<h4 id="export-reports">Export Reports<a hidden class="anchor" aria-hidden="true" href="#export-reports">#</a></h4>
+<p>Data Viewer allows you to generate <strong>summary reports</strong> for:</p>
+<ul>
+<li>Fixations</li>
+<li>Saccades</li>
+<li>Interest Areas</li>
+<li>Time bins</li>
+<li>Sample-level data</li>
+</ul>
+<p>These reports are easily opened in:</p>
+<ul>
+<li><strong>Excel</strong></li>
+<li><strong>SPSS</strong></li>
+<li><strong>R</strong></li>
+<li><strong>MATLAB</strong></li>
+</ul>
+<blockquote>
+<p>📊 These reports are key for downstream statistical analysis — we’ll explore them in detail in upcoming tutorials.</p>
+</blockquote>
+<h4 id="summary-what-you-learned">Summary: What You Learned<a hidden class="anchor" aria-hidden="true" href="#summary-what-you-learned">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>📁 Create Viewing Session</td>
+          <td>Start a new analysis project</td>
+      </tr>
+      <tr>
+          <td>📥 Import EDF Files</td>
+          <td>Load eye-tracking data</td>
+      </tr>
+      <tr>
+          <td>💡 Understand EDF vs. EVS</td>
+          <td>Know what’s editable and what isn’t</td>
+      </tr>
+      <tr>
+          <td>⏱️ Set Interest Periods</td>
+          <td>Define trial time windows for analysis</td>
+      </tr>
+      <tr>
+          <td>🧭 Use the GUI</td>
+          <td>Navigate trials, adjust settings, and visualize data</td>
+      </tr>
+      <tr>
+          <td>📤 Export Reports</td>
+          <td>Get your data into your preferred stats software</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="coming-up-next">Coming Up Next<a hidden class="anchor" aria-hidden="true" href="#coming-up-next">#</a></h4>
+<p>In the next tutorial, we’ll show you how to <strong>define Interest Areas</strong> and begin generating <strong>heat maps</strong> and <strong>scan paths</strong>. These visual tools will help you uncover where attention was focused during your experiment.</p>
 
 
   </div>

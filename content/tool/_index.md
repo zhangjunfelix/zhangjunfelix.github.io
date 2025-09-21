@@ -6,4 +6,4 @@ excludePosts: true
 
 ---
 
-Here is a collection of resources and ideas for language research. 
+Here is a collection of tutorials, resources and ideas for language research. 
