@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Computer on Jun Zhang</title>
+    <link>https://zhangjunfelix.github.io/tool/computer/</link>
+    <description>Recent content in Computer on Jun Zhang</description>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Aug 2023 15:02:40 +0800</lastBuildDate>
+    <atom:link href="https://zhangjunfelix.github.io/tool/computer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create static websites</title>
+      <link>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</link>
+      <pubDate>Sat, 12 Aug 2023 15:02:40 +0800</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/computer/websitebuilding/</guid>
+      <description>&lt;p&gt;Sure, I&amp;rsquo;ll revise the codes for clarity and aesthetics. Here&amp;rsquo;s the improved version:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;hugo&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Here are some of the codes/tips that I used in creating my website:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Commonly used commands&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change directories:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Create a new site (yml or toml):
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site anatole-felix -f yml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd anatole-felix
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Clone Anatole theme:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/lxndrblz/anatole.git themes/anatole --depth&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Open folder in VS Code:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;code .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Start local server:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;(Add &lt;code&gt;-D&lt;/code&gt; to include draft pages)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Commands to modify &lt;code&gt;config.toml&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+2.1 &lt;strong&gt;Add favicon&lt;/strong&gt;&lt;br&gt;
+- Step 1: Generate and download favicon from favicon.io&lt;br&gt;
+- Step 2: Extract and copy all files to the &lt;code&gt;static&lt;/code&gt; root directory&lt;br&gt;
+- Step 3: Add the following line to &lt;code&gt;themes/anatole/layouts/partials/head.html&lt;/code&gt;:&lt;br&gt;
+&lt;code&gt;html &amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; href=&amp;quot;favicon.ico&amp;quot; /&amp;gt; &lt;/code&gt;
+(Replace &lt;code&gt;favicon.ico&lt;/code&gt; with the appropriate file name if different)&lt;br&gt;
+Refer to this guide for more details.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
