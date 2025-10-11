@@ -5,10 +5,29 @@ draft: false
 
 cover: 
    image: images/L2A.jpeg
-   caption: https://favpng.com/png_view/second-language-acquisition-linguistics-second-language-png/j8PLYEKF (source)
+   caption: source https://favpng.com/png_view/second-language-acquisition-linguistics-second-language-png/j8PLYEKF
 
 ---
 
+### 🎓 My Second Language acquisition courses  
+
+I currently offer two specialized courses on second language acquisition, tailored to different academic levels:  
+
+#### 🎒 Undergraduate Level  
+*Introduction to Second Language Acquisition*  
+A foundational course covering core concepts in SLA for undergraduate students.  
+
+#### 🎓 Graduate Level  
+*Advanced Introduction to Second Language Acquisition*  
+An in-depth exploration of SLA theories and research for graduate students, with a focus on the perspective from generative linguistics.  
+
+
+### 🔍 Visit the course websites  
+For detailed syllabi, lecture notes, and readings:  
+
+- 🔹 [Undergraduate Course](https://zjpsycholin.github.io/SLA4ug/)  
+- 🔸 [Graduate Course](https://zjpsycholin.github.io/SLA4pg/)  
+<!--
 COURSE SYLLABUS [Download syllabus](Syllabus.pdf)
 
 
@@ -74,4 +93,4 @@ This course mainly covers the following aspects of SLA research. Contents may be
 ||||
 | Chapter 5 Social dimensions of SLA   | Lecture Notes: LN5 [Download](LN5.pdf);       | Supplementary readings: 1. Language socialization approaches to SLA [Download](Duff&Talmy_2011.pdf); 2. An identity approach to SLA [Download](Norton&McKinney_2011.pdf)         |
 
-
+-->
