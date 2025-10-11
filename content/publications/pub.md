@@ -16,6 +16,10 @@ draft: false
 * **2025**
     * *__Zhang, Jun__, & Wu, Yan.* (2025). Conventionalization of politeness and questions under discussion in pragmatic inferencing: Interpreting scalars in interpersonal contexts. *Journal of Pragmatics*, 249, 1-22. [Link to fulltext](https://www.sciencedirect.com/science/article/abs/pii/S037821662500205X)
 
+
+* **2025**
+    * *__Zhang, Jun__, & Wu, Yan.* (2025). Conventionalization of politeness and questions under discussion in pragmatic inferencing: Interpreting scalars in interpersonal contexts. *Journal of Pragmatics*, 249, 1-22. [Link to fulltext](https://www.sciencedirect.com/science/article/abs/pii/S037821662500205X)
+
 * **2023**
     * *__Zhang, Jun__, & Wu, Yan.* (2023). “Yixie” is likely not created equal for everyone: Distinct reasoning procedures in interpreting the same scalar quantifier. *Lingua*, 288, 103523. [Link to fulltext](https://www.sciencedirect.com/science/article/abs/pii/S0024384123000475)
 
