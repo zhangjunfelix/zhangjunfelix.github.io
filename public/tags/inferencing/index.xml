@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Inferencing on Jun Zhang</title>
-    <link>https://zhangjunfelix.github.io/tags/inferencing/</link>
+    <link>http://localhost:1313/tags/inferencing/</link>
     <description>Recent content in Inferencing on Jun Zhang</description>
     <generator>Hugo -- 0.151.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Jun 2023 22:38:49 +0800</lastBuildDate>
-    <atom:link href="https://zhangjunfelix.github.io/tags/inferencing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/inferencing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Pragmatic inferencing</title>
-      <link>https://zhangjunfelix.github.io/projects/praginfer/</link>
+      <link>http://localhost:1313/projects/praginfer/</link>
       <pubDate>Wed, 21 Jun 2023 22:38:49 +0800</pubDate>
-      <guid>https://zhangjunfelix.github.io/projects/praginfer/</guid>
+      <guid>http://localhost:1313/projects/praginfer/</guid>
       <description>&lt;p&gt;Given my view of languages as an critical part of human cognition, I would like to know more about the nature of this cognitive capability that seems to be only possessed by humans.&lt;/p&gt;
 &lt;p&gt;As a continuation of my research on language acquisition, I started to realize that, fascinating as linguistic competence may be, ignoring linguistic performance is not reasonable.&lt;/p&gt;
 &lt;p&gt;After working on topics of non-native language processing, especially disambiguation, I ventered into pragmatic inferencing (mostly due to failure to produce any publication &amp;#x1f615; &amp;#x1f62d; &amp;#x1f61e; &amp;#x1f631; ).&lt;/p&gt;</description>

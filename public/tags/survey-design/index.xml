@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Survey-Design on Jun Zhang</title>
-    <link>https://zhangjunfelix.github.io/tags/survey-design/</link>
+    <link>http://localhost:1313/tags/survey-design/</link>
     <description>Recent content in Survey-Design on Jun Zhang</description>
     <generator>Hugo -- 0.151.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://zhangjunfelix.github.io/tags/survey-design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/survey-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Designing Experimental Surveys in Qualtrics</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</link>
+      <link>http://localhost:1313/tool/experiments/qualtrics/</link>
       <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</guid>
+      <guid>http://localhost:1313/tool/experiments/qualtrics/</guid>
       <description>&lt;h2 id=&#34;-overview&#34;&gt;🧠 Overview&lt;/h2&gt;
 &lt;p&gt;This tutorial provides a comprehensive guide to building an experimental survey in &lt;strong&gt;Qualtrics&lt;/strong&gt;, specifically designed for testing how &lt;strong&gt;speaker identity&lt;/strong&gt; influences listeners’ judgments of &lt;strong&gt;informativeness&lt;/strong&gt; in varied &lt;strong&gt;face contexts&lt;/strong&gt;. It integrates methodological strategies, Qualtrics configurations, and deployment on &lt;strong&gt;Amazon Mechanical Turk (MTurk)&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
