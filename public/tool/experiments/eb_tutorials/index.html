@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Eyelink Experimental Builder tutorial | Jun Zhang</title>
+<meta name="keywords" content="">
+<meta name="description" content="Introduction to Experiment Builder: A Step-by-Step Guide
+video link
+Overview
+This tutorial provides a fundamental understanding of the Experiment Builder software. You&rsquo;ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.
+Introduction to Experiment Builder
+Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tool/experiments/eb_tutorials/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a090830a421002426baafbd314e38f149d77b4c48a12ee9312700d770b27fb26.css" integrity="sha256-oJCDCkIQAkJrqvvTFOOPFJ13tMSKEu6TEnANdwsn&#43;yY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tool/experiments/eb_tutorials/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });">
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Zhang (Alt + H)">Jun Zhang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/teaching/" title="Teaching">
+                    <span>Teaching</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tool/" title="Toolbox">
+                    <span>Toolbox</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Eyelink Experimental Builder tutorial
+    </h1>
+    <div class="post-meta"><span title='2025-01-28 00:00:00 +0000 UTC'>January 28, 2025</span>&nbsp;·&nbsp;<span>49 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-experiment-builder-a-step-by-step-guide">Introduction to Experiment Builder: A Step-by-Step Guide</a>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#introduction-to-experiment-builder">Introduction to Experiment Builder</a></li>
+        <li><a href="#tutorial-1-experiment-lifecycle-in-experiment-builder">Tutorial 1: Experiment Lifecycle in Experiment Builder**</a></li>
+        <li><a href="#tutorial-2-graphical-user-interface-overview">Tutorial 2: Graphical User Interface Overview</a></li>
+        <li><a href="#tutorial-3-overview-of-the-posner-task">Tutorial 3: Overview of the Posner Task</a></li>
+        <li><a href="#tutorial-4-hardware-settings">Tutorial 4: Hardware settings</a></li>
+        <li><a href="#tutorial-05---nodes-connections--messages">Tutorial 05 - Nodes, Connections &amp; Messages</a></li>
+        <li><a href="#tutorial-06---hierarchical-organization-and-data-source-introduction">Tutorial 06 - Hierarchical Organization and Data Source Introduction</a></li>
+        <li><a href="#tutorial-07---data-source-randomization-options">Tutorial 07 - Data Source Randomization Options</a></li>
+        <li><a href="#tutorial-08---trial-preparation">Tutorial 08 - Trial Preparation</a></li>
+        <li><a href="#tutorial-09---trial-events">Tutorial 09 - Trial Events</a></li>
+        <li><a href="#tutorial-10---screen-building-and-referencing">Tutorial 10 - Screen Building and Referencing</a></li>
+      </ul>
+    </li>
+    <li><a href="#webinar---implementing-the-visual-world-paradigm-in-experiment-builder">Webinar - Implementing the Visual World Paradigm in Experiment Builder</a></li>
+    <li><a href="#step-by-step-creation-of-the-visual-world-paradigm-in-eb">Step-by-step creation of the Visual World Paradigm in EB</a>
+      <ul>
+        <li><a href="#part-1--project-setup-and-data-source">Part 1 – Project Setup and Data Source</a></li>
+        <li><a href="#part-2--stimulus-display-and-interest-areas">Part 2 – Stimulus Display and Interest Areas</a></li>
+      </ul>
+    </li>
+    <li><a href="#a-triangle-layout-in-a-visual-world-experiment">A Triangle Layout in a Visual World Experiment</a>
+      <ul>
+        <li><a href="#using-positions_list-for-a-triangle-layout-in-a-visual-world-experiment">Using <code>POSITIONS_LIST</code> for a Triangle Layout in a Visual World Experiment</a></li>
+        <li><a href="#choosing-positions_list-coordinates-for-a-triangle-layout-on-a-19201080-screen">Choosing <code>POSITIONS_LIST</code> Coordinates for a Triangle Layout on a 1920×1080 Screen</a></li>
+      </ul>
+    </li>
+    <li><a href="#composite-images-and-ias-files-for-a-triangle-layout-in-a-visual-world-experiment">Composite Images and IAS Files for a Triangle Layout in a Visual World Experiment</a>
+      <ul>
+        <li><a href="#using-composite-images-and-ias-files-in-eyelink-visual-world-experiments">Using Composite Images and IAS Files in EyeLink Visual World Experiments&quot;</a></li>
+        <li><a href="#calculating-interest-area-ia-coordinates-from-powerpoint-measurements">Calculating Interest Area (IA) Coordinates from PowerPoint Measurements</a></li>
+        <li><a href="#how-eb-stores-ias-references-in-the-edf">How EB Stores IAS References in the EDF</a></li>
+        <li><a href="#note-on-screen-and-interest-area-layout">Note on Screen and Interest Area Layout</a></li>
+        <li><a href="#how-gaze-coordinates-are-determined-when-using-a-centered-composite-image">How Gaze Coordinates Are Determined When Using a Centered Composite Image</a></li>
+        <li><a href="#mapping-interest-areas-from-a-centered-composite-image">Mapping Interest Areas from a Centered Composite Image</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="introduction-to-experiment-builder-a-step-by-step-guide">Introduction to Experiment Builder: A Step-by-Step Guide<a hidden class="anchor" aria-hidden="true" href="#introduction-to-experiment-builder-a-step-by-step-guide">#</a></h2>
+<p><a href="https://www.youtube.com/playlist?list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv">video link</a></p>
+<h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
+<p>This tutorial provides a fundamental understanding of the Experiment Builder software. You&rsquo;ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.</p>
+<h3 id="introduction-to-experiment-builder">Introduction to Experiment Builder<a hidden class="anchor" aria-hidden="true" href="#introduction-to-experiment-builder">#</a></h3>
+<p>Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.</p>
+<h4 id="what-is-experiment-builder"><strong>What is Experiment Builder?</strong><a hidden class="anchor" aria-hidden="true" href="#what-is-experiment-builder">#</a></h4>
+<p>Experiment Builder is a powerful tool for creating experimental designs with the following features:</p>
+<ul>
+<li><strong>Graphical Interface:</strong> Drag-and-drop interface for intuitive programming.</li>
+<li><strong>EyeLink Integration:</strong> Built-in support for implementing eye-tracking experiments, including gaze-contingent designs.</li>
+<li><strong>Stimuli Presentation:</strong> Precise control over visual stimuli (images, videos, text) and audio timing down to the screen retrace level.</li>
+<li><strong>Data Analysis Features:</strong> Tools to auto-segment text into interest areas and track smooth pursuit targets over time for easier data comparison.</li>
+<li><strong>Cross-Platform Support:</strong> Compatible with both Windows and macOS. Projects can be edited and opened seamlessly across both platforms.</li>
+</ul>
+<hr>
+<h3 id="tutorial-1-experiment-lifecycle-in-experiment-builder">Tutorial 1: Experiment Lifecycle in Experiment Builder**<a hidden class="anchor" aria-hidden="true" href="#tutorial-1-experiment-lifecycle-in-experiment-builder">#</a></h3>
+<p>The typical process for designing an experiment in Experiment Builder includes the following steps:</p>
+<h4 id="1-creating-and-saving-a-project">1. Creating and Saving a Project<a hidden class="anchor" aria-hidden="true" href="#1-creating-and-saving-a-project">#</a></h4>
+<ol>
+<li>Open the Experiment Builder application and use the <strong>graphical user interface</strong> to design the experiment by building a flowchart.</li>
+<li>Save your project by specifying:
+<ul>
+<li><strong>Name of the project.</strong></li>
+<li><strong>Location to save the project.</strong></li>
+</ul>
+</li>
+<li>Saving creates a folder structure for your experiment.<br>
+Example: The Posner task example project follows this structure.
+<ul>
+<li>The main folder contains a file called <code>graph.ebd</code>.</li>
+<li>Open the project by double-clicking the <code>graph.ebd</code> file or loading it through the Experiment Builder interface.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Always manage files within Experiment Builder. Avoid manually editing or deleting files in the project folder.</p></blockquote>
+<h4 id="2-packaging-a-project">2. Packaging a Project<a hidden class="anchor" aria-hidden="true" href="#2-packaging-a-project">#</a></h4>
+<p>If you need to share or move a project (e.g., send to a colleague), use the <strong>File → Package</strong> command. This will:</p>
+<ul>
+<li>Create a single <code>.ebz</code> file.</li>
+<li>Use <strong>File → Unpack</strong> to expand it back into a full project folder.</li>
+</ul>
+<h4 id="3-test-running-the-experiment">3. Test Running the Experiment<a hidden class="anchor" aria-hidden="true" href="#3-test-running-the-experiment">#</a></h4>
+<ol>
+<li>Perform a <strong>test run</strong> to ensure everything works as intended:
+<ul>
+<li>Go to <strong>Experiment → Test Run</strong> or click the <strong>play button</strong> in the toolbar.</li>
+</ul>
+</li>
+<li>The test run will:
+<ul>
+<li>Generate an EyeLink data file.</li>
+<li>Allow you to verify the collected data for analysis.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>Important:</strong> Test runs should not be used for actual participant data collection. Only the latest test run&rsquo;s data file is saved, and previous test data is overwritten.</p></blockquote>
+<h4 id="4-deploying-the-experiment">4. Deploying the Experiment<a hidden class="anchor" aria-hidden="true" href="#4-deploying-the-experiment">#</a></h4>
+<p>Once the experiment is finalized:</p>
+<ol>
+<li>Go to <strong>Experiment → Deploy</strong>:
+<ul>
+<li>This creates a new folder containing an executable file (replacing the <code>graph.ebd</code> file).</li>
+</ul>
+</li>
+<li>Use this <strong>deployed folder</strong> for real participant data collection:
+<ul>
+<li>Run the experiment by double-clicking the executable file.</li>
+<li>Each run will prompt you to enter an <strong>EDF file name</strong> (EyeLink Data File).</li>
+<li>At the end of the run, the EDF file will be saved in the deployed folder&rsquo;s <code>results</code> subfolder.</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-hasp-license-key">5. HASP License Key<a hidden class="anchor" aria-hidden="true" href="#5-hasp-license-key">#</a></h4>
+<ul>
+<li>A license key is required to build and edit experiments.</li>
+<li>However, you <strong>do not need a license key</strong> to run deployed experiments for data collection.</li>
+</ul>
+<h4 id="6-data-analysis-preparation">6. Data Analysis Preparation<a hidden class="anchor" aria-hidden="true" href="#6-data-analysis-preparation">#</a></h4>
+<p>When preparing for data analysis, ensure that you:</p>
+<ol>
+<li>Copy the <strong>entire deployed project folder</strong> to the analysis computer, not just the EDF files.</li>
+<li>The deployed folder contains:
+<ul>
+<li>Image and video files.</li>
+<li>Interest area files essential for analysis in Data Viewer.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>Tip:</strong> Without the full folder, you may lose access to experimental stimuli and interest area data during analysis.</p></blockquote>
+<h4 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h4>
+<p>Experiment Builder simplifies experimental design and eye-tracking data collection with its graphical interface and precise timing controls. By following this guide, you’ll be able to:</p>
+<ol>
+<li>Create and save projects effectively.</li>
+<li>Perform test runs to ensure proper functionality.</li>
+<li>Deploy experiments for real data collection.</li>
+<li>Prepare for data analysis with all necessary files.</li>
+</ol>
+<p>For more details, refer to the official documentation or continue to the next tutorial in this series.</p>
+<hr>
+<h3 id="tutorial-2-graphical-user-interface-overview">Tutorial 2: Graphical User Interface Overview<a hidden class="anchor" aria-hidden="true" href="#tutorial-2-graphical-user-interface-overview">#</a></h3>
+<h4 id="1-getting-started-with-experiment-builder">1. Getting Started with Experiment Builder<a hidden class="anchor" aria-hidden="true" href="#1-getting-started-with-experiment-builder">#</a></h4>
+<p>Before building an experiment, it&rsquo;s essential to understand the interface and key elements.</p>
+<h4 id="user-interface-overview">User Interface Overview<a hidden class="anchor" aria-hidden="true" href="#user-interface-overview">#</a></h4>
+<p>The Experiment Builder interface consists of three main sections:</p>
+<p><strong>Graph Editor Window (Right Panel):</strong></p>
+<ul>
+<li>The main workspace where you construct experiments using nodes to create a flowchart.</li>
+</ul>
+<p><strong>Experiment Component Toolbox (Top Panel):</strong></p>
+<ul>
+<li>Contains different nodes categorized into:
+<ul>
+<li><strong>Action Nodes</strong> – Perform actions like displaying stimuli or recording responses.</li>
+<li><strong>Trigger Nodes</strong> – Wait for events (e.g., keypress, mouse click) before proceeding.</li>
+<li><strong>Other Nodes</strong> – Handle variables and special functions.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Left-Side Panels:</strong></p>
+<ul>
+<li><strong>Overview Panel</strong> – Allows quick navigation within the Graph Editor.</li>
+<li><strong>Structure Panel</strong> – Provides a hierarchical view of the project and hardware settings.</li>
+<li><strong>Properties Panel</strong> – Displays properties of selected nodes and allows editing.</li>
+<li><strong>Notes Panel</strong> – Used for adding comments to nodes for record-keeping.</li>
+</ul>
+<h4 id="2-adding-components-to-an-experiment">2. Adding Components to an Experiment<a hidden class="anchor" aria-hidden="true" href="#2-adding-components-to-an-experiment">#</a></h4>
+<h5 id="action-nodes-defining-experiment-steps">Action Nodes (Defining Experiment Steps)<a hidden class="anchor" aria-hidden="true" href="#action-nodes-defining-experiment-steps">#</a></h5>
+<p>These nodes execute specific tasks, such as:</p>
+<ul>
+<li><strong>Display Screen</strong> – Presents stimuli on the screen.</li>
+<li><strong>Drift Check</strong> – Ensures eye-tracking stability.</li>
+<li><strong>Play/Record Audio</strong> – Handles auditory stimuli.</li>
+</ul>
+<h5 id="trigger-nodes-handling-user-input">Trigger Nodes (Handling User Input)<a hidden class="anchor" aria-hidden="true" href="#trigger-nodes-handling-user-input">#</a></h5>
+<p>Trigger nodes control when the experiment advances:</p>
+<ul>
+<li><strong>Keyboard Trigger</strong> – Waits for a specific keypress.</li>
+<li><strong>Mouse Trigger</strong> – Detects a mouse click at a specified location.</li>
+<li><strong>Eye-Based Triggers</strong> – Detect gaze-contingent events (not used in this example).</li>
+</ul>
+<h5 id="other-nodes-managing-data--variables">Other Nodes (Managing Data &amp; Variables)<a hidden class="anchor" aria-hidden="true" href="#other-nodes-managing-data--variables">#</a></h5>
+<ul>
+<li><strong>Variable Nodes</strong> – Store values like reaction times and accuracy.</li>
+</ul>
+<h4 id="3-using-sequences-to-structure-an-experiment">3. Using Sequences to Structure an Experiment<a hidden class="anchor" aria-hidden="true" href="#3-using-sequences-to-structure-an-experiment">#</a></h4>
+<h5 id="sequences-blue-rectangles">Sequences (Blue Rectangles):<a hidden class="anchor" aria-hidden="true" href="#sequences-blue-rectangles">#</a></h5>
+<ul>
+<li>Special action nodes that repeat the same structure multiple times.</li>
+<li>Used to create blocks and trials in experiments.</li>
+</ul>
+<h5 id="data-sources-defining-trial-conditions">Data Sources (Defining Trial Conditions):<a hidden class="anchor" aria-hidden="true" href="#data-sources-defining-trial-conditions">#</a></h5>
+<ul>
+<li>Allows customization of stimuli and responses across trials.</li>
+<li>Each row represents a trial; each column represents a changing variable (e.g., stimulus name, location).</li>
+</ul>
+<h5 id="how-to-use-data-sources-in-a-sequence">How to Use Data Sources in a Sequence<a hidden class="anchor" aria-hidden="true" href="#how-to-use-data-sources-in-a-sequence">#</a></h5>
+<ul>
+<li>Click on the Data Source property of a sequence.</li>
+<li>Define variables (e.g., stimulus file names, correct responses).</li>
+<li>Reference these variables in node properties to dynamically change trial conditions.</li>
+<li>Enable randomization to shuffle trial orders.</li>
+</ul>
+<h4 id="4-summary--next-steps">4. Summary &amp; Next Steps<a hidden class="anchor" aria-hidden="true" href="#4-summary--next-steps">#</a></h4>
+<ul>
+<li>The Graph Editor is where you visually structure your experiment.</li>
+<li>Nodes are essential building blocks categorized into actions, triggers, and variables.</li>
+<li>Sequences allow repetition of trial structures with varying stimuli.</li>
+<li>Data Sources ensure trial conditions change dynamically while keeping the experiment structured.</li>
+</ul>
+<hr>
+<h3 id="tutorial-3-overview-of-the-posner-task">Tutorial 3: Overview of the Posner Task<a hidden class="anchor" aria-hidden="true" href="#tutorial-3-overview-of-the-posner-task">#</a></h3>
+<h4 id="overview-of-the-experiment-design">Overview of the Experiment Design<a hidden class="anchor" aria-hidden="true" href="#overview-of-the-experiment-design">#</a></h4>
+<p>In this video, we will discuss the design of the experiment covered in this tutorial series. We will highlight various components of the project that handle different aspects of the experiment as we go along. However, this video primarily provides an overview of the methodological design.</p>
+<p>For more detailed information regarding the implementation of different aspects of the design, please refer to other videos in the series.</p>
+<p>This tutorial series uses the <strong>Posner Task</strong> to illustrate the fundamental concepts of <strong>Experiment Builder</strong>. The goal is to demonstrate how Experiment Builder works within the context of a familiar task.</p>
+<p>This implementation of the Posner Task showcases how to:</p>
+<ul>
+<li>Present different stimuli on each trial</li>
+<li>Modify stimulus characteristics such as location</li>
+<li>Randomly assign variables that control timer duration</li>
+<li>Randomize trial and block orderings</li>
+<li>Collect participant responses and log response data</li>
+</ul>
+<p>While specific experimental paradigms may differ, the techniques demonstrated in this example can be applied to other paradigms. The tutorial aims to introduce fundamental building blocks, techniques, and best practices for implementing any experimental task.</p>
+<h4 id="posner-task-structure">Posner Task Structure<a hidden class="anchor" aria-hidden="true" href="#posner-task-structure">#</a></h4>
+<p>The <strong>Posner Task</strong> presented in this tutorial consists of a series of trials, each composed of several key events:</p>
+<h4 id="1-fixation--cue-presentation">1. Fixation &amp; Cue Presentation<a hidden class="anchor" aria-hidden="true" href="#1-fixation--cue-presentation">#</a></h4>
+<ul>
+<li>The trial begins with a <strong>fixation cross</strong> and <strong>two placeholder boxes</strong> on the left and right.</li>
+<li>A <strong>cue</strong> appears centrally near the fixation cross, which can be:
+<ul>
+<li><strong>Valid</strong>: The cue correctly predicts the target location.</li>
+<li><strong>Invalid</strong>: The cue indicates the opposite side of the target.</li>
+<li><strong>Neutral</strong>: The cue does not provide location information.</li>
+</ul>
+</li>
+<li>The cue remains on the screen for <strong>500 milliseconds</strong> before disappearing.</li>
+</ul>
+<h4 id="2-target-onset--response-collection">2. Target Onset &amp; Response Collection<a hidden class="anchor" aria-hidden="true" href="#2-target-onset--response-collection">#</a></h4>
+<ul>
+<li>After a <strong>randomly chosen interval</strong>, a target appears in one of the two placeholder boxes.</li>
+<li>The participant must press one of two keys to indicate whether the target is on the left or right:
+<ul>
+<li><code>Z</code> key → <strong>Left target</strong></li>
+<li><code>/</code> key → <strong>Right target</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="3-predictions--attention-effects">3. Predictions &amp; Attention Effects<a hidden class="anchor" aria-hidden="true" href="#3-predictions--attention-effects">#</a></h4>
+<ul>
+<li>Participants are expected to respond <strong>faster</strong> to targets preceded by a <strong>valid cue</strong>, as attention is directed toward the target location.</li>
+<li>This attentional shift may also result in <strong>faster eye movements</strong> toward the target position.</li>
+</ul>
+<h4 id="implementing-the-posner-task-in-experiment-builder">Implementing the Posner Task in Experiment Builder<a hidden class="anchor" aria-hidden="true" href="#implementing-the-posner-task-in-experiment-builder">#</a></h4>
+<p>The experiment is implemented as an <strong>EyeLink experiment</strong> within <strong>Experiment Builder</strong>. The procedure follows these steps:</p>
+<h4 id="1-camera-setup--calibration">1. Camera Setup &amp; Calibration<a hidden class="anchor" aria-hidden="true" href="#1-camera-setup--calibration">#</a></h4>
+<ul>
+<li>At the start, <strong>camera setup and calibration instructions</strong> are presented.</li>
+<li>The <strong>camera setup action</strong> puts the <strong>Host PC</strong> and <strong>Display PC</strong> into a special camera mode for <strong>eye tracker calibration</strong>.</li>
+</ul>
+<h4 id="2-trial-blocks--instructions">2. Trial Blocks &amp; Instructions<a hidden class="anchor" aria-hidden="true" href="#2-trial-blocks--instructions">#</a></h4>
+<p>The experiment consists of <strong>three blocks of trials</strong>:</p>
+<ul>
+<li><strong>Practice Block</strong>: 2 trials</li>
+<li><strong>Experimental Blocks</strong>: 10 trials each
+<ul>
+<li>4 <strong>valid</strong> trials</li>
+<li>1 <strong>invalid</strong> trial</li>
+<li>5 <strong>neutral</strong> trials</li>
+</ul>
+</li>
+</ul>
+<p>The <strong>practice block always appears first</strong>, but the order of experimental blocks is <strong>randomized</strong>. Within each block, the <strong>trial order is also randomized</strong>.</p>
+<h4 id="3-trial-execution">3. Trial Execution<a hidden class="anchor" aria-hidden="true" href="#3-trial-execution">#</a></h4>
+<p>Each trial follows this sequence:</p>
+<ol>
+<li><strong>Fixation cross</strong> and <strong>placeholder boxes</strong> appear (<em>1000 milliseconds</em>).</li>
+<li>The <strong>cue appears</strong> and remains for <em>500 milliseconds</em>, then disappears.</li>
+<li>After a <strong>random delay</strong>, the <strong>target appears</strong> (<em>up to 5000 milliseconds</em>).</li>
+<li>The participant presses the appropriate key (<code>Z</code> or <code>/</code>).</li>
+<li><strong>Immediate feedback</strong> is provided (correct or incorrect).</li>
+<li>If <strong>no response</strong> is made within <em>5 seconds</em>, the trial times out, and a message prompts the participant to respond faster.</li>
+<li>Feedback remains on-screen for <strong>2 seconds</strong>, followed by a <strong>blank screen</strong>.</li>
+</ol>
+<h4 id="4-experiment-completion--data-transfer">4. Experiment Completion &amp; Data Transfer<a hidden class="anchor" aria-hidden="true" href="#4-experiment-completion--data-transfer">#</a></h4>
+<ul>
+<li>After all <strong>22 trials</strong>, the experiment <strong>ends automatically</strong>.</li>
+<li>The <strong>EDF data file</strong> is transferred from the <strong>Host PC</strong> to the <strong>Display PC</strong>.</li>
+</ul>
+<h4 id="test-run-of-the-posner-task">Test Run of the Posner Task<a hidden class="anchor" aria-hidden="true" href="#test-run-of-the-posner-task">#</a></h4>
+<p>To test the experiment <strong>without</strong> an <strong>EyeLink Host PC</strong> or <strong>eye tracker</strong>, we can enable <strong>Dummy Mode</strong> in Experiment Builder.</p>
+<h5 id="enabling-dummy-mode">Enabling Dummy Mode<a hidden class="anchor" aria-hidden="true" href="#enabling-dummy-mode">#</a></h5>
+<ol>
+<li>Navigate to the <strong>EyeLink section</strong> in the <strong>Devices tab</strong> of the <strong>Structure Panel</strong>.</li>
+<li>Check the box for <strong>Dummy Mode</strong> to disable eye tracking functionality.</li>
+<li>This prevents the experiment from attempting to connect to a <strong>Host PC</strong>.</li>
+</ol>
+<h5 id="running-the-experiment">Running the Experiment<a hidden class="anchor" aria-hidden="true" href="#running-the-experiment">#</a></h5>
+<ol>
+<li>Go to <strong>Experiment → Test Run</strong>.</li>
+<li>When prompted for an <strong>EDF file name</strong>, use the default:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>test.edf
+</span></span></code></pre></div><ol start="3">
+<li>
+<p>Since Dummy Mode is enabled, a notification will confirm this.</p>
+</li>
+<li>
+<p>The program will ask which counterbalanced version of the experiment to use.</p>
+<p>This project includes two versions of the experiment.
+Select a version to proceed.</p>
+</li>
+<li>
+<p>The experiment begins as usual.</p>
+</li>
+</ol>
+<h5 id="key-points-during-test-run">Key Points During Test Run<a hidden class="anchor" aria-hidden="true" href="#key-points-during-test-run">#</a></h5>
+<p>Instructions and block transitions function as they would in a real experiment.
+The camera setup mode and drift check procedures are automatically skipped.
+The participant proceeds through practice trials and then experimental trials.
+A break screen appears between blocks.
+Pressing any key on the Display PC continues the experiment.
+Ending the Experiment Early
+To terminate a test run, press:
+<code>CTRL + C</code></p>
+<ul>
+<li>CTRL + C ensures proper shutdown and retrieval of the EDF file from the Host PC.</li>
+<li>Even in Dummy Mode (where no data transfer occurs), CTRL + C remains the best exit method.</li>
+<li>This method is recommended for both test runs and real data collection.</li>
+</ul>
+<h5 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h5>
+<p>This tutorial introduces the Posner Task implementation in Experiment Builder using EyeLink. The experiment follows a structured trial sequence, including fixation, cueing, response collection, and feedback.</p>
+<p>The tutorial also demonstrates how to enable Dummy Mode for test runs and highlights best practices for running and terminating experiments.</p>
+<p>For further details on EyeLink setup and experiment implementation, refer to the additional learning materials linked in the video description.</p>
+<hr>
+<h3 id="tutorial-4-hardware-settings">Tutorial 4: Hardware settings<a hidden class="anchor" aria-hidden="true" href="#tutorial-4-hardware-settings">#</a></h3>
+<h4 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h4>
+<p>When setting up an <strong>Experiment Builder</strong> project, one of the first steps is to <strong>configure hardware properties</strong>. These settings ensure proper communication between the experiment software and devices such as <strong>eye trackers, display screens, and audio equipment</strong>.</p>
+<p>This tutorial will guide you through the necessary steps to configure:</p>
+<ul>
+<li><strong>Eye tracker type and settings</strong></li>
+<li><strong>Display resolution and refresh rate</strong></li>
+<li><strong>Background color for consistency</strong></li>
+<li><strong>Audio and other external devices</strong></li>
+</ul>
+<hr>
+<h4 id="accessing-hardware-settings">Accessing Hardware Settings<a hidden class="anchor" aria-hidden="true" href="#accessing-hardware-settings">#</a></h4>
+<p>You can edit hardware properties in <strong>two ways</strong>:</p>
+<ol>
+<li>
+<p><strong>Devices Tab (Structure Panel)</strong></p>
+<ul>
+<li>Open the <strong>Devices tab</strong> in the <strong>Structure panel</strong> to quickly access and modify hardware settings.</li>
+</ul>
+</li>
+<li>
+<p><strong>Preferences Menu</strong></p>
+<ul>
+<li>Go to <strong>Edit → Preferences</strong></li>
+<li>Navigate to the <strong>Devices</strong> section under <strong>Preferences</strong></li>
+<li>Adjust hardware settings from there</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="setting-up-the-eye-tracker"><strong>Setting Up the Eye Tracker</strong><a hidden class="anchor" aria-hidden="true" href="#setting-up-the-eye-tracker">#</a></h4>
+<h5 id="choosing-your-eye-tracker-type"><strong>Choosing Your Eye Tracker Type</strong><a hidden class="anchor" aria-hidden="true" href="#choosing-your-eye-tracker-type">#</a></h5>
+<p>The first step is to specify the type of <strong>EyeLink</strong> eye tracker being used. This is done under the <strong>EyeLink section</strong> in the <strong>Devices tab</strong>.</p>
+<ul>
+<li>Configuring these properties allows Experiment Builder to send the correct <strong>commands</strong> to the <strong>Host PC</strong> for proper hardware setup.</li>
+<li>If you <strong>do not</strong> want Experiment Builder to send configuration commands, you can set these properties to <code>&quot;current&quot;</code> (explained later).</li>
+</ul>
+<h4 id="selecting-your-eye-tracker-model"><strong>Selecting Your Eye Tracker Model</strong><a hidden class="anchor" aria-hidden="true" href="#selecting-your-eye-tracker-model">#</a></h4>
+<p>From the <strong>Tracker Version</strong> dropdown menu, choose the <strong>EyeLink model</strong> you are using:</p>
+<ul>
+<li><strong>EyeLink 1 or 2</strong> → Simply select the correct version.</li>
+<li><strong>EyeLink 1000</strong> → Additional settings for mount type and illuminator position.</li>
+<li><strong>EyeLink 1000 Plus</strong> → Similar to the EyeLink 1000, but without the illuminator position setting.</li>
+<li><strong>EyeLink Portable Duo</strong> → Only requires selecting the mount usage mode.</li>
+</ul>
+<h4 id="configuring-eyelink-1000-and-1000-plus-settings"><strong>Configuring EyeLink 1000 and 1000 Plus Settings</strong><a hidden class="anchor" aria-hidden="true" href="#configuring-eyelink-1000-and-1000-plus-settings">#</a></h4>
+<p>If using <strong>EyeLink 1000</strong> or <strong>1000 Plus</strong>, specify additional properties:</p>
+<h5 id="1-mount-type"><strong>1. Mount Type</strong><a hidden class="anchor" aria-hidden="true" href="#1-mount-type">#</a></h5>
+<ul>
+<li><strong>Tower Mount</strong></li>
+<li><strong>Desktop Mount</strong></li>
+<li><strong>Arm Mount</strong></li>
+<li><strong>Long-Range Mount</strong></li>
+</ul>
+<h5 id="2-illuminator-position-for-desktop-mount-only-eyelink-1000"><strong>2. Illuminator Position (for Desktop Mount only, EyeLink 1000)</strong><a hidden class="anchor" aria-hidden="true" href="#2-illuminator-position-for-desktop-mount-only-eyelink-1000">#</a></h5>
+<ul>
+<li><strong>Left</strong></li>
+<li><strong>Right</strong></li>
+</ul>
+<h5 id="3-mount-usage"><strong>3. Mount Usage</strong><a hidden class="anchor" aria-hidden="true" href="#3-mount-usage">#</a></h5>
+<ul>
+<li><strong>Head Stabilized Mode (Chin Rest)</strong></li>
+<li><strong>Head Free Remote Mode</strong></li>
+<li><strong>Monocular vs. Binocular Tracking</strong></li>
+</ul>
+<p>For <strong>EyeLink 1000 Plus</strong>, you can use <strong>binocular tracking in head-free mode</strong>, unlike the standard EyeLink 1000.</p>
+<h4 id="configuring-eyelink-portable-duo"><strong>Configuring EyeLink Portable Duo</strong><a hidden class="anchor" aria-hidden="true" href="#configuring-eyelink-portable-duo">#</a></h4>
+<p>For <strong>EyeLink Portable Duo</strong>, select one of the following:</p>
+<ul>
+<li><strong>Head Stabilized (Chin Rest) Mode</strong></li>
+<li><strong>Head Free Remote Mode</strong></li>
+</ul>
+<h5 id="using"><strong>Using &ldquo;Current&rdquo; for Custom Host PC Settings</strong><a hidden class="anchor" aria-hidden="true" href="#using">#</a></h5>
+<p>If you prefer to configure the <strong>eye tracker settings manually on the Host PC</strong>, you can select <strong>&ldquo;current&rdquo;</strong> in the properties menu.</p>
+<ul>
+<li>This prevents Experiment Builder from <strong>overriding</strong> existing Host PC settings.</li>
+<li>The Host PC will use whatever <strong>configuration</strong> has already been selected in its interface.</li>
+</ul>
+<h4 id="setting-display-screen-resolution-and-refresh-rate"><strong>Setting Display Screen Resolution and Refresh Rate</strong><a hidden class="anchor" aria-hidden="true" href="#setting-display-screen-resolution-and-refresh-rate">#</a></h4>
+<p>When running an <strong>Experiment Builder</strong> project, the software <strong>temporarily changes the monitor&rsquo;s resolution and refresh rate</strong> based on the display settings in the project.</p>
+<h5 id="1-why-correct-display-settings-matter"><strong>1. Why Correct Display Settings Matter</strong><a hidden class="anchor" aria-hidden="true" href="#1-why-correct-display-settings-matter">#</a></h5>
+<ul>
+<li><strong>Positioning of stimuli</strong> is based on <strong>pixel coordinates</strong>, so the resolution must be accurate.</li>
+<li>A <strong>higher refresh rate</strong> is important for <strong>gaze-contingent</strong> studies, ensuring rapid screen updates.</li>
+</ul>
+<h5 id="2-choosing-the-best-resolution-and-refresh-rate"><strong>2. Choosing the Best Resolution and Refresh Rate</strong><a hidden class="anchor" aria-hidden="true" href="#2-choosing-the-best-resolution-and-refresh-rate">#</a></h5>
+<ul>
+<li><strong>Use the native resolution</strong> of the monitor → Maximizes performance and timing accuracy.</li>
+<li><strong>Set the highest refresh rate</strong> the monitor supports → Critical for studies requiring fast visual updates.</li>
+</ul>
+<h6 id="example-settings-standard-monitor"><strong>Example Settings (Standard Monitor)</strong><a hidden class="anchor" aria-hidden="true" href="#example-settings-standard-monitor">#</a></h6>
+<table>
+  <thead>
+      <tr>
+          <th>Setting</th>
+          <th>Recommended Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Resolution</td>
+          <td><strong>Native resolution</strong> (e.g., 1920×1080)</td>
+      </tr>
+      <tr>
+          <td>Refresh Rate</td>
+          <td><strong>60 Hz</strong> (or higher if supported)</td>
+      </tr>
+  </tbody>
+</table>
+<p>For this tutorial’s experiment, <strong>60 Hz and native resolution</strong> are used, as <strong>no gaze-contingent features</strong> require ultra-fast updates.</p>
+<h4 id="maintaining-a-consistent-background-color"><strong>Maintaining a Consistent Background Color</strong><a hidden class="anchor" aria-hidden="true" href="#maintaining-a-consistent-background-color">#</a></h4>
+<p>Ensuring a <strong>consistent background color</strong> across all stages of the experiment is <strong>critical</strong> for maintaining calibration accuracy.</p>
+<h5 id="1-why-background-color-matters"><strong>1. Why Background Color Matters</strong><a hidden class="anchor" aria-hidden="true" href="#1-why-background-color-matters">#</a></h5>
+<ul>
+<li><strong>Sudden changes in brightness</strong> between calibration, drift check, and stimuli presentation <strong>affect pupil size</strong>.</li>
+<li>This variation can <strong>disrupt eye tracker calibration</strong> and reduce accuracy.</li>
+</ul>
+<h5 id="2-setting-a-uniform-background"><strong>2. Setting a Uniform Background</strong><a hidden class="anchor" aria-hidden="true" href="#2-setting-a-uniform-background">#</a></h5>
+<p>To prevent large pupil size fluctuations:</p>
+<ul>
+<li><strong>Use the same background color</strong> for:
+<ul>
+<li><strong>Camera Setup</strong></li>
+<li><strong>Drift Check &amp; Drift Correction</strong></li>
+<li><strong>Display Screen Actions</strong></li>
+<li><strong>Stimulus Presentation</strong></li>
+</ul>
+</li>
+</ul>
+<p>For this tutorial, a <strong>gray background</strong> is used <strong>throughout the experiment</strong> to minimize pupil dilation changes.</p>
+<h5 id="3-pre-setting-background-color-in-preferences"><strong>3. Pre-setting Background Color in Preferences</strong><a hidden class="anchor" aria-hidden="true" href="#3-pre-setting-background-color-in-preferences">#</a></h5>
+<ul>
+<li>If you set the background color <strong>in preferences before adding nodes</strong>, all newly created nodes will automatically <strong>match the chosen color</strong>.</li>
+<li>This saves time and ensures <strong>consistency</strong> across the experiment.</li>
+</ul>
+<h4 id="configuring-audio-and-other-external-devices"><strong>Configuring Audio and Other External Devices</strong><a hidden class="anchor" aria-hidden="true" href="#configuring-audio-and-other-external-devices">#</a></h4>
+<p>If your experiment includes <strong>audio playback</strong> or uses <strong>additional hardware devices</strong>, configure them in the <strong>Devices tab</strong>.</p>
+<h5 id="1-checking-audio-properties"><strong>1. Checking Audio Properties</strong><a hidden class="anchor" aria-hidden="true" href="#1-checking-audio-properties">#</a></h5>
+<ul>
+<li>Ensure that the <strong>correct audio device</strong> is selected.</li>
+<li>Test audio playback to verify <strong>volume levels</strong> and <strong>latency</strong>.</li>
+</ul>
+<h5 id="2-managing-additional-devices"><strong>2. Managing Additional Devices</strong><a hidden class="anchor" aria-hidden="true" href="#2-managing-additional-devices">#</a></h5>
+<ul>
+<li>If using response boxes, button presses, or other external input devices, set their properties correctly.</li>
+<li>Experiment Builder will automatically detect and allow configuration for <strong>compatible devices</strong>.</li>
+</ul>
+<h4 id="saving-default-hardware-settings"><strong>Saving Default Hardware Settings</strong><a hidden class="anchor" aria-hidden="true" href="#saving-default-hardware-settings">#</a></h4>
+<p>To <strong>save your project settings as defaults</strong>, follow these steps:</p>
+<ol>
+<li>Go to <strong>Edit → Preferences</strong></li>
+<li>Navigate to the <strong>Devices</strong> section</li>
+<li>Click <strong>Save as Defaults</strong></li>
+</ol>
+<p>This ensures that <strong>future projects</strong> automatically apply the same hardware settings, reducing setup time.</p>
+<h4 id="summary-1"><strong>Summary</strong><a hidden class="anchor" aria-hidden="true" href="#summary-1">#</a></h4>
+<p>In this tutorial, we covered <strong>essential hardware settings</strong> in Experiment Builder, including:</p>
+<p>✔ <strong>Selecting the correct EyeLink model and configuring tracking options</strong><br>
+✔ <strong>Setting the display resolution and refresh rate for accurate stimulus presentation</strong><br>
+✔ <strong>Ensuring a uniform background color to maintain pupil stability</strong><br>
+✔ <strong>Configuring audio and external devices</strong><br>
+✔ <strong>Saving settings as defaults for future projects</strong></p>
+<p>By properly setting up hardware configurations, you ensure <strong>smooth experiment execution</strong> and <strong>accurate data collection</strong>. 🚀</p>
+<hr>
+<h3 id="tutorial-05---nodes-connections--messages">Tutorial 05 - Nodes, Connections &amp; Messages<a hidden class="anchor" aria-hidden="true" href="#tutorial-05---nodes-connections--messages">#</a></h3>
+<h4 id="introduction-1">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-1">#</a></h4>
+<p>In this tutorial, we will discuss how actions and triggers connect in <strong>Experiment Builder</strong> to ensure experimental events occur in the correct sequence. We will also explore how <strong>messages</strong> can be used to mark the occurrence of these events in the <strong>EyeLink data file</strong>.</p>
+<p>We will use a <strong>Posner task example</strong> to illustrate these concepts.</p>
+<h4 id="display-screen-actions">Display Screen Actions<a hidden class="anchor" aria-hidden="true" href="#display-screen-actions">#</a></h4>
+<h4 id="editing-a-display-screen-action"><em>Editing a Display Screen Action</em><a hidden class="anchor" aria-hidden="true" href="#editing-a-display-screen-action">#</a></h4>
+<ol>
+<li>The first display screen action, renamed <strong>&ldquo;display camera setup instructions&rdquo;</strong>, presents simple <strong>camera setup and calibration instructions</strong> to the <strong>Display PC monitor</strong>.</li>
+<li>To <strong>view and edit</strong> the contents of a display screen action:
+<ul>
+<li><strong>Double-click</strong> the action node.</li>
+<li>The <strong>Screen Builder</strong> will open.</li>
+<li>Here, you can <strong>add images, videos, text, shapes, and interest areas</strong> to create the display content.</li>
+</ul>
+</li>
+<li>In this example, a <strong>multi-line text resource</strong> is used to present the instructions.</li>
+</ol>
+<h4 id="keyboard-and-timer-trigger-nodes">Keyboard and Timer Trigger Nodes<a hidden class="anchor" aria-hidden="true" href="#keyboard-and-timer-trigger-nodes">#</a></h4>
+<h4 id="why-use-triggers"><em>Why Use Triggers?</em><a hidden class="anchor" aria-hidden="true" href="#why-use-triggers">#</a></h4>
+<p>Display screen actions must be <strong>followed by at least one trigger</strong> before connecting to other actions. Otherwise, the display will <strong>immediately be replaced</strong> by the next display screen action.</p>
+<h5 id="example-using-a-keyboard-and-timer-trigger">Example: Using a Keyboard and Timer Trigger<a hidden class="anchor" aria-hidden="true" href="#example-using-a-keyboard-and-timer-trigger">#</a></h5>
+<ul>
+<li>The <strong>&ldquo;display camera setup instructions&rdquo;</strong> action connects to the subsequent <strong>camera setup action</strong> using:
+<ul>
+<li>A <strong>keyboard trigger</strong>.</li>
+<li>A <strong>timer trigger</strong>.</li>
+</ul>
+</li>
+<li>This means that the experiment will proceed <strong>only when</strong>:
+<ul>
+<li>The participant <strong>presses a key</strong> (activating the keyboard trigger), OR</li>
+<li>The <strong>specified time</strong> elapses (activating the timer trigger).</li>
+</ul>
+</li>
+<li>Both triggers connect to the same <strong>camera setup action</strong>, and <strong>whichever fires first</strong> will continue the experiment.</li>
+</ul>
+<h4 id="messages-in-action-and-trigger-nodes">Messages in Action and Trigger Nodes<a hidden class="anchor" aria-hidden="true" href="#messages-in-action-and-trigger-nodes">#</a></h4>
+<h4 id="why-use-messages"><em>Why Use Messages?</em><a hidden class="anchor" aria-hidden="true" href="#why-use-messages">#</a></h4>
+<p>Each <strong>action or trigger node</strong> in Experiment Builder has a <strong>message property</strong>. This property:</p>
+<ul>
+<li><strong>Sends a message</strong> to the <strong>Host PC</strong>.</li>
+<li><strong>Inserts</strong> the message into the <strong>EyeLink data file</strong> (<code>.edf</code>).</li>
+<li><strong>Timestamp marks</strong> the exact time when an event occurs.</li>
+</ul>
+<h4 id="how-messages-work">How Messages Work<a hidden class="anchor" aria-hidden="true" href="#how-messages-work">#</a></h4>
+<ul>
+<li><strong>Display screen actions</strong> send messages <strong>time-locked to the start of the screen retrace</strong>.</li>
+<li>The <strong>timestamp is accurate within a millisecond</strong> of the retrace event.</li>
+<li>Filling out the <strong>message property</strong> ensures a record of the timing of <strong>experimental events</strong> in the <code>.edf</code> file.</li>
+</ul>
+<h4 id="using-messages-for-interest-periods-in-data-analysis">Using Messages for Interest Periods in Data Analysis<a hidden class="anchor" aria-hidden="true" href="#using-messages-for-interest-periods-in-data-analysis">#</a></h4>
+<h4 id="what-is-an-interest-period">What is an Interest Period?<a hidden class="anchor" aria-hidden="true" href="#what-is-an-interest-period">#</a></h4>
+<p>An <strong>Interest Period</strong> allows researchers to <strong>analyze only specific parts</strong> of an experimental trial.</p>
+<p>For example, in the <strong>Posner task</strong>, we may want to analyze only:</p>
+<ul>
+<li><strong>The period from target onset to response</strong>.</li>
+<li>Excluding <strong>fixation cue, SOA, and feedback</strong> phases.</li>
+</ul>
+<h4 id="how-to-set-an-interest-period">How to Set an Interest Period<a hidden class="anchor" aria-hidden="true" href="#how-to-set-an-interest-period">#</a></h4>
+<ul>
+<li>Messages associated with actions and triggers <strong>help define the Interest Period</strong> in <strong>Data Viewer</strong>.</li>
+<li>When analyzing data, messages in the <strong>EyeLink data file</strong> (<code>.edf</code>) can be used to <strong>mark event occurrences</strong>.</li>
+<li>You can find more details in the <strong>Data Viewer video tutorial series</strong>.</li>
+</ul>
+<h4 id="labels-vs-messages">Labels vs. Messages<a hidden class="anchor" aria-hidden="true" href="#labels-vs-messages">#</a></h4>
+<ul>
+<li><strong>Label Property</strong>:
+<ul>
+<li>Changes how the <strong>node appears in Experiment Builder</strong>.</li>
+<li>Does <strong>not</strong> affect the <code>.edf</code> file.</li>
+</ul>
+</li>
+<li><strong>Message Property</strong>:
+<ul>
+<li>Specifies <strong>what is written</strong> in the <code>.edf</code> file.</li>
+<li>Ensures experimental events are <strong>timestamped correctly</strong>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="best-practice">Best Practice<a hidden class="anchor" aria-hidden="true" href="#best-practice">#</a></h4>
+<ul>
+<li><strong>Give each node meaningful labels</strong>.</li>
+<li>Copy and paste the <strong>label text into the message property</strong>.</li>
+<li>This makes it <strong>easy to associate messages in the <code>.edf</code> file`</strong> with Experiment Builder nodes.</li>
+</ul>
+<h4 id="conclusion-1">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-1">#</a></h4>
+<p>In this tutorial, we covered:</p>
+<ol>
+<li><strong>How actions and triggers connect</strong> to control experimental flow.</li>
+<li><strong>Using keyboard and timer triggers</strong> to advance experiments.</li>
+<li><strong>How messages mark event occurrences</strong> in the EyeLink data file.</li>
+<li><strong>Setting Interest Periods</strong> for precise data analysis.</li>
+<li><strong>The difference between labels and messages</strong> in Experiment Builder.</li>
+</ol>
+<p>By following these steps, you can <strong>ensure accurate event timing</strong> and <strong>improve data analysis</strong> in your eye-tracking experiments.</p>
+<hr>
+<h3 id="tutorial-06---hierarchical-organization-and-data-source-introduction">Tutorial 06 - Hierarchical Organization and Data Source Introduction<a hidden class="anchor" aria-hidden="true" href="#tutorial-06---hierarchical-organization-and-data-source-introduction">#</a></h3>
+<h4 id="introduction-2">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-2">#</a></h4>
+<p>In this tutorial, we&rsquo;ll explore how to use hierarchical organization to avoid redundant structures in your Experiment Builder projects. We&rsquo;ll also introduce how to use data sources to manage trial information efficiently.</p>
+<h4 id="hierarchical-organization-with-sequences">Hierarchical Organization with Sequences<a hidden class="anchor" aria-hidden="true" href="#hierarchical-organization-with-sequences">#</a></h4>
+<h4 id="avoiding-redundancy"><em>Avoiding Redundancy</em><a hidden class="anchor" aria-hidden="true" href="#avoiding-redundancy">#</a></h4>
+<p>In Experiment Builder, you don&rsquo;t need to create separate nodes for each trial. Instead, you can use hierarchical organization through sequences to streamline your project.</p>
+<h4 id="using-sequences"><em>Using Sequences</em><a hidden class="anchor" aria-hidden="true" href="#using-sequences">#</a></h4>
+<p>Sequences are special action nodes that allow you to implement looping designs. You can double-click a sequence to go inside and add nodes to define events within that sequence. These events will repeat based on the sequence&rsquo;s iteration count.</p>
+<h4 id="nested-sequences"><em>Nested Sequences</em><a hidden class="anchor" aria-hidden="true" href="#nested-sequences">#</a></h4>
+<p>Sequences can be nested, allowing for loops within loops. This is useful for designs with multiple blocks of trials. For example, you can have a BLOCK sequence that repeats three times, each containing a TRIAL sequence that repeats for each trial within the block.</p>
+<h4 id="implementing-block-and-trial-sequences">Implementing BLOCK and TRIAL Sequences<a hidden class="anchor" aria-hidden="true" href="#implementing-block-and-trial-sequences">#</a></h4>
+<h4 id="block-sequence"><em>BLOCK Sequence</em><a hidden class="anchor" aria-hidden="true" href="#block-sequence">#</a></h4>
+<p>At the top level of your project, create a BLOCK sequence to handle the repetition of trial blocks. Double-click the BLOCK sequence to go inside and add nodes for each block.</p>
+<h4 id="trial-sequence"><em>TRIAL Sequence</em><a hidden class="anchor" aria-hidden="true" href="#trial-sequence">#</a></h4>
+<p>Inside the BLOCK sequence, add a TRIAL sequence to handle individual trials. Set the iteration count of the BLOCK sequence to the number of blocks you want to run.</p>
+<h4 id="conditional-triggers"><em>Conditional Triggers</em><a hidden class="anchor" aria-hidden="true" href="#conditional-triggers">#</a></h4>
+<p>Use conditional triggers to control the flow of your experiment. For example, you can check if the current block is the first one and direct the experiment to task instructions or a break screen accordingly.</p>
+<h4 id="different-number-of-trials-per-block">Different Number of Trials Per Block<a hidden class="anchor" aria-hidden="true" href="#different-number-of-trials-per-block">#</a></h4>
+<h4 id="split-by-property"><em>Split By Property</em><a hidden class="anchor" aria-hidden="true" href="#split-by-property">#</a></h4>
+<p>To run a different number of trials for each block, use the Split By property of the TRIAL sequence. For example, set it to <code>[2,10,10]</code> to have two trials in the first block and ten trials in each of the next two blocks.</p>
+<h4 id="introduction-to-data-sources">Introduction to Data Sources<a hidden class="anchor" aria-hidden="true" href="#introduction-to-data-sources">#</a></h4>
+<h4 id="what-is-a-data-source"><em>What is a Data Source?</em><a hidden class="anchor" aria-hidden="true" href="#what-is-a-data-source">#</a></h4>
+<p>A data source is a spreadsheet that contains information used on each iteration of a sequence. Typically, you&rsquo;ll have a data source for your trial sequence, containing details for each trial.</p>
+<h4 id="accessing-data-sources"><em>Accessing Data Sources</em><a hidden class="anchor" aria-hidden="true" href="#accessing-data-sources">#</a></h4>
+<p>To access a sequence&rsquo;s data source, click on its data source property. You can also use the dropdown at the top of the interface to select a data source.</p>
+<h4 id="populating-data-sources">Populating Data Sources<a hidden class="anchor" aria-hidden="true" href="#populating-data-sources">#</a></h4>
+<h4 id="adding-rows-and-columns"><em>Adding Rows and Columns</em><a hidden class="anchor" aria-hidden="true" href="#adding-rows-and-columns">#</a></h4>
+<p>You can add rows and columns directly in the data source editor. Alternatively, import data from a delimited text file created in spreadsheet software like Excel.</p>
+<h4 id="data-source-structure"><em>Data Source Structure</em><a hidden class="anchor" aria-hidden="true" href="#data-source-structure">#</a></h4>
+<p>Each row in the data source represents a trial, and columns represent variables that change from trial to trial. For example:</p>
+<ul>
+<li><strong>identifier</strong>: A unique value for each trial.</li>
+<li><strong>cueType</strong>: Specifies the type of cue (valid, invalid, neutral).</li>
+<li><strong>cueImage</strong>: The image file for the cue.</li>
+<li><strong>targetImage</strong>: The image file for the target.</li>
+<li><strong>targetSide</strong>: Describes the side of the target.</li>
+<li><strong>targetLocation</strong>: The coordinates for presenting the target image.</li>
+<li><strong>nontargetLocation</strong>: Coordinates for the opposite rectangle.</li>
+<li><strong>practiceStatus</strong>: Distinguishes practice from experimental trials.</li>
+<li><strong>correctResponse</strong>: The correct key press for each trial.</li>
+<li><strong>block</strong>: Indicates the block number for randomization.</li>
+<li><strong>counterbalance</strong>: Used to counterbalance the design.</li>
+</ul>
+<h4 id="using-data-sources-in-your-experiment">Using Data Sources in Your Experiment<a hidden class="anchor" aria-hidden="true" href="#using-data-sources-in-your-experiment">#</a></h4>
+<h4 id="referencing-data"><em>Referencing Data</em><a hidden class="anchor" aria-hidden="true" href="#referencing-data">#</a></h4>
+<p>While a data source specifies trial information, this data isn&rsquo;t automatically used. You need to reference these values in node and resource properties. For more details on how to use data sources and randomization options, see later tutorials in this series.</p>
+<h4 id="conclusion-2">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-2">#</a></h4>
+<p>By using hierarchical organization and data sources, you can efficiently manage complex experimental designs in Experiment Builder. This approach reduces redundancy and makes your project more manageable.</p>
+<hr>
+<h3 id="tutorial-07---data-source-randomization-options">Tutorial 07 - Data Source Randomization Options<a hidden class="anchor" aria-hidden="true" href="#tutorial-07---data-source-randomization-options">#</a></h3>
+<h4 id="introduction-3">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-3">#</a></h4>
+<p>In this tutorial, we&rsquo;ll explore the data source randomization options available in Experiment Builder. These options allow you to control the order of experimental trials, randomize trial and block orders, and manage counterbalancing.</p>
+<h4 id="overview-of-randomization-settings">Overview of Randomization Settings<a hidden class="anchor" aria-hidden="true" href="#overview-of-randomization-settings">#</a></h4>
+<h4 id="accessing-randomization-settings"><em>Accessing Randomization Settings</em><a hidden class="anchor" aria-hidden="true" href="#accessing-randomization-settings">#</a></h4>
+<p>The randomization settings button in a project&rsquo;s data source allows you to apply various randomization schemes to the ordering of experimental trials. These settings include options for:</p>
+<ul>
+<li>Blocking trials</li>
+<li>Randomizing trial and block orders</li>
+<li>Forcing trial ordering to limit the number of consecutive trials with a particular feature</li>
+<li>Creating alternative versions of the project for counterbalancing</li>
+</ul>
+<h4 id="example-posner-task-experimental-design">Example: Posner Task Experimental Design<a hidden class="anchor" aria-hidden="true" href="#example-posner-task-experimental-design">#</a></h4>
+<h4 id="experimental-design"><em>Experimental Design</em><a hidden class="anchor" aria-hidden="true" href="#experimental-design">#</a></h4>
+<p>The Posner task example is set up as follows:</p>
+<ul>
+<li>Two practice trials always come first.</li>
+<li>Two experimental blocks of 10 trials each follow.</li>
+<li>The order of the experimental blocks is randomized.</li>
+<li>The order of trials within each block is randomized.</li>
+<li>Two alternative lists (counterbalances) are used, and each participant receives trials from only one counterbalance.</li>
+</ul>
+<h4 id="data-source-columns">Data Source Columns<a hidden class="anchor" aria-hidden="true" href="#data-source-columns">#</a></h4>
+<h4 id="practice-status-column"><em>Practice Status Column</em><a hidden class="anchor" aria-hidden="true" href="#practice-status-column">#</a></h4>
+<ul>
+<li>The first two trials of each list have a value of &ldquo;practice.&rdquo;</li>
+<li>The remaining 20 trials have a value of &ldquo;experimental.&rdquo;</li>
+</ul>
+<h4 id="block-column"><em>Block Column</em><a hidden class="anchor" aria-hidden="true" href="#block-column">#</a></h4>
+<ul>
+<li>Practice trials have a block value of 1.</li>
+<li>The first block of 10 experimental trials has a block value of 2.</li>
+<li>The second block of 10 experimental trials has a block value of 3.</li>
+</ul>
+<h4 id="counterbalance-column"><em>Counterbalance Column</em><a hidden class="anchor" aria-hidden="true" href="#counterbalance-column">#</a></h4>
+<ul>
+<li>The first 22 rows (counterbalance 1) have a value of 1.</li>
+<li>The last 22 rows (counterbalance 2) have a value of 2.</li>
+</ul>
+<h4 id="implementing-randomization">Implementing Randomization<a hidden class="anchor" aria-hidden="true" href="#implementing-randomization">#</a></h4>
+<h4 id="blocking-levels"><em>Blocking Levels</em><a hidden class="anchor" aria-hidden="true" href="#blocking-levels">#</a></h4>
+<ol>
+<li>
+<p><strong>Practice Status (Blocking Level 1)</strong>:</p>
+<ul>
+<li>Set as blocking level 1.</li>
+<li>Randomized box unchecked to ensure practice trials come first.</li>
+<li>Practice trials (value &ldquo;practice&rdquo;) will precede experimental trials (value &ldquo;experimental&rdquo;).</li>
+</ul>
+</li>
+<li>
+<p><strong>Block (Blocking Level 2)</strong>:</p>
+<ul>
+<li>Set as blocking level 2.</li>
+<li>Randomized box checked to randomize the order of experimental blocks.</li>
+<li>Trials within each block remain grouped together, but the order of blocks is randomized.</li>
+</ul>
+</li>
+</ol>
+<h4 id="trial-randomization"><em>Trial Randomization</em><a hidden class="anchor" aria-hidden="true" href="#trial-randomization">#</a></h4>
+<ul>
+<li><strong>Enable Trial Randomization</strong>:
+<ul>
+<li>Checked to randomize the order of trials within each block.</li>
+<li>Constraint: The <code>cueImage</code> column is set as the run length control column with a maximum run length of 2.</li>
+<li>Ensures no more than two consecutive trials with the same cue image.</li>
+</ul>
+</li>
+</ul>
+<h4 id="counterbalancing">Counterbalancing<a hidden class="anchor" aria-hidden="true" href="#counterbalancing">#</a></h4>
+<h4 id="splitting-column"><em>Splitting Column</em><a hidden class="anchor" aria-hidden="true" href="#splitting-column">#</a></h4>
+<ul>
+<li><strong>Counterbalance Column</strong>:
+<ul>
+<li>Chosen as the splitting column.</li>
+<li>Prompts you to select a counterbalance value (1 or 2) at runtime.</li>
+<li>Only rows with the selected counterbalance value are used in the experiment.</li>
+</ul>
+</li>
+</ul>
+<h4 id="practical-steps">Practical Steps<a hidden class="anchor" aria-hidden="true" href="#practical-steps">#</a></h4>
+<ol>
+<li>
+<p><strong>Open Randomization Settings</strong>:</p>
+<ul>
+<li>Click the randomization settings button in the trial data source.</li>
+</ul>
+</li>
+<li>
+<p><strong>Set Blocking Levels</strong>:</p>
+<ul>
+<li>Set <code>practiceStatus</code> as blocking level 1 (randomized unchecked).</li>
+<li>Set <code>block</code> as blocking level 2 (randomized checked).</li>
+</ul>
+</li>
+<li>
+<p><strong>Enable Trial Randomization</strong>:</p>
+<ul>
+<li>Check the &ldquo;Enable Trial Randomization&rdquo; option.</li>
+<li>Set <code>cueImage</code> as the run length control column with a maximum run length of 2.</li>
+</ul>
+</li>
+<li>
+<p><strong>Set Splitting Column</strong>:</p>
+<ul>
+<li>Select the <code>counterbalance</code> column as the splitting column.</li>
+</ul>
+</li>
+</ol>
+<h4 id="conclusion-3">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-3">#</a></h4>
+<p>By using the randomization settings in Experiment Builder, you can efficiently manage the order of trials and blocks, ensuring that your experimental design is both randomized and counterbalanced. This approach helps maintain the integrity of your experimental results and ensures that each participant receives a balanced set of trials.</p>
+<hr>
+<h3 id="tutorial-08---trial-preparation">Tutorial 08 - Trial Preparation<a hidden class="anchor" aria-hidden="true" href="#tutorial-08---trial-preparation">#</a></h3>
+<h4 id="introduction-4">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-4">#</a></h4>
+<p>In this tutorial, we&rsquo;ll discuss trial preparation considerations in Experiment Builder. Proper trial preparation ensures smooth execution of experimental events and accurate data collection.</p>
+<h4 id="trial-preparation-workflow">Trial Preparation Workflow<a hidden class="anchor" aria-hidden="true" href="#trial-preparation-workflow">#</a></h4>
+<h4 id="basic-trial-events"><em>Basic Trial Events</em><a hidden class="anchor" aria-hidden="true" href="#basic-trial-events">#</a></h4>
+<p>Basic trial events, such as the presentation of images to participants, are typically placed inside a sequence labeled <strong>RECORDING</strong>. This setup allows for trial preparation before recording eye movement data and executing critical trial events.</p>
+<h4 id="prepare_sequence-action-node">PREPARE_SEQUENCE Action Node<a hidden class="anchor" aria-hidden="true" href="#prepare_sequence-action-node">#</a></h4>
+<h4 id="loading-stimuli"><em>Loading Stimuli</em><a hidden class="anchor" aria-hidden="true" href="#loading-stimuli">#</a></h4>
+<p>On each iteration of the trial sequence, we typically perform the following steps:</p>
+<ol>
+<li><strong>Load Stimuli</strong>:
+<ul>
+<li>Use the <strong>PREPARE_SEQUENCE</strong> action to load experimental stimuli (e.g., images, videos, audio files) into the Display PC&rsquo;s memory buffers.</li>
+<li>This ensures that the stimuli are pre-buffered and ready for presentation.</li>
+</ul>
+</li>
+</ol>
+<h4 id="transferring-display-screen-to-host-pc"><em>Transferring Display Screen to Host PC</em><a hidden class="anchor" aria-hidden="true" href="#transferring-display-screen-to-host-pc">#</a></h4>
+<ol start="2">
+<li><strong>Transfer Display Screen</strong>:
+<ul>
+<li>Set the <strong>Draw to EyeLink Host</strong> property of the <strong>PREPARE_SEQUENCE</strong> action to <strong>Image</strong>.</li>
+<li>Select one <strong>DISPLAY_SCREEN</strong> action in the recording sequence and check its <strong>Use for Host Display</strong> property.</li>
+<li>Ensure that all other <strong>DISPLAY_SCREEN</strong> actions have their <strong>Use for Host Display</strong> property unchecked.</li>
+<li>This allows the experimenter to monitor the participant&rsquo;s gaze in relation to experimental stimuli during trials.</li>
+</ul>
+</li>
+</ol>
+<h4 id="drift-checkcorrect-using-the-drift_correct-action-node">Drift Check/Correct using the DRIFT_CORRECT Action Node<a hidden class="anchor" aria-hidden="true" href="#drift-checkcorrect-using-the-drift_correct-action-node">#</a></h4>
+<h4 id="drift-correction"><em>Drift Correction</em><a hidden class="anchor" aria-hidden="true" href="#drift-correction">#</a></h4>
+<ol start="3">
+<li><strong>Drift Correction</strong>:
+<ul>
+<li>The <strong>DRIFT_CORRECT</strong> action presents a fixation target on the Display PC monitor.</li>
+<li>The position of the target is determined by the <strong>X Location</strong> and <strong>Y Location</strong> properties of the <strong>DRIFT_CORRECT</strong> action.</li>
+<li>During the experimental session, the experimenter can compare the gaze cursor position to the target position on the Host PC.</li>
+<li>When the participant&rsquo;s gaze is steady on the fixation target, either the experimenter or the participant can press the space bar to start the trial.</li>
+<li>Note: The <strong>DRIFT_CORRECT</strong> action is optional but recommended for ensuring accurate calibration and gaze position at the start of each trial.</li>
+</ul>
+</li>
+</ol>
+<h4 id="recording-data-using-the-recording-sequence">Recording Data using the RECORDING Sequence<a hidden class="anchor" aria-hidden="true" href="#recording-data-using-the-recording-sequence">#</a></h4>
+<h4 id="recording-sequence-setup"><em>Recording Sequence Setup</em><a hidden class="anchor" aria-hidden="true" href="#recording-sequence-setup">#</a></h4>
+<ol start="4">
+<li><strong>Recording Sequence</strong>:
+<ul>
+<li>The <strong>RECORDING</strong> sequence should have an iteration count of 1.</li>
+<li>This sequence is not used for looping but for controlling eye tracker recording.</li>
+<li>The <strong>RECORD</strong> property of the <strong>RECORDING</strong> sequence is checked to start and stop eye data recording.</li>
+<li>When the experiment exits the <strong>RECORDING</strong> sequence, it logs the values of data source columns and variable nodes, making them accessible in Data Viewer.</li>
+</ul>
+</li>
+</ol>
+<h4 id="real-time-processing-and-host-pc-communication">Real-Time Processing and Host PC Communication<a hidden class="anchor" aria-hidden="true" href="#real-time-processing-and-host-pc-communication">#</a></h4>
+<h4 id="real-time-processing"><em>Real-Time Processing</em><a hidden class="anchor" aria-hidden="true" href="#real-time-processing">#</a></h4>
+<ol start="5">
+<li><strong>Real-Time Processing</strong>:
+<ul>
+<li>Check the <strong>Is Realtime</strong> property of the <strong>RECORDING</strong> sequence to elevate the priority of Experiment Builder and ensure optimal timing of experimental events.</li>
+</ul>
+</li>
+</ol>
+<h4 id="sending-messages-to-host-pc"><em>Sending Messages to Host PC</em><a hidden class="anchor" aria-hidden="true" href="#sending-messages-to-host-pc">#</a></h4>
+<ol start="6">
+<li><strong>Sending Messages</strong>:
+<ul>
+<li>Use the <strong>EyeLink Record Status Message</strong> property of the <strong>RECORDING</strong> sequence to send messages to the experimenter.</li>
+<li>This message can provide feedback, such as the current trial number and total number of trials.</li>
+<li>Edit the message using string concatenation and references to the iteration and iteration count properties of the trial sequence.</li>
+</ul>
+</li>
+</ol>
+<h4 id="best-practices-and-checklist">Best Practices and Checklist<a hidden class="anchor" aria-hidden="true" href="#best-practices-and-checklist">#</a></h4>
+<h4 id="experiment-builder-checklist"><em>Experiment Builder Checklist</em><a hidden class="anchor" aria-hidden="true" href="#experiment-builder-checklist">#</a></h4>
+<ul>
+<li>Refer to the <strong>Experiment Builder Project Checklist</strong> in the user manual (accessed via Help -&gt; Contents) for best practices in trial preparation and other programming tips.</li>
+<li>This checklist helps avoid common pitfalls in data collection and analysis.</li>
+</ul>
+<h4 id="conclusion-4">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-4">#</a></h4>
+<p>Proper trial preparation in Experiment Builder ensures that stimuli are pre-loaded, the experimenter can monitor gaze positions, and data is accurately recorded. By following the steps outlined in this tutorial, you can set up efficient and reliable trial preparation for your experiments.</p>
+<p>Stay tuned for more tutorials in this series to learn advanced techniques for using Experiment Builder.</p>
+<hr>
+<h3 id="tutorial-09---trial-events">Tutorial 09 - Trial Events<a hidden class="anchor" aria-hidden="true" href="#tutorial-09---trial-events">#</a></h3>
+<h4 id="introduction-5">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-5">#</a></h4>
+<p>In this tutorial, we&rsquo;ll discuss the basic structure of critical trial events in an experiment. We&rsquo;ll explore how the recording sequence and data source work together to control the flow of events during each trial.</p>
+<h4 id="recording-sequence-structure">Recording Sequence Structure<a hidden class="anchor" aria-hidden="true" href="#recording-sequence-structure">#</a></h4>
+<h4 id="basic-structure"><em>Basic Structure</em><a hidden class="anchor" aria-hidden="true" href="#basic-structure">#</a></h4>
+<p>The nodes in the recording sequence form a skeleton structure or template for the sequence of events that occur on each trial. The data source provides the information that determines the differences across trials.</p>
+<h4 id="update-attribute-action-node">Update Attribute Action Node<a hidden class="anchor" aria-hidden="true" href="#update-attribute-action-node">#</a></h4>
+<h4 id="reset-variables"><em>Reset Variables</em><a hidden class="anchor" aria-hidden="true" href="#reset-variables">#</a></h4>
+<p>The first node in the recording sequence is an <strong>Update Attribute</strong> action called <strong>reset variables</strong>. This action:</p>
+<ul>
+<li>Sets the value of a variable used for the SOA (Stimulus Onset Asynchrony) duration by randomly selecting from a range of possible numbers.</li>
+<li>Resets the values of three variable nodes that store behavioral data collected during the trial.</li>
+</ul>
+<h4 id="display-screen-and-timer-trigger-nodes">Display Screen and Timer Trigger Nodes<a hidden class="anchor" aria-hidden="true" href="#display-screen-and-timer-trigger-nodes">#</a></h4>
+<h4 id="display-fixation-cross"><em>Display Fixation Cross</em><a hidden class="anchor" aria-hidden="true" href="#display-fixation-cross">#</a></h4>
+<ul>
+<li>The <strong>display fixation cross</strong> action presents the fixation cross and two placeholder boxes on the screen.</li>
+<li>The <strong>timer fixation cross</strong> trigger fires after 1000 milliseconds (1 second), controlling the duration of the fixation cross presentation.</li>
+</ul>
+<h4 id="display-cue"><em>Display Cue</em><a hidden class="anchor" aria-hidden="true" href="#display-cue">#</a></h4>
+<ul>
+<li>The <strong>display cue</strong> action presents the cue stimulus on the screen.</li>
+<li>The <strong>timer cue</strong> trigger fires after 500 milliseconds, controlling the duration of the cue presentation.</li>
+</ul>
+<h4 id="display-fixation-soa"><em>Display Fixation SOA</em><a hidden class="anchor" aria-hidden="true" href="#display-fixation-soa">#</a></h4>
+<ul>
+<li>The <strong>display fixation SOA</strong> action presents an exact copy of the fixation cross action, effectively removing the cue from the screen.</li>
+<li>The duration of this screen is determined by the value of a variable node called <strong>SOA duration</strong>, which is set randomly at the beginning of the trial.</li>
+</ul>
+<h4 id="display-target">Display Target<a hidden class="anchor" aria-hidden="true" href="#display-target">#</a></h4>
+<h4 id="display-target-1"><em>Display Target</em><a hidden class="anchor" aria-hidden="true" href="#display-target-1">#</a></h4>
+<ul>
+<li>The <strong>display target</strong> action presents the target stimulus to the participant.</li>
+<li>The <strong>timer target</strong> trigger fires after 5000 milliseconds (5 seconds), controlling the duration of the target presentation.</li>
+</ul>
+<h4 id="keyboard-or-timer-trigger-nodes">Keyboard or Timer Trigger Nodes<a hidden class="anchor" aria-hidden="true" href="#keyboard-or-timer-trigger-nodes">#</a></h4>
+<h4 id="keyboard-response-trigger"><em>Keyboard Response Trigger</em><a hidden class="anchor" aria-hidden="true" href="#keyboard-response-trigger">#</a></h4>
+<ul>
+<li>The <strong>keyboard response trigger</strong> is set to accept input from specific keys (e.g., slash and z keys).</li>
+<li>If a key is pressed, the <strong>check accuracy</strong> trigger checks the response against the correct response column in the trial data source.</li>
+</ul>
+<h4 id="conditional-triggers-1">Conditional Triggers<a hidden class="anchor" aria-hidden="true" href="#conditional-triggers-1">#</a></h4>
+<h4 id="check-accuracy"><em>Check Accuracy</em><a hidden class="anchor" aria-hidden="true" href="#check-accuracy">#</a></h4>
+<ul>
+<li>The <strong>check accuracy</strong> trigger determines whether the participant&rsquo;s response was correct.</li>
+<li>Two subsequent <strong>Update Attribute</strong> actions set the values of variable nodes that store the trial&rsquo;s behavioral data.</li>
+</ul>
+<h4 id="display-screen-and-timer-trigger-nodes-for-feedback">Display Screen and Timer Trigger Nodes for Feedback<a hidden class="anchor" aria-hidden="true" href="#display-screen-and-timer-trigger-nodes-for-feedback">#</a></h4>
+<h4 id="present-feedback"><em>Present Feedback</em><a hidden class="anchor" aria-hidden="true" href="#present-feedback">#</a></h4>
+<ul>
+<li>Feedback is presented to the participant for 2 seconds, handled by different <strong>display screen</strong> actions based on the response (correct, incorrect, or go faster).</li>
+<li>The <strong>timer feedback</strong> trigger fires after 2 seconds, and the <strong>display blank</strong> action clears the screen.</li>
+</ul>
+<h4 id="add-to-results-file-node">Add to Results File Node<a hidden class="anchor" aria-hidden="true" href="#add-to-results-file-node">#</a></h4>
+<h4 id="log-behavioral-data"><em>Log Behavioral Data</em><a hidden class="anchor" aria-hidden="true" href="#log-behavioral-data">#</a></h4>
+<ul>
+<li>The <strong>add to results file</strong> action logs the values of data source columns and variable nodes for the trial to a tab-delimited text file called <strong>results file</strong>.</li>
+<li>These values are also logged to the EyeLink data file when the recording sequence ends.</li>
+</ul>
+<h4 id="adding-message-property-for-nodes-and-triggers">Adding Message Property for Nodes and Triggers<a hidden class="anchor" aria-hidden="true" href="#adding-message-property-for-nodes-and-triggers">#</a></h4>
+<h4 id="event-markers"><em>Event Markers</em><a hidden class="anchor" aria-hidden="true" href="#event-markers">#</a></h4>
+<ul>
+<li>It is important to fill out the <strong>message property</strong> of all actions and triggers in the recording sequence.</li>
+<li>When a node is executed, an event marker (text of the message property) is sent to the EyeLink data file, marking the exact time of the experimental event.</li>
+<li>These messages can be used to set Interest Periods in Data Viewer for focused data analysis.</li>
+</ul>
+<h4 id="conclusion-5">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-5">#</a></h4>
+<p>By understanding the basic structure of trial events and how the recording sequence works, you can effectively control the flow of events during each trial. Properly setting up nodes and triggers ensures accurate data collection and analysis. For more detailed information on specific actions and triggers, refer to the videos on behavioral data logging and Interest Periods in Data Viewer.</p>
+<hr>
+<h3 id="tutorial-10---screen-building-and-referencing">Tutorial 10 - Screen Building and Referencing<a hidden class="anchor" aria-hidden="true" href="#tutorial-10---screen-building-and-referencing">#</a></h3>
+<h4 id="introduction-6">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction-6">#</a></h4>
+<p>In this tutorial, we&rsquo;ll learn how to add content to a display screen action using the screen builder and how to reference information in the data source to change experimental characteristics across trials. We&rsquo;ll focus on nodes in the project&rsquo;s recording sequence.</p>
+<h4 id="adding-content-to-display-screen-actions">Adding Content to Display Screen Actions<a hidden class="anchor" aria-hidden="true" href="#adding-content-to-display-screen-actions">#</a></h4>
+<h4 id="screen-builder-overview"><em>Screen Builder Overview</em><a hidden class="anchor" aria-hidden="true" href="#screen-builder-overview">#</a></h4>
+<p>The screen builder allows you to see and edit the content that will be presented to the participant by a display screen action. It includes buttons to add different types of screen resources, such as:</p>
+<ul>
+<li>Images</li>
+<li>Videos</li>
+<li>Text</li>
+<li>Basic shapes</li>
+<li>Interest areas (for analysis and triggers)</li>
+</ul>
+<p>Interest areas are not visible to participants but are useful for specifying regions of interest and can be used as triggering regions for mouse and gaze-based triggers.</p>
+<h4 id="adding-image-resources">Adding Image Resources<a hidden class="anchor" aria-hidden="true" href="#adding-image-resources">#</a></h4>
+<h4 id="adding-an-image-resource"><em>Adding an Image Resource</em><a hidden class="anchor" aria-hidden="true" href="#adding-an-image-resource">#</a></h4>
+<ol>
+<li>
+<p><strong>Access the Library Manager</strong>:</p>
+<ul>
+<li>Click the button that looks like books on a shelf or click &ldquo;Edit Library Manager&rdquo;.</li>
+<li>Add image files to your project&rsquo;s library under the &ldquo;Image&rdquo; tab.</li>
+<li>The library manager provides a preview of image files and shows properties of the selected file.</li>
+</ul>
+</li>
+<li>
+<p><strong>Insert an Image Resource</strong>:</p>
+<ul>
+<li>Go back to the screen builder for your display screen action.</li>
+<li>Use the &ldquo;Insert Image Resource&rdquo; button to add an image from your library.</li>
+<li>The properties of the image resource become visible in the properties panel on the left.</li>
+</ul>
+</li>
+<li>
+<p><strong>Source Filename Property</strong>:</p>
+<ul>
+<li>The &ldquo;Source Filename&rdquo; property specifies the image file to be displayed.</li>
+<li>If you want the same image on each trial, set the property to a specific image file (e.g., <code>cross.png</code>).</li>
+</ul>
+</li>
+</ol>
+<h4 id="adding-shape-resources">Adding Shape Resources<a hidden class="anchor" aria-hidden="true" href="#adding-shape-resources">#</a></h4>
+<h4 id="adding-a-shape-resource"><em>Adding a Shape Resource</em><a hidden class="anchor" aria-hidden="true" href="#adding-a-shape-resource">#</a></h4>
+<ol>
+<li><strong>Select the Shape Button</strong>:
+<ul>
+<li>Choose the appropriate shape button (e.g., rectangle).</li>
+<li>Click and drag to draw the shape on the screen.</li>
+<li>Set properties such as color and fill (e.g., white color with no fill).</li>
+</ul>
+</li>
+</ol>
+<h4 id="referencing-data-source-columns">Referencing Data Source Columns<a hidden class="anchor" aria-hidden="true" href="#referencing-data-source-columns">#</a></h4>
+<h4 id="changing-image-on-each-trial"><em>Changing Image on Each Trial</em><a hidden class="anchor" aria-hidden="true" href="#changing-image-on-each-trial">#</a></h4>
+<ol>
+<li>
+<p><strong>Display Cue Action</strong>:</p>
+<ul>
+<li>The display cue action is similar to the display fixation cross action but includes an additional image resource for the cue.</li>
+<li>To change the cue image on each trial, reference the <code>cueImage</code> column from the trial data source.</li>
+</ul>
+</li>
+<li>
+<p><strong>Making a Reference</strong>:</p>
+<ul>
+<li>Click on the &ldquo;Source Filename&rdquo; property in the properties panel.</li>
+<li>Click the button with three dots to open the attribute editor.</li>
+<li>Navigate to the data source component of the trial sequence.</li>
+<li>Double-click the <code>cueImage</code> column to create a reference.</li>
+<li>The reference will be shown at the top of the attribute editor.</li>
+</ul>
+</li>
+<li>
+<p><strong>Display Target Action</strong>:</p>
+<ul>
+<li>Similarly, reference the <code>targetImage</code> column for the target image resource.</li>
+<li>Reference the <code>targetLocation</code> column for the target image&rsquo;s location property.</li>
+</ul>
+</li>
+</ol>
+<h4 id="example-display-fixation-cross-action">Example: Display Fixation Cross Action<a hidden class="anchor" aria-hidden="true" href="#example-display-fixation-cross-action">#</a></h4>
+<ul>
+<li>The display fixation cross action uses an image resource to present a cross on a gray background.</li>
+<li>The image file (<code>cross.png</code>) is added from the library.</li>
+<li>The properties of the image resource can be edited in the screen builder.</li>
+</ul>
+<h4 id="example-display-cue-action">Example: Display Cue Action<a hidden class="anchor" aria-hidden="true" href="#example-display-cue-action">#</a></h4>
+<ul>
+<li>The display cue action includes an additional image resource for the cue.</li>
+<li>The <code>cueImage</code> column in the data source is referenced to change the cue image on each trial.</li>
+<li>The <code>targetLocation</code> column is referenced to change the target image&rsquo;s position on each trial.</li>
+</ul>
+<h4 id="conclusion-6">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion-6">#</a></h4>
+<p>By using the screen builder and referencing data source columns, you can dynamically change experimental characteristics across trials. This approach allows for flexible and efficient experiment design. For more detailed information on specific actions and triggers, refer to the videos on behavioral data logging and Interest Periods in Data Viewer.</p>
+<hr>
+<h2 id="webinar---implementing-the-visual-world-paradigm-in-experiment-builder">Webinar - Implementing the Visual World Paradigm in Experiment Builder<a hidden class="anchor" aria-hidden="true" href="#webinar---implementing-the-visual-world-paradigm-in-experiment-builder">#</a></h2>
+<p><a href="https://www.youtube.com/watch?v=U3gt2v9_ZN4">Link to video</a></p>
+<p><a href="https://drive.google.com/drive/folders/1PH312mMMkVTEfzxmwZXrIxZjTrTHAY56">Data, PPT &amp; Video downloads</a></p>
+<p>Example project: <em>SimpleVisualWorld.ebz</em></p>
+<p><strong>Overview</strong></p>
+<p>This tutorial is based on the SR Research webinar <em>Implementing the Visual World Paradigm in Experiment Builder</em>.<br>
+It walks you through building a Visual World experiment using the included <strong>SimpleVisualWorld.ebz</strong> project, covering:</p>
+<ul>
+<li>Automatic drift checks between trials</li>
+<li>Balancing stimulus positions</li>
+<li>Marking critical audio times in EDF files</li>
+<li>Logging behavioral responses</li>
+</ul>
+<p><strong>1. Experiment Structure</strong></p>
+<ul>
+<li><strong>Blocks:</strong>
+<ul>
+<li>1 practice block (2 trials)</li>
+<li>4 experimental blocks (4 trials each)</li>
+</ul>
+</li>
+<li><strong>Between-block event:</strong> Break screen</li>
+<li><strong>Counterbalancing:</strong> 2 list versions defined in the Data Source</li>
+</ul>
+<p><strong>2. Trial Start &amp; Auto Drift Check</strong></p>
+<p><strong>Fixation Cross</strong></p>
+<ul>
+<li><strong>Invisible Boundary Trigger</strong>:
+<ul>
+<li>Region: bounding box over fixation cross</li>
+<li>Event: <em>Gaze In Region For</em> = 500 ms</li>
+<li>Timeout: 10,000 ms</li>
+<li>On timeout:
+<ul>
+<li><strong>Update Attribute</strong> (<code>SET_RECALIBRATE</code>):
+<pre tabindex="0"><code>SHOULD_WE_RECALIBRATE = 1
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Recalibration Logic</strong></p>
+<ul>
+<li><strong>Conditional Trigger</strong> (<code>CHECK_TO_RECALIBRATE</code>):
+<ul>
+<li>If:
+<pre tabindex="0"><code>SHOULD_WE_RECALIBRATE == 1
+</code></pre>→ Go to <code>EL_CAMERA_SETUP</code></li>
+<li>Else → Continue trial</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. Stimulus Display &amp; Positioning</strong></p>
+<p><strong>Goal:</strong> Interest Areas (IAs) code <strong>stimulus type</strong>, not screen position.</p>
+<ul>
+<li><strong>Image Resources:</strong>
+<ul>
+<li><code>Target_Image</code></li>
+<li><code>PhonComp_Image</code></li>
+<li><code>SemComp_Image</code></li>
+<li><code>Distractor_Image</code></li>
+</ul>
+</li>
+<li><strong>Interest Areas:</strong>
+<ul>
+<li><code>IA_Target</code></li>
+<li><code>IA_PhonComp</code></li>
+<li><code>IA_SemComp</code></li>
+<li><code>IA_Distractor</code></li>
+<li>Location: Reference → corresponding image resource</li>
+</ul>
+</li>
+<li><strong>Variable:</strong>
+<ul>
+<li><code>POSITIONS_LIST</code> (list of <code>(x, y)</code> coordinates)
+<ul>
+<li>Index <code>0</code> unused</li>
+<li>Codes:<br>
+<code>1</code> = top left<br>
+<code>2</code> = top right<br>
+<code>3</code> = bottom left<br>
+<code>4</code> = bottom right</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Data Source:</strong>
+<ul>
+<li>Position codes: <code>Target_Pos</code>, <code>PhonComp_Pos</code>, <code>SemComp_Pos</code>, <code>Distractor_Pos</code></li>
+<li>File names: <code>Target_File</code>, <code>PhonComp_File</code>, <code>SemComp_File</code>, <code>Distractor_File</code></li>
+</ul>
+</li>
+<li><strong>DISPLAY_IMAGES Action:</strong>
+<ul>
+<li>Position = <code>POSITIONS_LIST</code> index from Data Source</li>
+<li>File = filename from Data Source</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Preview and Audio Playback</strong></p>
+<ul>
+<li><strong>TIMER_IMAGE_PREVIEW</strong>:
+<ul>
+<li>Duration = 500 ms</li>
+</ul>
+</li>
+<li><strong>PLAY_SOUND</strong> Action:
+<ul>
+<li>Sound File = <code>AudioFile</code> column from Data Source</li>
+</ul>
+</li>
+</ul>
+<p><strong>5. Critical Audio Event Marking</strong></p>
+<ul>
+<li><strong>TIMER_CRIT_WORD</strong> Trigger:
+<ul>
+<li>Start Time = <code>PLAY_SOUND.playStartTime</code></li>
+<li>Duration = <code>CritWordTime</code> column</li>
+<li><strong>Send Message To EDF</strong>:
+<pre tabindex="0"><code>CRIT_WORD_ONSET
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<p><strong>6. Mouse Response Collection</strong></p>
+<p><strong>Cursor Setup:</strong></p>
+<ul>
+<li>Cursor image resource</li>
+<li><strong>Position is Mouse Contingent</strong> = ON</li>
+<li><strong>Color Key</strong> = ON</li>
+<li><strong>Update Attribute</strong>:
+<ul>
+<li>Reset mouse position before showing images</li>
+</ul>
+</li>
+</ul>
+<p><strong>Click Detection:</strong></p>
+<ul>
+<li><strong>MOUSE_RESPONSE</strong> Trigger:
+<ul>
+<li>Region Type = INTEREST AREA</li>
+<li>Linked to: IA_Target, IA_PhonComp, IA_SemComp, IA_Distractor</li>
+<li>Button = 1 (left click)</li>
+<li><strong>Press Events</strong> = ON</li>
+<li><strong>Position Triggered</strong> = ON</li>
+</ul>
+</li>
+</ul>
+<p><strong>7. Logging Behavioral Data</strong></p>
+<ul>
+<li><strong>Conditional Trigger</strong> after MOUSE_RESPONSE:
+<ul>
+<li>If:
+<pre tabindex="0"><code>IA ID == 1
+</code></pre>→ <strong>SET_VARS_CORRECT</strong>:
+<pre tabindex="0"><code>ACCURACY = 1
+</code></pre></li>
+<li>Else:
+→ <strong>SET_VARS_INCORRECT</strong>:
+<pre tabindex="0"><code>ACCURACY = 0
+</code></pre></li>
+</ul>
+</li>
+<li>Both branches also set:
+<ul>
+<li><code>IMAGE_CLICKED</code></li>
+<li><code>RT</code></li>
+</ul>
+</li>
+<li><strong>Send Message to EDF</strong> and write to results file</li>
+</ul>
+<p><strong>8. Trial End</strong></p>
+<ul>
+<li><strong>Feedback Display</strong>: 1 second</li>
+<li>Next trial or block break</li>
+</ul>
+<p><strong>Summary Table</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Purpose</th>
+          <th>EB Objects Used</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Auto Drift Check</td>
+          <td>Maintain calibration</td>
+          <td>Invisible Boundary Trigger, Conditional Trigger</td>
+      </tr>
+      <tr>
+          <td>Stimulus Positioning</td>
+          <td>Type-based IA coding</td>
+          <td>Image Resources, Interest Areas, <code>POSITIONS_LIST</code></td>
+      </tr>
+      <tr>
+          <td>Audio Event Marking</td>
+          <td>Time-lock to critical words</td>
+          <td>Timer Trigger, Send Message to EDF</td>
+      </tr>
+      <tr>
+          <td>Mouse Response</td>
+          <td>Collect participant clicks</td>
+          <td>Cursor Resource, Mouse Response Trigger</td>
+      </tr>
+      <tr>
+          <td>Data Logging</td>
+          <td>Store accuracy, RT, choice</td>
+          <td>Conditional Trigger, Update Attribute, EDF Msg</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="step-by-step-creation-of-the-visual-world-paradigm-in-eb">Step-by-step creation of the Visual World Paradigm in EB<a hidden class="anchor" aria-hidden="true" href="#step-by-step-creation-of-the-visual-world-paradigm-in-eb">#</a></h2>
+<p><strong>Series Navigation:</strong><br>
+Part 1 – Project Setup and Data Source <br>
+Part 2 – Stimulus Display and Interest Areas</p>
+<h3 id="part-1--project-setup-and-data-source">Part 1 – Project Setup and Data Source<a hidden class="anchor" aria-hidden="true" href="#part-1--project-setup-and-data-source">#</a></h3>
+<p><strong>Overview</strong></p>
+<p>This post begins the step-by-step build of the <em>SimpleVisualWorld.ebz</em> experiment as described in the SR Research webinar <em>Implementing the Visual World Paradigm in Experiment Builder</em>.</p>
+<p><strong>1. Create a New Project</strong></p>
+<ol>
+<li>Open <strong>Experiment Builder</strong> and select <strong>File → New Project</strong>.</li>
+<li>Give the project a descriptive name (e.g., <code>VisualWorldParadigm</code>).</li>
+<li>Set the save location for your <code>.ebz</code> file.</li>
+</ol>
+<p><strong>2. Define Variables</strong></p>
+<p>From the transcript, the following variables are used later in the build:</p>
+<ol>
+<li><code>SHOULD_WE_RECALIBRATE</code> – integer, default value <code>0</code>.</li>
+<li><code>POSITIONS_LIST</code> – list, stores <code>(x, y)</code> coordinates for positions 1–4.</li>
+<li><code>ACCURACY</code> – integer.</li>
+<li><code>IMAGE_CLICKED</code> – string.</li>
+<li><code>RT</code> – number.</li>
+</ol>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Go to the <strong>Variables</strong> tab.</li>
+<li>Add each variable with its correct type.</li>
+<li>For <code>POSITIONS_LIST</code>:
+<ul>
+<li>Add position coordinates:
+<pre tabindex="0"><code>0 = (0,0)   # unused
+1 = top left
+2 = top right
+3 = bottom left
+4 = bottom right
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>Note on <code>POSITIONS_LIST</code>, Image Positions, and Interest Areas in a Visual World Experiment</strong></p>
+<p><strong>What</strong><br>
+In this experiment, <code>POSITIONS_LIST</code> is a variable storing fixed <code>(x, y)</code> coordinates for potential stimulus locations on a 1920×1080 display.<br>
+Each coordinate was chosen so that it lies in a different quadrant:</p>
+<pre tabindex="0"><code>Index 0: (0, 0)        # unused placeholder
+Index 1: (480, 270)    # top left
+Index 2: (1440, 270)   # top right
+Index 3: (480, 810)    # bottom left
+Index 4: (1440, 810)   # bottom right
+</code></pre><img src="/images/positionlistVW4Q.png" alt="4-Quadrant positions for POSITIONS_LIST" width="450">
+<p>The screen center is at <code>(960, 540)</code>, dividing the display into four quadrants:</p>
+<ul>
+<li><strong>Top left:</strong> <code>x &lt; 960</code> and <code>y &lt; 540</code></li>
+<li><strong>Top right:</strong> <code>x &gt; 960</code> and <code>y &lt; 540</code></li>
+<li><strong>Bottom left:</strong> <code>x &lt; 960</code> and <code>y &gt; 540</code></li>
+<li><strong>Bottom right:</strong> <code>x &gt; 960</code> and <code>y &gt; 540</code></li>
+</ul>
+<p><strong>How</strong></p>
+<ul>
+<li>The Data Source contains position codes (1–4) for each stimulus type (e.g., <code>Target_Pos</code>, <code>PhonComp_Pos</code>).</li>
+<li>EB uses the code as an <strong>index</strong> into <code>POSITIONS_LIST</code> to find the corresponding coordinates.</li>
+<li>For example, <code>Target_Pos = 2</code> → <code>POSITIONS_LIST[2] = (1440, 270)</code>
+<ul>
+<li><code>1440</code> &gt; <code>960</code> → right half of screen</li>
+<li><code>270</code> &lt; <code>540</code> → top half of screen<br>
+→ Result: <strong>top-right quadrant</strong>.</li>
+</ul>
+</li>
+<li>The Image Resource’s <strong>Position</strong> property references <code>POSITIONS_LIST</code>, with the <strong>Index</strong> tied to the relevant Data Source column.</li>
+<li>Each Interest Area’s <strong>Location</strong> property references its image resource, so when the image is positioned, the IA moves with it automatically.</li>
+</ul>
+<p><strong>Why</strong></p>
+<ul>
+<li><strong>Quadrants ≠ Interest Areas</strong>: Quadrants are just possible screen positions. Interest Areas are named for stimulus type (e.g., <code>IA_Target</code>, <code>IA_PhonComp</code>) and follow the assigned image to any quadrant.</li>
+<li><strong>Counterbalancing</strong>: The same stimulus type can appear in different quadrants across trials, supporting balanced designs without changing IA definitions.</li>
+<li><strong>Clean analysis</strong>: In Data Viewer, <code>IA_Target</code> always refers to the target stimulus, regardless of which quadrant it was displayed in. This avoids the need to re-code locations in post-processing.</li>
+</ul>
+<p>This setup ensures stimulus placement is flexible, Interest Areas always match stimulus identity, and the design supports efficient counterbalancing and straightforward analysis.</p></blockquote>
+<p><strong>3. Prepare the Data Source</strong></p>
+<p>The Data Source should contain columns matching the variables used to position and display stimuli:</p>
+<ol>
+<li><strong>Position columns</strong> (integer values 1–4):
+<ul>
+<li><code>Target_Pos</code></li>
+<li><code>PhonComp_Pos</code></li>
+<li><code>SemComp_Pos</code></li>
+<li><code>Distractor_Pos</code></li>
+</ul>
+</li>
+<li><strong>File name columns</strong> (string):
+<ul>
+<li><code>Target_File</code></li>
+<li><code>PhonComp_File</code></li>
+<li><code>SemComp_File</code></li>
+<li><code>Distractor_File</code></li>
+</ul>
+</li>
+<li><strong>Audio file column</strong>:
+<ul>
+<li><code>AudioFile</code></li>
+</ul>
+</li>
+<li><strong>Critical word timing</strong>:
+<ul>
+<li><code>CritWordTime</code> (in milliseconds)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Open the <strong>Data Source</strong> editor.</li>
+<li>Create the columns listed above.</li>
+<li>Fill in the rows for each trial according to your design.</li>
+<li>Save the Data Source file.</li>
+</ol>
+<p><strong>4. Create Project Blocks</strong></p>
+<p>From the transcript:</p>
+<ul>
+<li><strong>1 practice block</strong> (2 trials)</li>
+<li><strong>4 experimental blocks</strong> (4 trials each)</li>
+<li>Break screen between blocks</li>
+<li>Two counterbalanced list versions in the Data Source</li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>In the timeline, create a <strong>Practice Block</strong>:
+<ul>
+<li>Number of trials: 2.</li>
+</ul>
+</li>
+<li>Create <strong>Experimental Block 1–4</strong>:
+<ul>
+<li>Number of trials: 4 in each block.</li>
+</ul>
+</li>
+<li>Add a <strong>Break Screen</strong> sequence between blocks.</li>
+<li>Link blocks to the correct Data Source list version.</li>
+</ol>
+<hr>
+<h3 id="part-2--stimulus-display-and-interest-areas">Part 2 – Stimulus Display and Interest Areas<a hidden class="anchor" aria-hidden="true" href="#part-2--stimulus-display-and-interest-areas">#</a></h3>
+<p><strong>Overview</strong></p>
+<p>This post covers the setup of stimulus display and interest areas for the <em>SimpleVisualWorld.ebz</em> experiment, following the SR Research webinar transcript step-by-step.</p>
+<p><strong>1. Add Image Resources</strong></p>
+<p>From the transcript, we have four image resources:</p>
+<ol>
+<li><code>Target_Image</code></li>
+<li><code>PhonComp_Image</code></li>
+<li><code>SemComp_Image</code></li>
+<li><code>Distractor_Image</code></li>
+</ol>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>In the <strong>Resource Manager</strong>, create a new <strong>Image Resource</strong> for each stimulus type.</li>
+<li>Assign placeholder images for now — these will be replaced with file references from the Data Source later.</li>
+</ol>
+<p><strong>2. Create Interest Areas (IAs)</strong></p>
+<p>The transcript specifies one IA per stimulus type, not per position.</p>
+<ol>
+<li><code>IA_Target</code></li>
+<li><code>IA_PhonComp</code></li>
+<li><code>IA_SemComp</code></li>
+<li><code>IA_Distractor</code></li>
+</ol>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>On the stimulus display canvas, right-click → <strong>Add Interest Area</strong>.</li>
+<li>Name it according to stimulus type (e.g., <code>IA_Target</code>).</li>
+<li>In the <strong>Location</strong> property of the IA, set <strong>Reference</strong> to the matching image resource (e.g., <code>IA_Target</code> → <code>Target_Image</code>).</li>
+<li>Repeat for all four IAs.</li>
+</ol>
+<p><strong>3. Link Positions from <code>POSITIONS_LIST</code></strong></p>
+<p>The transcript specifies that stimulus positions are controlled by a variable rather than fixed coordinates.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Select <code>Target_Image</code> in the display canvas.</li>
+<li>In the <strong>Position</strong> property, set Reference → <code>POSITIONS_LIST</code>.</li>
+<li>For <strong>Index</strong>, reference the Data Source column <code>Target_Pos</code>.</li>
+<li>Repeat for:
+<ul>
+<li><code>PhonComp_Image</code> → Index from <code>PhonComp_Pos</code></li>
+<li><code>SemComp_Image</code> → Index from <code>SemComp_Pos</code></li>
+<li><code>Distractor_Image</code> → Index from <code>Distractor_Pos</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>4. Link Image Files from the Data Source</strong></p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Select <code>Target_Image</code>.</li>
+<li>In the <strong>File</strong> property, set Reference → <code>Target_File</code> (Data Source column).</li>
+<li>Repeat for:
+<ul>
+<li><code>PhonComp_Image</code> → <code>PhonComp_File</code></li>
+<li><code>SemComp_Image</code> → <code>SemComp_File</code></li>
+<li><code>Distractor_Image</code> → <code>Distractor_File</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>5. Add DISPLAY_IMAGES Action to the Trial Sequence</strong></p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>In the trial sequence, insert a <strong>DISPLAY_IMAGES</strong> action.</li>
+<li>Ensure it references the four image resources already linked to <code>POSITIONS_LIST</code> and Data Source columns.</li>
+<li>Place this action in the correct order in the trial timeline, before the audio playback.</li>
+</ol>
+<hr>
+<h2 id="a-triangle-layout-in-a-visual-world-experiment">A Triangle Layout in a Visual World Experiment<a hidden class="anchor" aria-hidden="true" href="#a-triangle-layout-in-a-visual-world-experiment">#</a></h2>
+<h3 id="using-positions_list-for-a-triangle-layout-in-a-visual-world-experiment">Using <code>POSITIONS_LIST</code> for a Triangle Layout in a Visual World Experiment<a hidden class="anchor" aria-hidden="true" href="#using-positions_list-for-a-triangle-layout-in-a-visual-world-experiment">#</a></h3>
+<blockquote>
+<p><strong>What</strong><br>
+In this design, we present <strong>three images</strong> arranged in a triangular pattern on a 1920×1080 display. Instead of placing them in rectangular quadrants, we define a <code>POSITIONS_LIST</code> with three fixed <code>(x, y)</code> coordinates, each representing one vertex of the triangle:</p>
+<pre tabindex="0"><code>Index 0: (0, 0)        # unused placeholder
+Index 1: (960, 270)    # top center
+Index 2: (560, 810)    # bottom left
+Index 3: (1360, 810)   # bottom right
+</code></pre><blockquote>
+<img src="/images/positionlistVW3Q.png" alt="3-Quadrant positions for POSITIONS_LIST" width="450"></blockquote>
+<p>These coordinates were chosen so that each point lies inside one of the intended positions of the triangle. You can adjust these values to change spacing or alignment.</p>
+<p><strong>How</strong></p>
+<ol>
+<li>
+<p><strong>Define <code>POSITIONS_LIST</code></strong></p>
+<ul>
+<li>In Experimental Builder, create a variable named <code>POSITIONS_LIST</code> of type <strong>Point List</strong>.</li>
+<li>Enter the coordinates above, keeping index <code>0</code> as an unused placeholder.</li>
+</ul>
+</li>
+<li>
+<p><strong>Add position columns in the Data Source</strong></p>
+<ul>
+<li>In your CSV/Excel Data Source, add a <strong>position column</strong> for each image type:
+<ul>
+<li><code>Target_Pos</code></li>
+<li><code>Comp_Pos</code> (competitor)</li>
+<li><code>Distractor_Pos</code></li>
+</ul>
+</li>
+<li>For each trial, assign a number <strong>1–3</strong> indicating where that image should appear.</li>
+<li>Example:
+<table>
+  <thead>
+      <tr>
+          <th>Trial</th>
+          <th>Target_Pos</th>
+          <th>Comp_Pos</th>
+          <th>Distractor_Pos</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>2</td>
+          <td>1</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Link images to <code>POSITIONS_LIST</code></strong></p>
+<ul>
+<li>On the display, select each image resource (<code>Target_Image</code>, <code>Comp_Image</code>, <code>Distractor_Image</code>).</li>
+<li>In the <strong>Position</strong> property:
+<ul>
+<li>Set <strong>Reference</strong> → <code>POSITIONS_LIST</code>.</li>
+<li>Set <strong>Index</strong> → the matching Data Source column (<code>Target_Pos</code>, <code>Comp_Pos</code>, or <code>Distractor_Pos</code>).</li>
+</ul>
+</li>
+<li>This tells EB: <em>For this trial, place the image at <code>POSITIONS_LIST[ DataSource.PositionColumn ]</code></em>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Link Interest Areas to image resources</strong></p>
+<ul>
+<li>Create an Interest Area (IA) for each stimulus type (<code>IA_Target</code>, <code>IA_Comp</code>, <code>IA_Distractor</code>).</li>
+<li>In the IA’s <strong>Location</strong> property, set <strong>Reference</strong> → the associated image resource.</li>
+<li>This ensures the IA moves automatically to follow its image’s position in each trial.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Why</strong></p>
+<ul>
+<li><strong>Flexible positioning</strong>: You can easily change the coordinates in <code>POSITIONS_LIST</code> to adjust the triangle’s shape without editing every display.</li>
+<li><strong>Counterbalancing</strong>: Stimulus types can swap positions across trials simply by changing the position codes in the Data Source.</li>
+<li><strong>Clean analysis</strong>: Interest Areas are tied to stimulus identity, not fixed positions. For example, <code>IA_Target</code> always means the target stimulus, whether it appears at the top or bottom of the triangle.</li>
+<li><strong>Reusability</strong>: The same trial display works for all position combinations, avoiding the need to create separate layouts for each configuration.</li>
+</ul>
+<p>This method mirrors the standard <code>POSITIONS_LIST</code> approach used in quadrant-based designs, but with custom coordinates for a triangle arrangement, ensuring both experimental flexibility and data analysis clarity.</p></blockquote>
+<hr>
+<h3 id="choosing-positions_list-coordinates-for-a-triangle-layout-on-a-19201080-screen">Choosing <code>POSITIONS_LIST</code> Coordinates for a Triangle Layout on a 1920×1080 Screen<a hidden class="anchor" aria-hidden="true" href="#choosing-positions_list-coordinates-for-a-triangle-layout-on-a-19201080-screen">#</a></h3>
+<blockquote>
+<p><strong>Understanding the Coordinate System</strong><br>
+Experimental Builder (EB) uses screen coordinates where:</p>
+<ul>
+<li><code>(0, 0)</code> = top-left corner of the screen</li>
+<li><code>(1920, 1080)</code> = bottom-right corner (for a 1920×1080 display)</li>
+<li>By default, the <strong>Position</strong> property for an image refers to its <strong>center point</strong>, not its top-left corner.</li>
+</ul>
+<p><strong>Goal Layout</strong><br>
+For a triangle arrangement of three images:</p>
+<ul>
+<li>One image at the <strong>top center</strong></li>
+<li>Two images at the <strong>bottom</strong>, left and right</li>
+</ul>
+<p><strong>Step-by-Step Process</strong></p>
+<ol>
+<li>
+<p><strong>Find the screen center</strong></p>
+<pre tabindex="0"><code>Center X = 1920 / 2 = 960
+Center Y = 1080 / 2 = 540
+</code></pre></li>
+<li>
+<p><strong>Top vertex (Image 1)</strong></p>
+<ul>
+<li>Keep it horizontally centered: <code>x = 960</code></li>
+<li>Move it upward to about 1/4 of the way down the screen: <code>y = 270</code></li>
+<li>Result: <code>(960, 270)</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Bottom left vertex (Image 2)</strong></p>
+<ul>
+<li>Shift left from the center: <code>x = 960 - 400 = 560</code></li>
+<li>Move it downward to about 3/4 of the way down the screen: <code>y = 810</code></li>
+<li>Result: <code>(560, 810)</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Bottom right vertex (Image 3)</strong></p>
+<ul>
+<li>Shift right from the center: <code>x = 960 + 400 = 1360</code></li>
+<li>Same vertical position as bottom left: <code>y = 810</code></li>
+<li>Result: <code>(1360, 810)</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>Final <code>POSITIONS_LIST</code></strong></p>
+<pre tabindex="0"><code>Index 0: (0, 0)        # unused placeholder
+Index 1: (960, 270)    # top center
+Index 2: (560, 810)    # bottom left
+Index 3: (1360, 810)   # bottom right
+</code></pre><p><strong>Why These Values Work</strong></p>
+<ul>
+<li><strong>Symmetry:</strong> Equal horizontal shifts from the center produce a balanced triangle.</li>
+<li><strong>Spacing:</strong> Vertical offsets (270 for top, 810 for bottom) keep images apart and leave room for Interest Areas.</li>
+<li><strong>Adjustability:</strong> Changing horizontal or vertical offsets lets you easily resize or reshape the triangle without altering the Data Source or trial displays.</li>
+</ul>
+<p><strong>Tip</strong>: These values assume that your image’s <em>center point</em> is positioned at the given coordinates. If you use large images, test the layout to ensure they don’t overlap and adjust offsets accordingly.</p></blockquote>
+<hr>
+<h2 id="composite-images-and-ias-files-for-a-triangle-layout-in-a-visual-world-experiment">Composite Images and IAS Files for a Triangle Layout in a Visual World Experiment<a hidden class="anchor" aria-hidden="true" href="#composite-images-and-ias-files-for-a-triangle-layout-in-a-visual-world-experiment">#</a></h2>
+<h3 id="using-composite-images-and-ias-files-in-eyelink-visual-world-experiments">Using Composite Images and IAS Files in EyeLink Visual World Experiments&quot;<a hidden class="anchor" aria-hidden="true" href="#using-composite-images-and-ias-files-in-eyelink-visual-world-experiments">#</a></h3>
+<p><strong>🎯 Overview</strong></p>
+<p>In a Visual World eye-tracking experiment, the <strong>Target</strong>, <strong>Competitor</strong>, and <strong>Distractor</strong> are combined into a <strong>single composite image</strong> for each trial.</p>
+<p>This method replaces <code>POSITIONS_LIST</code> with <strong>matching Interest Area Set (IAS) files</strong> that define rectangles aligned with the composite layout.</p>
+<ul>
+<li>Composite images fix the layout of stimuli.</li>
+<li>IAS files specify screen-relative coordinates of Interest Areas (IAs).</li>
+<li>This guarantees that the gaze data always maps correctly to each object.</li>
+</ul>
+<p><strong>🛠 How to Implement</strong></p>
+<p><strong>1. 🖼 Create Composite Images</strong></p>
+<ul>
+<li>Use <strong>PowerPoint</strong> (or similar) to arrange the three images (Target, Competitor, Distractor).</li>
+<li>Export each slide as a <code>.png</code> (e.g., <code>1280 × 718</code>).</li>
+<li>In EB, these images will be displayed <strong>centered on a <code>1920 × 1080</code> screen</strong>, without stretching.</li>
+<li>Create multiple composites to counterbalance object positions across trials.</li>
+</ul>
+<p><strong>2. 📐 Define Interest Areas (IAS Files)</strong>
+For each composite, create a <code>.ias</code> file that specifies the Interest Area rectangles.</p>
+<p>Coordinates must be relative to the <strong>full screen (1920 × 1080)</strong>, not the composite image size.</p>
+<p>Since a <code>1280 × 718</code> image is centered on the <code>1920 × 1080</code> screen:</p>
+<ul>
+<li>Horizontal offset = (1920 − 1280) / 2 = <strong>320</strong></li>
+<li>Vertical offset = (1080 − 718) / 2 = <strong>181</strong></li>
+</ul>
+<p>Add these offsets to the image-relative IA coordinates.</p>
+<p>Example conversion:<br>
+If the Target is at (524, 19) in the image, then its screen coordinates are:</p>
+<ul>
+<li>X = 524 + 320 = <strong>844</strong></li>
+<li>Y = 19 + 181 = <strong>200</strong></li>
+</ul>
+<blockquote>
+<p>Example IAS file:</p></blockquote>
+<pre tabindex="0"><code>Label X Y Width Height
+Target 844 200 233 233
+Competitor 475 647 233 233
+Distractor 1212 647 233 233
+</code></pre><ul>
+<li><strong>Label</strong> = stimulus role (Target, Competitor, Distractor)</li>
+<li><strong>X, Y</strong> = top-left corner of IA rectangle (screen pixels)</li>
+<li><strong>Width, Height</strong> = IA size (screen pixels)</li>
+</ul>
+<p>If stimuli swap positions in another composite, you only change coordinates in the IAS file — labels remain consistent.</p>
+<p><strong>3. 📋 Reference Images and IAS Files in the Data Source</strong>
+In the EB Data Source spreadsheet, include:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Trial</th>
+          <th>CompositeImage</th>
+          <th>IASFile</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>comp1.png</td>
+          <td>comp1.ias</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>comp2.png</td>
+          <td>comp2.ias</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>comp3.png</td>
+          <td>comp3.ias</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><code>CompositeImage</code> → composite stimulus filename</li>
+<li><code>IASFile</code> → matching interest area set filename</li>
+</ul>
+<p><strong>4. ⚙ Configure the Display in EB</strong></p>
+<ul>
+<li>Insert a single <strong>Image Resource</strong>.
+<ul>
+<li>Set <strong>Filename Reference</strong> to the <code>CompositeImage</code> column.</li>
+</ul>
+</li>
+<li>In the Display <strong>Properties</strong>, set <strong>Interest Area Set Name</strong> to reference the <code>IASFile</code> column.</li>
+<li>Place composites in the <code>images/</code> folder and IAS files in the <code>ias/</code> folder of the EB project.</li>
+</ul>
+<p><strong>5. 📡 During Recording</strong></p>
+<ul>
+<li>EB loads the composite image and its IAS file for each trial.</li>
+<li>IA definitions are written into the <code>.edf</code> along with gaze data.</li>
+</ul>
+<p><strong>6. 📊 In Data Viewer</strong></p>
+<ul>
+<li>The correct interest areas load automatically per trial.</li>
+<li>Exports include <code>IA_LABEL</code> values (<code>Target</code>, <code>Competitor</code>, <code>Distractor</code>), regardless of screen position.</li>
+</ul>
+<p><strong>✅ Advantages</strong></p>
+<ul>
+<li>🔄 Eliminates <code>POSITIONS_LIST</code> (layout is fixed in the composite).</li>
+<li>🎯 Precise IA mapping (avoids misalignment).</li>
+<li>💡 Simplified setup (one image, one IAS file per trial).</li>
+<li>🎲 Easy counterbalancing (shuffle composite–IAS pairs in the Data Source).</li>
+<li>📊 Streamlined Data Viewer analysis (labels consistent across trials).</li>
+</ul>
+<p><strong>⚠️ Trade-offs</strong></p>
+<ul>
+<li>✏️ Each new layout requires a composite + IAS pair.</li>
+<li>🧩 Less flexible — moving images means re-exporting composites and updating IAS files.</li>
+<li>📂 Requires careful file management to avoid mismatches.</li>
+</ul>
+<p><strong>🖼 Example</strong></p>
+<img src="/images/composite_in_full_screen_black_white.png" alt="Composite Image in a full screen" width="450">
+<p><em>Example: A <code>1280 × 718</code> composite centered on a <code>1920 × 1080</code> screen, with IAS coordinates offset to align with Target, Competitor, and Distractor. In the actual experiment, the background of both the composite images and the screen are set as black. Only the three interest areas are set as white.</em></p>
+<p><strong>📊 Conversion Table</strong></p>
+<p>Here’s how the three IA coordinates from the composite image (<code>1280 × 718</code>) were converted into screen-relative coordinates (<code>1920 × 1080</code>):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Label</th>
+          <th>Image X</th>
+          <th>Image Y</th>
+          <th>Width</th>
+          <th>Height</th>
+          <th>+320 (H offset)</th>
+          <th>+181 (V offset)</th>
+          <th>Screen X</th>
+          <th>Screen Y</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Target</td>
+          <td>524</td>
+          <td>19</td>
+          <td>233</td>
+          <td>233</td>
+          <td>524 + 320</td>
+          <td>19 + 181</td>
+          <td><strong>844</strong></td>
+          <td><strong>200</strong></td>
+      </tr>
+      <tr>
+          <td>Competitor</td>
+          <td>155</td>
+          <td>466</td>
+          <td>233</td>
+          <td>233</td>
+          <td>155 + 320</td>
+          <td>466 + 181</td>
+          <td><strong>475</strong></td>
+          <td><strong>647</strong></td>
+      </tr>
+      <tr>
+          <td>Distractor</td>
+          <td>892</td>
+          <td>466</td>
+          <td>233</td>
+          <td>233</td>
+          <td>892 + 320</td>
+          <td>466 + 181</td>
+          <td><strong>1212</strong></td>
+          <td><strong>647</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>This table ensures clarity:</p>
+<ul>
+<li><strong>Image X/Y</strong> = measured directly on the 1280×718 composite</li>
+<li><strong>Offsets</strong> = applied to center the image on the 1920×1080 screen</li>
+<li><strong>Screen X/Y</strong> = final values to use in IAS files</li>
+</ul>
+<hr>
+<h3 id="calculating-interest-area-ia-coordinates-from-powerpoint-measurements">Calculating Interest Area (IA) Coordinates from PowerPoint Measurements<a hidden class="anchor" aria-hidden="true" href="#calculating-interest-area-ia-coordinates-from-powerpoint-measurements">#</a></h3>
+<p><strong>Prompt</strong><br>
+Measurements from PowerPoint’s <em>Size &amp; Position</em> panel for a composite image:</p>
+<p><strong>Top-center image</strong></p>
+<ul>
+<li>X position = 13.45 cm (from top-left corner)</li>
+<li>Y position = 0.5 cm (from top-left corner)</li>
+<li>Width = 6 cm</li>
+<li>Height = 6 cm</li>
+</ul>
+<p><strong>Bottom-left image</strong></p>
+<ul>
+<li>X position = 4 cm (from top-left corner)</li>
+<li>Y position = 12 cm (from top-left corner)</li>
+<li>Width = 6 cm</li>
+<li>Height = 6 cm</li>
+</ul>
+<p><strong>Bottom-right image</strong></p>
+<ul>
+<li>X position = 23 cm (from top-left corner)</li>
+<li>Y position = 12 cm (from top-left corner)</li>
+<li>Width = 6 cm</li>
+<li>Height = 6 cm</li>
+</ul>
+<p><strong>Slide size</strong>: 1280×718 px<br>
+<strong>Screen size</strong>: 1920×1080 px<br>
+<strong>Export DPI</strong>: 99 pixels/inch</p>
+<hr>
+<p><strong>Step 1 — Conversion Factor</strong></p>
+<p>To convert from cm to pixels:
+$$
+\text{pixels} = \text{cm} \times \frac{99}{2.54} \approx \text{cm} \times 38.976
+$$</p>
+<p>At <strong>99 DPI</strong>, every cm ≈ <strong>38.976 px</strong>.</p>
+<p><strong>Step 2 — Convert each measurement</strong></p>
+<p><strong>Top-center</strong></p>
+<ul>
+<li>X = 13.45 × 38.976 ≈ <strong>524 px</strong></li>
+<li>Y = 0.5 × 38.976 ≈ <strong>19 px</strong></li>
+<li>Width = 6 × 38.976 ≈ <strong>234 px</strong></li>
+<li>Height = 6 × 38.976 ≈ <strong>234 px</strong></li>
+</ul>
+<p><strong>Bottom-left</strong></p>
+<ul>
+<li>X = 4 × 38.976 ≈ <strong>156 px</strong></li>
+<li>Y = 12 × 38.976 ≈ <strong>468 px</strong></li>
+<li>Width = <strong>234 px</strong></li>
+<li>Height = <strong>234 px</strong></li>
+</ul>
+<p><strong>Bottom-right</strong></p>
+<ul>
+<li>X = 23 × 38.976 ≈ <strong>896 px</strong></li>
+<li>Y = 12 × 38.976 ≈ <strong>468 px</strong></li>
+<li>Width = <strong>234 px</strong></li>
+<li>Height = <strong>234 px</strong></li>
+</ul>
+<hr>
+<p><strong>Step 3 — IAS File (relative to composite image 1280×718 px)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># Label        X     Y     Width   Height
+</span></span><span style="display:flex;"><span>TopCenter     524    19     234     234
+</span></span><span style="display:flex;"><span>BottomLeft    156   468     234     234
+</span></span><span style="display:flex;"><span>BottomRight   896   468     234     234
+</span></span></code></pre></div><hr>
+<h3 id="how-eb-stores-ias-references-in-the-edf">How EB Stores IAS References in the EDF<a hidden class="anchor" aria-hidden="true" href="#how-eb-stores-ias-references-in-the-edf">#</a></h3>
+<blockquote>
+<p>When you set <strong>Interest Area Set Name</strong> in a Display to reference the <code>IASFile</code> column in your Data Source:</p>
+<ol>
+<li>
+<p><strong>During experiment runtime</strong></p>
+<ul>
+<li>For each trial, EB reads the filename from the <code>IASFile</code> column (e.g., <code>comp1.ias</code>)</li>
+<li>EB loads that <code>.ias</code> file and applies it to the stimulus display for that trial.</li>
+</ul>
+</li>
+<li>
+<p><strong>While recording</strong></p>
+<ul>
+<li>EB writes a special <strong>IA definition message</strong> into the <code>.edf</code> file at the exact moment the trial starts.</li>
+<li>This message contains:
+<ul>
+<li>The IA labels (e.g., <code>Target</code>, <code>Competitor</code>, <code>Distractor</code>)</li>
+<li>The coordinates and sizes of each IA rectangle</li>
+<li>The link between this IA set and the trial ID</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>When you open the EDF in Data Viewer</strong></p>
+<ul>
+<li>Data Viewer reads the IA definition messages directly from the EDF.</li>
+<li>It reconstructs the IA sets for each trial exactly as they were during the experiment.</li>
+<li>Because your IAS files were named by stimulus role (not position), the exported data’s <code>IA_LABEL</code> values always match the correct Target/Competitor/Distractor for that trial.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Why this matters</strong></p>
+<ul>
+<li>You don’t need to manually load IAS files later — they’re already embedded in the EDF.</li>
+<li>The <code>IA_LABEL</code> column in fixation/saccade exports is trustworthy for direct analysis.</li>
+<li>Even if the same physical IA coordinates are reused across different trials, the labels are correct because they’re tied to the trial-specific IAS file that EB applied during recording.</li>
+</ul></blockquote>
+<hr>
+<h3 id="note-on-screen-and-interest-area-layout">Note on Screen and Interest Area Layout<a hidden class="anchor" aria-hidden="true" href="#note-on-screen-and-interest-area-layout">#</a></h3>
+<blockquote>
+<p>In this setup:</p>
+<ul>
+<li>The <strong>full screen resolution</strong> is <strong>1920×1200</strong> pixels (Some computers are <strong>1920*1080</strong>).</li>
+<li>The <strong>composite stimulus image</strong> is <strong>1280×718</strong> pixels and is positioned in the <strong>center</strong> of the screen.</li>
+<li>All Interest Area (IA) coordinates are defined <strong>relative to the composite image’s top-left corner</strong>.</li>
+</ul>
+<p><strong>Interest Area coordinates for this example</strong>:</p>
+<pre tabindex="0"><code># Label       X     Y     Width   Height
+Target       524   19    233     233
+Competitor   155   466   233     233
+Distractor   892   466   233     233
+</code></pre><p>When the composite image is displayed in Experimental Builder:</p>
+<ul>
+<li>EB draws it centered on the screen (1920×1200).</li>
+<li>Each IA’s <code>(X, Y)</code> coordinate is offset by the composite image’s top-left corner position on the screen.</li>
+<li>The <strong>Y coordinate</strong> is inverted when converting from EB’s top-left origin to plotting or analysis environments like Matplotlib.</li>
+</ul>
+<p><strong>Visualization of Layout</strong>:</p>
+<img src="/images/triangleIAS.png" alt="Composite image centered on screen with interest areas" width="500">
+<p><strong>Why this matters</strong>:</p>
+<ul>
+<li>The IAS file should always use coordinates relative to the composite image size (1280×718), not the full screen size.</li>
+<li>As long as the composite image stays centered, the same IAS coordinates will align correctly across trials.</li>
+</ul></blockquote>
+<hr>
+<h3 id="how-gaze-coordinates-are-determined-when-using-a-centered-composite-image">How Gaze Coordinates Are Determined When Using a Centered Composite Image<a hidden class="anchor" aria-hidden="true" href="#how-gaze-coordinates-are-determined-when-using-a-centered-composite-image">#</a></h3>
+<p><strong>Prompt</strong><br>
+Explain how the coordinates of gazes are determined in this case.</p>
+<p><strong>1. Eye tracker coordinate system</strong></p>
+<ul>
+<li>The EyeLink tracker samples gaze points in <strong>full screen coordinates</strong>.</li>
+<li>On this setup, the screen is <strong>1920 × 1080 pixels</strong>.</li>
+<li>The origin <code>(0, 0)</code> is at the <strong>top-left corner of the screen</strong>.</li>
+</ul>
+<p><strong>2. Composite image placement</strong></p>
+<ul>
+<li>The composite stimulus image is <strong>1280 × 718 px</strong>.</li>
+<li>Experimental Builder (EB) positions it <strong>centered</strong> on the 1920×1080 screen.</li>
+</ul>
+<p><strong>Screen offsets:</strong></p>
+<ul>
+<li>Horizontal offset = (1920 − 1280) ÷ 2 = <strong>320 px</strong> from the left edge.</li>
+<li>Vertical offset = (1080 − 718) ÷ 2 = <strong>181 px</strong> from the top edge.</li>
+</ul>
+<p><strong>3. Interest Area (IAS) coordinates</strong></p>
+<ul>
+<li>The <code>.ias</code> file stores IA coordinates <strong>relative to the composite image’s top-left corner</strong>.</li>
+<li>Example: <code>TopCenter</code> IA = (524, 19) inside the composite image.</li>
+</ul>
+<p><strong>EB applies offsets when displaying:</strong></p>
+<p>IA_screen_X = Image_offset_X + IA_relative_X<br>
+IA_screen_Y = Image_offset_Y + IA_relative_Y</p>
+<p>For <code>(524, 19)</code>:</p>
+<ul>
+<li>Screen X = 320 + 524 = <strong>844</strong></li>
+<li>Screen Y = 181 + 19 = <strong>200</strong></li>
+</ul>
+<p><strong>4. How Data Viewer uses it</strong></p>
+<ul>
+<li>EB writes the <strong>final screen-space IA coordinates</strong> into the <code>.edf</code> file during recording.</li>
+<li>When the EDF is opened in Data Viewer:
+<ul>
+<li>The IAs are already in <strong>screen coordinates</strong> matching the gaze samples.</li>
+<li>If a gaze sample is at <code>(850, 210)</code>, Data Viewer checks if it falls inside <code>(844, 200, width=704, height=704)</code> and assigns the correct <code>IA_LABEL</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Key takeaway</strong><br>
+Even though IAS files are designed in <strong>composite image space</strong>, EB applies the <strong>centering offset</strong> at runtime and stores the <strong>true screen coordinates</strong> in the EDF.<br>
+This ensures Data Viewer’s analysis is accurate without any manual coordinate conversion.</p>
+<hr>
+<hr>
+<h3 id="mapping-interest-areas-from-a-centered-composite-image">Mapping Interest Areas from a Centered Composite Image<a hidden class="anchor" aria-hidden="true" href="#mapping-interest-areas-from-a-centered-composite-image">#</a></h3>
+<p><strong>🔠 Screen and Image Setup</strong></p>
+<ul>
+<li><strong>Experiment screen resolution:</strong> <code>1920 × 1080</code> (fullscreen)</li>
+<li><strong>Composite image size:</strong> <code>1280 × 718</code> pixels</li>
+<li><strong>Composite image position:</strong> <strong>centered</strong> on screen, <strong>not stretched or scaled</strong></li>
+<li><strong>Each face tile size (Interest Area):</strong> <code>233 × 233</code> pixels (square)</li>
+</ul>
+<p><strong>📀 Composite Image Position on Screen</strong></p>
+<p>Since the image is centered and smaller than the screen:</p>
+<pre tabindex="0"><code>Left/right margin  = (1920 − 1280) / 2 = 320 px  
+Top/bottom margin  = (1080 − 718) / 2 = 181 px
+</code></pre><p>Thus, the <strong>top-left corner of the composite image</strong> is positioned at <strong>(320, 181)</strong> on the screen.</p>
+<p><strong>🔁 Conversion Rule: Image to Screen Coordinates</strong></p>
+<p>If your interest area (IA) coordinates are defined relative to the image (1280×718), you must convert them to <strong>screen-based coordinates</strong> for use in Experimental Builder (EB).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>X_screen = X_image + 320
+</span></span><span style="display:flex;"><span>Y_screen = Y_image + 181
+</span></span><span style="display:flex;"><span>Width and Height remain the same
+</span></span></code></pre></div><blockquote>
+<p>⚠️ EB and Data Viewer interpret IA coordinates relative to the full screen, <strong>not</strong> the image. Always apply this conversion before use.</p></blockquote>
+<p><strong>🧪 Example Conversion</strong></p>
+<p><strong>Interest Areas in Image Coordinates (1280×718)</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Label</th>
+          <th>X</th>
+          <th>Y</th>
+          <th>Width</th>
+          <th>Height</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Target</td>
+          <td>524</td>
+          <td>19</td>
+          <td>233</td>
+          <td>233</td>
+      </tr>
+      <tr>
+          <td>Competitor</td>
+          <td>155</td>
+          <td>466</td>
+          <td>233</td>
+          <td>233</td>
+      </tr>
+      <tr>
+          <td>Distractor</td>
+          <td>892</td>
+          <td>466</td>
+          <td>233</td>
+          <td>233</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Converted to Screen Coordinates (1920×1080)</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Label</th>
+          <th>X</th>
+          <th>Y</th>
+          <th>Width</th>
+          <th>Height</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Target</td>
+          <td>844</td>
+          <td>200</td>
+          <td>233</td>
+          <td>233</td>
+      </tr>
+      <tr>
+          <td>Competitor</td>
+          <td>475</td>
+          <td>647</td>
+          <td>233</td>
+          <td>233</td>
+      </tr>
+      <tr>
+          <td>Distractor</td>
+          <td>1212</td>
+          <td>647</td>
+          <td>233</td>
+          <td>233</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>📄 Ready-to-Use <code>.ias</code> Snippet</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span># Label       X    Y    Width  Height
+</span></span><span style="display:flex;"><span>Target       844  200  233    233
+</span></span><span style="display:flex;"><span>Competitor   475  647  233    233
+</span></span><span style="display:flex;"><span>Distractor  1212  647  233    233
+</span></span></code></pre></div><p>✅ Save this file with <code>.ias</code> extension in <strong>plain text</strong>, UTF-8 encoding, and use LF line endings (not Windows CRLF).</p>
+<p><strong>✅ Best Practices for Experimental Builder</strong></p>
+<ol>
+<li>
+<p><strong>Display</strong>: Set the image action to &ldquo;centered&rdquo; and <strong>do not scale</strong> or stretch it.</p>
+</li>
+<li>
+<p><strong>Interest Areas</strong>: Load the converted <code>.ias</code> file as an Interest Area Set.</p>
+</li>
+<li>
+<p><strong>Test</strong>: Run a test session and visually confirm alignment of the rectangles with image elements.</p>
+</li>
+<li>
+<p><strong>Environment</strong>: Ensure:</p>
+<ul>
+<li>Screen resolution is exactly 1920×1080</li>
+<li>No DPI scaling or OS-level zoom is active</li>
+<li>Image is not resized at runtime</li>
+</ul>
+</li>
+</ol>
+<p><strong>🔁 When to Recalculate IA Coordinates</strong></p>
+<p>Recalculate coordinates if:</p>
+<ul>
+<li>You change the <strong>image size</strong></li>
+<li>You change the <strong>screen resolution</strong></li>
+<li>You <strong>scale or stretch</strong> the image in EB</li>
+<li>You edit <strong>position or layout</strong> of elements within the composite image</li>
+</ul>
+<p>This workflow ensures <strong>pixel-perfect alignment</strong> between your visual stimuli and gaze-tracking data, which is critical for meaningful analysis using Data Viewer.</p>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Zhang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -6,6 +6,9 @@ theme: "PaperMod"
 
 
 
+
+
+
 markup:
   goldmark:
     renderer:
@@ -59,6 +62,9 @@ menu:
           url: /tool/neuralnetworks/
           weight: 54
           home: false    
+
+
+
 
 
 enableEmoji: true

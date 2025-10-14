@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Jun Zhang</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on Jun Zhang</description>
+    <generator>Hugo -- 0.151.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Jun 2023 22:38:49 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Pragmatic inferencing</title>
+      <link>http://localhost:1313/projects/praginfer/</link>
+      <pubDate>Wed, 21 Jun 2023 22:38:49 +0800</pubDate>
+      <guid>http://localhost:1313/projects/praginfer/</guid>
+      <description>&lt;p&gt;Given my view of languages as an critical part of human cognition, I would like to know more about the nature of this cognitive capability that seems to be only possessed by humans.&lt;/p&gt;
+&lt;p&gt;As a continuation of my research on language acquisition, I started to realize that, fascinating as linguistic competence may be, ignoring linguistic performance is not reasonable.&lt;/p&gt;
+&lt;p&gt;After working on topics of non-native language processing, especially disambiguation, I ventered into pragmatic inferencing (mostly due to failure to produce any publication &amp;#x1f615; &amp;#x1f62d; &amp;#x1f61e; &amp;#x1f631; ).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2. language acquisition</title>
+      <link>http://localhost:1313/projects/nonnative/</link>
+      <pubDate>Tue, 20 Jun 2023 22:39:05 +0800</pubDate>
+      <guid>http://localhost:1313/projects/nonnative/</guid>
+      <description>&lt;p&gt;As a learner of English as a foreign language since age 13, I naturally wonder how my English always come short of native-like competence. Such curiosity drives me, as a linguist, further to investigate issues in non-native language acquisition and conduct research on these issues.&lt;/p&gt;
+&lt;p&gt;Here is a link to my master&amp;rsquo;s thesis.
+《中国大学生英语写作中语篇衔接手段的使用研究》&lt;a href=&#34;https://kns.cnki.net/kcms2/article/abstract?v=RyaFSLOYMk5LKnlQeuON3lZLmXNW61jdu88ypOVVXS5JWDqWjKOG3Zdxv_oqBVvEWqeK78rehNkcB7D-qYHstcgvtuOh57iEXcSD6xqlxhFCYF3IgJRnnrkM-kbSwnc4&amp;amp;uniplatform=NZKPT&amp;amp;flag=copy&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;While I was studying for my Ph.D., I expanded my interest into the area of first language acquisition as I was working on how syntactic knowledge was acquired.
+Here is a link to my Ph.D. disseration. &lt;a href=&#34;https://scholars.hkbu.edu.hk/en/studentTheses/scope-interaction-between-universal-quantifiers-and-sentential-ne&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/projects/praglife/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/praglife/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

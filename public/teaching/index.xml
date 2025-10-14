@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Teaching on Jun Zhang</title>
+    <link>http://localhost:1313/teaching/</link>
+    <description>Recent content in Teaching on Jun Zhang</description>
+    <generator>Hugo -- 0.151.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Jul 2023 15:50:45 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Second Language Acquisition</title>
+      <link>http://localhost:1313/teaching/l2a/</link>
+      <pubDate>Sun, 09 Jul 2023 15:50:45 +0800</pubDate>
+      <guid>http://localhost:1313/teaching/l2a/</guid>
+      <description>&lt;h3 id=&#34;-my-second-language-acquisition-courses&#34;&gt;🎓 My Second Language acquisition courses&lt;/h3&gt;
+&lt;p&gt;I currently offer two specialized courses on second language acquisition, tailored to different academic levels:&lt;/p&gt;
+&lt;h4 id=&#34;-undergraduate-level&#34;&gt;🎒 Undergraduate Level&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Introduction to Second Language Acquisition&lt;/em&gt;&lt;br&gt;
+A foundational course covering core concepts in SLA for undergraduate students.&lt;/p&gt;
+&lt;h4 id=&#34;-graduate-level&#34;&gt;🎓 Graduate Level&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Advanced Introduction to Second Language Acquisition&lt;/em&gt;&lt;br&gt;
+An in-depth exploration of SLA theories and research for graduate students, with a focus on the perspective from generative linguistics.&lt;/p&gt;
+&lt;h3 id=&#34;-visit-the-course-websites&#34;&gt;🔍 Visit the course websites&lt;/h3&gt;
+&lt;p&gt;For detailed syllabi, lecture notes, and readings:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
