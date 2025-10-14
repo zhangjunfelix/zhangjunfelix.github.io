@@ -4,10 +4,27 @@
     <title>Welcome on Jun Zhang</title>
     <link>https://zhangjunfelix.github.io/</link>
     <description>Recent content in Welcome on Jun Zhang</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jul 2025 13:52:18 -0400</lastBuildDate>
     <atom:link href="https://zhangjunfelix.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eyelink Date Viewer tutorial</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/dv_tutorial/</link>
+      <pubDate>Sat, 19 Jul 2025 13:52:18 -0400</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/dv_tutorial/</guid>
+      <description>&lt;h2 id=&#34;data-viewer-a-beginners-guide-to-eye-tracking-analysis&#34;&gt;Data Viewer: A Beginner&amp;rsquo;s Guide to Eye-Tracking Analysis&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLOdF-B36TwsqdfpUssFpXNsV3MC5QtHa9&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Welcome to the first tutorial in our &lt;strong&gt;Data Viewer for Beginners&lt;/strong&gt; series. If you&amp;rsquo;re new to eye-tracking analysis or just getting started with &lt;strong&gt;SR Research’s Data Viewer&lt;/strong&gt;, this guide is for you.&lt;/p&gt;
+&lt;p&gt;In this post, you’ll learn:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What Data Viewer is&lt;/li&gt;
+&lt;li&gt;What kinds of eye-tracking data it can analyze&lt;/li&gt;
+&lt;li&gt;How it helps researchers visualize and extract insights&lt;/li&gt;
+&lt;li&gt;Why it&amp;rsquo;s one of the most widely used tools for processing EyeLink data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s take a first look at what makes Data Viewer so powerful and beginner-friendly.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Designing Experimental Surveys in Qualtrics</title>
       <link>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</link>
@@ -72,15 +89,15 @@ The following are the materials from his course. It has been such a wonderful ex
 &lt;p&gt;In this seminar, we shall explore one perspective on &amp;ldquo;meaning&amp;rdquo; through &lt;em&gt;Latent Semantic Analysis (LSA)&lt;/em&gt;. Key concepts include:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Eyelink software tutorial</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</link>
+      <title>Eyelink Experimental Builder tutorial</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/eb_tutorials/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</guid>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/eb_tutorials/</guid>
       <description>&lt;h2 id=&#34;introduction-to-experiment-builder-a-step-by-step-guide&#34;&gt;Introduction to Experiment Builder: A Step-by-Step Guide&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qCMgHiGbWN4&amp;amp;list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
 &lt;p&gt;This tutorial provides a fundamental understanding of the Experiment Builder software. You&amp;rsquo;ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.&lt;/p&gt;
-&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;&lt;strong&gt;Introduction to Experiment Builder&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;Introduction to Experiment Builder&lt;/h3&gt;
 &lt;p&gt;Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.&lt;/p&gt;</description>
     </item>
     <item>
@@ -392,10 +409,16 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
       <link>https://zhangjunfelix.github.io/teaching/l2a/</link>
       <pubDate>Sun, 09 Jul 2023 15:50:45 +0800</pubDate>
       <guid>https://zhangjunfelix.github.io/teaching/l2a/</guid>
-      <description>&lt;p&gt;COURSE SYLLABUS &lt;a href=&#34;Syllabus.pdf&#34;&gt;Download syllabus&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;course-description&#34;&gt;&lt;em&gt;COURSE DESCRIPTION&lt;/em&gt;&lt;/h4&gt;
-&lt;p&gt;This course is a general introduction to scientific research into how people learn a second language. Although the course is designed to be accessible to students from a wide variety of backgrounds, some knowledge of the linguistic structure of English will be assumed.&lt;/p&gt;
-&lt;p&gt;Second language acquisition, or SLA, is a theoretical and experimental field of study which, like first language acquisition studies, looks at the phenomenon of language development &amp;ndash; in this case the acquisition of a second language.&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;-my-second-language-acquisition-courses&#34;&gt;🎓 My Second Language acquisition courses&lt;/h3&gt;
+&lt;p&gt;I currently offer two specialized courses on second language acquisition, tailored to different academic levels:&lt;/p&gt;
+&lt;h4 id=&#34;-undergraduate-level&#34;&gt;🎒 Undergraduate Level&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Introduction to Second Language Acquisition&lt;/em&gt;&lt;br&gt;
+A foundational course covering core concepts in SLA for undergraduate students.&lt;/p&gt;
+&lt;h4 id=&#34;-graduate-level&#34;&gt;🎓 Graduate Level&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Advanced Introduction to Second Language Acquisition&lt;/em&gt;&lt;br&gt;
+An in-depth exploration of SLA theories and research for graduate students, with a focus on the perspective from generative linguistics.&lt;/p&gt;
+&lt;h3 id=&#34;-visit-the-course-websites&#34;&gt;🔍 Visit the course websites&lt;/h3&gt;
+&lt;p&gt;For detailed syllabi, lecture notes, and readings:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bayesian modeling</title>
@@ -459,8 +482,14 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;In progress&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Conventionalization of politeness, alternatives, and pragmatic inferencing&lt;/li&gt;
-&lt;li&gt;Timecourse of politeness and perspective-taking: an eye-tracking study   &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Timecourse of politeness and perspective-taking: an eye-tracking study&lt;/li&gt;
+&lt;li&gt;Speaker sensitivity in pragmatic inferencing     &lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;2025&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Zhang, Jun&lt;/strong&gt;, &amp;amp; Wu, Yan.&lt;/em&gt; (2025). Conventionalization of politeness and questions under discussion in pragmatic inferencing: Interpreting scalars in interpersonal contexts. &lt;em&gt;Journal of Pragmatics&lt;/em&gt;, 249, 1-22. &lt;a href=&#34;https://www.sciencedirect.com/science/article/abs/pii/S037821662500205X&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -470,13 +499,7 @@ Use GLMMs when your response variable is &lt;strong&gt;not continuous&lt;/strong
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;2022&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Zhang, Jun&lt;/strong&gt;, &amp;amp; Wu, Yan.&lt;/em&gt; (2022). Epistemic reasoning in pragmatic inferencing by non-native speakers: The case of scalar implicatures. &lt;em&gt;Second Language Research&lt;/em&gt;, 02676583211069735. &lt;a href=&#34;https://journals.sagepub.com/doi/abs/10.1177/02676583211069735&#34;&gt;Link to fulltext&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;2020&lt;/strong&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;2022&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>1. Pragmatic inferencing</title>
@@ -503,7 +526,9 @@ Here is a link to my Ph.D. disseration. &lt;a href=&#34;https://scholars.hkbu.ed
       <link>https://zhangjunfelix.github.io/about/about/</link>
       <pubDate>Tue, 20 Jun 2023 22:30:07 +0800</pubDate>
       <guid>https://zhangjunfelix.github.io/about/about/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;EDUCATION&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://orcid.org/0000-0002-8840-0951&#34;&gt;ORCID&lt;/a&gt;  &lt;br&gt;
+&lt;a href=&#34;https://scholar.google.com/citations?user=mP4oQBgAAAAJ&amp;amp;hl=en&#34;&gt;Google Scholar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EDUCATION&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Ph.D. in Linguistics&lt;/strong&gt; (2009-2013) | Hong Kong Baptist University &amp;ndash; advised by &lt;a href=&#34;https://ias.szu.edu.cn/en/info/1048/1616.htm&#34;&gt;Dr. Huang Yue Yuan&lt;/a&gt; and &lt;a href=&#34;https://scholar.google.com/citations?user=I31eYH4AAAAJ&amp;amp;hl=zh-CN&#34;&gt;Dr. Yang Suying&lt;/a&gt;
 &lt;ul&gt;
@@ -518,6 +543,7 @@ Here is a link to my Ph.D. disseration. &lt;a href=&#34;https://scholars.hkbu.ed
 &lt;li&gt;Associate Professor, Anhui University | School of Foreign Studies&lt;/li&gt;
 &lt;li&gt;Visiting Scholar, University of Connecticut | Department of Psychological Sciences -Advised by &lt;a href=&#34;https://psychology.uconn.edu/person/gerry-altmann/&#34;&gt;Prof. Gerry Altmann&lt;/a&gt; at his &lt;a href=&#34;https://altmann.lab.uconn.edu&#34;&gt;Psycholinguistics Lab&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Fulbright FLTA, Ramapo College of New Jersey | School of Humanities and Global Studies&lt;/li&gt;
+&lt;li&gt;Lecturer, Anhui University | School of Foreign Studies&lt;/li&gt;
 &lt;li&gt;Lecturer, Hong Kong Baptist University | Language Center&lt;/li&gt;
 &lt;li&gt;Research Assistant, Hong Kong Baptist University | Language Center &amp;amp; Department of English Language and Literature&lt;/li&gt;
 &lt;/ul&gt;

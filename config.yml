@@ -1,11 +1,9 @@
 baseURL: "https://zhangjunfelix.github.io/"
 languageCode: "en-us"
 title: "Jun Zhang"
+theme: "PaperMod"
 
 
-module:
-  imports:
-    - path: github.com/adityatelange/hugo-PaperMod
 
 
 markup:

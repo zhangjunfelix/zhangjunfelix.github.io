@@ -4,10 +4,27 @@
     <title>Psycholinguistics Experiments on Jun Zhang</title>
     <link>https://zhangjunfelix.github.io/tool/experiments/</link>
     <description>Recent content in Psycholinguistics Experiments on Jun Zhang</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jul 2025 13:52:18 -0400</lastBuildDate>
     <atom:link href="https://zhangjunfelix.github.io/tool/experiments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eyelink Date Viewer tutorial</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/dv_tutorial/</link>
+      <pubDate>Sat, 19 Jul 2025 13:52:18 -0400</pubDate>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/dv_tutorial/</guid>
+      <description>&lt;h2 id=&#34;data-viewer-a-beginners-guide-to-eye-tracking-analysis&#34;&gt;Data Viewer: A Beginner&amp;rsquo;s Guide to Eye-Tracking Analysis&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLOdF-B36TwsqdfpUssFpXNsV3MC5QtHa9&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Welcome to the first tutorial in our &lt;strong&gt;Data Viewer for Beginners&lt;/strong&gt; series. If you&amp;rsquo;re new to eye-tracking analysis or just getting started with &lt;strong&gt;SR Research’s Data Viewer&lt;/strong&gt;, this guide is for you.&lt;/p&gt;
+&lt;p&gt;In this post, you’ll learn:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What Data Viewer is&lt;/li&gt;
+&lt;li&gt;What kinds of eye-tracking data it can analyze&lt;/li&gt;
+&lt;li&gt;How it helps researchers visualize and extract insights&lt;/li&gt;
+&lt;li&gt;Why it&amp;rsquo;s one of the most widely used tools for processing EyeLink data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s take a first look at what makes Data Viewer so powerful and beginner-friendly.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Designing Experimental Surveys in Qualtrics</title>
       <link>https://zhangjunfelix.github.io/tool/experiments/qualtrics/</link>
@@ -34,15 +51,15 @@
 &lt;p&gt;Each speaker (Emily, Meilin) should have the following 4 sub-blocks:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Eyelink software tutorial</title>
-      <link>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</link>
+      <title>Eyelink Experimental Builder tutorial</title>
+      <link>https://zhangjunfelix.github.io/tool/experiments/eb_tutorials/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangjunfelix.github.io/tool/experiments/eyelink_software_tutorials/</guid>
+      <guid>https://zhangjunfelix.github.io/tool/experiments/eb_tutorials/</guid>
       <description>&lt;h2 id=&#34;introduction-to-experiment-builder-a-step-by-step-guide&#34;&gt;Introduction to Experiment Builder: A Step-by-Step Guide&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=qCMgHiGbWN4&amp;amp;list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLOdF-B36TwspI-XgKuRC2xFfa768Lsngv&#34;&gt;video link&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
 &lt;p&gt;This tutorial provides a fundamental understanding of the Experiment Builder software. You&amp;rsquo;ll learn about its user interface, core components, and how to structure experiments using sequences, triggers, and data sources.&lt;/p&gt;
-&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;&lt;strong&gt;Introduction to Experiment Builder&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;introduction-to-experiment-builder&#34;&gt;Introduction to Experiment Builder&lt;/h3&gt;
 &lt;p&gt;Welcome to the Experiment Builder introductory tutorial series! This guide will walk you through the basics of using Experiment Builder, a Python-based programming environment with a graphical drag-and-drop interface designed for creating experimental designs.&lt;/p&gt;</description>
     </item>
     <item>
