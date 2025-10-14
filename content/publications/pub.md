@@ -13,14 +13,6 @@ draft: false
    * Timecourse of politeness and perspective-taking: an eye-tracking study   
    * Speaker sensitivity in pragmatic inferencing     <br>
    
-* **2025**
-    * *__Zhang, Jun__, & Wu, Yan.* (2025). Conventionalization of politeness and questions under discussion in pragmatic inferencing: Interpreting scalars in interpersonal contexts. *Journal of Pragmatics*, 249, 1-22. [Link to fulltext](https://www.sciencedirect.com/science/article/abs/pii/S037821662500205X)
-
-
-
-
-
-
 
 
 * **2025**
